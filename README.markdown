@@ -8,7 +8,7 @@
 
 /Sample Messages/VendorName - Sample Messages output from named vendor system to test against
 
-/DMS - Latest Domain Message Specification version name removed to allow a diff
+/NHS111 DMS - Latest Domain Message Specification version name removed to allow a diff
 
 ##Contribute
 Please fork and submit a pull request

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artifactPackage>
+	<dynamicModel>
+		<!--Non – Coded CDA Document Interactions-->
+		<interaction id="POCD_IN120036GB01">
+			<Models>
+				<sendingRole modelId="POCD_AR000001GB01"/>
+				<receivingRole modelId="POCD_AR000002GB01"/>
+				<triggerEvent modelId="POCD_TE000001GB01"/>
+				<transmissionWrapper modelId="MCCI_MT010101UK12"/>
+				<controlActWrapper modelId="MCAI_MT040101UK03"/>
+				<payload modelId="POCD_MT000002UK01"/>
+			</Models>
+		</interaction>
+		<interaction id="POCD_IN120038GB01">
+			<Models>
+				<sendingRole modelId="POCD_AR000001GB01"/>
+				<receivingRole modelId="POCD_AR000003GB01"/>
+				<triggerEvent modelId="POCD_TE000001GB01"/>
+				<transmissionWrapper modelId="MCCI_MT010101UK12"/>
+				<controlActWrapper modelId="MCAI_MT040101UK03"/>
+				<payload modelId="POCD_MT000002UK01"/>
+			</Models>
+		</interaction>
+		<interaction id="POCD_IN120039GB01">
+			<Models>
+				<sendingRole modelId="POCD_AR000001GB01"/>
+				<receivingRole modelId="POCD_AR000002GB01"/>
+				<receivingRole modelId="POCD_AR000003GB01"/>
+				<triggerEvent modelId="POCD_TE000002GB01"/>
+				<transmissionWrapper modelId="MCCI_MT010101UK12"/>
+				<controlActWrapper modelId="MCAI_MT040101UK03"/>
+				<payload modelId="POCD_MT000002UK01"/>
+			</Models>
+		</interaction>
+	</dynamicModel>
+</artifactPackage>

@@ -1,0 +1,1032 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Ambulance Request Tabular View</title><script language="JavaScript1.2">
+				
+var isNew=0;
+var isNS4=0;
+var isIE4=0;
+
+var brow=((navigator.appName) + (parseInt(navigator.appVersion)));
+
+//alert(brow);
+if (parseInt(navigator.appVersion)>=5)
+{
+	isNew=1
+}
+else
+{
+	if(brow=="Netscape4")
+	{
+		isNS4=1;
+		document.captureEvents(Event.ONMOUSEOVER);
+	}
+	else
+	{
+		if(brow=="Microsoft Internet Explorer4")
+		{
+			isIE4=1;
+		}
+	}
+		
+}
+
+// thats ok
+
+
+if(isNS4||isIE4||isNew)
+{
+	docObj=(isNS4) ? 'document' : 'document.all';
+	
+	styleObj=(isNS4) ? ' ' : '.style';
+}
+
+function checkDOM(elementName)
+{
+	if(isNS4||isIE4||isNew)
+	{
+		dom=eval(docObj + '.' + elementName + styleObj);
+		//alert('This browser uses the ' + dom + 'Document Object Model.');
+		dom.left =0;
+		dom.top =0;
+	}
+}
+
+function popUp(evt,currElem)
+{
+
+	if((isNS4 && currElem !=0) || (isIE4 && currElem !=0))
+	{
+		dom =eval(docObj +'.' +currElem+styleObj);
+		state=dom.visibility;
+		if ((state == "visible") || (state=="show"))
+		{
+			dom.visibility="hidden";
+		}
+		else
+		{
+			if(isNS4)
+			{
+				topVal=eval(evt.pageY);
+				leftVal=eval(evt.pageX);
+				/*if(((document.body.scrollLeft+document.body.clientWidth)-leftVal)< 150)
+				{
+					leftVal=(document.body.clientWidth+document.body.scrollLeft-151);
+				}
+				if(((document.body.scrollTop+document.body.clientHeight)-topVal)< 30)
+				{
+					topVal=(document.body.clientHeight+document.body.scrollTop-80);
+				}*/
+
+			}
+			if(isIE4)
+			{
+				topVal=eval(event.clientY)  + document.body.scrollTop+20;
+				leftVal=eval(event.clientX) + document.body.scrollLeft;
+				
+				if(((document.body.scrollLeft+document.body.clientWidth)-leftVal)< 150)
+				{
+					leftVal=(document.body.clientWidth+document.body.scrollLeft-151);
+				}
+				if(((document.body.scrollTop+document.body.clientHeight)-topVal)< 30)
+				{
+					topVal=(document.body.clientHeight+document.body.scrollTop-80);
+				}
+			}
+			if(leftVal < 2)
+			{
+				leftVal=2;
+			}
+			dom.top=topVal;
+			dom.left=leftVal;
+			dom.visibility="visible";
+		}
+	}
+}
+
+</script><style>
+#ds
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+#cwe
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#cne
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#maindiv {
+	overflow: auto; 
+	width: 100%; 
+	height: 90%; 
+	}
+
+
+.hypertext
+{
+	position: absolute;
+	background-color: white;
+	layer-background-colour: cornflowerblue;
+	padding: 3px;
+	border: 3px solid blue;
+	width: 150px;
+	font:normal 10pt/13pt helvetica, sans-serif;
+	text-align: left;
+	color: blue;
+}
+
+.actclass
+{
+	background-color: red;
+}
+
+.entclass
+{
+	background-color: lightgreen;;
+}
+
+.roleclass
+{
+	background-color: yellow;;
+}
+.otherclass
+{
+	background-color: blue;
+}
+.choiceclass
+{
+	background-color: gray;
+}
+.actrelclass
+{
+	background-color: pink;
+}
+.partclass
+{
+	background-color: cyan;
+}
+.rolelinkclass
+{
+	background-color: lightyellow;
+}
+TABLE {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: 1px solid black;
+	border-width: 3px 1px;
+}
+.part td
+{
+	border-width: 2px 1px;
+	border-color: gray;
+	border-style: solid;
+}
+.class td
+{
+	border-width: 3px 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+
+</style></head>
+   <body onload="checkDOM('ds')">
+      <h1>Ambulance Request - tabular view</h1><span id="ds" class="hypertext">No Current Link To Vocabulary</span><span id="cwe" class="hypertext">Coded With Extensions</span><span id="cne" class="hypertext">Coded No Extensions</span><table frame="vsides" rules="cols" cellpadding="2" cellspacing="0">
+         <tr class="class">
+            <td height="35"><a href="REPC_RM200001GB01.htm"><b>REPC_RM200001GB01</b></a></td>
+            <td height="35" nowrap="yes"></td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#"><b></b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">PCPR</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">RQO</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>AmbulanceRequestTypeSnCT</b> } )
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>effectiveTime</b> (<a href="../../../Data Types/DataTypes.htm#TS"><b>TS</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>id</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="partclass"><font color="green"><b>[1..*] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/author"></a>author</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ParticipationType</b></a> } )<br> {<b> Fixed="<font color="red">AUT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contextControlCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ContextControl</b></a> } )<br> {<b> Fixed="<font color="red">OP</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contentId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>) {<b> "<a href="../../Templates/Document%20files/NPFIT-000081_Role.htm"><font color="red">NPFIT-000081#Role</font></a>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>functionCode</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a href="../../../Vocabulary/AuthorFunctionType.htm" target="_top"><b>AuthorFunctionType</b></a> } )<br> {<b> Fixed="<font color="red">OA</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>time</b> (<a href="../../../Data Types/DataTypes.htm#TS"><b>TS</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>participant</b> (<a href="#AuthorChoice"><b>AuthorChoice</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="partclass"><font color="green"><b>[1..*] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/informationRecipient"></a>informationRecipient</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ParticipationType</b></a> } )<br> {<b> Fixed="<font color="red">PRCP</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contentId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>) {<b> "<a href="../../Templates/Document%20files/NPFIT-000080_Role.htm"><font color="red">NPFIT-000080#Role</font></a>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>participant</b> (<a href="#InformationRecipientChoice"><b>InformationRecipientChoice</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation"></a>pertinentInformation</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentTraumaFlag</b> (<a href="#TraumaFlag"><b>TraumaFlag</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation1"></a>pertinentInformation1</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentFireFlag</b> (<a href="#FireFlag"><b>FireFlag</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation2"></a>pertinentInformation2</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentSceneSafeFlag</b> (<a href="#SceneSafeFlag"><b>SceneSafeFlag</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation3"></a>pertinentInformation3</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentPoliceFlag</b> (<a href="#PoliceFlag"><b>PoliceFlag</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation4"></a>pertinentInformation4</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentTrappedFlag</b> (<a href="#TrappedFlag"><b>TrappedFlag</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/pertinentInformation5"></a>pertinentInformation5</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">PERT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>pertinentEncounterEvent</b> (<a href="#EncounterEvent"><b>EncounterEvent</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AmbulanceRequest/reason"></a>reason</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">RSON</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>seperatableInd</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)<br> {<b> Fixed="<font color="red">false</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>justifyingTriageOutcome</b> (<a href="#TriageOutcome"><b>TriageOutcome</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="actrelclass"><font color="green"><b>[0..1] </b></font><b><a id="AmbulanceRequest/replacementOf"></a>replacementOf</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActRelationshipType</b></a> } )<br> {<b> Fixed="<font color="red">RPLC</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><b>priorPreviousAmbulanceRequest</b> (<a href="#PreviousAmbulanceRequest"><b>PreviousAmbulanceRequest</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="TriageOutcome"><b>TriageOutcome</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>TriageOutcomeType</b> } )<br> {<b> Fixed="<font color="red">TO</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>AmbulancePriorityType</b> } )
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="PreviousAmbulanceRequest"><b>PreviousAmbulanceRequest</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">PCPR</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">RQO</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>id</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="choiceclass"><a name="InformationRecipientChoice"><b>InformationRecipientChoice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font>: <b><a href="../../Templates/Document%20files/NPFIT-000080_Role.htm">Template1</a></b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="choiceclass"><a name="AuthorChoice"><b>AuthorChoice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font>: <b><a href="../../Templates/Document%20files/NPFIT-000081_Role.htm">Template4</a></b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="TrappedFlag"><b>TrappedFlag</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>SystemFlagType</b> } )<br> {<b> Fixed="<font color="red">TR</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="PoliceFlag"><b>PoliceFlag</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>SystemFlagType</b> } )<br> {<b> Fixed="<font color="red">PL</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="SceneSafeFlag"><b>SceneSafeFlag</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>SystemFlagType</b> } )<br> {<b> Fixed="<font color="red">SC</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="FireFlag"><b>FireFlag</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>SystemFlagType</b> } )<br> {<b> Fixed="<font color="red">FR</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="TraumaFlag"><b>TraumaFlag</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">OBS</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>code</b> (<a href="../../../Data Types/DataTypes.htm#CV"><b>CV</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<b>SystemFlagType</b> } )<br> {<b> Fixed="<font color="red">TM</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>value</b> (<a href="../../../Data Types/DataTypes.htm#BL"><b>BL</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="actclass"><a name="EncounterEvent"><b>EncounterEvent</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AmbulanceRequest"><b>AmbulanceRequest</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActClass</b></a> } )<br> {<b> Fixed="<font color="red">ENC</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>moodCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ActMood</b></a> } )<br> {<b> Fixed="<font color="red">EVN</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>effectiveTime</b> (<a href="../../../Data Types/DataTypes.htm#IVL"><b>IVL</b></a><b>&lt;<a href="../../../Data Types/DataTypes.htm#TS"><b>TS</b></a>&gt;</b>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..*] </b></font><font color="green"><b> [M] </b></font><b>id</b> (<a href="../../../Data Types/DataTypes.htm#SET"><b>SET</b></a><b>&lt;<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>&gt;</b>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[0..1] </b></font><b>text</b> (<a href="../../../Data Types/DataTypes.htm#ST"><b>ST</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="partclass"><font color="green"><b>[0..1] </b></font><b><a id="EncounterEvent/informant"></a>informant</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ParticipationType</b></a> } )<br> {<b> Fixed="<font color="red">INF</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contextControlCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ContextControl</b></a> } )<br> {<b> Fixed="<font color="red">OP</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contentId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>) {<b> "<a href="../../Templates/Document%20files/NPFIT-000085_Role.htm"><font color="red">NPFIT-000085#Role</font></a>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><b>participant</b> (<a href="#InformantChoice"><b>InformantChoice</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="partclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="EncounterEvent/location"></a>location</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ParticipationType</b></a> } )<br> {<b> Fixed="<font color="red">LOC</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contentId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>) {<b> "<a href="../../Templates/Document%20files/NPFIT-000099_Role.htm"><font color="red">NPFIT-000099#Role</font></a>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>templateId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)<br> {<b> Fixed="<font color="red">COCD_TP146232GB01#location</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>participant</b> (<a href="#HealthCareFacilityChoice"><b>HealthCareFacilityChoice</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%" class="partclass"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="EncounterEvent/recordTarget"></a>recordTarget</b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>typeCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ParticipationType</b></a> } )<br> {<b> Fixed="<font color="red">RCT</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contextControlCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>ContextControl</b></a> } )<br> {<b> Fixed="<font color="red">OP</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>contentId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>) {<b> "<a href="../../Templates/Document%20files/NPFIT-000083_Role.htm"><font color="red">NPFIT-000083#Role</font></a>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>participant</b> (<a href="#Patient"><b>Patient</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="choiceclass"><a name="InformantChoice"><b>InformantChoice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#EncounterEvent"><b>EncounterEvent</b></a></td>
+         </tr>
+         <tr class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font>: <b><a href="../../Templates/Document%20files/NPFIT-000085_Role.htm">Template3</a></b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="choiceclass"><a name="Patient"><b>Patient</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#EncounterEvent"><b>EncounterEvent</b></a></td>
+         </tr>
+         <tr class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font>: <b><a href="../../Templates/Document%20files/NPFIT-000083_Role.htm">Template5</a></b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="choiceclass"><a name="HealthCareFacilityChoice"><b>HealthCareFacilityChoice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#EncounterEvent"><b>EncounterEvent</b></a></td>
+         </tr>
+         <tr class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font>: <b><a href="../../Templates/Document%20files/NPFIT-000099_Role.htm">Template2</a></b></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false"></div>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

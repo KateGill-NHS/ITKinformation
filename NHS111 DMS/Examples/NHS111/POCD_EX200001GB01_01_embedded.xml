@@ -1,0 +1,1728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example message is provided for illustrative purposes only. It has had no clinical validation. Whilst every effort has been taken to ensure that the examples are consistent with the message specification contained within the MiM, where there are conflicts with the written message specification or schema, the specification or schema shall be considered to take precedence-->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pathways="http://nhspathways.org/webservices/pathways/pathwaysCase" xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/POCD_MT000002UK01.xsd" classCode="DOCCLIN" moodCode="EVN">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT200001GB01"/>
+	<id root="A709A442-3CF4-476E-8377-376500E829C9"/>
+	<code code="000000000000000" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"/>
+	<title>NHS 111 Pathways Report</title>
+	<effectiveTime value="201105192000"/>
+	<confidentialityCode code="V" displayName="very restricted" codeSystem="2.16.840.1.113883.5.25"/>
+	<setId root="411910CF-1A76-4330-98FE-C345DDEE5553"/>
+	<versionNumber value="1"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole"/>
+		<patientRole classCode="PAT">
+			<templateId extension="COCD_TP145201GB01#PatientRole" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id extension="K12345" root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+			<id extension="993254128" root="2.16.840.1.113883.2.1.3.2.4.18.23"/>
+			<addr use="H">
+				<streetAddressLine>17, County Avenue</streetAddressLine>
+				<streetAddressLine>Woodtown</streetAddressLine>
+				<city>Medway</city>
+				<postalCode>ME5 FS3</postalCode>
+			</addr>
+			<addr use="PHYS">
+				<streetAddressLine>2, Brancaster Road</streetAddressLine>
+				<city>Medway</city>
+				<postalCode>ME5 FL5</postalCode>
+				<desc>Follow the high street and turn left by Boots</desc>
+				<country>GB</country>
+				<country>Great Britain</country>
+				<additionalLocator>+38.265789-85.623415</additionalLocator>
+			</addr>
+			<telecom value="tel:01634 775667" use="H"/>
+			<telecom value="tel:01634 451628" use="HV"/>
+			<telecom value="mailto: Joe.Blogg@emailfree.co.uk" use="H"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145201GB01#patientPatient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<prefix>Mr</prefix>
+					<family>Joe</family>
+					<given>Blogg</given>
+				</name>
+				<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" code="1"/>
+				<birthTime value="19890101"/>
+				<languageCommunication>
+					<templateId extension="COCD_TP145201GB01#languageCommunication" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+					<languageCode codeSystem="2.16.840.1.113883.2.1.3.2.4.17.70" code="en"/>
+				</languageCommunication>
+			</patient>
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="V396F"/>
+				<name>Medway Medical Practice</name>
+				<telecom value="tel:01634 111222" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Springer Street</streetAddressLine>
+					<city>Medway</city>
+					<postalCode>ME5 5TY</postalCode>
+				</addr>
+				<standardIndustryClassCode code="001" displayName="GP Practice" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor"/>
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+		<time value="201105192000"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="100"/>
+			<code code="OOH02" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Practitioner"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+				<name>
+					<given>Mary</given>
+					<family>Jones</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L399"/>
+				<name>Medway NHS Foundation Trust</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<dataEnterer typeCode="ENT" contextControlCode="OP">
+		<npfitlc:contentId extension="COCD_TP145205GB01#AssignedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+		<assignedEntity classCode="ASSIGNED">
+			<templateId extension="COCD_TP145205GB01#AssignedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="100"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145205GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>Steve</given>
+					<family>Cook</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</dataEnterer>
+	<informant typeCode="INF" contextControlCode="OP">
+		<npfitlc:contentId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+		<relatedEntity classCode="PRS">
+			<templateId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<code code="01" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" displayName="Spouse"/>
+			<addr use="HP">
+				<streetAddressLine>43 Summers Avenue</streetAddressLine>
+				<streetAddressLine>Somerset Street</streetAddressLine>
+				<city>Medway</city>
+				<postalCode>ME5 7TY</postalCode>
+			</addr>
+			<telecom value="tel:07886554123" use="MC"/>
+			<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145007UK03#relationshipHolder" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>Helga</given>
+					<family>Bloggs</family>
+				</name>
+			</relatedPerson>
+		</relatedEntity>
+	</informant>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian"/>
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian"/>
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L3"/>
+				<name>Medway NHS Foundation Trust</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145203GB02#IntendedRecipient"/>
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId extension="COCD_TP145203GB02#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145203GB02#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<id extension="EM396" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+				<name>Medway Kent Ambulance Trust</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<informationRecipient typeCode="TRC">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145202GB01#IntendedRecipient"/>
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId extension="COCD_TP145202GB01#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<npfitlc:recipientRoleCode code="NR0260" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" displayName="General Medical Practitioner"/>
+			<id nullFlavor="NI"/>
+			<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145202GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>Pauline</given>
+					<family>Shelley</family>
+				</name>
+			</informationRecipient>
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145202GB01#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<id extension="W123" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+				<name>Medway Medical Practice</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<authenticator typeCode="AUTHEN">
+		<npfitlc:contentId extension="COCD_TP145205GB01#AssignedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+		<time value="201105192015"/>
+		<signatureCode nullFlavor="NA"/>
+		<assignedEntity classCode="ASSIGNED">
+			<templateId extension="COCD_TP145205GB01#AssignedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="100"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145205GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>Bruce</given>
+					<family>Weller</family>
+				</name>
+			</assignedPerson>
+		</assignedEntity>
+	</authenticator>
+	<participant typeCode="ADM" contextControlCode="OP">
+		<npfitlc:contentId extension="COCD_TP145214GB01#AssociatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+		<associatedEntity classCode="ASSIGNED">
+			<templateId extension="COCD_TP145214GB01#AssociatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="000000000"/>
+			<associatedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145214GB01#associatedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>Bill Lydon</name>
+			</associatedPerson>
+			<scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145214GB01#scopingOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="V396AA"/>
+				<name>Medway PCT</name>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146228GB01#EncompassingEncounter"/>
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146228GB01#EncompassingEncounter"/>
+			<id root="3D3B95B5-24AA-42ED-9F77-BE7ECEB78C3E"/>
+			<code code="11429006" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Consultation"/>
+			<effectiveTime>
+				<low value="201105191945"/>
+				<high value="201105192015"/>
+			</effectiveTime>
+			<dischargeDispositionCode nullFlavor="NA"/>
+			<responsibleParty typeCode="RESP">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146228GB01#responsibleParty"/>
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145210GB01#AssignedEntity"/>
+				<assignedEntity classCode="ASSIGNED">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#AssignedEntity"/>
+					<id nullFlavor="NI"/>
+					<code code="R0010" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Medical Director"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#assignedPerson"/>
+						<name>
+							<given>Dave</given>
+							<family>Cornwell</family>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#representedOrganization"/>
+						<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="VDE232323"/>
+						<name>Medway South Out of Hours Centre</name>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146228GB01#location"/>
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145211GB01#HealthCareFacility"/>
+				<healthCareFacility classCode="SDLOC">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145211GB01#HealthCareFacility"/>
+					<code code="313161000000107" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Example Care Setting"/>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="7AFDCAD6-1CE3-45A6-A176-DDAC27F46C87"/>
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId extension="COCD_TP146224GB01#ObservationMedia" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+						<observationMedia classCode="OBS" moodCode="EVN">
+							<templateId extension="COCD_TP146224GB01#ObservationMedia" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<id root="7DAC2CE0-AE1A-11DB-98EE-B18E1E0994CD"/>
+							<value representation="TXT" mediaType="text/xml">
+								<pathways:PathwaysCase>
+									<serviceDestination>
+										<name>EMAS</name>
+										<code/>
+									</serviceDestination>
+									<messageStatus>PartialExpectingUpdate</messageStatus>
+									<caseReceiveStart>2011-02-17T17:27:33.78Z</caseReceiveStart>
+									<caseReceiveEnd>2011-02-17T17:31:14.313Z</caseReceiveEnd>
+									<outcome>
+										<title>Dispatch 19 minute ambulance</title>
+										<code>Dx012</code>
+									</outcome>
+									<caseDetails>
+										<caseRef>32829643</caseRef>
+										<caseId>8067b9b2-e604-4414-b56f-8e3cc4de4b1b</caseId>
+										<address>
+											<building/>
+											<street>redacted</street>
+											<locality/>
+											<town>redacted</town>
+											<county>redacted</county>
+											<postcode>redacted</postcode>
+											<mapRef>
+												<longitude/>
+												<latitude/>
+											</mapRef>
+											<country>
+												<name>England</name>
+												<isoAlpha2>GB</isoAlpha2>
+											</country>
+											<directions/>
+										</address>
+										<condition/>
+										<contactDetails>
+											<caller>
+												<name/>
+												<phone>
+													<number>redacted</number>
+													<extension/>
+												</phone>
+											</caller>
+										</contactDetails>
+									</caseDetails>
+									<patient>
+										<forename>redacted</forename>
+										<surname>redacted</surname>
+										<address>
+											<building/>
+											<street>redacted</street>
+											<locality/>
+											<town>redacted</town>
+											<county>redacted</county>
+											<postcode>redacted</postcode>
+											<mapRef>
+												<longitude/>
+												<latitude/>
+											</mapRef>
+											<country>
+												<name>England</name>
+												<isoAlpha2>GB</isoAlpha2>
+											</country>
+											<directions/>
+										</address>
+										<phone>
+											<number>redacted</number>
+											<extension/>
+										</phone>
+										<gender>Male</gender>
+										<nationalNumber/>
+										<providerDetails type="DOCTOR">
+											<provider>
+												<name/>
+												<id/>
+											</provider>
+											<providerGroup>
+												<name/>
+												<id/>
+											</providerGroup>
+										</providerDetails>
+										<dateOfBirth>
+											<dob>2010-06-23</dob>
+										</dateOfBirth>
+										<mobilePhone/>
+									</patient>
+									<returnPhone>
+										<number>redacted</number>
+										<extension/>
+									</returnPhone>
+									<billingAddress>
+										<building/>
+										<street/>
+										<locality/>
+										<town/>
+										<county/>
+										<postcode/>
+										<mapRef>
+											<longitude/>
+											<latitude/>
+										</mapRef>
+										<country>
+											<name/>
+											<isoAlpha2>ZZ</isoAlpha2>
+										</country>
+										<directions/>
+									</billingAddress>
+									<pathwayDetails>
+										<pathwayTriageDetails>
+											<pathwayTriage>
+												<start>2011-02-17T17:27:33.78Z</start>
+												<finish>2011-02-17T17:31:14.313Z</finish>
+												<triageDisposition>
+													<initialDispCode>Dx012</initialDispCode>
+													<initialDispText>Dispatch 19 minute ambulance</initialDispText>
+													<timeReached>2011-02-17T17:39:36.743Z</timeReached>
+												</triageDisposition>
+												<finalDisposition>
+													<finalDispCode>Dx012</finalDispCode>
+													<finalDisptext>Dispatch 19 minute ambulance</finalDisptext>
+												</finalDisposition>
+												<transferCodeDetails>
+													<transferCode type="T1"/>
+												</transferCodeDetails>
+												<user>
+													<id>3137</id>
+													<name>redacted</name>
+													<skillSet>T1</skillSet>
+												</user>
+												<triageLineDetails>
+													<triageLine>
+														<start>2011-02-17T17:27:33.797Z</start>
+														<finish>2011-02-17T17:27:33.797Z</finish>
+														<questionType>SetVariable</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId/>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText/>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Patient:  redacted  redacted, Age Gender Selected: redacted , redacted , redacted</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:27:33.797Z</start>
+														<finish>2011-02-17T17:27:33.797Z</finish>
+														<questionType>PathwaysSelection</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText/>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Pathway Selected: PMI, Calling About Someone else</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+														<systemFlags>
+															<systemFlag>Trapped</systemFlag>
+														</systemFlags>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:27:33.86Z</start>
+														<finish>2011-02-17T17:28:01.5Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>5</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220109</questionId>
+															<questionText>What is the reason for the call?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="true">
+																	<text>an injury or other health problem</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a need to access another healthcare provider</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a healthcare professional requesting contact with another clinician</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a report of results or tests</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>more</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Illness or injury</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>An injury or other health problem was described.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:28:01.563Z</start>
+														<finish>2011-02-17T17:28:06.313Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>35</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx140118</questionId>
+															<questionText>Has the baby just been born?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>yes</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The baby was more than one hour old.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:28:06.373Z</start>
+														<finish>2011-02-17T17:28:07.86Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>40</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220110</questionId>
+															<questionText>Is he breathing and conscious?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="true">
+																	<text>breathing AND conscious</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>breathing but NOT conscious (includes current fitting)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>NOT breathing</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>choking now</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Breathing and conscious</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The individual was described as breathing and conscious.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:28:07.923Z</start>
+														<finish>2011-02-17T17:28:22.063Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>60</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220285</questionId>
+															<questionText>Has he been bleeding very heavily IN THE LAST HOUR?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>blood spurting from a wound</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>an egg cupful or more of red blood from a body opening</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>an egg cupful or more from a wound</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Major blood loss was not described.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Change</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:28:22.47Z</start>
+														<finish>2011-02-17T17:28:22.47Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>2050</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText>SocialConcernsExcluded</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>=="present"</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>*</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text/>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Change</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:30:41.483Z</start>
+														<finish>2011-02-17T17:30:46.5Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PEE3</pathwayId>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx140159</questionId>
+															<questionText>What is the reason for ending the assessment?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>the phone line went dead</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>the caller terminated the call (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>I terminated the call (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>triage not possible</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>transfer to a clinician</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Call transferred for clinician assessment</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Assessment ended because the call required transfer to a clinician.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>EarlyExit</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:30:46.577Z</start>
+														<finish>2011-02-17T17:31:09.14Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PEE3</pathwayId>
+																<pathwayOrderNo>50</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220408</questionId>
+															<questionText>WHAT IS THE REASON FOR TRANSFER TO A CLINICIAN?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>caller refuses disposition</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>multiple unrelated symptoms</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>difficulty obtaining adequate information</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>medication or medical procedure enquiry</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>declared medical history (details not required)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>other complex call (specify)</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The reason for transfer to a clinician was: other complex call.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment>NEEDS FURTHER ASSESSMENT</userComment>
+														<action>Back</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:31:09.233Z</start>
+														<finish>2011-02-17T17:31:11.89Z</finish>
+														<questionType>Disposition</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PEE3</pathwayId>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText>Speak to Clinician from our Service immediately</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code>Dx32</code>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>A clinician from our service will call the individual back immediately to assess the problem.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Restart</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:03.117Z</start>
+														<finish>2011-02-17T17:35:08.367Z</finish>
+														<questionType>SetVariable</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId/>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText/>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Patient:  redacted redacted, Age Gender Selected: redacted , redacted , redacted</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:03.117Z</start>
+														<finish>2011-02-17T17:35:08.367Z</finish>
+														<questionType>PathwaysSelection</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText/>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Pathway Selected: PMI, Calling About Someone else</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+														<systemFlags>
+															<systemFlag>CATBLevel3</systemFlag>
+														</systemFlags>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:08.447Z</start>
+														<finish>2011-02-17T17:35:10.68Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>5</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220109</questionId>
+															<questionText>What is the reason for the call?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="true">
+																	<text>an injury or other health problem</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a need to access another healthcare provider</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a healthcare professional requesting contact with another clinician</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a report of results or tests</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>more</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Illness or injury</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>An injury or other health problem was described.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:10.727Z</start>
+														<finish>2011-02-17T17:35:12.82Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>35</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx140118</questionId>
+															<questionText>Has the baby just been born?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>yes</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The baby was more than one hour old.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:12.867Z</start>
+														<finish>2011-02-17T17:35:14.727Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>40</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220110</questionId>
+															<questionText>Is he breathing and conscious?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="true">
+																	<text>breathing AND conscious</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>breathing but NOT conscious (includes current fitting)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>NOT breathing</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>choking now</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Breathing and conscious</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The individual was described as breathing and conscious.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:14.773Z</start>
+														<finish>2011-02-17T17:35:56.977Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>60</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220285</questionId>
+															<questionText>Has he been bleeding very heavily IN THE LAST HOUR?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>blood spurting from a wound</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>an egg cupful or more of red blood from a body opening</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>an egg cupful or more from a wound</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Major blood loss, wound</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Major blood loss from a wound was described.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:57.04Z</start>
+														<finish>2011-02-17T17:35:59.01Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>20000</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx140109</questionId>
+															<questionText>Is he fighting desperately for every breath?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>yes</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Fighting for breath was not described.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:35:59.057Z</start>
+														<finish>2011-02-17T17:36:16.523Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>20400</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220563</questionId>
+															<questionText>Is he limp, floppy and/or unresponsive?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>yes</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The child was not described as limp, floppy and/or unresponsive.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:36:16.587Z</start>
+														<finish>2011-02-17T17:36:19.383Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>20450</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220561</questionId>
+															<questionText>Is he warm to touch?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="true">
+																	<text>yes</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not safe to touch</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Warm to touch</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>The individual was described as being warm to touch.</text>
+															<positive>true</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:36:19.477Z</start>
+														<finish>2011-02-17T17:36:22.463Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>20800</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx120019</questionId>
+															<questionText>Was the injury caused by any of the following?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>a gunshot</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>a stabbing</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>being ejected from a vehicle</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>A gunshot or stabbing injury or ejection from a vehicle was not described.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:36:22.54Z</start>
+														<finish>2011-02-17T17:36:25.667Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>23100</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220286</questionId>
+															<questionText>DID THE INJURY INVOLVE ANY OF THE FOLLOWING?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>a fall of 5 metres or more (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>multiple major injuries (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>major wound or amputation - not just involving a single finger or toe (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>being knocked over by a blast (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>A major fall, multiple major injuries, a major wound/amputation or blast injury were not described.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Change</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:36:53.057Z</start>
+														<finish>2011-02-17T17:37:05.18Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PEE3</pathwayId>
+																<pathwayOrderNo>0</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx140159</questionId>
+															<questionText>What is the reason for ending the assessment?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>the phone line went dead</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>the caller terminated the call (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>I terminated the call (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>triage not possible</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>transfer to a clinician</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term>Call transferred for clinician assessment</term>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>Assessment ended because the call required transfer to a clinician.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>EarlyExit</action>
+														<includeInReport>false</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:38:51.963Z</start>
+														<finish>2011-02-17T17:38:53.82Z</finish>
+														<questionType>SingleAnswer</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>23100</pathwayOrderNo>
+															</triageLogicId>
+															<questionId>Tx220286</questionId>
+															<questionText>DID THE INJURY INVOLVE ANY OF THE FOLLOWING?</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text>a fall of 5 metres or more (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>multiple major injuries (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>major wound or amputation - not just involving a single finger or toe (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>being knocked over by a blast (specify)</text>
+																	<rationale/>
+																</answer>
+																<answer selected="false">
+																	<text>not sure</text>
+																	<rationale/>
+																</answer>
+																<answer selected="true">
+																	<text>no</text>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code/>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>A major fall, multiple major injuries, a major wound/amputation or blast injury were not described.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+													<triageLine>
+														<start>2011-02-17T17:38:53.9Z</start>
+														<finish>2011-02-17T17:39:36.743Z</finish>
+														<questionType>Disposition</questionType>
+														<question>
+															<triageLogicId>
+																<pathwayVersion>
+																	<major>6</major>
+																	<minor>2</minor>
+																	<subRevision>1</subRevision>
+																</pathwayVersion>
+																<pathwayId>PMI</pathwayId>
+																<pathwayOrderNo>24100</pathwayOrderNo>
+															</triageLogicId>
+															<questionId/>
+															<questionText>Dispatch 19 minute ambulance</questionText>
+															<questionRationale/>
+															<answers>
+																<answer selected="false">
+																	<text/>
+																	<rationale/>
+																</answer>
+															</answers>
+															<dispositionRationale>
+																<term/>
+																<code>Dx012</code>
+															</dispositionRationale>
+														</question>
+														<careAdviceKeywordDetails>
+															<careAdviceKeyword/>
+														</careAdviceKeywordDetails>
+														<clinicalArea/>
+														<reportText>
+															<text>An emergency ambulance is being arranged.</text>
+															<positive>false</positive>
+														</reportText>
+														<userComment/>
+														<action>Next</action>
+														<includeInReport>true</includeInReport>
+													</triageLine>
+												</triageLineDetails>
+												<origSite>
+													<siteId>4</siteId>
+													<siteName>Dudley</siteName>
+													<caseId>8067b9b2-e604-4414-b56f-8e3cc4de4b1b</caseId>
+													<pathwaysContentVersion>6.2.1hNHSD</pathwaysContentVersion>
+													<software>
+														<productName>CAS Framework</productName>
+														<version>V12.2</version>
+													</software>
+												</origSite>
+												<callerIsPatient>false</callerIsPatient>
+											</pathwayTriage>
+										</pathwayTriageDetails>
+										<demographics>
+											<gender>Male</gender>
+											<ageGroup>Adult</ageGroup>
+										</demographics>
+										<sharedCaseId/>
+									</pathwayDetails>
+									<site>
+										<id>4</id>
+										<name>Dudley</name>
+									</site>
+								</pathways:PathwaysCase>
+							</value>
+						</observationMedia>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="E27F4264-C005-4BC3-BFA1-57C3E64B30B7"/>
+							<title>Consultation Summary</title>
+							<text>
+								<content>Printed on 29/07/2011 13:18:09 (UTC)</content>
+							</text>
+							<author typeCode="AUT" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#author"/>
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor"/>
+								<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+								<time value="200708012055"/>
+								<assignedAuthor classCode="ASSIGNED">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+									<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="101"/>
+									<code code="OOH02" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Practitioner"/>
+									<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+										<name>
+											<given>Mary</given>
+											<family>Flemming</family>
+										</name>
+									</assignedPerson>
+									<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+										<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L399"/>
+										<name>Medway South Out of Hours Centre</name>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="773110DB-288F-4B32-8DE1-362646A65E9A"/>
+							<title>Patient:</title>
+							<text>
+								<content>Joe Blogg</content>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="8271D2F1-123F-4A14-A1AC-C6C8023223CF"/>
+							<title>Disposition:</title>
+							<text>
+								<content>Go to the nearest Emergency Department within 4 hours.</content>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="8271D2F1-126F-4A14-A1AC-C6C8023233CF"/>
+							<title>Selected care service:</title>
+							<text>
+								<content>-9</content>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="8271D2F1-126F-4A14-A1AC-C6C8023243CF"/>
+							<title>Pathways Assessment:</title>
+							<text>
+								<content>An injury or other health problem was described.
+									<br/>The individual was described as breathing and conscious.
+									<br/>Loss of at least a mugful of blood in the last 30 minutes was not described.
+									<br/>An illness or other health problem was described. - Insect Bite
+									<br/>Fighting for breath was not described.
+									<br/>A heart attack, chest/upper back pain, recent probable stroke, recent fit/seizure or suicide attempt was not described as the main call reason.
+									<br/>New confusion, a diabetic hypo, a probable allergic reaction or successful resuscitation was not described as being the main call reason.
+									<br/>The individual was described as being warm to touch.
+									<br/>An insect or spider bite or sting was described. - Tick Bite
+									<br/>A sting/bite occurring within the last hour was not described.
+									<br/>10 or more stings were not described.
+									<br/>Nausea or vomiting since the sting was not described.
+									<br/>A sting involving the eyes or mouth was not described.
+									<br/>A fever was not described.
+									<br/>An insect still attached to the skin was described.
+									<br/>A tick bite was described.
+									<br/>
+								</content>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>
+							<id root="8271D2F1-126F-4A14-A1AC-C6C8023203CF"/>
+							<title>Advice given:</title>
+							<text>
+								<content>Remove any jewellery or tight clothing from the area.
+									<br/>Antihistamine medication and creams help reduce swelling and itching. They can be bought from pharmacies. Talk to the pharmacist for advice. Follow the instructions in the pack.
+									<br/>Unless advised not to, or they have already been given, paracetamol or ibuprofen can be used to relieve pain. Follow the instructions in the pack. If in doubt ask a pharmacist.
+								</content>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

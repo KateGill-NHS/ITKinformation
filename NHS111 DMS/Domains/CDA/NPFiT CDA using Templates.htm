@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>NHS 111: Generic CDA Specification</title>
+</head>
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../../Core/logo_left.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message Specification</h1>
+
+		</div>
+
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../../Core/logo_right.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 1.0; Status: Draft A</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../../Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+			<a href="../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">Message Definitions</a></li>
+			<!-- commented PRTR1
+			<li>
+			<a href="../Domains/HDN/Document files/IM.htm" title="Discharge Notifications to Social Care">Discharge Notifications to Social Care</a></li>
+			<li>
+			<a href="../Domains/CHC/Document files/IM.htm" title="NHS Continuing Healthcare">NHS Continuing Healthcare</a></li> 
+			-->
+			<li class="selected">
+			<a href="../../Core/Generic.htm" title="Generic">
+			Generic</a></li>
+			<li>
+			<a href="../../Core/References.htm" title="References">
+			References</a></li>
+			<li>
+			<a href="../../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>
+		<ul class="tabs level1">
+			<li class="selected">
+				<a href="../CDA/NPFiT CDA using Templates.htm" title="Nullification Domain Specification">
+				Generic CDA</a>    
+			</li>
+			<li>
+				<a href="../../Data Types/DataTypes.htm" title="Data Types Specification">
+				Data Types Specification</a>    
+			</li>
+			<li>
+				<a href="../../Domains/Nullification/Document files/IM.htm" title="Nullification Domain Specification">
+				Nullification</a>    
+			</li>
+			<!--<li>
+				<a href="../Infrastructure/Document files/IM.htm" title="Infrastructure Domain Specification">
+				TMS Infrastructure</a>        
+			</li>
+			<li>
+				<a href="../CMETs/Document files/IM.htm" title="TMS Infrastructure CMETs">
+				TMS Infrastructure CMETs</a>    
+			</li>-->
+			
+
+		</ul>
+	</div>
+<div id="content">			
+	<h1><a name=_Toc_Section_></a>Generic CDA Specification</h1>
+	<p class="un-numberedheading2"><b>Contents</b></p>
+	<div class="index1" div id="fp_TOC" class="fp_TOC">
+		<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;Overview</a><br><a href="#_Toc_Section_2.">2.&nbsp;&nbsp;&nbsp; NHS CFH Constrained CDA Model</a><p>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#_Toc_Section_2.1">2.1&nbsp;&nbsp;&nbsp;&nbsp;NPfIT CDA RMIM - POCD_MT000001UK04</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.2">2.2&nbsp;&nbsp;&nbsp;&nbsp;NHS CDA RMIM - POCD_MT000002UK01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.3">2.3&nbsp;&nbsp;&nbsp;&nbsp;Comparison of the Two NHS CFH Constrained CDA Models</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4.1">2.4&nbsp;&nbsp;&nbsp;&nbsp;Error Correction using CDA replacement</a><br>
+		<a href="#_Toc_Section_5">3&nbsp;&nbsp;&nbsp;&nbsp;Recipient and Originator Responsibilities</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.1">3.1&nbsp;&nbsp;&nbsp;&nbsp;Recipient responsibilities</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.1.1">3.1.1&nbsp;&nbsp;&nbsp;&nbsp;Error handling
+		</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.2">3.2&nbsp;&nbsp;&nbsp;&nbsp;Originator Responsibilities</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.2.1">3.2.1&nbsp;&nbsp;&nbsp;&nbsp;Error handling
+		</a><br><a href="#_Toc_Section_7">4&nbsp;&nbsp;&nbsp;&nbsp;Conformance and development tools</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7.1">4.1&nbsp;&nbsp;&nbsp;&nbsp;NPfIT StyleSheet - 
+CDA_NPfIT_Document_Renderer.xsl</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7.2">4.2&nbsp;&nbsp;&nbsp;&nbsp;Generic Schematrons</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7.3">4.3&nbsp;&nbsp;&nbsp;&nbsp;NPfIT Transform</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7.4">4.4&nbsp;&nbsp;&nbsp;&nbsp;TemplateConfig.xml</a></div><p>&nbsp;<div class="MsoNormal" align="center" style="text-align:center">
+		<hr size="2" width="100%" align="center"></div>
+	<h1><a name=_Toc_Section_1></a>1&nbsp;&nbsp;&nbsp;&nbsp;Overview</h1>
+	<p class="MsoNormal">This part of the specification contains information 
+	about the things which are generic across NHS CFH CDA domains.</p>
+	<p class="MsoNormal">It&nbsp; details constrained models, generic 
+	responsibilities for senders and receivers or CDA documents, conformance and 
+	testing tools and artefacts.&nbsp; </p>
+	<h1><a name=_Toc_Section_2.></a>2.&nbsp;&nbsp;&nbsp; NHS CFH Constrained CDA Models</h1>
+	<p class="MsoNormal">There are currently two constrained models used to 
+	constrain the structure of NHS CFH CDA instances. These are detailed in the 
+	following subsections:</p>
+	<p class="MsoNormal">For the correct usage of these artefacts refer to the latest 
+			version of </p>
+	<p class="MsoNormal">&quot;NPFIT-ELIBR-AREL-P1R2-0178 Technical 
+			Guidance for Implementation of Templated CDA Domains&quot; this 
+	document will be part of the baseline associated with this specification.</p>
+		<hr size="2" width="100%" align="center">
+	<h2><a name=POCD_MT000001UK04></a><a name=_Toc_Section_2.1></a>2.1&nbsp;&nbsp;&nbsp;&nbsp;NPfIT 
+	CDA RMIM - POCD_MT000001UK04</h2>
+	<p class="MsoNormal">This model was originally developed for the NPfIT 
+	programme to constrain the structure of 
+	NHS CFH CDA documents flowing over TMS and/or stored in PSIS.<font face="Arial" size="3"> 
+	Localisation has been applied to the model and to the schema to support the 
+	NHS CFH templating approach. </font>Templated models 
+	specified in each domain may further constrain CDA 
+	documents for that domain<font face="Arial" size="3">. </font></p>
+	<p class="MsoNormal"><b>THIS PROFILE DOES NOT USE THIS CONSTRAINED MODEL.</b></p>
+	<p>&nbsp;</p><font face="Arial" size="3"><table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table1" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 418px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			<font size="3"><b>Description</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="535" bgcolor="#99CCFF" colspan="6">
+			<font size="3"><b>Artefacts</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 418px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="2">
+			The NPfIT&nbsp; CDA generic model is a constrained version of the 
+			Balloted CDA model with localisation applied to the model and 
+			schema.</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="82" align="center">
+			<b>RMIM</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="86" align="center">
+			<b>Tabular view</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>Schema</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>Templates </b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>References </b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>mif</b></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="82" align="center" height="21">
+			<a title="View R-MIM" style="COLOR: blue" href="Tabular%20View/POCD_RM000001UK04.htm" target="_blank">
+			<img height="16" src="../../Core/Components_files/image003.gif" width="16" border="0"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="86" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<a title="View Schema" style="COLOR: blue" href="../../Schemas/POCD_MT000001UK04.xsd" target="_blank">
+			<img height="16" src="../../Core/Components_files/image005.gif" width="16" border="0"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<a title="View MIF" href="../../Mif/POCD_RM000001UK04-NPFiT-CDA-RMIM.mif" target="_blank">
+			<img src="../../Core/Components_files/icon_mif.gif" border="0"></a></td>
+		</tr>
+	</table>
+		<hr size="2" width="100%" align="center"><h2><a name=POCD_MT000002UK01></a><a name=_Toc_Section_2.2></a>2.2&nbsp;&nbsp;&nbsp;&nbsp;NHS CDA RMIM - POCD_MT000002UK01</h2>
+	<p class="MsoNormal">This model has been developed to allow a more 
+				flexible approach to CDA when implemented using ITK or point to 
+	point on TMS for new post NPfIT message flows.</p>
+	<p class="MsoNormal">This model is the balloted 
+	CDA model in CDA 2006 Release 2. Localisation has been applied to the schema 
+	to support the NHS CFH templating approach. Templated models 
+	specified in each domain may further constrain CDA 
+	documents for that domain. </p>
+	<p>&nbsp;</p><table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table249" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 418px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			<font size="3"><b>Description</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="535" bgcolor="#99CCFF" colspan="6">
+			<font size="3"><b>Artefacts</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 418px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="2">The NHS CDA generic model is a copy of the Balloted CDA model but 
+			has NHS CFH localisation applied to the schema only .</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="82" align="center">
+			<b>RMIM</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="86" align="center">
+			<b>Tabular view</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>Schema</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>Templates </b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>References </b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center">
+			<b>mif</b></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="82" align="center" height="21">
+			<a title="View R-MIM" style="COLOR: blue" href="POCD_RM000002UK01.gif">
+			<img height="16" src="../../Core/Components_files/image003.gif" width="16" border="0"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="86" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<a title="View Schema" style="COLOR: blue" href="../../Schemas/POCD_MT000002UK01.xsd" target="_blank">
+			<img height="16" src="../../Core/Components_files/image005.gif" width="16" border="0"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<font face="Arial" size="3"><b>N/A</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="60" align="center" height="21">
+			<b>N/A</b></td>
+		</tr>
+	</table>
+		<hr size="2" width="100%" align="center">
+	<h2 align="left"><a name=_Toc_Section_2.3></a>2.3&nbsp;&nbsp;&nbsp;&nbsp;Comparison of the Two NHS CFH Constrained CDA Models</h2>
+	<p align="left">This section details the most important differences between 
+	the two models and identifies the classes involved.</p>
+	<p align="left">&nbsp;</p>
+	</font>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table252" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			Class(es)</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			NPfIT CDA RMIM - POCD_MT000001UK04</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" bgcolor="#99CCFF">
+			NHS CDA RMIM - POCD_MT000002UK01</td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Consent</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#Consent_Class">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			NonXMLBody</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#NonXMLBody_Class">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Section.Subject</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#Section.Subject_Class">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			RegionOfInterest</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#RegionOfInterest_Class_">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			ObservationMedia</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#ObservationMedia_Class">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			ExternalObservation</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#ExternalObservation_Class_">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			ExternalProcedure</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#ExternalProcedure_Class_">click to view class</a></td>
+		</tr>
+		<tr>
+			<td style="width: 188px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			ExternalDocument</td>
+			<td style="width: 352px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top">
+			Removed</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="359" align="center">
+			Present&nbsp;&nbsp;
+			<a target="_blank" class="d-mim-small" href="Tabular%20View/images/Comparison.htm#ExternalDocument_Class">click to view class</a></td>
+		</tr>
+		</table>
+	<h2><a name=_Toc_Section_4.1></a>2.4&nbsp;&nbsp;&nbsp;&nbsp;Error Correction using CDA replacement</h2>
+		<p class="MsoMIM">If a document is sent in error, then the sending system 
+	should send a replacement document with the correct information using CDA 
+	replacement update semantics. <!--Where it is not possible to provide a 
+	replacement&nbsp; or if a document must be withdrawn then the document must 
+	be nullified. A _nullify 
+	document_ document should be used: further details of this type of replacement is 
+	contained in the <a href="../Nullification/Document%20files/IM.htm">Nullification Domain Specification</a>, and illustrations are provided in 
+	the section below.</p>-->
+		<hr size="2" width="100%" align="center">
+	<h1><a name=_Toc_Section_5></a>3&nbsp;&nbsp;&nbsp;&nbsp;Recipient and Originator Responsibilities</h1>
+	<p class="MsoMIM">The recipient and sender responsibilities stated this 
+	section are additional&nbsp;to the standard CDA recipient and 
+	originator responsibilities. </p>
+	<h2><a name=_Toc_Section_5.1></a>3.1&nbsp;&nbsp;&nbsp;&nbsp;Recipient responsibilities</h2>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext;" id="table248" width="80%" border="1" cellpadding="0" cellspacing="3">
+		<tr>
+			<td style="width: 385px; padding: 0cm 5.4pt;" valign="top" bgcolor="#99ccff">
+			<font size="3"><b>Responsibility</b></font></td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361" bgcolor="#99ccff">
+			<font size="3"><b>Details</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 385px; padding: 0cm 5.4pt;" valign="top">Assume default values where they are defined in this 
+					specification, and where the instance does not contain a 
+					value</td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">Where CDA defines default values, the recipient 
+		must assume these values in the event that no value is contained in a 
+		CDA instance.</td>
+		</tr>
+		<tr>
+			<td style="width: 385px; padding: 0cm 5.4pt;" rowspan="3" valign="top">Parse and interpret the complete CDA header
+			</td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A recipient of a CDA document must be able to parse 
+		and interpret the complete CDA header. </td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">Because applications may choose to display demographic and 
+
+					other CDA header data drawn from a central master directory, 
+
+					the rendering of the CDA document header is at the 
+
+					discretion of the recipient. </td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">An NPfIT stylesheet is included within the Domain-MIM. Use of this stylesheet is at the discretion of the recipient.
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 385px; padding: 0cm 5.4pt;" rowspan="6" valign="top">Parse and interpret the CDA body sufficiently to be 
+					able to render it</td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">Where a system receives a document outside of its 
+		conformance level (i.e. containing CDA entries it is unable to parse and 
+		interpret) it may choose to only render the document.</td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A recipient of a CDA document must be able to process the body of a CDA 
+					document sufficiently to be able to render it.</td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A recipient of a CDA document must render the structured 
+					body, and the label of each section as 
+		conveyed in the Section.title.</td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A 
+					recipient of a CDA document is only required to process CDA 
+					entries in that document which are applicable to the receiving system's conformance level: this 
+					may not be the complete set of CDA entries contained within the 
+		CDA body.</td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A recipient of a CDA document containing templates it 
+		is able to parse and interpret is required to validate the document against referenced templates.</td>
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="361">A recipient of a CDA document containing CDA entries 
+		it is unable to parse and interpret is not required to process those CDA entries and should render the textual representation 
+		only.</td>
+		</tr>
+	</table>
+	<h3><a name=_Toc_Section_5.1.1></a>3.1.1&nbsp;&nbsp;&nbsp;&nbsp;Error handling  
+		</h3><font face="Arial">
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext;" id="table202" width="80%" border="1" cellpadding="0" cellspacing="3">
+		<tr>
+			<td style="width: 264px; padding: 0cm 5.4pt;" valign="top" bgcolor="#99ccff">
+			<font size="3"><b>Error</b></font></td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="365" bgcolor="#99ccff">
+			<font size="3"><b>Example Scenario</b></font></td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="303" bgcolor="#99ccff">
+			<b><font size="3">Example Error Resolution</font></b></td>
+		</tr>
+		<tr>
+			<td style="width: 264px; padding: 0cm 5.4pt;" rowspan="2" valign="top">An incorrect or invalid document is received.</td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="365">Document relating to John Smith is received with NHS Number
+
+					<font face="Arial">for Jane Smith due to incorrect NHS Number being used by originator.
+
+					</font></td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="303" rowspan="2">A 
+
+				recipient of such a invalid / incorrect document may 
+
+				deal with errors by <!--either-->:
+
+					<p>Sending an Application Acknowledgement to the originating 
+
+				system stating the error type using one of the error codes from 
+
+				the code list for the domain contained in the relevant External 
+
+				Interface Specification when implemented over TMS or the 
+					relevant ITK specification when implemented over ITK.. </p><!--or
+				
+					<p>Nullifying the document&nbsp;using a 
+
+				&quot;nullify document&quot; document which MUST be sent to all recipients 
+
+				and the originating system.&nbsp;&nbsp; </td>-->
+		</tr>
+		<tr>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="365">Report 
+
+				received by GP; in the next consultation with patient GP discusses 
+
+				report and patient denies he had the care. This could 
+
+				occur where someone is treated in ED but uses someone else's 
+				identity.</td>
+		</tr>
+	</table></font>
+	<p class="MsoMIM"><b>Note - Application Acknowledgements are sent by the 
+	receiving application to originating systems for either notification of 
+	success or failure handling.</b></p>
+	<p></p>
+	<h2><a name=_Toc_Section_5.2></a>3.2&nbsp;&nbsp;&nbsp;&nbsp;Originator Responsibilities</h2>
+	<div align="center"><font face="Arial">
+		<table class="MsoTableGrid" style="border: 1pt solid windowtext;" id="table203" width="80%" border="1" cellpadding="0" cellspacing="3">
+			<tr>
+				<td style="width: 385px; padding: 0cm 5.4pt;" valign="top" bgcolor="#99ccff">
+				<font size="3"><b>Responsibility</b></font></td>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361" bgcolor="#99ccff">
+				<font size="3"><b>Details</b></font></td>
+			</tr>
+			<tr>
+				<td style="width: 385px; padding: 0cm 5.4pt;" valign="top" rowspan="3">
+				<font face="Arial">Properly construct CDA Narrative Blocks</font></td>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361">
+				<font face="Arial">An 
+
+				originator of a CDA document must ensure that the attested 
+
+				portion of the document body is structured such that a 
+
+				recipient, adhering to the recipient responsibilities above, 
+
+				will correctly render the document. </font></td>
+			</tr>
+			<tr>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361">
+				<font face="Arial">The 
+
+				attested narrative contents of a section must be placed in the 
+
+				Section.text field, regardless of whether information is also 
+
+				conveyed in CDA entries. </font></td>
+			</tr>
+			<tr>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361">
+				<font face="Arial">Attested multimedia referenced by URL in the narrative must not 
+				be carried in the document sent to PSIS.</font></td>
+			</tr>
+			<tr>
+				<td style="width: 385px; padding: 0cm 5.4pt;" rowspan="2" valign="top">
+				<font face="Arial">Properly construct 
+
+		</font>CDA structured Body</td>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361">The 
+
+				label of each section must be conveyed in the Section.title 
+
+				component.</td>
+			</tr>
+			<tr>
+				<td style="padding: 0cm 5.4pt;" valign="top" width="361">An 
+
+				originator of a CDA document is only required to encode CDA 
+				entries <font face="Arial">applicable to the sending system's conformance level: the 
+				complete narrative might not be
+
+		</font>fully encoded in CDA entries.</td>
+			</tr>
+		</table></font></div>
+	<h3><a name=_Toc_Section_5.2.1></a>3.2.1&nbsp;&nbsp;&nbsp;&nbsp;Error handling  
+		</h3><font face="Arial">
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext;" id="table204" width="80%" border="1" cellpadding="0" cellspacing="3">
+		<tr>
+			<td style="width: 487px; padding: 0cm 5.4pt;" valign="top" bgcolor="#99ccff">
+			<font size="3" face="Arial"><b>Error</b></font></td>
+			<td style="padding: 0cm 5.4pt;" valign="top" width="466" bgcolor="#99ccff">
+			<font size="3" face="Arial"><b>Resolution</b></font></td>
+		</tr>
+		<!--
+		<tr>
+			<td style="width: 487px; padding: 0cm 5.4pt;" >An Originating system receives a &quot;Nullify Document&quot; 
+				document for a document it has sent.</td>
+			<td style="padding: 0cm 5.4pt;" ><font face="Arial">Originating system must Nullify 
+
+				the invalid document using the &quot;Nullify Document&quot;&nbsp;document. It should also nullify any 
+
+				local cache / copy as necessary.</font></td>
+		</tr>
+		-->
+		<tr>
+			<td style="width: 487px; padding: 0cm 5.4pt;" valign="top">An Originating system receives an Application Acknowledgement 
+				containing an error code from the code list for the domain given 
+				in the relevant External Interface Specification.
+
+					<td style="padding: 0cm 5.4pt;" valign="top" width="466">Originating system must:<p>Replace the invalid document with a new correct version.</p> <!--or
+
+					<p>Nullify 
+
+				the invalid document using the &quot;Nullify Document&quot;&nbsp;document<font face="Arial">
+
+				which MUST be sent to all recipients</font>. It should also nullify any 
+
+				local cache / copy as necessary.</p></td> -->
+		</tr>
+	</table></font>
+		<hr size="2" width="100%" align="center">
+	<h1><a name=_Toc_Section_7></a>4&nbsp;&nbsp;&nbsp;&nbsp;Conformance and development tools</h1>
+			<p class="MsoNormal">NHS CFH provides some conformance and 
+				development tools on an as is basis examples versions of some of 
+				these artefacts are listed below for information only</p>
+			<h2><a name=_Toc_Section_7.1></a>4.1&nbsp;&nbsp;&nbsp;&nbsp;NPfIT StyleSheet - 
+CDA_NPfIT_Document_Renderer.xsl</h2>
+			<p class="MsoNormal"><b>
+			<a target="_blank" href="../../Transforms/CDA_NPfIT_Document_Renderer.xsl">Stylesheet - CDA_NPfIT_Document_Renderer.xsl</a></b></p>
+			<h2><a name=_Toc_Section_7.2></a>4.2&nbsp;&nbsp;&nbsp;&nbsp;Generic Schematrons</h2>
+			<p class="MsoNormal"><b>
+			<a target="_blank" href="../../Schematrons/Generic_CDA_Document_Schematron.xml">Generic_CDA_Document_Schematron.xml</a></b></p>
+	<p class="MsoNormal"><b>
+	<a target="_blank" href="../../Schematrons/CfH_CDA_Document_Schematron.xml">CfH_CDA_Document_Schematron.xml</a></b></p>
+			<h2><a name=_Toc_Section_7.3></a>4.3&nbsp;&nbsp;&nbsp;&nbsp;NPfIT Transform</h2>
+			<p class="MsoNormal"><b>
+			<a target="_blank" href="../../Transforms/TrueCDAToCDALike_v2.xsl">Generic CDA to 
+			Templated Document transform - TrueCDAToCDALike.xsl</a></b></p>
+	<p class="MsoNormal"><b>
+	<a target="_blank" href="../../Transforms/CDALikeToTrueCDA_v2.xsl">Templated Document 
+			to Generic CDA transform - CDALikeToTrueCDA.xsl</a></b></p>
+			<h2><a name=_Toc_Section_7.4></a>4.4&nbsp;&nbsp;&nbsp;&nbsp;TemplateConfig.xml</h2>
+
+			
+			<p class="MsoNormal"><b>&nbsp;<a target="_blank" href="../../Mif/TemplateConfig.xml">TemplateConfig.xml</a></b></p>
+			</div>
+			<div id="footer">
+	<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:cfh.interoperabilityteam@nhs.net">Contact Us</a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div></div>
+
+</body>
+
+</html>

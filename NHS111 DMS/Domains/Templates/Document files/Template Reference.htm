@@ -1,0 +1,985 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>NHS 111: Template Cross Reference</title>
+</head>
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../../../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../../../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../../../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../../../Core/logo_left.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message 
+			Specification </h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../../../Core/logo_right.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 1.0; Status: Draft A</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../../../Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+						<a href="../../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">
+						Message Definitions</a></li>
+			<li>
+			<a href="../../../Core/Generic.htm" title="Generic">
+			Generic</a></li>
+			<li class="selected">
+			<a href="../../../Core/References.htm" title="References">
+			References</a></li>
+			<li>
+			<a href="../../../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>
+		<ul class="tabs level1">
+			<li class="selected">
+				<a  href="../../NHS111/Document files/NHS111References.htm" title="NHS 111">
+				NHS 111</a>    
+			</li>
+			<li>
+
+				<a href="../../Nullification/Document files/Nullification References.htm" title="Nullification">
+				Nullification</a>      
+			</li>
+			<!--<li>
+				<a href="../../Infrastructure/Document files/TMSInfrastructureReferences.htm" title="TMS Infrastructure">
+				TMS Infrastructure</a>     
+			</li>-->
+			
+
+		</ul>
+		<ul class="tabs level2">
+			<li>
+				<a href="../../../Data Types/NHS111DataTypeReferences.htm" title="Data Type Cross Ref">
+				Data Type Cross Ref</a>    
+			</li>
+			<li>
+							<a href="Constraint Reference.htm" title="Constraint Cross Ref">
+							Constraint Cross Ref</a>    
+			</li>
+			<li class="selected">
+
+				<a href="Template Reference.htm" title="Template Cross Ref">
+				Template Cross Ref</a>    
+			</li>
+<li>
+				<a href="../../../Vocabulary/NHS111VocabReferences.htm" title="Vocabulary Cross Ref">
+				Vocabulary Cross Ref</a>    
+			</li>
+
+		</ul>
+
+	</div>
+	<div id="content"> 
+		<h2><span style="font-style: normal">NHS 111 Template Cross Reference</span></h2>
+      <div class="section">
+         <div class="section1_1">
+            <h2>Contents</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RelatedEntity 
+			- COCD_TP145007UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustodianOrganizationUniversal 
+			- COCD_TP145018UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorPersonUniversal 
+			- COCD_TP145200GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PatientUniversal 
+			- COCD_TP145201GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientPersonUniversal 
+			- COCD_TP145202GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_6">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientOrganizationUniversal 
+			- COCD_TP145203GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientWorkgroupUniversal 
+			- COCD_TP145204GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_8">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PersonUniversal 
+			- COCD_TP145205GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_9">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorDeviceUniversal 
+			- COCD_TP145207GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_10">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorNonNamedPersonUniversal 
+			- COCD_TP145208GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_11">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PersonWithOrganizationUniversal 
+			- COCD_TP145210GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_12">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkgroupUniversal 
+			- COCD_TP145212GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_13">13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentParticipantUniversal 
+			- COCD_TP145214GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_14">14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IncidentalHealthCareFacilityUniversal 
+			- COCD_TP145222GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_15">15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consent 
+			- COCD_TP146226GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_16">16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceEvent 
+			- COCD_TP146227GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_17">17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EncompassingEncounter 
+			- COCD_TP146232GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_18">18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AttachmentWithoutParticipants 
+			- COCD_TP146245GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_19">19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111TextSection 
+			- COCD_TP146246GB01</a></div>
+         <hr>
+         <div class="section1_2">
+            <h2><a name="_Toc_Section_1"></a>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145007UK03 [ RelatedEntity ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145007UK03.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145007UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145007UK03.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145007UK03-RelatedEntity.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000085#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000085_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_9" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Informant constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_2"></a>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145018UK03 [ CustodianOrganizationUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145018UK03.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145018UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145018UK03.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145018UK03-CustodianOrganizationUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000014#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000014_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_7" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>6.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 6.0 - Split HSC domain into (1) HSC and (2) CHC</p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 5.0 - Added CHC CDA Documents to parentModel</p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 4.0 added new universal templates. </p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Added COCD_TP145200GB01-AuthorPersonUniversal template 
+						to NPFIT-000014#Role CustodianChoice constraint used by 
+						&quot;HSC&quot; domain CDA Messages.
+                        </p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Added Nullification domain to parent model</p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 3.0 added ADM, HSC and DIG</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_3"></a>&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145200GB01 [ AuthorPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145200GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145200GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145200GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145200GB01-AuthorPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000081#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000081_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_5" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Author constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_4"></a>&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145201GB01 [ PatientUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145201GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145201GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145201GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145201GB01-PatientUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000083#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000083_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_6" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: RecordTarget constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_5"></a>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145202GB01 [ RecipientPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145202GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145202GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145202GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145202GB01-RecipientPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000080#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000080_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_4" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: InformationRecipient/ tracker constraints 
+						added - universal templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_6"></a>&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145203GB02 [ RecipientOrganizationUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145203GB02.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145203GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145203GB02.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145203GB02-RecipientOrganizationUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000080#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000080_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_4" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: InformationRecipient/ tracker constraints 
+						added - universal templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_7"></a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145204GB02 [ RecipientWorkgroupUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145204GB02.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145204GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145204GB02.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145204GB02-RecipientWorkgroupUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000080#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000080_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_4" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: InformationRecipient/ tracker constraints 
+						added - universal templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_8"></a>&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145205GB01 [ PersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145205GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145205GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145205GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145205GB01-PersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000084#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000084_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_8" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0: Authenticator constraints - universal tems 
+						only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_9"></a>&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145207GB01 [ AuthorDeviceUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145207GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145207GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145207GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145207GB01-AuthorDeviceUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000081#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000081_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_5" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Author constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_10"></a>&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145208GB01 [ AuthorNonNamedPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145208GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145208GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145208GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145208GB01-AuthorNonNamedPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000081#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000081_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_5" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Author constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_11"></a>&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145210GB01 [ PersonWithOrganizationUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145210GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145210GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145210GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145210GB01-PersonWithOrganizationUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000085#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000085_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_9" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Informant constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000088#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000088_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_13" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0 - Encompassing Encounter ResponsibleParty 
+						Templates - universal</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000089#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000089_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_12" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0 - Encompassing Encounter Encounter 
+						Participant Templates - universal</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000091#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000091_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_14" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0: Performer Templates - added new universal 
+						templates.</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_12"></a>&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145212GB02 [ WorkgroupUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145212GB02.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145212GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145212GB02.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145212GB02-WorkgroupUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000081#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000081_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_5" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Author constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000088#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000088_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_13" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0 - Encompassing Encounter ResponsibleParty 
+						Templates - universal</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000089#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000089_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_12" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0 - Encompassing Encounter Encounter 
+						Participant Templates - universal</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-000091#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000091_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_14" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0: Performer Templates - added new universal 
+						templates.</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_13"></a>&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145214GB01 [ DocumentParticipantUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145214GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145214GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145214GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145214GB01-DocumentParticipantUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000086#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000086_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_10" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Participant constraints added - universal 
+						templates only</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_14"></a>&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145222GB01 [ 
+			IncidentalHealthCareFacilityUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145222GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145222GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145222GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145222GB01-IncidentalHealthCareFacilityUniversal.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000099#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000099_Role.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image013.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_11" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>3.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 3.0 - Encompassing Encounter location Templates 
+						- universal</p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						HealthCareFacilityUniversal (COCD_TP145211GB01) is 
+						removed from this constraint</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Templates</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_15"></a>&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146226GB01 [ Consent ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146226GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146226GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146226GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146226GB01-Consent.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000051#Act</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000051_Act.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image012.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_3" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Consent Templates added</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_16"></a>&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146227GB01 [ ServiceEvent ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146227GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146227GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146227GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146227GB01-ServiceEvent.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000050#Act</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000050_Act.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image012.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Service Event Templates added</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_17"></a>&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146232GB01 [ EncompassingEncounter ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146232GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146232GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146232GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146232GB01-EncompassingEncounter.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000052#Act</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000052_Act.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image012.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1: Encounter Templates added</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_18"></a>&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146245GB01 [ AttachmentWithoutParticipants ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146245GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146245GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146245GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146245GB01-AttachmentWithoutParticipants.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000065#Section</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000065_Section.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image012.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_16" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>2.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 2.0</p>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Created for NHS 111 for Attachement without Roles 
+						Template COCD_TP146245GB01</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_19"></a>&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146246GB01 [ NHS111TextSection ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146246GB01.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image003.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146246GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image004.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146246GB01.xsd" target="_blank"><img border="0" src="../../../Core/Components_files/image005.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146246GB01-NHS111TextSection.mif" target="_blank"><img border="0" src="../../../Core/Components_files/icon_mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-000040#Section</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-000040_Section.htm" target="_blank"><img border="0" src="../../../Core/Components_files/image012.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="Constraint Reference.htm#_Toc_Section_15" target="_blank"><img border="0" src="../../../Core/Components_files/image014.gif" width="16" height="16"></a></td>
+                     <td>4.0</td>
+                     <td>A</td>
+                     <td>
+                        <p xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						Version 1.0 - text section constraints</p>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>NHS 111</li>
+            </ul>
+            <hr>
+         </div></div></div>
+
+  	<div id="footer">
+	<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net" target="_blank">
+		Contact Us</a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div></div> 
+	</div>       
+   </body>
+</html>

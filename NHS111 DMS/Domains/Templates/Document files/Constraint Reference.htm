@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>NHS 111: Constraints Cross Reference</title>
+</head>
+
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../../../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../../../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../../../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../../../Core/logo_left.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message 
+			Specification </h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../../../Core/logo_right.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 1.0; Status: Draft A</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../../../Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+			<a href="../../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">
+			Message Definitions</a></li>
+			<li>
+			<a href="../../../Core/Generic.htm" title="Generic">
+			Generic</a></li>
+			<li class="selected">
+			<a href="../../../Core/References.htm" title="References">
+			References</a></li>
+			<li>
+			<a href="../../../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>
+		<ul class="tabs level1">
+			<li class="selected">
+				<a  href="../../NHS111/Document files/NHS111References.htm" title="Non-Coded CDA Document">
+				NHS 111</a>    
+			</li>
+			<li>
+
+				<a href="../../Nullification/Document files/Nullification References.htm" title="Nullification">
+				Nullification</a>      
+			</li>
+			<!--<li>
+				<a href="../../Infrastructure/Document files/TMSInfrastructureReferences.htm" title="TMS Infrastructure">
+				TMS Infrastructure</a>     
+			</li>-->
+			
+
+		</ul>
+		<ul class="tabs level2">
+			<li>
+				<a href="../../../Data Types/NHS111DataTypeReferences.htm" title="Data Type Cross Ref">
+				Data Type Cross Ref</a>    
+			</li>
+			<li class="selected">
+							<a href="Constraint Reference.htm" title="Constraint Cross Ref">
+							Constraint Cross Ref</a>    
+			</li>
+			<li>
+				<a href="Template Reference.htm" title="Template Cross Ref">
+				Template Cross Ref</a>    
+			</li>
+<li>
+				<a href="../../../Vocabulary/NHS111VocabReferences.htm" title="Vocabulary Cross Ref">
+				Vocabulary Cross Ref</a>    
+			</li>
+
+		</ul>
+
+	</div>
+	<div id="content">
+	<div class="section">
+	<h2><span style="font-style: normal">NHS 111 Constraint Cross Reference</span></h2>
+         <div class="section1_1">
+            <h2>Contents</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000052_Act</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000050_Act</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000051_Act</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000080_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000081_Role</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_6">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000083_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000014_Role</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_8">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000084_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_9">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000085_Role</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_10">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000086_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_11">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000099_Role</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_12">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000089_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_13">13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000088_Role</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_14">14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000091_Role</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_15">15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000040_Section</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_16">16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NPFIT-000065_Section</a></div>
+         <hr>
+         <div class="section1_2">
+            <h2><a name="_Toc_Section_1"></a>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000052_Act.htm" target="_blank">NPFIT-000052#Act</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#EncompassingEncounter" target="_blank">
+						EncompassingEncounter</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_2"></a>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000050_Act.htm" target="_blank">NPFIT-000050#Act</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ServiceEvent" target="_blank">
+						ServiceEvent</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_3"></a>&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000051_Act.htm" target="_blank">NPFIT-000051#Act</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#Consent" target="_blank">
+						Consent</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_4"></a>&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000080_Role.htm" target="_blank">NPFIT-000080#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#InformationRecipientChoice" target="_blank">
+						InformationRecipientChoice</a></td>
+                  </tr>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#InformationRecipientChoice" target="_blank">
+						InformationRecipientChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_5"></a>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000081_Role.htm" target="_blank">NPFIT-000081#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#AuthorChoice" target="_blank">
+						AuthorChoice</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146246GB01-NoEdit.htm#OriginatingAuthor" target="_blank">
+						OriginatingAuthor</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_6"></a>&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000083_Role.htm" target="_blank">NPFIT-000083#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#Patient" target="_blank">
+						Patient</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_7"></a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000014_Role.htm" target="_blank">NPFIT-000014#Role</a>
+               			&nbsp;&nbsp;[ version : 6.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#CustodianChoice" target="_blank">
+						CustodianChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_8"></a>&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000084_Role.htm" target="_blank">NPFIT-000084#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_9"></a>&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000085_Role.htm" target="_blank">NPFIT-000085#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#InformantChoice" target="_blank">
+						InformantChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_10"></a>&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000086_Role.htm" target="_blank">NPFIT-000086#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_11"></a>&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000099_Role.htm" target="_blank">NPFIT-000099#Role</a>
+               			&nbsp;&nbsp;[ version : 3.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01.htm" target="_blank">
+						COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01-NoEdit.htm#HealthCareFacilityChoice" target="_blank">
+						HealthCareFacilityChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_12"></a>&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000089_Role.htm" target="_blank">NPFIT-000089#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01.htm" target="_blank">
+						COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01-NoEdit.htm#ParticipantChoice" target="_blank">
+						ParticipantChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_13"></a>&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000088_Role.htm" target="_blank">NPFIT-000088#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01.htm" target="_blank">
+						COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146232GB01-NoEdit.htm#ResponsiblePartyChoice" target="_blank">
+						ResponsiblePartyChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_14"></a>&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000091_Role.htm" target="_blank">NPFIT-000091#Role</a>
+               			&nbsp;&nbsp;[ version : 1.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146227GB01.htm" target="_blank">
+						COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Tabular%20View/COCD_TP146227GB01-NoEdit.htm#PerformerChoice" target="_blank">
+						PerformerChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_15"></a>&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000040_Section.htm" target="_blank">NPFIT-000040#Section</a>
+               			&nbsp;&nbsp;[ version : 4.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#SectionChoice" target="_blank">
+						SectionChoice</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_16"></a>&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constraint :
+               			<a href="NPFIT-000065_Section.htm" target="_blank">NPFIT-000065#Section</a>
+               			&nbsp;&nbsp;[ version : 2.0 ] &nbsp;&nbsp;[ status : Active ]
+            </h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 40%">Description</td>
+                     <td style="width: 25%">Class</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS 111</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">
+						POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../../NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#CodedEntry" target="_blank">
+						CodedEntry</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+         </div>
+      </div></div>
+  	<div id="footer">
+	<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net" target="_blank">
+		Contact Us</a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div></div>
+	</div>       
+   </body>
+</html>

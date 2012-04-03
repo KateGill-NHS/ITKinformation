@@ -1,0 +1,539 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>AuthorDeviceUniversal Tabular View</title><script language="JavaScript1.2">
+				
+var isNew=0;
+var isNS4=0;
+var isIE4=0;
+
+var brow=((navigator.appName) + (parseInt(navigator.appVersion)));
+
+//alert(brow);
+if (parseInt(navigator.appVersion)>=5)
+{
+	isNew=1
+}
+else
+{
+	if(brow=="Netscape4")
+	{
+		isNS4=1;
+		document.captureEvents(Event.ONMOUSEOVER);
+	}
+	else
+	{
+		if(brow=="Microsoft Internet Explorer4")
+		{
+			isIE4=1;
+		}
+	}
+		
+}
+
+// thats ok
+
+
+if(isNS4||isIE4||isNew)
+{
+	docObj=(isNS4) ? 'document' : 'document.all';
+	
+	styleObj=(isNS4) ? ' ' : '.style';
+}
+
+function checkDOM(elementName)
+{
+	if(isNS4||isIE4||isNew)
+	{
+		dom=eval(docObj + '.' + elementName + styleObj);
+		//alert('This browser uses the ' + dom + 'Document Object Model.');
+		dom.left =0;
+		dom.top =0;
+	}
+}
+
+function popUp(evt,currElem)
+{
+
+	if((isNS4 && currElem !=0) || (isIE4 && currElem !=0))
+	{
+		dom =eval(docObj +'.' +currElem+styleObj);
+		state=dom.visibility;
+		if ((state == "visible") || (state=="show"))
+		{
+			dom.visibility="hidden";
+		}
+		else
+		{
+			if(isNS4)
+			{
+				topVal=eval(evt.pageY);
+				leftVal=eval(evt.pageX);
+				/*if(((document.body.scrollLeft+document.body.clientWidth)-leftVal)< 150)
+				{
+					leftVal=(document.body.clientWidth+document.body.scrollLeft-151);
+				}
+				if(((document.body.scrollTop+document.body.clientHeight)-topVal)< 30)
+				{
+					topVal=(document.body.clientHeight+document.body.scrollTop-80);
+				}*/
+
+			}
+			if(isIE4)
+			{
+				topVal=eval(event.clientY)  + document.body.scrollTop+20;
+				leftVal=eval(event.clientX) + document.body.scrollLeft;
+				
+				if(((document.body.scrollLeft+document.body.clientWidth)-leftVal)< 150)
+				{
+					leftVal=(document.body.clientWidth+document.body.scrollLeft-151);
+				}
+				if(((document.body.scrollTop+document.body.clientHeight)-topVal)< 30)
+				{
+					topVal=(document.body.clientHeight+document.body.scrollTop-80);
+				}
+			}
+			if(leftVal < 2)
+			{
+				leftVal=2;
+			}
+			dom.top=topVal;
+			dom.left=leftVal;
+			dom.visibility="visible";
+		}
+	}
+}
+
+</script><style>
+#ds
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+#cwe
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#cne
+{
+	position: absolute;
+	visibility: hidden;
+	z-index: 100;
+	top: 10px;
+	left: 10px;
+}
+
+#maindiv {
+	overflow: auto; 
+	width: 100%; 
+	height: 90%; 
+	}
+
+
+.hypertext
+{
+	position: absolute;
+	background-color: white;
+	layer-background-colour: cornflowerblue;
+	padding: 3px;
+	border: 3px solid blue;
+	width: 150px;
+	font:normal 10pt/13pt helvetica, sans-serif;
+	text-align: left;
+	color: blue;
+}
+
+.actclass
+{
+	background-color: red;
+}
+
+.entclass
+{
+	background-color: lightgreen;;
+}
+
+.roleclass
+{
+	background-color: yellow;;
+}
+.otherclass
+{
+	background-color: blue;
+}
+.choiceclass
+{
+	background-color: gray;
+}
+.actrelclass
+{
+	background-color: pink;
+}
+.partclass
+{
+	background-color: cyan;
+}
+.rolelinkclass
+{
+	background-color: lightyellow;
+}
+TABLE {
+	empty-cells: show;
+	border-collapse: collapse;
+	border: 1px solid black;
+	border-width: 3px 1px;
+}
+.part td
+{
+	border-width: 2px 1px;
+	border-color: gray;
+	border-style: solid;
+}
+.class td
+{
+	border-width: 3px 1px;
+	border-color: black;
+	border-style: solid;
+}
+
+
+</style></head>
+   <body onload="checkDOM('ds')">
+      <h1>AuthorDeviceUniversal - tabular view</h1><span id="ds" class="hypertext">No Current Link To Vocabulary</span><span id="cwe" class="hypertext">Coded With Extensions</span><span id="cne" class="hypertext">Coded No Extensions</span><table frame="vsides" rules="cols" cellpadding="2" cellspacing="0">
+         <tr class="class">
+            <td height="35"><a href="COCD_TP145207GB01.htm"><b>COCD_TP145207GB01</b></a></td>
+            <td height="35" nowrap="yes"></td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="roleclass"><a name="AssignedAuthorDevice"><b>AssignedAuthorDevice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>
+                     <b>A template to identify an authoring device or system.</b>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>
+                     <b>This class identifies a device playing the role of an author.</b>
+                     
+                  </p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#"><b></b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>RoleClass</b></a> } )<br> {<b> Fixed="<font color="red">ASSIGNED</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>Indicates that this role is assigned.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..*] </b></font><font color="green"><b> [R] </b></font><b>id</b> (<a href="../../../Data Types/DataTypes.htm#SET"><b>SET</b></a><b>&lt;<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>&gt;</b>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>One or more identifier(s) including local identifiers which identify the the authoring device.</p>
+                  
+                  <ul>
+                     
+                     <li>The <i>root </i>attribute shall contain the OID  for the identifying system.                            
+                     </li>
+                     
+                     <li>The <i>extension </i>attribute shall contain the device's identifier.                            
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>Where no OID is available the OID "2.16.840.1.113883.2.1.3.2.4.18.24" shall be used</p>
+                  
+                  <p>Where no identifier is available a nullFlavor of "NI" (no information) shall be used, as shown below:</p>
+                  
+                  <p>&lt;id nullFlavor="NI"/&gt;</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>templateId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)<br> {<b> Fixed="<font color="red">COCD_TP145207GB01#AssignedAuthorDevice</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                  
+                  <div>
+                     
+                     <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                     
+                     <ul>
+                        
+                        <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
+                        </li>
+                        
+                        <li>The <em>extension </em>attribute shall contain the fixed value.
+                        </li>
+                        
+                     </ul>
+                     
+                  </div>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AssignedAuthorDevice/assignedAuthoringDevice"></a>assignedAuthoringDevice</b> (<a href="#AuthoringDevice"><b>AuthoringDevice</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>A link to the assigned authoring device.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b><a id="AssignedAuthorDevice/representedOrganization"></a>representedOrganization</b> (<a href="#Organization"><b>Organization</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>A link to the represented organisation.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="entclass"><a name="AuthoringDevice"><b>AuthoringDevice</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>
+                     <strong>Details of the device.</strong>
+                     
+                  </p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AssignedAuthorDevice"><b>AssignedAuthorDevice</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>EntityClass</b></a> } )<br> {<b> Fixed="<font color="red">DEV</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>Identifies that this is a device.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>determinerCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>EntityDeterminer</b></a> } )<br> {<b> Fixed="<font color="red">INSTANCE</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>Identifies that the entity is a single identifiable device.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [R] </b></font><b>manufacturerModelName</b> (<a href="../../../Data Types/DataTypes.htm#SC"><b>SC</b></a> {<a onmouseout="popUp(event,'cwe')" onmouseover="popUp(event,'cwe')"><b>CWE</b></a>:<a target="_top"><b>ManufacturerModelName</b></a> } )
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>A character string that optionally may have a code attached which describes the manufacturer model for the device.</p>
+                  
+                  <p>The text must always be present if a code is present. The code maybe a local code and is not defined in this documentation.</p>
+                  
+                  <p>An appropriate nullFlavor may be used if required.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [R] </b></font><b>softwareName</b> (<a href="../../../Data Types/DataTypes.htm#SC"><b>SC</b></a> {<a onmouseout="popUp(event,'cwe')" onmouseover="popUp(event,'cwe')"><b>CWE</b></a>:<a target="_top"><b>SoftwareName</b></a> } )
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>A character string that optionally may have a code attached which describes the software for the device.</p>
+                  
+                  <p>The text must always be present if a code is present. The code maybe a local code and is not defined in this documentation.</p>
+                  
+                  <p>An appropriate nullFlavor may be used if required.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>templateId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)<br> {<b> Fixed="<font color="red">COCD_TP145207GB01#assignedAuthoringDevice</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                  
+                  <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                  
+                  <ul>
+                     
+                     <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
+                     </li>
+                     
+                     <li>The <em>extension </em>attribute shall contain the fixed value.
+                     </li>
+                     
+                  </ul>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="class">
+            <td class="entclass"><a name="Organization"><b>Organization</b></a></td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>
+                     <b>Details to allow identification of an organisation which is responsible or maintains the device or system.</b>
+                     
+                  </p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr class="mif">
+            <td align="right" width="50%"></td>
+            <td><font color="gray">Used by: </font><a href="#AssignedAuthorDevice"><b>AssignedAuthorDevice</b></a></td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>classCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>EntityClass</b></a> } )<br> {<b> Fixed="<font color="red">ORG</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>Indicates this is an organisation.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>determinerCode</b> (<a href="../../../Data Types/DataTypes.htm#CS"><b>CS</b></a> {<a onmouseout="popUp(event,'cne')" onmouseover="popUp(event,'cne')"><b>CNE</b></a>:<a target="_top"><b>EntityDeterminer</b></a> } )<br> {<b> Fixed="<font color="red">INSTANCE</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>Indicates this is an instance of an organisation.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>id</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>A valid identifier that uniquely identifies the organisation.</p>
+                  
+                  <p>The organisation id attribute can be populated using the following ODS codes (formerly known as NACS code) :</p>
+                  
+                  <ul>
+                     
+                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.2"
+                     </li>
+                     
+                     <li>The <em>extension </em>attribute shall contain the ODS site code.
+                     </li>
+                     
+                  </ul>
+                  
+                  <ul>
+                     
+                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.1"
+                     </li>
+                     
+                     <li>The <em>extension </em>attribute shall contain the ODS organisation code.
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>Note these are listed in order preference for populating this attribute.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>name</b> (<a href="../../../Data Types/DataTypes.htm#ON"><b>ON</b></a>)
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <p>The name of the organisation.  </p>
+                  
+                  <p></p>
+                  
+                  <p>This shall use the name associated with the ODS code.</p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr valign="top" class="part">
+            <td width="50%"><font color="green"><b>[1..1] </b></font><font color="green"><b> [M] </b></font><b>templateId</b> (<a href="../../../Data Types/DataTypes.htm#II"><b>II</b></a>)<br> {<b> Fixed="<font color="red">COCD_TP145207GB01#representedOrganization</font>"</b> }
+            </td>
+            <td width="50%">
+               <div style="height: 100%; width: 100%;" contenteditable="false">
+                  
+                  <div>
+                     
+                     <div>
+                        
+                        <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                        
+                        <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                        
+                        <ul>
+                           
+                           <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
+                           </li>
+                           
+                           <li>The <em>extension </em>attribute shall contain the fixed value.
+                           </li>
+                           
+                        </ul>
+                        
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

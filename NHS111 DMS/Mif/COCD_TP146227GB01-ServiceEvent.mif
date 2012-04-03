@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<staticModel isAbstract="false" isSerializable="true" name="COCD_TP146227GB01" packageKind="root" representationKind="flat" xsi:schemaLocation="urn:hl7-org:v3/mif C:\PROGRA~1\HL7\System\schemas\mifStaticModelFlat.xsd" xmlns="urn:hl7-org:v3/mif" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<packageLocation artifact="TP" domain="CD" name="COCD_TP146227GB01" realm="GB" root="DEFN" section="HM" subSection="CO" version="01" id="146227"/>
+	<header>
+		<renderingInformation application="NHS R-MIM Designer 2.99.KJ.08" renderingTime="2011-07-19T14:52:18" schemaVersion="1"/>
+		<legalese copyrightOwner="NHS Connecting for Health"/>
+	</header>
+	<graphicRepresentation presentation="HL7">
+		<graphElement name="Main">
+			<position x="0.0" y="0.0"/>
+			<size height="3.19056" width="9.33096"/>
+		</graphElement>
+	</graphicRepresentation>
+	<derivationSupplier staticModelDerivationId="1">
+		<targetStaticModel artifact="RIM" realm="UV" root="DEFN" version="1"/>
+	</derivationSupplier>
+	<ownedEntryPoint className="ServiceEvent" id="COCD_TP146227GB01" isAbstract="false" name="ServiceEvent">
+		<annotations>
+			<description>
+				<text>
+					<p>Description</p>
+				</text>
+			</description>
+			<otherAnnotation type="html">
+				<text>
+					<b>A template to identify the service being documented</b>
+					<br/>
+				</text>
+			</otherAnnotation>
+		</annotations>
+		<graphicRepresentation>
+			<graphElement containerDiagramName="Main" isHeightAutoSize="false" isWidthAutoSize="false" nodeOrientation="Down" shapeId="COCD_TP146227GB01">
+				<position x="1.09728" y="0.02778"/>
+				<size height="0.45278" width="1.19185"/>
+				<anchorage connectToShapeId="Sheet.1">
+					<position x="1.6932" y="0.48056"/>
+					<graphEdge>
+						<anchor>
+							<position x="1.6932" y="1.29833"/>
+						</anchor>
+					</graphEdge>
+				</anchorage>
+			</graphElement>
+		</graphicRepresentation>
+	</ownedEntryPoint>
+	<ownedClass>
+		<class isAbstract="false" name="ServiceEvent">
+			<derivationSupplier className="Act" staticModelDerivationId="1"/>
+			<graphicRepresentation presentation="HL7">
+				<graphElement containerDiagramName="Main" isHeightAutoSize="false" isWidthAutoSize="false" shapeId="Sheet.1" shapeTemplate="Act">
+					<position x="0.01" y="1.29833"/>
+					<size height="1.88223" width="3.19141"/>
+				</graphElement>
+			</graphicRepresentation>
+			<annotations>
+				<otherAnnotation type="html">
+					<text>
+						<p>
+							<b>A template to identify the service being documented</b>
+							<br/>
+						</p>
+						<p>
+							<b>This class represents the main Act, such as a colonoscopy or an appendectomy, being documented.</b>
+						</p>
+						<p>
+							<b>The  ServiceEvent class specializes the act inherent in the  ClinicalDocument.code, such as where the ClinicalDocument.code is simply  "Procedure Report" and the procedure was a "colonoscopy".</b>
+						</p>
+						<p>
+							<b>The ServiceEvent shall not conflict with the value inherent in the ClinicalDocument.code.</b>
+						</p>
+					</text>
+				</otherAnnotation>
+			</annotations>
+			<attribute conformance="R" defaultValue="COCD_TP146227GB01#ServiceEvent" fixedValue="COCD_TP146227GB01#ServiceEvent" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="templateId" sortKey="0">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<div>
+								<div contenteditable="false">
+									<div>
+										<div>
+											<p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+											<p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+											<ul>
+												<li>The root attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
+												<li>The extension attribute shall contain the fixed value.</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="templateId" className="Act" staticModelDerivationId="1"/>
+				<type name="II"/>
+			</attribute>
+			<attribute conformance="R" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="classCode" sortKey="1" isStructural="true">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>Indicates this is an act.</p>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="classCode" className="Act" staticModelDerivationId="1"/>
+				<type name="CS"/>
+				<supplierDomainSpecification codingStrength="CNE" domainName="ACT"/>
+			</attribute>
+			<attribute conformance="R" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="moodCode" sortKey="2" fixedValue="EVN" isStructural="true">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>Indicates this is a event.</p>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="moodCode" className="Act" staticModelDerivationId="1"/>
+				<type name="CS"/>
+				<supplierDomainSpecification codingStrength="CNE" domainName="EVN"/>
+			</attribute>
+			<attribute isMandatory="false" maximumMultiplicity="*" minimumMultiplicity="0" name="id" sortKey="3">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<div>
+								<div contenteditable="false">
+									<p>Unique identifiers for this instance of a ServiceEvent.</p>
+									<p>The Identifier Global datatype flavour is used to carry the first identifiers  follows:</p>
+									<ul>
+										<li>The <em>root</em> attribute shall contain a DCE UUID.</li>
+									</ul>
+								</div>
+							</div>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="id" className="Act" staticModelDerivationId="1"/>
+				<type name="SET">
+					<supplierBindingArgumentDatatype name="II"/>
+				</type>
+			</attribute>
+			<attribute isMandatory="false" maximumMultiplicity="1" minimumMultiplicity="0" name="code" sortKey="4">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>A code from a codesystem to identify the type of service event.                               </p>
+							<div>
+								<div>
+									<div id="UKCT_HD144013UK01#Act;Observation/$code" style="width: 100%; height: 100%; background-color: white">
+										<div>
+											<div> The following attributes are a minimum to carry this information:<br/>
+												<ul>
+													<li>The code attribute shall contain a code from the relevant vocabulary.</li>
+													<li>The codeSystem attribute shall contain the OID for vocabulary.</li>
+													<li>The displayName attribute shall carry a description associated with the code in the vocabulary.</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="code" className="Act" staticModelDerivationId="1"/>
+				<type name="CE"/>
+				<supplierDomainSpecification codingStrength="CWE" domainName="CodedEntryCode"/>
+			</attribute>
+			<attribute isMandatory="false" maximumMultiplicity="1" minimumMultiplicity="0" name="effectiveTime" sortKey="10">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>The time of the service. <br/>
+							</p>
+							<p>The date range shall be carried as follows: </p>
+							<p>If a single point in time is to be carried the Date or Time Point data type  shall be used: </p>
+							<ul>
+								<li>The <i>center </i>attribute shall contain the date.                                                                              </li>
+							</ul> This datatype is used if date of the service is not fully known /  available<br/>
+							<p>If both a start date and an end date are present the Date or Time Interval  Complete data type shall be used: </p>
+							<ul>
+								<li>The <i>low</i> attribute shall contain the start date.                                                                                </li>
+								<li>The <i>high</i> attribute shall contain the end date.                                                                               </li>
+							</ul>
+							<p>If only a start date is present the Date or Time Interval After data type  shall be used: </p>
+							<ul>
+								<li>The <i>low</i> attribute shall contain the start date.                                                                              </li>
+							</ul>                                  This datatype would only be used if the service is still ongoing                       </text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="effectiveTime" className="Act" staticModelDerivationId="1"/>
+				<type name="IVL">
+					<supplierBindingArgumentDatatype name="TS"/>
+				</type>
+			</attribute>
+		</class>
+	</ownedClass>
+	<ownedClass>
+		<class isAbstract="true" name="PerformerChoice">
+			<derivationSupplier className="Role" staticModelDerivationId="1"/>
+			<graphicRepresentation presentation="HL7">
+				<graphElement containerDiagramName="Main" isHeightAutoSize="true" isWidthAutoSize="true" nodeOrientation="Portrait" shapeId="Sheet.5" shapeTemplate="Choice">
+					<position x="6.64843" y="1.49056"/>
+					<size height="1.0" width="1.66114"/>
+				</graphElement>
+			</graphicRepresentation>
+			<annotations>
+				<otherAnnotation type="html">
+					<text>
+						<p>A link to the choice of performer templates.</p>
+					</text>
+				</otherAnnotation>
+			</annotations>
+			<specializationChild childClassName="Template1">
+				<graphicRepresentation>
+					<graphElement containerDiagramName="Main" shapeId="Sheet.7">
+						<position x="6.77343" y="1.74056"/>
+						<size height="0.5" width="1.41114"/>
+					</graphElement>
+				</graphicRepresentation>
+				<annotations>
+					<otherAnnotation type="html">
+						<text/>
+					</otherAnnotation>
+				</annotations>
+			</specializationChild>
+		</class>
+	</ownedClass>
+	<ownedClass>
+		<class isAbstract="true" name="Template1">
+			<derivationSupplier className="Role" staticModelDerivationId="1"/>
+			<graphicRepresentation presentation="HL7">
+				<graphElement containerDiagramName="Main" isHeightAutoSize="true" isWidthAutoSize="true" shapeId="Sheet.7" shapeTemplate="Role">
+					<position x="6.77343" y="1.74056"/>
+					<size height="0.5" width="1.41114"/>
+				</graphElement>
+			</graphicRepresentation>
+			<annotations>
+				<otherAnnotation type="html">
+					<text/>
+				</otherAnnotation>
+			</annotations>
+			<attribute conformance="R" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="classCode" sortKey="0" isStructural="true">
+				<annotations>
+					<otherAnnotation type="html">
+						<text/>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="classCode" className="Role" staticModelDerivationId="1"/>
+				<type name="CS"/>
+				<supplierDomainSpecification codingStrength="CNE" domainName="RoleClass"/>
+			</attribute>
+		</class>
+	</ownedClass>
+	<ownedClass>
+		<class isAbstract="false" name="Participant">
+			<derivationSupplier className="Participation" staticModelDerivationId="1"/>
+			<graphicRepresentation presentation="HL7">
+				<graphElement containerDiagramName="Main" nodeOrientation="Right" shapeId="Sheet.17" shapeTemplate="Participation" textWrappingWidth="66.0">
+					<position x="3.20141" y="1.60283"/>
+					<size height="0.83611" width="3.44702"/>
+				</graphElement>
+			</graphicRepresentation>
+			<annotations>
+				<constraint name="contentId">
+					<text>
+						<p>NPFIT-000091#Role</p>
+					</text>
+					<graphicRepresentation>
+						<graphElement shapeId="Sheet.30" containerDiagramName="Main" isWidthAutoSize="true" isHeightAutoSize="true">
+							<position x="4.34137" y="2.79056"/>
+							<size width="1.13639" height="0.32778"/>
+							<anchorage connectToShapeId="Sheet.17">
+								<position x="4.90957" y="2.95445"/>
+								<graphEdge>
+									<anchor>
+										<position x="4.85821" y="2.43894"/>
+									</anchor>
+								</graphEdge>
+							</anchorage>
+						</graphElement>
+					</graphicRepresentation>
+				</constraint>
+				<otherAnnotation type="html">
+					<text>
+						<p>
+							<b>The performer participant represents care professionals invloved in performing the service.</b>
+							<br/>
+						</p>
+					</text>
+				</otherAnnotation>
+			</annotations>
+			<attribute conformance="R" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="contentId" sortKey="0">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<div contenteditable="false">
+								<div>
+									<div>
+										<p>This attribute, when valued in an instance, provides a unique forward pointing identifier for a template which constrains                            the classes and attributes which follow.</p>
+										<p>The attribute is intended simply as a structural navigational aid and should not be relied upon as an indicator of semantic                            meaning.</p>
+										<p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+										<ul>
+											<li>The root attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.16"</li>
+											<li>The extension attribute shall contain the template artifact Id.</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="contentId" className="Participation" staticModelDerivationId="1"/>
+				<type name="II"/>
+			</attribute>
+			<attribute conformance="R" defaultValue="COCD_TP146227GB01#performer" fixedValue="COCD_TP146227GB01#performer" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="templateId" sortKey="0">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<div>
+								<div>
+									<div contenteditable="false">
+										<div>
+											<div>
+												<p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+												<p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+												<ul>
+													<li>The root attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
+													<li>The extension attribute shall contain the fixed value.</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="templateId" className="Participation" staticModelDerivationId="1"/>
+				<type name="II"/>
+			</attribute>
+			<attribute conformance="R" isMandatory="true" maximumMultiplicity="1" minimumMultiplicity="1" name="typeCode" sortKey="1" isStructural="true">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>A code from the stated HL7 x_domain to identify the type of service event performer.</p>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="typeCode" className="Participation" staticModelDerivationId="1"/>
+				<type name="CS"/>
+				<supplierDomainSpecification codingStrength="CNE" domainName="x_ServiceEventPerformer"/>
+			</attribute>
+			<attribute isMandatory="false" maximumMultiplicity="1" minimumMultiplicity="0" name="functionCode" sortKey="2">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>A code which specifies additional detail about the function of the performer (e.g. scrub nurse, third assistant), any code any code system may be used.                               </p>
+							<div>
+								<div>
+									<div id="UKCT_HD144013UK01#Act;Observation/$code" style="width: 100%; height: 100%; background-color: white">
+										<div>
+											<div> The following attributes are a minimum to carry this information:<br/>
+												<ul>
+													<li>The code attribute shall contain a code from the relevant vocabulary.</li>
+													<li>The codeSystem attribute shall contain the OID for vocabulary.</li>
+													<li>The displayName attribute shall carry a description associated with the code in the vocabulary.</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p/>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="functionCode" className="Participation" staticModelDerivationId="1"/>
+				<type name="CE"/>
+				<supplierDomainSpecification codingStrength="CWE" domainName="ParticipationFunction"/>
+			</attribute>
+			<attribute isMandatory="false" maximumMultiplicity="1" minimumMultiplicity="0" name="time" sortKey="7">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>
+							<p>The time during which the performer was involved in the activity. <br/>
+							</p>
+							<p>The date range shall be carried as follows: </p>
+							<p>If a single point in time is to be carried the Date or Time Point data type  shall be used: </p>
+							<ul>
+								<li>The <i>center </i>attribute shall contain the date.                                                                              </li>
+							</ul> This datatype is used if time is not fully known /  available<br/>
+							<p>If both a start date and an end date are present the Date or Time Interval  Complete data type shall be used: </p>
+							<ul>
+								<li>The <i>low</i> attribute shall contain the start date.                                                                                </li>
+								<li>The <i>high</i> attribute shall contain the end date.                                                                               </li>
+							</ul>
+							<p>If only a start date is present the Date or Time Interval After data type  shall be used: </p>
+							<ul>
+								<li>The <i>low</i> attribute shall contain the start date.                                                                              </li>
+							</ul>                                  This datatype would only be used if the service is still ongoing                      <p/>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier attributeName="time" className="Participation" staticModelDerivationId="1"/>
+				<type name="IVL">
+					<supplierBindingArgumentDatatype name="TS"/>
+				</type>
+			</attribute>
+		</class>
+	</ownedClass>
+	<ownedAssociation>
+		<graphicRepresentation>
+			<graphElement connectToShapeId="Sheet.1" containerDiagramName="Main" shapeId="Sheet.17">
+				<position x="3.20141" y="2.02089"/>
+				<graphEdge>
+					<anchor connectToShapeId="Sheet.1">
+						<position x="3.20141" y="2.02089"/>
+					</anchor>
+				</graphEdge>
+			</graphElement>
+		</graphicRepresentation>
+		<connections>
+			<traversableConnection isMandatory="false" maximumMultiplicity="*" minimumMultiplicity="0" name="performer" participantClassName="Participant">
+				<annotations>
+					<otherAnnotation type="html">
+						<text/>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier associationEndName="outboundParticipation" className="ServiceEvent" staticModelDerivationId="1"/>
+			</traversableConnection>
+			<nonTraversableConnection participantClassName="ServiceEvent">
+				<derivationSupplier associationEndName="act" className="Participant" staticModelDerivationId="1"/>
+			</nonTraversableConnection>
+		</connections>
+	</ownedAssociation>
+	<ownedAssociation>
+		<graphicRepresentation>
+			<graphElement connectToShapeId="Sheet.5" containerDiagramName="Main" shapeId="Sheet.17">
+				<position x="6.64843" y="2.02089"/>
+				<graphEdge>
+					<anchor connectToShapeId="Sheet.5">
+						<position x="6.64843" y="2.02089"/>
+					</anchor>
+				</graphEdge>
+			</graphElement>
+		</graphicRepresentation>
+		<connections>
+			<traversableConnection isMandatory="false" maximumMultiplicity="1" minimumMultiplicity="1" name="participant" participantClassName="PerformerChoice">
+				<annotations>
+					<otherAnnotation type="html">
+						<text>A link to the performers<br/>
+						</text>
+					</otherAnnotation>
+				</annotations>
+				<derivationSupplier associationEndName="role" className="Participant" staticModelDerivationId="1"/>
+				<participantClassSpecialization className="Template1" traversalName="participantTemplate1"/>
+			</traversableConnection>
+			<nonTraversableConnection participantClassName="Participant">
+				<derivationSupplier associationEndName="participation" className="PerformerChoice" staticModelDerivationId="1"/>
+			</nonTraversableConnection>
+		</connections>
+	</ownedAssociation>
+</staticModel>

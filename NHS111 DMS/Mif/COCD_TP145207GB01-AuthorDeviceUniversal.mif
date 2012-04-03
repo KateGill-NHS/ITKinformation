@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<staticModel isAbstract="false" isSerializable="true"
+    name="COCD_TP145207GB01" packageKind="root"
+    representationKind="flat" xmlns="urn:hl7-org:v3/mif"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3/mif C:\PROGRA~1\HL7\System\schemas\mifStaticModelFlat.xsd">
+    <packageLocation artifact="TP" domain="CD" id="145207"
+        name="COCD_TP145207GB01" realm="GB" root="DEFN" section="HM"
+        subSection="CO" version="01"/>
+    <header>
+        <renderingInformation
+            application="NHS R-MIM Designer 2.99.KJ.11"
+            renderingTime="2010-10-20T09:58:41" schemaVersion="1"/>
+        <legalese copyrightOwner="NHS Connecting for Health"/>
+    </header>
+    <graphicRepresentation presentation="HL7">
+        <graphElement name="Main">
+            <position x="0.0" y="0.0"/>
+            <size height="3.5" width="9.649"/>
+        </graphElement>
+    </graphicRepresentation>
+    <derivationSupplier staticModelDerivationId="1">
+        <targetStaticModel artifact="RIM" realm="UV" root="DEFN" version="1"/>
+    </derivationSupplier>
+    <ownedEntryPoint className="AssignedAuthorDevice"
+        id="COCD_TP145207GB01" isAbstract="false" name="AuthorDeviceUniversal">
+        <annotations>
+            <description>
+                <text>
+                    <p>A universal template for an authoring device</p>
+                </text>
+            </description>
+            <otherAnnotation type="html">
+                <text>
+                    <b>A template to identify an authoring device or system.</b>
+                    <br/>
+                </text>
+            </otherAnnotation>
+        </annotations>
+        <graphicRepresentation>
+            <graphElement containerDiagramName="Main"
+                isHeightAutoSize="false" isWidthAutoSize="false"
+                nodeOrientation="Down" shapeId="COCD_TP145207GB01">
+                <position x="1.84642" y="0.29444"/>
+                <size height="0.45278" width="2.74197"/>
+                <anchorage connectToShapeId="Sheet.1">
+                    <position x="3.21741" y="0.74722"/>
+                    <graphEdge>
+                        <anchor>
+                            <position x="3.21741" y="1.2"/>
+                        </anchor>
+                    </graphEdge>
+                </anchorage>
+            </graphElement>
+        </graphicRepresentation>
+    </ownedEntryPoint>
+    <ownedClass>
+        <class isAbstract="false" name="AssignedAuthorDevice">
+            <derivationSupplier className="Role" staticModelDerivationId="1"/>
+            <graphicRepresentation presentation="HL7">
+                <graphElement containerDiagramName="Main"
+                    isHeightAutoSize="true" isWidthAutoSize="false"
+                    shapeId="Sheet.1" shapeTemplate="Role">
+                    <position x="1.251" y="1.2"/>
+                    <size height="0.64778" width="3.898"/>
+                </graphElement>
+            </graphicRepresentation>
+            <annotations>
+                <otherAnnotation type="html">
+                    <text>
+                        <p>
+                            <b>A template to identify an authoring device or system.</b>
+                            <br/>
+                        </p>
+                        <p>
+                            <b>This class identifies a device playing the role of an author.</b>
+                        </p>
+                    </text>
+                </otherAnnotation>
+            </annotations>
+            <attribute conformance="R"
+                defaultValue="COCD_TP145207GB01#AssignedAuthorDevice"
+                fixedValue="COCD_TP145207GB01#AssignedAuthorDevice"
+                isMandatory="true" maximumMultiplicity="1"
+                minimumMultiplicity="1" name="templateId" sortKey="0">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                            <div>
+                                <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                                <ul>
+                                    <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
+                                    <li>The <em>extension </em>attribute shall contain the fixed value.</li>
+                                </ul>
+                            </div>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="templateId"
+                    className="Role" staticModelDerivationId="1"/>
+                <type name="II"/>
+            </attribute>
+            <attribute conformance="R" fixedValue="ASSIGNED"
+                isMandatory="true" isStructural="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="classCode" sortKey="1">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>Indicates that this role is assigned.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="classCode"
+                    className="Role" staticModelDerivationId="1"/>
+                <type name="CS"/>
+                <supplierDomainSpecification codingStrength="CNE" domainName="ASSIGNED"/>
+            </attribute>
+            <attribute conformance="R" isMandatory="false"
+                maximumMultiplicity="*" minimumMultiplicity="1"
+                name="id" sortKey="2">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>One or more identifier(s) including local identifiers which identify the the authoring device.</p>
+                            <ul>
+                                <li>The <i>root </i>attribute shall contain the OID  for the identifying system.                            </li>
+                                <li>The <i>extension </i>attribute shall contain the device's identifier.                            </li>
+                            </ul>
+                            <p>Where no OID is available the OID "2.16.840.1.113883.2.1.3.2.4.18.24" shall be used</p>
+                            <p>Where no identifier is available a nullFlavor of "NI" (no information) shall be used, as shown below:</p>
+                            <p>&lt;id nullFlavor="NI"/&gt;</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="id" className="Role" staticModelDerivationId="1"/>
+                <type name="SET" typeSpecialisation="II.NPfIT.oid.required">
+                    <supplierBindingArgumentDatatype name="II"/>
+                </type>
+            </attribute>
+        </class>
+    </ownedClass>
+    <ownedClass>
+        <class isAbstract="false" name="Organization">
+            <derivationSupplier className="Organization" staticModelDerivationId="1"/>
+            <graphicRepresentation presentation="HL7">
+                <graphElement containerDiagramName="Main"
+                    isHeightAutoSize="true" isWidthAutoSize="false"
+                    shapeId="Sheet.11" shapeTemplate="Entity">
+                    <position x="0.01" y="2.44222"/>
+                    <size height="1.04778" width="3.59"/>
+                </graphElement>
+            </graphicRepresentation>
+            <annotations>
+                <otherAnnotation type="html">
+                    <text>
+                        <p>
+                            <b>Details to allow identification of an organisation which is responsible or maintains the device or system.</b>
+                        </p>
+                    </text>
+                </otherAnnotation>
+            </annotations>
+            <attribute conformance="R"
+                defaultValue="COCD_TP145207GB01#representedOrganization"
+                fixedValue="COCD_TP145207GB01#representedOrganization"
+                isMandatory="true" maximumMultiplicity="1"
+                minimumMultiplicity="1" name="templateId" sortKey="0">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <div>
+                                <div>
+                                    <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                                    <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                                    <ul>
+                                    <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
+                                    <li>The <em>extension </em>attribute shall contain the fixed value.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="templateId"
+                    className="Organization" staticModelDerivationId="1"/>
+                <type name="II"/>
+            </attribute>
+            <attribute conformance="R" fixedValue="ORG"
+                isMandatory="true" isStructural="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="classCode" sortKey="1">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>Indicates this is an organisation.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="classCode"
+                    className="Organization" staticModelDerivationId="1"/>
+                <type name="CS"/>
+                <supplierDomainSpecification codingStrength="CNE" domainName="ORG"/>
+            </attribute>
+            <attribute conformance="R" fixedValue="INSTANCE"
+                isMandatory="true" isStructural="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="determinerCode" sortKey="2">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>Indicates this is an instance of an organisation.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="determinerCode"
+                    className="Organization" staticModelDerivationId="1"/>
+                <type name="CS"/>
+                <supplierDomainSpecification codingStrength="CNE" domainName="INSTANCE"/>
+            </attribute>
+            <attribute conformance="R" isMandatory="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="id" sortKey="3">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>A valid identifier that uniquely identifies the organisation.</p>
+                            <p>The organisation id attribute can be populated using the following ODS codes (formerly known as NACS code) :</p>
+                            <ul>
+                                <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.2"</li>
+                                <li>The <em>extension </em>attribute shall contain the ODS site code.</li>
+                            </ul>
+                            <ul>
+                                <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.1"</li>
+                                <li>The <em>extension </em>attribute shall contain the ODS organisation code.</li>
+                            </ul>
+                            <p>Note these are listed in order preference for populating this attribute.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="id"
+                    className="Organization" staticModelDerivationId="1"/>
+                <type name="II" typeSpecialisation="II.NPfIT.OrganizationSDS.Organisation.oid"/>
+            </attribute>
+            <attribute conformance="R" isMandatory="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="name" sortKey="6">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>The name of the organisation.  </p>
+                            <p/>
+                            <p>This shall use the name associated with the ODS code.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="name"
+                    className="Organization" staticModelDerivationId="1"/>
+                <type name="ON"/>
+            </attribute>
+        </class>
+    </ownedClass>
+    <ownedClass>
+        <class isAbstract="false" name="AuthoringDevice">
+            <derivationSupplier className="Device" staticModelDerivationId="1"/>
+            <graphicRepresentation presentation="HL7">
+                <graphElement containerDiagramName="Main"
+                    isHeightAutoSize="false" isWidthAutoSize="false"
+                    shapeId="Sheet.15" shapeTemplate="Entity">
+                    <position x="4.9" y="2.45222"/>
+                    <size height="1.04778" width="4.739"/>
+                </graphElement>
+            </graphicRepresentation>
+            <annotations>
+                <otherAnnotation type="html">
+                    <text>
+                        <p>
+                            <strong>Details of the device.</strong>
+                        </p>
+                    </text>
+                </otherAnnotation>
+            </annotations>
+            <attribute conformance="R"
+                defaultValue="COCD_TP145207GB01#assignedAuthoringDevice"
+                fixedValue="COCD_TP145207GB01#assignedAuthoringDevice"
+                isMandatory="true" maximumMultiplicity="1"
+                minimumMultiplicity="1" name="templateId" sortKey="0">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                            <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                            <ul>
+                                <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
+                                <li>The <em>extension </em>attribute shall contain the fixed value.</li>
+                            </ul>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="templateId"
+                    className="Device" staticModelDerivationId="1"/>
+                <type name="II"/>
+            </attribute>
+            <attribute conformance="R" fixedValue="DEV"
+                isMandatory="true" isStructural="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="classCode" sortKey="1">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>Identifies that this is a device.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="classCode"
+                    className="Device" staticModelDerivationId="1"/>
+                <type name="CS"/>
+                <supplierDomainSpecification codingStrength="CNE" domainName="DEV"/>
+            </attribute>
+            <attribute conformance="R" fixedValue="INSTANCE"
+                isMandatory="true" isStructural="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="determinerCode" sortKey="2">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>Identifies that the entity is a single identifiable device.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="determinerCode"
+                    className="Device" staticModelDerivationId="1"/>
+                <type name="CS"/>
+                <supplierDomainSpecification codingStrength="CNE" domainName="INSTANCE"/>
+            </attribute>
+            <attribute conformance="R" isMandatory="false"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="manufacturerModelName" sortKey="1">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>A character string that optionally may have a code attached which describes the manufacturer model for the device.</p>
+                            <p>The text must always be present if a code is present. The code maybe a local code and is not defined in this documentation.</p>
+                            <p>An appropriate nullFlavor may be used if required.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier
+                    attributeName="manufacturerModelName"
+                    className="Device" staticModelDerivationId="1"/>
+                <type name="SC"/>
+                <supplierDomainSpecification codingStrength="CWE" domainName="ManufacturerModelName"/>
+            </attribute>
+            <attribute conformance="R" isMandatory="false"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="softwareName" sortKey="2">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>A character string that optionally may have a code attached which describes the software for the device.</p>
+                            <p>The text must always be present if a code is present. The code maybe a local code and is not defined in this documentation.</p>
+                            <p>An appropriate nullFlavor may be used if required.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier attributeName="softwareName"
+                    className="Device" staticModelDerivationId="1"/>
+                <type name="SC"/>
+                <supplierDomainSpecification codingStrength="CWE" domainName="SoftwareName"/>
+            </attribute>
+        </class>
+    </ownedClass>
+    <ownedAssociation>
+        <graphicRepresentation>
+            <graphElement connectToShapeId="Sheet.15"
+                containerDiagramName="Main" shapeId="Sheet.1">
+                <position x="5.149" y="1.84778"/>
+                <graphEdge>
+                    <anchor connectToShapeId="Sheet.15">
+                        <position x="7.2695" y="2.45222"/>
+                    </anchor>
+                </graphEdge>
+            </graphElement>
+        </graphicRepresentation>
+        <connections>
+            <traversableConnection conformance="R" isMandatory="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="assignedAuthoringDevice" participantClassName="AuthoringDevice">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>A link to the assigned authoring device.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier associationEndName="player"
+                    className="AssignedAuthorDevice" staticModelDerivationId="1"/>
+            </traversableConnection>
+            <nonTraversableConnection participantClassName="AssignedAuthorDevice">
+                <derivationSupplier associationEndName="playedRole"
+                    className="AuthoringDevice" staticModelDerivationId="1"/>
+            </nonTraversableConnection>
+        </connections>
+    </ownedAssociation>
+    <ownedAssociation>
+        <graphicRepresentation>
+            <graphElement connectToShapeId="Sheet.11"
+                containerDiagramName="Main" shapeId="Sheet.1">
+                <position x="5.149" y="1.2"/>
+                <graphEdge>
+                    <anchor connectToShapeId="Sheet.11">
+                        <position x="2.7025" y="2.44222"/>
+                    </anchor>
+                </graphEdge>
+            </graphElement>
+        </graphicRepresentation>
+        <connections>
+            <traversableConnection conformance="R" isMandatory="true"
+                maximumMultiplicity="1" minimumMultiplicity="1"
+                name="representedOrganization" participantClassName="Organization">
+                <annotations>
+                    <otherAnnotation type="html">
+                        <text>
+                            <p>A link to the represented organisation.</p>
+                        </text>
+                    </otherAnnotation>
+                </annotations>
+                <derivationSupplier associationEndName="scoper"
+                    className="AssignedAuthorDevice" staticModelDerivationId="1"/>
+            </traversableConnection>
+            <nonTraversableConnection participantClassName="AssignedAuthorDevice">
+                <derivationSupplier associationEndName="scopedRole"
+                    className="Organization" staticModelDerivationId="1"/>
+            </nonTraversableConnection>
+        </connections>
+    </ownedAssociation>
+</staticModel>

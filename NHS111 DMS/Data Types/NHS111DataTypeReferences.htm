@@ -1,0 +1,2694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>NHS 111: Data Type Cross Ref</title>
+</head>
+
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../Core/logo_left.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message Specification </h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../Core/logo_right.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 1.0; Status: Draft A</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+			<a href="../Domains/NHS111/Document files/IM.htm" title="Message Definitions">Message Definitions</a>
+			
+			<li>
+			<a href="../Core/Generic.htm" title="Generic">
+			Generic</a></li>
+			<!--
+			<li class="selected">
+			<a href="References.htm" title="References">
+			References</a></li>
+			-->
+			
+			<li class="selected">
+			<a href="../Core/References.htm" title="References">
+			References</a></li>
+
+			<li>
+			<a href="../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>		<ul class="tabs level1">
+			<li class="selected">
+				<a title="NHS 111" href="../Domains/NHS111/Document%20files/NHS111References.htm">NHS 111</a>     
+			</li>
+			<li>
+
+				<a href="../Domains/Nullification/Document files/Nullification References.htm" title="Nullification">
+				Nullification</a>       
+			</li>
+			<!--<li>
+				<a href="../Domains/Infrastructure/Document files/TMSInfrastructureReferences.htm" title="TMS Infrastructure">
+				TMS Infrastructure</a>     
+			</li>-->
+			
+
+		</ul>
+		<ul class="tabs level2">
+			<li class="selected">
+
+				<a title="Data Type Cross Ref" href="NHS111DataTypeReferences.htm">Data Type Cross Ref</a>     
+			</li>
+			<li>
+				<a href="../Domains/Templates/Document files/Constraint Reference.htm" title="Constraint Cross Ref">
+				Constraint Cross Ref</a>    
+			</li>
+			<li>
+				<a href="../Domains/Templates/Document files/Template Reference.htm" title="Template Cross Ref">
+				Template Cross Ref</a>    
+			</li>
+<li>
+				<a title="Vocabulary Cross Ref" href="../Vocabulary/NHS111VocabReferences.htm">Vocabulary Cross Ref</a>    
+			</li>
+
+		</ul>
+
+	</div>
+	<div id="content"> 
+		<h2><span style="font-style: normal">NHS 111 Data Type Cross Reference
+		</span></h2>
+      <div class="section">
+         <div class="section1_1">
+            <h2>Contents</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AD</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BL</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CD</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CE</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_6">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CV</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ED</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_8">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;II</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_9">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INT</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_10">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IVL&lt;TS&gt;</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_11">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ON</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_12">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PN</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_13">13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SC</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_14">14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET&lt;AD&gt;</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_15">15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET&lt;II&gt;</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_16">16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET&lt;PN&gt;</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_17">17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SET&lt;TEL&gt;</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_18">18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ST</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_19">19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEL</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_20">20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TN</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_21">21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TS</a></div>
+         <hr>
+         <div class="section1_2">
+            <h2><a name="_Toc_Section_1"></a>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#AD" target="_blank"><b>AD</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#RelatedEntity" target="_blank">RelatedEntity</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">AssociatedEntity</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01.htm" target="_blank">COCD_TP145222GB01</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>addr</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_2"></a>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#BL" target="_blank"><b>BL</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#StructuredBody/component" target="_blank">component</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/component" target="_blank">component</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClassificationSection/component" target="_blank">component</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClassificationSection/entry" target="_blank">entry</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">LanguageCommunication</a></td>
+                     <td>preferenceInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/component1" target="_blank">component1</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2/component2" target="_blank">component2</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3/component3" target="_blank">component3</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4/component4" target="_blank">component4</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5/component5" target="_blank">component5</a></td>
+                     <td>contextConductionInd</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_4"></a>&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#CE" target="_blank"><b>CE</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 15%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 25%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                     <td style="width: 15%">Vocabulary</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>confidentialityCode</td>
+                     <td>x_BasicConfidentialityKind</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">LanguageCommunication</a></td>
+                     <td>modeCode</td>
+                     <td>LanguageAbilityMode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">LanguageCommunication</a></td>
+                     <td>proficiencyLevelCode</td>
+                     <td>LanguageAbilityProficiency</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#RelatedSubject" target="_blank">RelatedSubject</a></td>
+                     <td>code</td>
+                     <td>PersonalRelationshipRoleType</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#SubjectPerson" target="_blank">SubjectPerson</a></td>
+                     <td>administrativeGenderCode</td>
+                     <td>AdministrativeGender</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                     <td>OrganizationIndustryClass</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01.htm" target="_blank">COCD_TP146226GB01</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01-NoEdit.htm#Consent" target="_blank">Consent</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CodedEntryCode.htm" target="_blank">CodedEntryCode</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent" target="_blank">ServiceEvent</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CodedEntryCode.htm" target="_blank">CodedEntryCode</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent/performer" target="_blank">performer</a></td>
+                     <td>functionCode</td>
+                     <td>ParticipationFunction</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_5"></a>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#CS" target="_blank"><b>CS</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 15%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 25%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                     <td style="width: 15%">Vocabulary</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">LanguageCommunication</a></td>
+                     <td>languageCode</td>
+                     <td>
+						<a href="../Vocabulary/HumanLanguage.htm" target="_blank">HumanLanguage</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01.htm" target="_blank">COCD_TP146226GB01</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01-NoEdit.htm#Consent" target="_blank">Consent</a></td>
+                     <td>statusCode</td>
+                     <td>ActStatus</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_6"></a>&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#CV" target="_blank"><b>CV</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 15%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 25%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                     <td style="width: 15%">Vocabulary</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CDADocumentTypeSnCT.htm" target="_blank">CDADocumentTypeSnCT</a></td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/author" target="_blank">author</a></td>
+                     <td>functionCode</td>
+                     <td>
+						<a href="../Vocabulary/AuthorFunctionType.htm" target="_blank">AuthorFunctionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ParentDocument" target="_blank">ParentDocument</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CDADocumentTypeSnCT.htm" target="_blank">CDADocumentTypeSnCT</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#RelatedEntity" target="_blank">RelatedEntity</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CDAPersonRelationshipType.htm" target="_blank">CDAPersonRelationshipType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/JobRoleName.htm" target="_blank">JobRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Patient" target="_blank">Patient</a></td>
+                     <td>administrativeGenderCode</td>
+                     <td><a href="../Vocabulary/Sex.htm" target="_blank">Sex</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                     <td>
+						<a href="../Vocabulary/CDAOrganizationProviderType.htm" target="_blank">CDAOrganizationProviderType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>recipientRoleCode</td>
+                     <td>
+						<a href="../Vocabulary/JobRoleName.htm" target="_blank">JobRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                     <td>
+						<a href="../Vocabulary/CDAOrganizationType.htm" target="_blank">CDAOrganizationType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                     <td>
+						<a href="../Vocabulary/CDAOrganizationType.htm" target="_blank">CDAOrganizationType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#RecipientWorkgroup" target="_blank">RecipientWorkgroup</a></td>
+                     <td>recipientRoleCode</td>
+                     <td>
+						<a href="../Vocabulary/WorkgroupRoleName.htm" target="_blank">WorkgroupRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/JobRoleName.htm" target="_blank">JobRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/JobRoleName.htm" target="_blank">JobRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/JobRoleName.htm" target="_blank">JobRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#HealthCareFacility" target="_blank">HealthCareFacility</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/CDACareSettingTypeSnCT.htm" target="_blank">CDACareSettingTypeSnCT</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Workgroup" target="_blank">Workgroup</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/WorkgroupRoleName.htm" target="_blank">WorkgroupRoleName</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">AssociatedEntity</a></td>
+                     <td>code</td>
+                     <td>RoleCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01.htm" target="_blank">COCD_TP145222GB01</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01-NoEdit.htm#HealthCareFacility" target="_blank">HealthCareFacility</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/IncidentalLocationTypeSnCT.htm" target="_blank">IncidentalLocationTypeSnCT</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">EncompassingEncounter</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111EncounterCode.htm" target="_blank">NHS111EncounterCode</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">EncompassingEncounter</a></td>
+                     <td>dischargeDispositionCode</td>
+                     <td>
+						<a href="../Vocabulary/NHS111DispositionCode.htm" target="_blank">NHS111DispositionCode</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">Section2</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">Section3</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">Section1</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/author" target="_blank">author</a></td>
+                     <td>functionCode</td>
+                     <td>
+						<a href="../Vocabulary/AuthorFunctionType.htm" target="_blank">AuthorFunctionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">Section4</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">Section5</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">Section6</a></td>
+                     <td>code</td>
+                     <td>
+						<a href="../Vocabulary/NHS111CDADocumentSectionType.htm" target="_blank">NHS111CDADocumentSectionType</a></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_7"></a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#ED" target="_blank"><b>ED</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01.htm" target="_blank">COCD_TP146245GB01</a></td>
+                     <td>AttachmentWithoutParticipants</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01-NoEdit.htm#ObservationMedia" target="_blank">ObservationMedia</a></td>
+                     <td>value</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">Section2</a></td>
+                     <td>text</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">Section3</a></td>
+                     <td>text</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">Section1</a></td>
+                     <td>text</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">Section4</a></td>
+                     <td>text</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">Section5</a></td>
+                     <td>text</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">Section6</a></td>
+                     <td>text</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_8"></a>&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#II" target="_blank"><b>II</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>typeId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>messageType</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>setId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/tracker" target="_blank">tracker</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/informationRecipient" target="_blank">informationRecipient</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/author" target="_blank">author</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/recordTarget" target="_blank">recordTarget</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/custodian" target="_blank">custodian</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ParentDocument" target="_blank">ParentDocument</a></td>
+                     <td>setId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ParentDocument" target="_blank">ParentDocument</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/componentOf" target="_blank">componentOf</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClassificationSection/component" target="_blank">component</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClassificationSection" target="_blank">ClassificationSection</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/informant" target="_blank">informant</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/documentationOf" target="_blank">documentationOf</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/authorization" target="_blank">authorization</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClassificationSection/entry" target="_blank">entry</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#RelatedEntity" target="_blank">RelatedEntity</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03.htm" target="_blank">COCD_TP145018UK03</a></td>
+                     <td>CustodianOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03-NoEdit.htm#AssignedCustodian" target="_blank">AssignedCustodian</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03.htm" target="_blank">COCD_TP145018UK03</a></td>
+                     <td>CustodianOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03-NoEdit.htm#CustodianOrganization" target="_blank">CustodianOrganization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03.htm" target="_blank">COCD_TP145018UK03</a></td>
+                     <td>CustodianOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03-NoEdit.htm#CustodianOrganization" target="_blank">CustodianOrganization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#PatientRole" target="_blank">PatientRole</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Patient" target="_blank">Patient</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">LanguageCommunication</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#RecipientWorkgroup" target="_blank">RecipientWorkgroup</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#RecipientWorkgroup" target="_blank">RecipientWorkgroup</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AssignedAuthorDevice" target="_blank">AssignedAuthorDevice</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AuthoringDevice" target="_blank">AuthoringDevice</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#HealthCareFacility" target="_blank">HealthCareFacility</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Workgroup" target="_blank">Workgroup</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Workgroup" target="_blank">Workgroup</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#RelatedSubject" target="_blank">RelatedSubject</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#SubjectPerson" target="_blank">SubjectPerson</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">AssociatedEntity</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01.htm" target="_blank">COCD_TP145222GB01</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01-NoEdit.htm#HealthCareFacility" target="_blank">HealthCareFacility</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01.htm" target="_blank">COCD_TP145222GB01</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01.htm" target="_blank">COCD_TP146226GB01</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01-NoEdit.htm#Consent" target="_blank">Consent</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent" target="_blank">ServiceEvent</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent/performer" target="_blank">performer</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent/performer" target="_blank">performer</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/encounterParticipant" target="_blank">encounterParticipant</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/encounterParticipant" target="_blank">encounterParticipant</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/location" target="_blank">location</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/location" target="_blank">location</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">EncompassingEncounter</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/responsibleParty" target="_blank">responsibleParty</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/responsibleParty" target="_blank">responsibleParty</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01.htm" target="_blank">COCD_TP146245GB01</a></td>
+                     <td>AttachmentWithoutParticipants</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01-NoEdit.htm#ObservationMedia" target="_blank">ObservationMedia</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01.htm" target="_blank">COCD_TP146245GB01</a></td>
+                     <td>AttachmentWithoutParticipants</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146245GB01-NoEdit.htm#ObservationMedia" target="_blank">ObservationMedia</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/component1" target="_blank">component1</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">Section2</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">Section2</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2/component2" target="_blank">component2</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">Section3</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">Section3</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3/component3" target="_blank">component3</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">Section1</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">Section1</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/author" target="_blank">author</a></td>
+                     <td>contentId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/author" target="_blank">author</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">Section4</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">Section4</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">Section5</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">Section5</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4/component4" target="_blank">component4</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5/component5" target="_blank">component5</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">Section6</a></td>
+                     <td>templateId</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">Section6</a></td>
+                     <td>id</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_9"></a>&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#INT" target="_blank"><b>INT</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>versionNumber</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ParentDocument" target="_blank">ParentDocument</a></td>
+                     <td>versionNumber</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_10"></a>&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#IVL" target="_blank"><b>IVL</b></a>&lt;<a href="DataTypes.htm#TS" target="_blank"><b>TS</b></a>&gt;
+            </h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent" target="_blank">ServiceEvent</a></td>
+                     <td>effectiveTime</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent/performer" target="_blank">performer</a></td>
+                     <td>time</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter/encounterParticipant" target="_blank">encounterParticipant</a></td>
+                     <td>time</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">EncompassingEncounter</a></td>
+                     <td>effectiveTime</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_11"></a>&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#ON" target="_blank"><b>ON</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03.htm" target="_blank">COCD_TP145018UK03</a></td>
+                     <td>CustodianOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145018UK03-NoEdit.htm#CustodianOrganization" target="_blank">CustodianOrganization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>name</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_12"></a>&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#PN" target="_blank"><b>PN</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#Person" target="_blank">Person</a></td>
+                     <td>name</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_13"></a>&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#SC" target="_blank"><b>SC</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 15%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 25%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                     <td style="width: 15%">Vocabulary</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AuthoringDevice" target="_blank">AuthoringDevice</a></td>
+                     <td>manufacturerModelName</td>
+                     <td>ManufacturerModelName</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AuthoringDevice" target="_blank">AuthoringDevice</a></td>
+                     <td>softwareName</td>
+                     <td>SoftwareName</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_14"></a>&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#SET" target="_blank"><b>SET</b></a>&lt;<a href="DataTypes.htm#AD" target="_blank"><b>AD</b></a>&gt;
+            </h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#PatientRole" target="_blank">PatientRole</a></td>
+                     <td>addr</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#RelatedSubject" target="_blank">RelatedSubject</a></td>
+                     <td>addr</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_15"></a>&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#SET" target="_blank"><b>SET</b></a>&lt;<a href="DataTypes.htm#II" target="_blank"><b>II</b></a>&gt;
+            </h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#PatientRole" target="_blank">PatientRole</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AssignedAuthorDevice" target="_blank">AssignedAuthorDevice</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#HealthCareFacility" target="_blank">HealthCareFacility</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">AssociatedEntity</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01.htm" target="_blank">COCD_TP146226GB01</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB01-NoEdit.htm#Consent" target="_blank">Consent</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01.htm" target="_blank">COCD_TP146227GB01</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB01-NoEdit.htm#ServiceEvent" target="_blank">ServiceEvent</a></td>
+                     <td>id</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">EncompassingEncounter</a></td>
+                     <td>id</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_16"></a>&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#SET" target="_blank"><b>SET</b></a>&lt;<a href="DataTypes.htm#PN" target="_blank"><b>PN</b></a>&gt;
+            </h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Patient" target="_blank">Patient</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#SubjectPerson" target="_blank">SubjectPerson</a></td>
+                     <td>name</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_17"></a>&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#SET" target="_blank"><b>SET</b></a>&lt;<a href="DataTypes.htm#TEL" target="_blank"><b>TEL</b></a>&gt;
+            </h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">AssignedAuthor</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#PatientRole" target="_blank">PatientRole</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">Organization</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01.htm" target="_blank">COCD_TP145202GB01</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB01-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02.htm" target="_blank">COCD_TP145203GB02</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB02-NoEdit.htm#IntendedRecipient" target="_blank">IntendedRecipient</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02.htm" target="_blank">COCD_TP145204GB02</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB02-NoEdit.htm#RecipientWorkgroup" target="_blank">RecipientWorkgroup</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01.htm" target="_blank">COCD_TP145205GB01</a></td>
+                     <td>PersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145205GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">AssignedEntity</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Workgroup" target="_blank">Workgroup</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#RelatedSubject" target="_blank">RelatedSubject</a></td>
+                     <td>telecom</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">AssociatedEntity</a></td>
+                     <td>telecom</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_18"></a>&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#ST" target="_blank"><b>ST</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">Section2</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">Section3</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">Section1</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">Section4</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">Section5</a></td>
+                     <td>title</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">Section6</a></td>
+                     <td>title</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_19"></a>&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#TEL" target="_blank"><b>TEL</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#RelatedEntity" target="_blank">RelatedEntity</a></td>
+                     <td>telecom</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_20"></a>&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#TN" target="_blank"><b>TN</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01.htm" target="_blank">COCD_TP145211GB01</a></td>
+                     <td>HealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145211GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>name</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01.htm" target="_blank">COCD_TP145222GB01</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB01-NoEdit.htm#Place" target="_blank">Place</a></td>
+                     <td>name</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_21"></a>&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datatype : 
+               				<a href="DataTypes.htm#TS" target="_blank"><b>TS</b></a></h2>
+            <table>
+               <thead class="datatypeheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument" target="_blank">ClinicalDocument</a></td>
+                     <td>effectiveTime</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB01.htm" target="_blank">POCD_RM200001GB01</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB01-NoEdit.htm#ClinicalDocument/author" target="_blank">author</a></td>
+                     <td>time</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Patient" target="_blank">Patient</a></td>
+                     <td>birthTime</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01.htm" target="_blank">COCD_TP145213GB01</a></td>
+                     <td>RelatedSubject</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145213GB01-NoEdit.htm#SubjectPerson" target="_blank">SubjectPerson</a></td>
+                     <td>birthTime</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/author" target="_blank">author</a></td>
+                     <td>time</td>
+                  </tr>
+               </tbody>
+            </table>	</div>
+	</div>
+	</div>
+<div id="footer">
+	<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net" target="_blank">Contact Us</a></a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div></div>
+
+
+
+</body>
+
+</html>
