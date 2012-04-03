@@ -6,7 +6,7 @@ By trackig it in this manner we can clearly see via diff or the diff interface t
 Publishing sample message outputs here will allow vendors to self assure their systems with your systems prior to go live.
 We will also collate test datasets here so we can test our systems as we learn and develop.
 
-'<Official Wording>This is not intended to replace TRUD, it is a tool to be used without warrenty that I believe we will all benefit form using and maybe influence TRUD :-)</Official Wording>
+<Official Wording>This is not intended to replace TRUD, it is a tool to be used without warrenty that I believe we will all benefit form using and maybe influence TRUD :-)</Official Wording>
 
 ##Structure
 /  Interoperability Specification - Latest release with version name removed to allow a diff
