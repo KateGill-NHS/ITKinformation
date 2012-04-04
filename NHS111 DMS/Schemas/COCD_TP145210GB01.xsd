@@ -47,7 +47,8 @@
          <xs:group ref="InfrastructureRootElements"/>
          <xs:element name="addr" type="AD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="code" type="CV.NPfIT.Codedplain" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="id" type="II.NPfIT.oid.required" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="id" type="II.NPfIT.oid.required.assigningAuthorityName" minOccurs="1"
+                     maxOccurs="unbounded"/>
          <xs:element name="telecom" type="TEL" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="templateId" minOccurs="1" maxOccurs="1">
             <xs:complexType>
@@ -91,9 +92,19 @@
             <xs:complexType>
                <xs:complexContent>
                   <xs:restriction base="II">
-                     <xs:attribute name="root" type="II.NPfIT.OrganizationSDS.Organisation.oid" use="optional"/>
-                     <xs:attribute name="extension" type="II.NPfIT.OrganizationSDS.Organisation.extension"
-                                   use="optional"/>
+                     <xs:attribute name="root" use="optional">
+                        <xs:simpleType>
+                           <xs:restriction base="uid">
+                              <xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+                              <xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.19.2"/>
+                           </xs:restriction>
+                        </xs:simpleType>
+                     </xs:attribute>
+                     <xs:attribute name="extension" use="optional">
+                        <xs:simpleType>
+                           <xs:restriction base="st"/>
+                        </xs:simpleType>
+                     </xs:attribute>
                      <xs:attribute name="nullFlavor" type="cs_NullFlavor" use="optional"/>
                      <xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
                      <xs:attribute name="assigningAuthorityName" type="st" use="prohibited"/>

@@ -39,10 +39,10 @@
          <constraint version="3.0"/>
       </xs:appinfo>
    </xs:annotation>
-   <xs:include schemaLocation="../Schemas/COCD_TP145222GB01.xsd"/>
+   <xs:include schemaLocation="../Schemas/COCD_TP145222GB02.xsd"/>
    <xs:group name="NPFIT-000099_Role">
       <xs:sequence>
-         <xs:group ref="COCD_TP145222GB01"/>
+         <xs:group ref="COCD_TP145222GB02"/>
       </xs:sequence>
    </xs:group>
 </xs:schema>

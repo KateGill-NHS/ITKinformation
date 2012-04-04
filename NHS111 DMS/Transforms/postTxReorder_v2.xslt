@@ -178,7 +178,7 @@
 	
 	<!-- identity template for complex datatype elements, which should not be reordered-->
 	<!-- TODO: list all compont DTs here-->
-	<xsl:template match="h:tel|h:value|h:effectiveTime|h:code|h:name|h:time|h:text|h:addr" mode="alpha-order">
+	<xsl:template match="h:tel|h:value|h:effectiveTime|h:useablePeriod|h:code|h:name|h:time|h:text|h:addr" mode="alpha-order">
         <xsl:copy-of select="."/>
     </xsl:template>
     

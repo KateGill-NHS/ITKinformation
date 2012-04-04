@@ -1,4 +1,4 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:hl7-org:v3" xmlns:hl7="urn:hl7-org:v3" targetNamespace="urn:hl7-org:v3" elementFormDefault="qualified">
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:hl7="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:hl7-org:v3" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
 			<changeHistory>
@@ -59,7 +59,7 @@
 			<changeHistory>
 				<date>11.07.2007</date>
 				<notes>
-					<p>Added new flavours &quot; CD.NPfIT.CDA.Url &quot; and  &quot; CV.NPfIT.CDA.Url &quot; and &quot; CV.NPfIT.CDA.Url &quot;  </p>
+					<p>Added new flavours &quot; CD.NPfIT.CDA.Url &quot; and &quot; CV.NPfIT.CDA.Url &quot; and &quot; CV.NPfIT.CDA.Url &quot;</p>
 					<p>This flavour fixes the url issue within the core data type url being tight.</p>
 				</notes>
 			</changeHistory>
@@ -76,9 +76,7 @@
 		<xs:restriction base="uid">
 			<xs:pattern value="([0-9][0-9]*)(\.[0-9][0-9]*)*">
 				<xs:annotation>
-					<xs:documentation>
-						Pattern facet to carry only oid in root of an II data type
-					</xs:documentation>
+					<xs:documentation>Pattern facet to carry only oid in root of an II data type</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 		</xs:restriction>
@@ -87,9 +85,7 @@
 		<xs:restriction base="uid">
 			<xs:pattern value="[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}">
 				<xs:annotation>
-					<xs:documentation>
-						Pattern facet to allow upper case hex in the uuid in root of II data type
-					</xs:documentation>
+					<xs:documentation>Pattern facet to allow upper case hex in the uuid in root of II data type</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 		</xs:restriction>
@@ -102,6 +98,18 @@
 				<xs:attribute name="nullFlavor" type="cs_NullFlavor" use="optional"/>
 				<xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
 				<xs:attribute name="assigningAuthorityName" type="st" use="prohibited"/>
+				<xs:attribute name="displayable" type="bl" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="II.NPfIT.oid.required.assigningAuthorityName">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:attribute name="root" type="II.NPfIT.root.oid" use="optional"/>
+				<xs:attribute name="extension" type="st" use="optional"/>
+				<xs:attribute name="nullFlavor" type="cs_NullFlavor" use="optional"/>
+				<xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
+				<xs:attribute name="assigningAuthorityName" type="st" use="optional"/>
 				<xs:attribute name="displayable" type="bl" use="prohibited"/>
 			</xs:restriction>
 		</xs:complexContent>
@@ -136,6 +144,18 @@
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="II.NPfIT.oid.mandatory.assignedAuthority">
+		<xs:complexContent>
+			<xs:restriction base="II">
+				<xs:attribute name="root" type="II.NPfIT.root.oid" use="required"/>
+				<xs:attribute name="extension" type="st" use="required"/>
+				<xs:attribute name="nullFlavor" type="cs_NullFlavor" use="prohibited"/>
+				<xs:attribute name="assigningAuthorityName" type="st" use="optional"/>
+				<xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
+				<xs:attribute name="displayable" type="bl" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:simpleType name="II.NPfIT.Patient.oid">
 		<xs:restriction base="II.NPfIT.root.oid">
 			<xs:enumeration value="2.16.840.1.113883.2.1.4.1"/>
@@ -145,9 +165,7 @@
 		<xs:restriction base="st">
 			<xs:pattern value="[0-9]{10}">
 				<xs:annotation>
-					<xs:documentation>
-						Pattern facet to allow only ten digits for NHS Number
-					</xs:documentation>
+					<xs:documentation>Pattern facet to allow only ten digits for NHS Number</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 		</xs:restriction>
@@ -166,9 +184,7 @@
 		<xs:restriction base="st">
 			<xs:pattern value="[A-Za-z][A-Za-z0-9\-]*">
 				<xs:annotation>
-					<xs:documentation>
-						Pattern facet to other temporary NHS numbers
-					</xs:documentation>
+					<xs:documentation>Pattern facet to other temporary NHS numbers</xs:documentation>
 				</xs:annotation>
 			</xs:pattern>
 		</xs:restriction>
@@ -288,8 +304,24 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ST.Title" mixed="true">
+		<xs:complexContent>
+			<xs:restriction base="ST">
+				<xs:sequence>
+					<xs:element name="reference" type="TEL" minOccurs="0" maxOccurs="0"/>
+					<xs:element name="thumbnail" type="thumbnail" minOccurs="0" maxOccurs="0"/>
+					<xs:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="mediaType" type="cs" use="prohibited"/>
+				<xs:attribute name="language" type="cs" use="prohibited"/>
+				<xs:attribute name="compression" type="cs_CompressionAlgorithm" use="prohibited"/>
+				<xs:attribute name="integrityCheck" type="bin" use="prohibited"/>
+				<xs:attribute name="integrityCheckAlgorithm" type="cs_IntegrityCheckAlgorithm" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="ADXP.NPfIT.NotAny" mixed="true">
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:restriction base="ST">
 				<xs:sequence>
 					<xs:element name="reference" type="TEL" minOccurs="0"/>
@@ -299,7 +331,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ADXP.NPfIT.Coded" mixed="true">
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:extension base="ADXP.NPfIT.NotAny">
 				<xs:sequence>
 					<xs:element name="code" type="CV"/>
@@ -309,19 +341,16 @@
 	</xs:complexType>
 	<xs:complexType name="AD.NPfIT.CodedCountry" mixed="true">
 		<xs:annotation>
-			<xs:documentation>
-Mailing and home or office addresses. A sequence of address parts,
-such as street or post office Box, city, postal code, country, etc.
-</xs:documentation>
+			<xs:documentation>Mailing and home or office addresses. A sequence of address parts, such as street or post office Box, city, postal code, country, etc.</xs:documentation>
 			<xs:appinfo/>
 		</xs:annotation>
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:extension base="ANY">
 				<xs:sequence>
 					<xs:choice minOccurs="0" maxOccurs="unbounded">
 						<xs:element name="delimiter">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="DEL"/>
 									</xs:restriction>
@@ -331,7 +360,7 @@ such as street or post office Box, city, postal code, country, etc.
 						<xs:element name="country" type="ADXP.NPfIT.Coded"/>
 						<xs:element name="state">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="STA"/>
 									</xs:restriction>
@@ -340,7 +369,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="county">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="CPA"/>
 									</xs:restriction>
@@ -349,7 +378,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="city">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="CTY"/>
 									</xs:restriction>
@@ -358,7 +387,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="postalCode">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="ZIP"/>
 									</xs:restriction>
@@ -367,7 +396,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="streetAddressLine">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="SAL"/>
 									</xs:restriction>
@@ -376,7 +405,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="houseNumber">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="BNR"/>
 									</xs:restriction>
@@ -385,7 +414,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="houseNumberNumeric">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="BNN"/>
 									</xs:restriction>
@@ -394,7 +423,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="direction">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="DIR"/>
 									</xs:restriction>
@@ -403,7 +432,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="streetName">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="STR"/>
 									</xs:restriction>
@@ -412,7 +441,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="streetNameBase">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="STB"/>
 									</xs:restriction>
@@ -421,7 +450,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="streetNameType">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="STTYP"/>
 									</xs:restriction>
@@ -430,7 +459,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="additionalLocator">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="ADL"/>
 									</xs:restriction>
@@ -439,7 +468,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="unitID">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="UNID"/>
 									</xs:restriction>
@@ -448,7 +477,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="unitType">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="UNIT"/>
 									</xs:restriction>
@@ -457,7 +486,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="carrier">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="CAR"/>
 									</xs:restriction>
@@ -466,7 +495,7 @@ such as street or post office Box, city, postal code, country, etc.
 						</xs:element>
 						<xs:element name="censusTract">
 							<xs:complexType mixed="true">
-								<xs:complexContent mixed="true">
+								<xs:complexContent>
 									<xs:restriction base="ADXP">
 										<xs:attribute name="partType" type="cs_AddressPartType" fixed="CEN"/>
 									</xs:restriction>
@@ -502,12 +531,7 @@ such as street or post office Box, city, postal code, country, etc.
 					</xs:choice>
 					<xs:element name="useablePeriod" type="IVL_TS" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
-							<xs:documentation>
-A General Timing Specification (GTS) specifying the periods of
-time during which the address can be used.  This is used to specify
-different addresses for different times of the year or to refer to
-historical addresses.
-      </xs:documentation>
+							<xs:documentation>A General Timing Specification (GTS) specifying the periods of time during which the address can be used. This is used to specify different addresses for different times of the year or to refer to historical addresses.</xs:documentation>
 							<xs:appinfo/>
 						</xs:annotation>
 						<!-- FIXME: one would expect the name "GTS" here but it's not
@@ -517,21 +541,13 @@ historical addresses.
 				</xs:sequence>
 				<xs:attribute name="use" type="set_cs_PostalAddressUse" use="optional">
 					<xs:annotation>
-						<xs:documentation>
-A set of codes advising a system or user which address in a set of
-like addresses to select for a given purpose.
-</xs:documentation>
+						<xs:documentation>A set of codes advising a system or user which address in a set of like addresses to select for a given purpose.</xs:documentation>
 						<xs:appinfo/>
 					</xs:annotation>
 				</xs:attribute>
 				<xs:attribute name="isNotOrdered" type="bl" use="optional">
 					<xs:annotation>
-						<xs:documentation>
-A boolean value specifying whether the order of the address parts is known
-or not. While the address parts are always a Sequence, the order in which
-they are presented may or may not be known. Where this matters, the
-isNotOrdered property can be used to convey this information.
-      </xs:documentation>
+						<xs:documentation>A boolean value specifying whether the order of the address parts is known or not. While the address parts are always a Sequence, the order in which they are presented may or may not be known. Where this matters, the isNotOrdered property can be used to convey this information.</xs:documentation>
 						<xs:appinfo/>
 					</xs:annotation>
 				</xs:attribute>
@@ -559,8 +575,15 @@ isNotOrdered property can be used to convey this information.
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="ANY.NHS.URL">
+		<xs:complexContent>
+			<xs:extension base="ANY">
+				<xs:attribute name="value" type="url" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="Cda.NPfIT.ED" mixed="true">
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:extension base="BIN">
 				<xs:sequence>
 					<xs:element name="reference" type="Any.NPfIT.Url" minOccurs="0"/>
@@ -577,7 +600,7 @@ isNotOrdered property can be used to convey this information.
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ED.NHS.NonXMLBodyText" mixed="true">
-		<xs:complexContent mixed="true">
+		<xs:complexContent>
 			<xs:restriction base="ED">
 				<xs:sequence>
 					<xs:element name="reference" type="TEL" minOccurs="0"/>
@@ -593,8 +616,8 @@ isNotOrdered property can be used to convey this information.
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="ED.NHS.NHS111Attachment" mixed="true">
-		<xs:complexContent mixed="true">
+	<xs:complexType name="ED.NHS.ObservationMedia" mixed="true">
+		<xs:complexContent>
 			<xs:restriction base="ED">
 				<xs:sequence>
 					<xs:element name="reference" type="TEL" minOccurs="0"/>
@@ -609,7 +632,18 @@ isNotOrdered property can be used to convey this information.
 				<xs:attribute name="integrityCheckAlgorithm" type="cs_IntegrityCheckAlgorithm" use="optional" default="SHA-1"/>
 			</xs:restriction>
 		</xs:complexContent>
-	</xs:complexType>	
+	</xs:complexType>
+	<xs:complexType name="ED.NHS.URL" mixed="true">
+		<xs:complexContent>
+			<xs:restriction base="ED">
+				<xs:sequence>
+					<xs:element name="reference" type="TEL" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="mediaType" type="cs" use="required"/>
+				<xs:attribute name="representation" type="cs_BinaryDataEncoding" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="CD.NPfIT.CDA.Url">
 		<xs:complexContent>
 			<xs:extension base="ANY">
@@ -646,6 +680,19 @@ isNotOrdered property can be used to convey this information.
 				<xs:attribute name="codeSystemName" type="st" use="optional"/>
 				<xs:attribute name="codeSystemVersion" type="st" use="optional"/>
 				<xs:attribute name="displayName" type="st" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CE.NPfIT.Codedplain">
+		<xs:complexContent>
+			<xs:restriction base="CE">
+				<xs:attribute name="code" type="cs" use="required"/>
+				<xs:attribute name="codeSystem" type="oid" use="required"/>
+				<xs:attribute name="codeSystemName" type="st" use="prohibited"/>
+				<xs:attribute name="codeSystemVersion" type="st" use="prohibited"/>
+				<xs:attribute name="displayName" type="st" use="required"/>
+				<xs:attribute name="nullFlavor" type="cs_NullFlavor" use="prohibited"/>
+				<xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>
@@ -797,6 +844,23 @@ isNotOrdered property can be used to convey this information.
 				<xs:attribute name="displayName" type="st" use="prohibited"/>
 				<xs:attribute name="nullFlavor" type="cs_NullFlavor" use="optional"/>
 				<xs:attribute name="updateMode" type="cs_UpdateMode" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+		<xs:complexType name="ED.NHS.NHS111Attachment" mixed="true">
+		<xs:complexContent>
+			<xs:restriction base="ED">
+				<xs:sequence>
+					<xs:element name="reference" type="TEL" minOccurs="0"/>
+					<xs:element name="thumbnail" type="thumbnail" minOccurs="0"/>
+					<xs:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="mediaType" type="cs" use="required"/>
+				<xs:attribute name="representation" type="cs_BinaryDataEncoding" use="required"/>
+				<xs:attribute name="language" type="cs" use="optional"/>
+				<xs:attribute name="compression" type="cs_CompressionAlgorithm" use="optional"/>
+				<xs:attribute name="integrityCheck" type="bin" use="optional"/>
+				<xs:attribute name="integrityCheckAlgorithm" type="cs_IntegrityCheckAlgorithm" use="optional" default="SHA-1"/>
 			</xs:restriction>
 		</xs:complexContent>
 	</xs:complexType>

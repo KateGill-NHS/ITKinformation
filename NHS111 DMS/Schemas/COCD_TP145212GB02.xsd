@@ -141,7 +141,8 @@
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
          <xs:element name="code" type="CV.NPfIT.Codedplain" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="id" type="II" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="id" type="II.NPfIT.oid.required.assigningAuthorityName" minOccurs="1"
+                     maxOccurs="1"/>
          <xs:element name="telecom" type="TEL" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="templateId" minOccurs="1" maxOccurs="1">
             <xs:complexType>

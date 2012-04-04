@@ -27,7 +27,7 @@
 		</div>
 	</div>
 		<div id="navigation">
-		<div id="status">Version: 1.0; Status: Draft A</div>
+		<div id="status">Version: 1.0; Status: RC2</div>
 		<ul class="tabs level0">
 			<li class="selected">
 			<a href="Index.htm" title="Overview">
@@ -36,45 +36,48 @@
 			<a href="Domains/NHS111/Document files/IM.htm" title="Message Definitions">Message Definitions</a>
 			</li>
 			<li>
-			<a href="Core/Generic.htm" title="Generic">
-			Generic</a></li>
+			<a href="Domains/NHS111/Document files/AssociatedSpecifications.htm" title="Associated Specifications">
+			Associated Specifications</a></li>
 			<li>
 			<a href="Core/References.htm" title="References">
 			References</a></li>
-			<li>
-			<a href="Core/Glossary.htm" title="Glossary">
-			Glossary</a></li>
 		</ul>
 		<ul class="tabs level1">
-			<li>
-			<a title="Change History" href="Core/ChangeHistory/CH.htm">
-			Change History</a></li>
-		</ul>
+
+		<li>		<a href="./Core/ChangeHistory/CH.htm" title="Change History">Change History</a></li>
+		<!--<li>		<a href="./Data Types/DataTypes.htm" title="Data Types">Data Types</a></li>-->
+		<li>		<a href="./Core/Glossary.htm" title="Glossary">Glossary</a></li>		
+		<li>		<a href="./Core/Guide.htm" title="User Guide">User Guide</a></li>				
+		<li>		<a title="Message Creation Guidance" href="./Domains/NHS111/Document files/MessageCreationGuidance.htm">
+			Message Creation Guidance</a></li>			
+		</ul>		
+
 	</div>
 <div id="content">
 <h1>Overview: NHS 111 Domain Message Specification</h1>
 	<p>
 	<font face="Arial">The NHS 111 Domain Message Specification supports
-	the following care communications:</font></p>
+	the following care communications:</font></p><br/>
 <ul>
 		<li><font face="Arial">NHS 111 CDA Document</font></li>
-		<li><font face="Arial">NHS 111 Ambulance Request</font></li></ul>
+		<li><font face="Arial">NHS 111 Ambulance Request</font></li>
+		<li><font face="Arial">NHS 111 Repeat Caller Request</font></li>
+		<li><font face="Arial">NHS 111 Repeat Caller Response</font></li>
+		<li><font face="Arial">Interaction to communicate Repeat Caller reports 
+		to a GP</font></li></ul>
 
 	<p><font face="Arial">The payloads contained in this specification are
 	&quot;universal&quot;. This means that the receiver does not need to have connectivity
 	to the Spine Directory Services (SDS) to be able to fully process payloads.
 	For further details on the use of universal messaging
-	please refer to the latest version of <b>Universalisation of NHS CDA
-	documents, </b>t</font>his document will be part of the baseline associated
-with this specification. Also
+	please refer to the
+	<a target="_blank" href="Technical%20Guidance%20for%20Templated%20CDA%20Domains%20v3.0%20Approved.pdf">
+	Technical Guidance for Templated CDA Domains</a> included in this specification (under the "Message Creation Guidance" tab)</font>. Also
 included in
 	this Domain Message Specification are artefacts required to instantiate the
 	message specifications.<p>These include:<ul>
-	<li>Generic CDA Specification</li>
-	<li>Nullification Implementation Manual</li>
-	<!--<li>TMS Infrastructure Specification <b>(Not used with ITK implementation)</b></li>
-	<li>CMETs Specification for CMETs used with TMS Infrastructure <b>(Not used
-	with ITK implementation)</b></li>-->
+	<li>Generic CDA Specification - for details click on the "Associated Specifications" tab </li>
+	<li>Nullification Implementation Manual - for details click on the "Associated Specifications" tab</li>
 	<li>Data Types Specification</li>
 	<li>Vocabulary Specification for Vocabularies used by this domain</li>
 	</ul>
@@ -135,9 +138,9 @@ The authors gratefully acknowledge input from HL7 UK and HL7 members during the 
 </div>
 </div>
 <div id="footer">
-<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
+<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0214</div>
 <div class="d-mim-span-8">CFH Interoperability Team: <a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
-<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div>
+<div class="d-mim-span-8 d-mim-last">Release Date: 16-Mar-2012</div>
 </div>
 </div>
 </body>

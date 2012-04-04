@@ -24,23 +24,19 @@
 		<img src="../../../Core/logo_right.jpg" class="d-mim-right"> </div>
 </div>
 <div id="navigation">
-<div id="status">Version: 1.0; Status: Draft A</div>
+<div id="status">Version: 1.0; Status: RC2</div>
 	<ul class="tabs level0">
 		<li><a href="../../../Index.htm" title="Overview">Overview</a></li>
 		<li class="selected">
 		<a href="../../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">
 		Message Definitions</a>
 		<li>
-			<a href="../../../Core/Generic.htm" title="Generic">
-			Generic</a></li>		<li><a href="../../../Core/References.htm" title="References">
+			<a href="AssociatedSpecifications.htm" title="Associated Specifications">
+			Associated Specifications</a></li>		<li><a href="../../../Core/References.htm" title="References">
 		References</a></li>
-		<li><a href="../../../Core/Glossary.htm" title="Glossary">Glossary</a></li>
 	</ul>
 	<ul class="tabs level1">
-		<!--<li><a href="message_defs_IM.htm" title="Message Definitions">Message Definitions</a>   
-		</li>-->
-		<!--<li><a href="TMS_IM.htm" title="TMS Implementation">TMS Implementation
-		</a></li>-->
+
 		<li class="selected">
 		<a href="ITK_WebService_IM.htm" title="ITK Implementation">
 		ITK Implementation</a>
@@ -49,13 +45,10 @@
 				<a href="Profiles/Profiles.htm" title="Configuration Profiles">
 				Configuration Profiles</a>  
 			</li>
-			<!--<li>
-				<a href="GreenCDA.htm" title="Green CDA Profile">
-				Green CDA</a>  
-			</li>-->			
+			
 	</ul>
 </div>
-<div id="content">
+<div id="content" style="width: 950px">
 	<h1><a name=_Toc_Section_></a>ITK Implementation</h1>
 
 		<p class="un-numberedheading2">Contents</p>
@@ -67,32 +60,36 @@
 	1.4&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Out of Hours Receiving System - POCD_AR000007GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.5">
 	1.5&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Repository Receiving System - POCD_AR000008GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.6">
 	1.6&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Copy Recipient - POCD_AR000009GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.7">
-	1.7&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request Receiving System - REPC_AR000001GB01</a><br><a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;Trigger Events</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.1">
+	1.7&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request Receiving System - REPC_AR000001GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.8">
+	1.8&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query Fulfiller System - 
+QUPA_AR000001GB01</a><br><a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;Trigger Events</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.1">
 	2.1&nbsp;&nbsp;&nbsp;&nbsp;NHS 111&nbsp;Send - POCD_TE000003GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.2">
 	2.2&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Nullify By Replacement - POCD_TE000004GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.3">
-	2.3&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request - REPC_TE000001GB01</a><br><a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;Interactions</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.1">3.1&nbsp;&nbsp;&nbsp;&nbsp;Primary General Practitioner Recipient
+	2.3&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request - REPC_TE000001GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.4">
+	2.4&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query - QUPA_TE000001GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.5">
+	2.5&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Response - PRPA_TE000001GB01</a><br><a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;Interactions</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.1">3.1&nbsp;&nbsp;&nbsp;&nbsp;Primary General Practitioner Recipient
 		
 
 			NHS 111 CDA 
-	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v1-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.2">3.2&nbsp;&nbsp;&nbsp;&nbsp;Primary Emergency Department Recipient
+	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v2-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.2">3.2&nbsp;&nbsp;&nbsp;&nbsp;Primary Emergency Department Recipient
 		
 
 			NHS 111 CDA 
-	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryEmergencyDepartmentRecipientNHS111CDADocument-v1-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.3">3.3&nbsp;&nbsp;&nbsp;&nbsp;Primary Out of Hour Recipient
-		
-
-			NHS 111 CDA 
-	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-
-
-			urn:nhs-itk:interaction:primaryOutofHourRecipientNHS111CDADocument-v1-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.4">3.4&nbsp;&nbsp;&nbsp;&nbsp;Primary Repeat Caller Repository Recipient
+	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryEmergencyDepartmentRecipientNHS111CDADocument-v2-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.3">3.3&nbsp;&nbsp;&nbsp;&nbsp;Primary Out of Hour Recipient
 		
 
 			NHS 111 CDA 
 	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
-			urn:nhs-itk:interaction:primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v1-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.5">3.5&nbsp;&nbsp;&nbsp;&nbsp;Copy Recipient
+			urn:nhs-itk:interaction:primaryOutofHourRecipientNHS111CDADocument-v2-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.4">3.4&nbsp;&nbsp;&nbsp;&nbsp;Primary Repeat Caller Repository Recipient
+		
+
+			NHS 111 CDA 
+	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			urn:nhs-itk:interaction:primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v2-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.5">3.5&nbsp;&nbsp;&nbsp;&nbsp;Copy Recipient
 
 
 	
@@ -109,7 +106,7 @@
 <font face="Arial">
 		
 
-			urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v1-0</font></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.6">3.6&nbsp;&nbsp;&nbsp;&nbsp;Nullify NHS 111 CDA Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v2-0</font></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.6">3.6&nbsp;&nbsp;&nbsp;&nbsp;Nullify NHS 111 CDA Document:  <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 <font face="Arial">
 		
@@ -118,9 +115,21 @@
 	Request for Ambulance: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
-			urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v1-0</a><br><a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;Message Definitions</a><br><a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;Message Examples for ITK Using Web 
+			urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v2-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.8">3.8&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller 
+Sync Query Response: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			urn:nhs-itk:interaction:nhs111RepeatCallerSyncQueryResp-v1-0</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3.9">3.9&nbsp;&nbsp;&nbsp;&nbsp;Primary NHS 111 Repeat 
+Caller 
+	Document Set: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			urn:nhs-itk:interaction:primaryNHS111RepeatCallerDocumentSet-v1-0</a><br><a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;Message Definitions</a><br><a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;Message Examples for ITK Using Web 
 	Services and Universal Templates</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.1">
-	5.1&nbsp;&nbsp;&nbsp;NHS 111 CDA Document - POCD_MT200001GB01</a></div>
+	5.1&nbsp;&nbsp;&nbsp;NHS 111 CDA Document - POCD_MT200001GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.2">
+	5.2&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request - REPC_RM200001GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.3">
+	5.3&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query - QUPA_RM000001GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5.4">
+	5.4&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Response - PRPA_RM000001GB01</a></div>
 	<p>&nbsp;</p>
 		<hr size=2 width="100%" align=center>
 	<h1><a name=_Toc_Section_1></a>1&nbsp;&nbsp;&nbsp;&nbsp;Application Roles</h1>
@@ -133,7 +142,7 @@
 		<tr>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
 
-			<b><font size="3">The NHS 111 Originating System is 
+			<b><font size="2">The NHS 111 Originating System is 
 			responsible for sending the following NHS 111 
 			interactions:</font></b></td>
 		</tr>
@@ -227,7 +236,7 @@
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
 	<font size="2"><a title="View Interaction" href="#_Toc_Section_3.6"><img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></font></td>
 		</tr>
-<tr>
+		<tr>
 			<td style="width: 1080px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" align="left">
 			
 
@@ -239,13 +248,40 @@
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
 	<font size="2"><a title="View Interaction" href="#_Toc_Section_3.7"><img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></font></td>
 		</tr>
+		<tr>
+			<td style="width: 1080px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" align="left">
+			
 
+	
+NHS 111 Repeat Caller Sync Query Response</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
+	<font size="2"><a title="View Interaction" href="#_Toc_Section_3.8"><img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></font></td>
+		</tr>
+		<tr>
+			<td style="width: 1080px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" align="left">
+			
+
+	
+Primary NHS 111 Repeat Caller Document Set</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
+	<font size="2"><a title="View Interaction" href="#_Toc_Section_3.9"><img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></font></td>
+		</tr>
 		<tr>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
-			<b><font size="2">The NHS 111 Originating System may 
-			receive responses to the interactions from the Receiving System.
+			<b><font size="2">The NHS 111 Originating System may receive 
+			responses to the interactions from the Receiving System.
 			</font></b></td>
 		</tr>
+<tr>
+			<td style="width: 1080px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" align="left">
+			
+
+	
+NHS 111 Repeat Caller Sync Query Response</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
+	<font size="2"><a title="View Interaction" href="#_Toc_Section_3.8"><img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></font></td>
+		</tr>
+
 	</table>
 			<p class="MsoNormal"><font size="3">Note:- the NHS 111 Originating System may not necessarily send all the 
 			interactions detailed above but when sending any interaction SHOULD 
@@ -548,7 +584,7 @@
 		<tr>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
 			<b>The NHS 111 <font face="Arial">Copy Recipient 
-			may initiates responses for the above interactions to the</font> 
+			may initiate responses for the above interactions to the</font> 
 			NHS 111 Originating System.</b></td>
 		</tr>
 	</table>
@@ -578,6 +614,37 @@
 		<tr>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
 			<b>The NHS 111 Ambulance Request Receiving System may initiate 
+			responses for the interaction to the NHS 111 
+			Originating System.</b></td>
+		</tr>
+	</table>
+	<h2><a name=QUPA_AR000001GB01></a><a name=_Toc_Section_1.8></a>
+	1.8&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query Fulfiller System - 
+QUPA_AR000001GB01</h2>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table310" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
+			<b>The NHS 111 Repeat Caller Query Receiving System receives the 
+			Query Request from NHS 111 Originating System and 
+			should take action to cater to query message:</b></td>
+		</tr>
+		<tr>
+			<td style="width: 927px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" align="left">
+			
+
+	
+<font face="Arial">
+		
+
+NHS 111 Re</font>peat Caller Query</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="22" align="center">
+			<a title="View Interaction" href="#_Toc_Section_3.8">
+			<img border="0" src="../../../Core/Components_files/image001.gif" width="16" height="16"></a></td>
+		</tr>
+
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" colspan="2" bgcolor="#99CCFF">
+			<b>The NHS 111 Repeat Caller Query Receiving System may initiate 
 			responses for the interaction to the NHS 111 
 			Originating System.</b></td>
 		</tr>
@@ -624,7 +691,39 @@
 			requested.</b></td>
         </tr>
       </table>
+	
+
+	<h2><a name=QUPA_TE000001GB01></a><a name=_Toc_Section_2.4></a>
+	2.4&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query - QUPA_TE000001GB01</h2>
+
+    <div class="c1">
+      <table class="MsoTableGrid c11" style="border: 1pt solid windowtext; id="table255" width="80%"
+      border="1" cellpadding="0" cellspacing="3">
+        <tr>
+          <td class="c10" valign="top" bgcolor="#99CCFF"><b>The NHS 111 Repeat 
+			Caller Query trigger event indicates that an Query is 
+			triggered.</b></td>
+        </tr>
+      </table>
     </div>
+	
+
+	<h2><a name=PRPA_TE000001GB01></a><a name=_Toc_Section_2.5></a>
+	2.5&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Response - PRPA_TE000001GB01</h2>
+
+    <div class="c1">
+      <table class="MsoTableGrid c11" style="border: 1pt solid windowtext; id="table255" width="80%"
+      border="1" cellpadding="0" cellspacing="3">
+        <tr>
+          <td class="c10" valign="top" bgcolor="#99CCFF"><b>The NHS 111 Repeat 
+			Caller Response trigger event indicates that an Response is 
+			triggered.</b></td>
+        </tr>
+      </table>
+    </div>
+	
+
+		<p>&nbsp;</div>
 	
 
 		<p>&nbsp;</div>
@@ -636,20 +735,21 @@
 		<h1><a name=_Toc_Section_3></a>3&nbsp;&nbsp;&nbsp;&nbsp;Interactions</h1>
 		<p class="MsoNormal"><b>
 <font face="Arial">
-		Note:- For CDA domains when using ITK the interactions are bound to the 
-		&quot;Balloted CDA model&quot; and use the &quot;<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">NHS 
+		Note: NHS CDA documents are bound to the 
+		&quot;Balloted CDA model&quot; and use the &quot;<a href="../../../AssociatedSpecifications/GenericCDA/Schemas/POCD_MT000002UK01.xsd" target="_blank">NHS 
 		CDA Generic schema
-			<font size="3">(POCD_MT000002UK01.xsd)</font></a>&quot;</font><br>The CDA 
-		Domain models are used for conformance checking of NPfIT templates after 
-		transforming the &quot;On the Wire&quot; instance to &quot;templated&quot; instance.</b></p>
+			<font size="3">(POCD_MT000002UK01.xsd)</font></a>&quot;. </font>The CDA 
+		Domain models documented in this pack under the &quot;Message Definitions&quot; 
+		tab, are used for conformance checking of NPfIT templates after 
+		transforming the &quot;On-the-Wire&quot; instance to &quot;templated&quot; instance. 
+		See the &quot;Transforms&quot; tab under &quot;References&quot; for details of a transform 
+		from On-the-Wire to a templated instance.</b></p>
 	<p class="MsoNormal">&nbsp;</p>
 	<p class="MsoNormal">This specification defines responsibilities 
 	additional&nbsp;to the standard CDA recipient and originator responsibilities. 
 	These are documented in the
-	<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_5">
-	Generic CDA Specification</a>. Use of CDA replacement is documented in the
-	<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_4.1">
-	Generic CDA Specification</a>. For this CDA document profile these 
+		<a href="../../../AssociatedSpecifications/GenericCDA/Index.htm">Generic CDA Specification</a>. Use of CDA replacement is documented in the
+	<a href="../../../AssociatedSpecifications/GenericCDA/Index.htm">Generic CDA Specification</a>. For this CDA document profile these 
 	additional responsibilities are option.
 	</p>
 	<font face="Arial">
@@ -659,7 +759,7 @@
 		
 
 			NHS 111 CDA 
-	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v1-0</h2>
+	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v2-0</h2>
 		
 
 			<table>
@@ -672,9 +772,9 @@
 					<td colspan="2">Primary General Practitioner Recipient NHS 111 
 					
 			<font size="2">CDA Document
-			</font>(Version 1.0)</td>
+			</font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
-					primaryGeneralPractitionerRecipientNHS111CDADocument-v1-0</td>
+					primaryGeneralPractitionerRecipientNHS111CDADocument-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -709,9 +809,9 @@ the document.</font></td>
 					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="IM.htm">POCD_MT200001GB01 </a></td>
+					<a href="IM.htm">POCD_MT200001GB02 </a></td>
 				</tr>
 				<tr>
 
@@ -723,23 +823,7 @@ the document.</font></td>
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -751,13 +835,13 @@ the document.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
@@ -766,7 +850,7 @@ the document.</font></td>
 		
 
 			NHS 111 CDA 
-	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urn:nhs-itk:interaction:primaryEmergencyDepartmentRecipientNHS111CDADocument-v1-0</h2>
+	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; urn:nhs-itk:interaction:primaryEmergencyDepartmentRecipientNHS111CDADocument-v2-0</h2>
 
 
 	
@@ -780,9 +864,9 @@ the document.</font></td>
 					<td colspan="2">Primary Emergency Department Recipient NHS 111 
 					
 			<font size="2">CDA Document
-			</font>(Version 1.0)</td>
+			</font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
-					primaryEmergencyDepartmentRecipeintNHS111CDADocument-v1-0</td>
+					primaryEmergencyDepartmentRecipeintNHS111CDADocument-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -817,9 +901,9 @@ the document.</font></td>
 					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="IM.htm">POCD_MT200001GB01 </a></td>
+					<a href="IM.htm">POCD_MT200001GB02 </a></td>
 				</tr>
 				<tr>
 
@@ -831,23 +915,7 @@ the document.</font></td>
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -859,13 +927,13 @@ the document.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
@@ -877,7 +945,7 @@ the document.</font></td>
 	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
-			urn:nhs-itk:interaction:primaryOutofHourRecipientNHS111CDADocument-v1-0</h2>
+			urn:nhs-itk:interaction:primaryOutofHourRecipientNHS111CDADocument-v2-0</h2>
 		
 
 			<table>
@@ -890,9 +958,9 @@ the document.</font></td>
 					<td colspan="2">Primary Out of Hour Recipient NHS 111 
 					
 			<font size="2">CDA Document
-			</font>(Version 1.0)</td>
+			</font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
-					primaryOutofHourRecipientNHS111CDADocument-v1-0</td>
+					primaryOutofHourRecipientNHS111CDADocument-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -927,9 +995,9 @@ the document.</font></td>
 					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="IM.htm">POCD_MT200001GB01 </a></td>
+					<a href="IM.htm">POCD_MT200001GB02 </a></td>
 				</tr>
 				<tr>
 
@@ -941,23 +1009,7 @@ the document.</font></td>
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -969,13 +1021,13 @@ the document.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
@@ -987,7 +1039,7 @@ the document.</font></td>
 	Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
-			urn:nhs-itk:interaction:primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v1-0</h2>
+			urn:nhs-itk:interaction:primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v2-0</h2>
 		
 
 			<table>
@@ -1000,9 +1052,9 @@ the document.</font></td>
 					<td colspan="2">Primary Repeat Caller Repository Recipient NHS 111 
 					
 			<font size="2">CDA Document
-			</font>(Version 1.0)</td>
+			</font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
-					primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v1-0</td>
+					primaryRepeatCallerRepositoryRecipientNHS111CDADocument-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -1037,9 +1089,9 @@ the document.</font></td>
 					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="IM.htm">POCD_MT200001GB01 </a></td>
+					<a href="IM.htm">POCD_MT200001GB02 </a></td>
 				</tr>
 				<tr>
 
@@ -1051,23 +1103,7 @@ the document.</font></td>
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -1079,13 +1115,13 @@ the document.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
@@ -1108,7 +1144,7 @@ the document.</font></td>
 <font face="Arial">
 		
 
-			urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v1-0</font></h2>
+			urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v2-0</font></h2>
 
 
 	
@@ -1125,9 +1161,9 @@ the document.</font></td>
 					<td colspan="2">Copy Recipient NHS 111 
 					
 			<font size="2">CDA Document
-			</font>(Version 1.0)</td>
+			</font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
-					copyRecipient<font face="Arial">NHS111</font>CDADocument-v1-0</td>
+					copyRecipient<font face="Arial">NHS111</font>CDADocument-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -1161,7 +1197,7 @@ document is for information only and NO system action is defined.</font></td>
 					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
 					<a href="IM.htm">
 
@@ -1170,7 +1206,7 @@ document is for information only and NO system action is defined.</font></td>
 <font face="Arial">
 		
 
-					POCD_MT200001GB01</font></a></td>
+					POCD_MT200001GB02</font></a></td>
 				</tr>
 				<tr>
 
@@ -1182,23 +1218,7 @@ document is for information only and NO system action is defined.</font></td>
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -1210,19 +1230,24 @@ document is for information only and NO system action is defined.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</font></td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>
+	<font face="Arial">
+		
+
+					Send NHS 111 Report</font>
+					(Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
 
 	</font>
-	<h2><a name=_Toc_Section_3.6></a>3.6&nbsp;&nbsp;&nbsp;&nbsp;Nullify NHS 111 CDA Document: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<h2><a name=_Toc_Section_3.6></a>3.6&nbsp;&nbsp;&nbsp;&nbsp;Nullify NHS 111 CDA Document:  <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 <font face="Arial">
 		
@@ -1282,10 +1307,9 @@ system.
 		
 
 					<b>Conformance Format: </b>Nullification Document (Version 
-5.0)</font></td>
+5.0) (see &quot;Associated Specifications&quot; tab)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="../../../Domains/Nullification/Document%20files/IM.htm#_Toc_Section_5.1">
-					POCD_MT130001UK05</a></td>
+					POCD_MT130001UK05</td>
 				</tr>
 				<tr>
 
@@ -1297,23 +1321,7 @@ system.
 <font face="Arial">
 		
 
-					<a href="../../CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -1325,13 +1333,13 @@ system.
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</font></td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</font></td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
 
@@ -1340,7 +1348,7 @@ system.
 	Request for Ambulance: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
-			urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v1-0</h2>
+			urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v2-0</h2>
 		
 
 			<table>
@@ -1351,7 +1359,7 @@ system.
 				</tr>
 				<tr>
 					<td colspan="2">Primary NHS 111 <font size="2">Request for 
-					Ambulance </font>(Version 1.0)</td>
+					Ambulance </font>(Version 2.0)</td>
 					<td>urn:nhs-itk:interaction:<br/>
 
 
@@ -1359,7 +1367,7 @@ system.
 <font face="Arial">
 		
 
-					primaryNHS111RequestforAmbulance</font>-v1-0</td>
+					primaryNHS111RequestforAmbulance</font>-v2-0</td>
 				</tr>
 				<tr>
 					<th colspan="3">Interaction Description</th>
@@ -1394,25 +1402,9 @@ the message.</font></td>
 					<b>Conformance Format and Wire Format: </b></font>NHS 111 <font face="Arial">
 		
 
-					(Version 1.0)</font></td>
+					(Version 2.0)</font></td>
 					<td width="39%" style="vertical-align: top">
-					<a href="IM.htm">REPC_MT200001GB01 </a></td>
-				</tr>
-				<tr>
-					<th class="noUnderLine" colspan="3">Receiver 
-					Responsibilities</th>
-				</tr>
-				<tr>
-					
-					<th><span style="font-size: 12px">Trigger</span></th>
-					<th><span style="font-size: 12px">Response Name</span></th>
-					<th><span style="font-size: 12px">Response Definition</span></th>
-				</tr>
-				<tr>
-					<td width="19%">Receipt of Message</td>
-					<td>Business Acknowledgment (Version 1.0)</td>
-					<td>urn:nhs-itk:interaction:<br/>
-					sendBusinessAck-v1-0</td>
+					<a href="IM.htm">REPC_MT200001GB02 </a></td>
 				</tr>
 				<tr>
 					<th width="19%">Transmission Details<br/><span style="font-size:12px">
@@ -1424,15 +1416,253 @@ the message.</font></td>
 					<td width="19%">Transmission Wrapper</td>
 					<td>ITK Distribution Envelope (Version 2.0)</td>
 					<td>
-					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd">
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
 					distributionEnvelope-v2-0</a></td>
 				</tr>
 				<tr>
 					<td width="19%">Web Service</td>
-					<td>Send CDA Document (Version 2.0) (Input)</td>
-					<td>SendCDADocument-v2-0 (CoreServices-v1-0.wsdl)</td>
+					<td>Request Ambulance Dispatch (Version 1.0) (Input)</td>
+					<td>RequestAmbulanceDispatch-v1-0 
+					<a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
 				</tr>
 				</table>
+
+
+	<h2><a name=_Toc_Section_3.8></a>3.8&nbsp;&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller 
+Sync Query Response: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			urn:nhs-itk:interaction:nhs111RepeatCallerSyncQueryResp-v1-0</h2>
+		
+
+			<table>
+				<tr>
+					<th colspan="2">Interaction Details<br/><span style="font-size: 12px">
+					Interaction Name</span></th>
+					<th><br/><span style="font-size: 12px">Interaction ID</span></th>
+				</tr>
+				<tr>
+					<td colspan="2">NHS 111 <font size="2">Repeat Caller 
+					Synchronous Query Response</font>(Version 1.0)</td>
+					<td>urn:nhs-itk:interaction:<br/>
+
+
+	
+<font face="Arial">
+		
+
+					nhs111RepeatCallerSyncQueryResp</font>-v1-0</td>
+				</tr>
+				<tr>
+					<th colspan="3">Interaction Description</th>
+				</tr>
+				<tr>
+					<td colspan="3">
+
+<font face="Arial">
+		
+
+					Communicates a NHS 111 repeat caller query to an repeat 
+caller system 
+recipient where the recipient is recommended to act upon request carried in 
+the message. Recipient of the query message responds with the response message 
+synchronously back to NHS 111 system.</font></td>
+				</tr>
+				<tr>
+					<th class="noUnderLine" colspan="3">Sender Responsibilities</th>
+				</tr>
+				<tr>
+					<th><span style="font-size: 12px">Trigger</span></th>
+					<th><span style="font-size: 12px">Message Name</span></th>
+					<th><span style="font-size: 12px">Message Definition</span></th>
+				</tr>
+				<tr>
+					<td style="vertical-align: top" width="19%">
+					Query is triggered</td>
+
+					<td width="38%" style="vertical-align: top">
+
+<font face="Arial">
+		
+
+					<b>Conformance Format and Wire Format: </b></font>NHS 111 <font face="Arial">
+		
+
+					(Version 1.0)</font></td>
+					<td width="39%" style="vertical-align: top">
+					<a href="IM.htm">QUPA_RM000001GB01</a></td>
+				</tr>
+				<tr>
+					<th class="noUnderLine" colspan="3">Recipient Responsibilities</th>
+				</tr>
+				<tr>
+					<th><span style="font-size: 12px">Trigger</span></th>
+					<th><span style="font-size: 12px">Message Name</span></th>
+					<th><span style="font-size: 12px">Message Definition</span></th>
+				</tr>
+				<tr>
+					<td style="vertical-align: top" width="19%">
+					Response is triggered</td>
+
+					<td width="38%" style="vertical-align: top">
+
+<font face="Arial">
+		
+
+					<b>Conformance Format and Wire Format: </b></font>NHS 111 <font face="Arial">
+		
+
+					(Version 1.0)</font></td>
+					<td width="39%" style="vertical-align: top">
+					
+
+	
+<font face="Arial">
+		
+
+					<a href="IM.htm">PRPA_RM000001GB01</a></font></td>
+				</tr>
+				<tr>
+					<th width="19%">Transmission Details<br/><span style="font-size:12px">
+					Item</span></th>
+					<th><br/><span style="font-size: 12px">Name</span></th>
+					<th><br/><span style="font-size:12px">ID</span></th>
+				</tr>
+				<tr>
+					<td width="19%">Transmission Wrapper</td>
+					<td>ITK Distribution Envelope (Version 2.0)</td>
+					<td>
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
+					distributionEnvelope-v2-0</a></td>
+				</tr>
+				<tr>
+					<td width="19%">Web Service</td>
+					<td>Synchronous
+
+
+	
+<font face="Arial">
+		
+
+					Repeat Caller System
+
+
+	</font>
+					Query and Response (Version 1.0) </td>
+					<td>NHS111RepeatCallerSyncQueryResp-v1-0 
+					<a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
+				</tr>
+				</table>
+
+
+	<h2><a name=_Toc_Section_3.9></a>3.9&nbsp;&nbsp;&nbsp;&nbsp;Primary NHS 111 Repeat 
+Caller 
+	Document Set: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+			urn:nhs-itk:interaction:primaryNHS111RepeatCallerDocumentSet-v1-0</h2>
+		
+
+			<table>
+				<tr>
+					<th colspan="2">Interaction Details<br/><span style="font-size: 12px">
+					Interaction Name</span></th>
+					<th><br/><span style="font-size: 12px">Interaction ID</span></th>
+				</tr>
+				<tr>
+					<td colspan="2">
+
+
+	
+<font face="Arial">
+		
+
+					Primary NHS 111 Repeat Caller 
+	Document Set</font><font size="2">
+			</font>(Version 1.0)</td>
+					<td>urn:nhs-itk:interaction:<br/>
+
+
+	
+<font face="Arial">
+		
+
+					primaryNHS111RepeatCallerDocumentSet-v1-0</font></td>
+				</tr>
+				<tr>
+					<th colspan="3">Interaction Description</th>
+				</tr>
+				<tr>
+					<td colspan="3">
+
+<font face="Arial">
+		
+
+					Communicates NHS 111 repeat caller document set which 
+includes the NHS 111 reports from repeat caller system along with the current 
+NHS 111 Report to a Out of Hour 
+recipient where the recipient is recommended to act upon information carried in 
+the document set. Distribution envelope will carry multiple NHS 111 reports as 
+different payloads with in same envelope.</font></td>
+				</tr>
+				<tr>
+					<th class="noUnderLine" colspan="3">Sender Responsibilities</th>
+				</tr>
+				<tr>
+					<th><span style="font-size: 12px">Trigger</span></th>
+					<th><span style="font-size: 12px">Message Name</span></th>
+					<th><span style="font-size: 12px">Message Definition</span></th>
+				</tr>
+				<tr>
+					<td style="vertical-align: top" width="19%" rowspan="2">
+					Sending of multiple NHS 111 Reports </td>
+
+					<td width="38%" style="vertical-align: top">
+
+<font face="Arial">
+		
+
+					<b>Conformance Format: </b></font>NHS 111 <font face="Arial">
+		
+
+					(Version 2.0)</font></td>
+					<td width="39%" style="vertical-align: top">
+					<a href="IM.htm">POCD_MT200001GB02 </a></td>
+				</tr>
+				<tr>
+
+					<td width="38%" style="vertical-align: top">
+
+<b>Wire Format: </b>NHS CDA RMIM (Version 1.0)</td>
+					<td width="39%" style="vertical-align: top">
+
+<font face="Arial">
+		
+
+					<a href="../../../AssociatedSpecifications/GenericCDA/Domains/CDA/NPFiT%20CDA%20using%20Templates.htm#_Toc_Section_2.2">POCD_MT000002UK01</a></font></td>
+				</tr>
+				<tr>
+					<th width="19%">Transmission Details<br/><span style="font-size:12px">
+					Item</span></th>
+					<th><br/><span style="font-size: 12px">Name</span></th>
+					<th><br/><span style="font-size:12px">ID</span></th>
+				</tr>
+				<tr>
+					<td width="19%">Transmission Wrapper</td>
+					<td>ITK Distribution Envelope (Version 2.0)</td>
+					<td>
+					<a href="../../../Schemas/distributionEnvelope-v2-0.xsd" target="_blank">
+					distributionEnvelope-v2-0</a></td>
+				</tr>
+				<tr>
+					<td width="19%">Web Service</td>
+					<td>Send NHS 111 Report (Version 1.0) (Input)</td>
+					<td>SendNHS111Report-v1-0 <a href="../../../Schemas/wsdl/NHS111-v3-0.wsdl" target="_blank">(NHS111-v3-0.wsdl)</a></td>
+				</tr>
+				</table>
+
+
+	<p>&nbsp;</p>
 
 
 	<p>&nbsp;</p>
@@ -1446,9 +1676,11 @@ the message.</font></td>
 	</font>
 	<h1><a name=_Toc_Section_5></a>5&nbsp;&nbsp;&nbsp;&nbsp;Message Examples for ITK Using Web 
 	Services and Universal Templates</h1>
-	<h2><a name=POCD_MT200001GB01></a><a name=_Toc_Section_5.1></a>
-	5.1&nbsp;&nbsp;&nbsp;NHS 111 CDA Document - POCD_MT200001GB01</h2>
-	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table206" border="1" cellpadding="0" cellspacing="3" width="80%">
+	<h2><a name=POCD_MT200001GB02></a><a name=_Toc_Section_5.1></a>
+	5.1&nbsp;&nbsp;&nbsp;NHS 111 CDA Document - POCD_MT200001GB02</h2>
+	<font face="Arial">
+
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table313" border="1" cellpadding="0" cellspacing="3" width="80%">
 		<tr>
 			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
 			<font size="3"><b>Scenario</b></font></td>
@@ -1470,27 +1702,197 @@ the message.</font></td>
 		</tr>
 		<tr>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
-			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB01_01.xml">
-			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
-			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="113" height="22" align="center">
-			<b>
-			<b>X</b></td>
-			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
-			<a target="_blank" href="../../../TemplatedExamples/NHS111/POCD_EX200001GB01_01_StructuredBody.xml">
+			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB02_01.xml">
 			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
 			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
-			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB01_01.htm">
+						
+			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB02_02_ITK.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<a target="_blank" href="../../../TemplatedExamples/NHS111/POCD_EX200001GB02_01.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB02_01.htm">
 			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
 		</tr>
-		</table>
-	<font face="Arial">
+		<tr>
+		<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="1">
+		NHS 111 Repeat Caller Document Set (<font face="Arial">POCD_MT200001GB01) 
+		with multiple payloads</td>
+		<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial">
 
-</div>
-<div id="footer">
-		<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
-		<div class="d-mim-span-8">CFH Interoperability Team: <a href="mailto:CFH.interoperabilityteam@nhs.net">
-			Contact Us</a></div>
-		<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div>
+			<a target="_blank" href="../../../Examples/NHS111/POCD_EX200001GB02_03_ITK.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>	
+		</tr>
+		</table>
+
+	<h2><a name=REPC_RM200001GB02></a><a name=_Toc_Section_5.2></a>
+	5.2&nbsp;&nbsp;&nbsp;NHS 111 Ambulance Request - REPC_RM200001GB02</h2>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table309" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			<font size="3"><b>Scenario</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="536" bgcolor="#99CCFF" colspan="4">
+			<font size="3"><b>Artefacts</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="2">
+			<font face="Arial">NHS 111 Ambulance Request (REPC_RM20000</font>1<font face="Arial">GB01)</font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" align="center">
+			<b>Payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="113" align="center">
+			<b>Wrapped payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" align="center">
+			<b>&quot;Templated&quot; payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" align="center">
+			<b>Rendered payload</b></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+			<a target="_blank" href="../../../Examples/NHS111/REPC_EX200001GB02_01.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="113" height="22" align="center">
+			
+			<a target="_blank" href="../../../Examples/NHS111/REPC_EX200001GB02_02_ITK.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial">
+
+			<b>
+			X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial">
+
+			<b>
+			X</td>
+		</tr>
+			<tr>
+		<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="1">
+		NHS 111 Ambulance Request with location identified using the gazetteer</td>
+		<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+		<a target="_blank" href="../../../Examples/NHS111/REPC_EX200001GB02_04.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			
+
+			<b>X</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>	
+		</tr>
+
+		</table>
+
+	<h2><a name=QUPA_RM000001GB01></a><a name=_Toc_Section_5.3></a>
+	5.3&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Query - QUPA_RM000001GB01</h2>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table311" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			<font size="3"><b>Scenario</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="536" bgcolor="#99CCFF" colspan="4">
+			<font size="3"><b>Artefacts</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="2">
+			<font face="Arial">
+
+			NHS 111 Repeat Caller Query (QUPA_RM000001GB01)</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" align="center">
+			<b>Payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="113" align="center">
+			<b>Wrapped payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" align="center">
+			<b>&quot;Templated&quot; payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" align="center">
+			<b>Rendered payload</b></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+			<a target="_blank" href="../../../Examples/NHS111/QUPA_EX000001GB01_01.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial">
+
+			<a target="_blank" href="../../../Examples/NHS111/QUPA_EX000001GB01_02_ITK.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial">
+
+			<b>
+			X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>
+		</tr>
+		</table>
+
+	<h2><a name=PRPA_RM000001GB01></a><a name=_Toc_Section_5.4></a>
+	5.4&nbsp;&nbsp;&nbsp;NHS 111 Repeat Caller Response - PRPA_RM000001GB01</h2>
+	<table class="MsoTableGrid" style="border: 1pt solid windowtext" id="table312" border="1" cellpadding="0" cellspacing="3" width="80%">
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" bgcolor="#99CCFF">
+			<font size="3"><b>Scenario</b></font></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" width="536" bgcolor="#99CCFF" colspan="4">
+			<font size="3"><b>Artefacts</b></font></td>
+		</tr>
+		<tr>
+			<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="2">
+			NHS 111 Repeat Caller Response (PRPA_RM000001GB01) without document being returned</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" align="center">
+			<b>Payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="113" align="center">
+			<b>Wrapped payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" align="center">
+			<b>&quot;Templated&quot; payload</b></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" align="center">
+			<b>Rendered payload</b></td>
+		</tr>
+		<tr>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+			<a target="_blank" href="../../../Examples/NHS111/PRPA_EX000001GB01_01.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial">
+
+			<b>
+			X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial">
+
+			<b>
+			X</td>
+		</tr>
+		<tr>
+		<td style="width: 417px; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" valign="top" rowspan="1">
+		NHS 111 Repeat Caller Response (PRPA_RM000001GB01) with CDA document attached</td>
+		<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="103" height="22" align="center">
+			<a target="_blank" href="../../../Examples/NHS111/PRPA_EX000001GB01_02.xml">
+			<img border="0" src="../../../Core/Components_files/image006.gif" width="16" height="16"></a></td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="136" height="22" align="center">
+			<font face="Arial"><b>X</td>
+			<td style="padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" width="127" height="22" align="center">
+			<font face="Arial"><b>X</td>	
+		</tr>
+		</table>
+	<p>&nbsp;</p>
+	<p>&nbsp;</div>
+	<div id="footer">
+		<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0214</div>
+		<div class="d-mim-span-8">CFH Interoperability Team:
+			<a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+		<div class="d-mim-span-8 d-mim-last">Release Date: 16-Mar-2012</div>
 	</div>
 </div>
 

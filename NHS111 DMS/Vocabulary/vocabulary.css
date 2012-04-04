@@ -1,81 +1,88 @@
-
-
-DIV.comment
+body
 {
-    PADDING-RIGHT: 10px;
-    PADDING-LEFT: 10px;
-    FONT-SIZE: smaller;
-    PADDING-BOTTOM: 10px;
-    COLOR: #a52a2a;
-    PADDING-TOP: 10px;
-    FONT-STYLE: italic;
-    FONT-FAMILY: Arial;
-    BACKGROUND-COLOR: #ffebcd;
-    font-color: #a52a2a
-}
-DIV.section1_2
-{
-    FONT-FAMILY: Arial;
-}
-DIV.section1_3
-{
-    FONT-FAMILY: Arial;
-}
-SPAN.pretitle
-{
-    COLOR: silver
-}
-H2
-{
-    FONT-WEIGHT: bold;
-    FONT-SIZE: large;
-    FONT-STYLE: italic;
-    FONT-FAMILY: Arial
-}
-TABLE
-{
-    WIDTH: 80%;
-    FONT-FAMILY: Arial;
-    border-collapse:separate;
-    border-spacing:0;
-}
-TABLE.version
-{
-    WIDTH: 30%;
-    border-collapse:separate;
-    border-spacing:0;
-}
-TBODY
-{
-    FONT-SIZE: smaller;
-    FONT-FAMILY: Arial
-}
-TD
-{
-    PADDING-RIGHT: 3pt;
-    PADDING-LEFT: 3pt;
-    PADDING-BOTTOM: 3pt;
-    VERTICAL-ALIGN: top;
-    PADDING-TOP: 3pt;
-    BORDER-BOTTOM: black 1px solid;
-    FONT-FAMILY: Arial
-}
-P
-{
-    FONT-FAMILY: Arial
-}
-TD.vocabheader
-{
-    FONT-WEIGHT: bold;
-    FONT-FAMILY: Arial
-}
-THEAD.vocabheader
-{
-    FONT-WEIGHT: bold;
-    FONT-FAMILY: Arial
-}
-LI
-{
-    FONT-FAMILY: Arial
+    font-family: Arial;
 }
 
+h1
+{
+    font-size:larger;
+    font-weight:bold;
+}
+
+div.comment
+{
+  	padding-right:10px;
+  	padding-left:10px;
+  	padding-top:10px;
+  	padding-bottom:10px;
+  	background-color:#ffebcd;
+    font-size:smaller;
+    font-style:italic;
+    font-color:#a52a2a;
+    color:#a52a2a
+}
+
+span.pretitle
+{
+    color: Silver;
+}
+
+h2
+{
+    font-size:large;
+    font-style:italic;
+    font-weight:bold;
+}
+
+h2 a{padding-top:10px;} 
+
+table
+{
+    border-right: black 1px solid;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    border-collapse: collapse;
+    width: 70%;
+    
+}
+
+table.version
+{
+    width: 30%;
+}
+
+tbody
+{
+    font-size: smaller;
+}
+
+td
+{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 3pt 3pt 3pt 3pt;
+    vertical-align: top;
+}
+
+tr.retired
+{
+	background: silver
+}
+
+p.retired
+{
+    font-style:italic;
+    font-weight:bold;
+}
+
+td.vocabheader
+{
+    background: #E5E5E5;
+}
+
+thead.vocabheader
+{
+    background: #E5E5E5;
+}

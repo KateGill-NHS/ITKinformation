@@ -220,7 +220,8 @@ TABLE {
                   <div>
                      
                      <div>
-                        <strong>The custodian of the document.</strong>
+                        <b>A template for a custodian of the document. The custodian is the legal owner or legally responsible organisation of the document.<br>
+                           </b>
                         
                      </div>
                      
@@ -241,8 +242,28 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>Indicates that the role is assigned.</p>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
+                  <p>The HL7 attribute <b>classCode</b> describes this class as an assigned role.<br>
+                     
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
+                     
+                     
+                  </p> The XML attribute <b>classCode</b> is fixed to "<font color="#ff0000">
+                     <b>ASSIGNED</b>
+                     </font>". 
                </div>
             </td>
          </tr>
@@ -252,21 +273,49 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description</b>
+                        </u>
+                     <br>
+                     <br>The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is                         used
+                     to identify how the CDA standard has been constrained for NHS use.                      
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
                      
-                     <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                  </p>
+                  
+                  <p>The <b>Identifier External </b>data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:                      
+                  </p>
+                  
+                  <ul>
                      
-                     <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
                      
-                     <ul>
+                     <li>The XML attribute <b>root</b>  is fixed to the OID "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                           </font>"                         
+                     </li>
+                     
+                     
+                     <li>The XML attribute <b>extension</b> is fixed to <font color="#000000">"<b>
+                              <span class="redText"></span>
+                              </b>
+                           </font>
+                        <font color="#ff0000">
+                           <b>
+                              <span class="redText">COCD_TP145018UK03#AssignedCustodian</span>
+                              </b>
+                           </font>
+                        <span class="redText">"</span>
                         
-                        <li>The root attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
-                        
-                        <li>The extension attribute shall contain the fixed value.</li>
-                        
-                     </ul>
+                     </li>
                      
-                  </div>
+                  </ul>
                   
                </div>
             </td>
@@ -277,7 +326,7 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>A link to the organisation entity which is scoping this role.</div>
+                  <div>A link to the organisation which is scoping this custodian role.</div>
                   
                </div>
             </td>
@@ -286,10 +335,8 @@ TABLE {
             <td class="entclass"><a name="CustodianOrganization"><b>CustodianOrganization</b></a></td>
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
-                  
-                  <p>
-                     <strong>An Organisation which can be identified on SDS</strong>.
-                  </p>
+                  <b>This class details the organisation which is the custodian </b>
+                  <br>
                   
                </div>
             </td>
@@ -304,8 +351,26 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>Indicates that the entity is a single identifiable instance of an  organisation.</div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
+                  <p>The HL7 attribute <b>classCode</b> describes this class as an organisation.                   
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
+                     
+                  </p>                                      The XML attribute <b>classCode</b> is fixed to "<b>
+                     <font color="#ff0000">ORG</font>
+                     </b>".
                </div>
             </td>
          </tr>
@@ -315,10 +380,27 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>Indicates that this is an instance.<br>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
                      
                   </p>
                   
+                  <p>The HL7 attribute <b>determinerCode</b> describes this class as an instance of an organisation.                   
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
+                     
+                     
+                  </p>                                      The XML attribute <b>determinerCode</b> is fixed to "<font color="#ff0000">
+                     <b>INSTANCE</b>
+                     </font>".
                </div>
             </td>
          </tr>
@@ -327,33 +409,65 @@ TABLE {
             </td>
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
-                  							              
-                  <p>A valid identifier that uniquely identifies the organisation.</p>
-                  							              
-                  <p>The organization id attribute can be populated using the following ODS codes (formerly known as NACS code) :</p>
-                  							              
-                  <ul>
-                     								                
-                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.2"
-                     </li>
-                     								                
-                     <li>The <em>extension </em>attribute shall contain the ODS site code.
-                     </li>
-                     							              
-                  </ul>
-                  							              
-                  <ul>
-                     								                
-                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.1"
-                     </li>
-                     								                
-                     <li>The <em>extension </em>attribute shall contain the ODS organisation code.
-                     </li>
-                     							              
-                  </ul>
-                  							              
-                  <p>Note these are listed in order preference for populating this attribute.</p>							
-                  						            
+                  
+                  <div contenteditable="false" style="height: 100%; width: 100%">
+                     
+                     <p>
+                        <u>
+                           <b>Model Attribute Description   </b>
+                           </u>
+                        <br>
+                        
+                     </p>
+                     
+                     <p>The HL7 attribute<b> id</b> uses an ODS code as an  identifier that uniquely identifies the organisation which is the custodian of the document.    
+                        The ODS code should identify the organisation at  either the site level or organisation level. Where possible the  organisation
+                        should be identified at the site level. ODS codes  were formerly known as NACS codes.                   
+                     </p>
+                     
+                     <p>
+                        <u>
+                           <b>Implementation in XML Instance   </b>
+                           </u>
+                        <br>
+                        
+                     </p>
+                     
+                     <p>When ODS site code is used then the XML element <b>id </b>is populated in the following way:                   
+                     </p>
+                     
+                     <ul>
+                        
+                        
+                        <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                              <b>2.16.840.1.113883.2.1.3.2.4.19.2</b>
+                              </font>"                      
+                        </li>
+                        
+                        <li>The XML attribute <b>extension</b> shall contain the ODS site code.                      
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>When ODS organisation code is used then the XML element <b>id </b>is populated in the following way:<br>
+                        
+                     </p>
+                     
+                     <ul>
+                        
+                        
+                        <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                              <b>2.16.840.1.113883.2.1.3.2.4.19.1</b>
+                              </font>"                      
+                        </li>
+                        
+                        <li>The XML attribute <b>extension</b> shall contain the ODS organisation code.                      
+                        </li>
+                        
+                     </ul>
+                     
+                  </div>
+                  
                </div>
             </td>
          </tr>
@@ -363,17 +477,29 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>
+                  <div contenteditable="false" style="height: 100%; width: 100%">
                      
-                     <div>The name of the organisation.</div>
+                     <p>
+                        <u>
+                           <b>Model Attribute Description </b>
+                           </u>
+                        <br>
+                        
+                     </p>
                      
-                     <div>This shall use the name associated with the code above which will be either</div>
+                     <p>The HL7 attribute <b>name</b> uses the description of the organisation associated with the ODS code.                   
+                     </p>
                      
-                     <div>NACS site name (identified in the EIS  by LDAP OID 2.5.4.10)</div>
+                     <p>
+                        <u>
+                           <b>Implementation in XML Instance  </b>
+                           </u>
+                        <br>
+                        
+                     </p>
                      
-                     <div>or</div>
-                     
-                     <div>NACS organisation Code (identified in the EIS by LDAP OID 2.5.4.11)  </div>
+                     <div>The XML element <b>name</b> will carry the description associated with the ODS code carried in the XML attribute <b>extension</b>  of the XML element <b>id</b>.                   
+                     </div>
                      
                   </div>
                   
@@ -386,21 +512,50 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description</b>
+                        </u>
+                     <br>
+                     <br>The HL7 attribute templateId provides a unique identifier for the template and the class name within that template. This is
+                     used to identify how the CDA standard has been constrained for NHS use.                      
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
                      
-                     <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                  </p>
+                  
+                  <p>The <b>Identifier External </b>data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:                      
+                  </p>
+                  
+                  <ul>
                      
-                     <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
                      
-                     <ul>
+                     <li>The XML attribute <b>root</b>  is fixed to the OID "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                           </font>"                         
+                     </li>
+                     
+                     
+                     <li>The XML attribute <b>extension</b> is fixed to <font color="#000000">"<b>
+                              <span class="redText"></span>
+                              </b>
+                           </font>
+                        <b>
+                           <span class="redText">
+                              <font color="#ff0000">C</font>
+                              <font color="#ff0000">OCD_TP145018UK03#representedCustodianOrganization</font>
+                              </span>
+                           </b>
+                        <span class="redText">".</span>
                         
-                        <li>The root attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
-                        
-                        <li>The extension attribute shall contain the fixed value.</li>
-                        
-                     </ul>
+                     </li>
                      
-                  </div>
+                  </ul>
                   
                </div>
             </td>

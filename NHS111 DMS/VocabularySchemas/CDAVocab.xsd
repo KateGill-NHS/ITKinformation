@@ -1372,4 +1372,366 @@
 			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.283"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="GPESMessageType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>active</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.324"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_GPESMessageType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="GPESMessageType_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="ObservationType_codeSystem" use="optional"/>
+				<xs:attribute name="displayName" type="st" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_GPESMessageType">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="GPESMessageType_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="GPESMessageType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="GPES-E-Q-NT"/>
+			<xs:enumeration value="GPES-E-Q-RTPR"/>
+			<xs:enumeration value="GPES-Q-E-NT"/>
+			<xs:enumeration value="GPES-Q-E-RTP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GPESMessageType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="GPES-E-Q Notification message"/>
+			<xs:enumeration value="GPES-E-Q Run Time Parameter Response message"/>
+			<xs:enumeration value="GPES-Q-E Notification message"/>
+			<xs:enumeration value="GPES-Q-E Run Time Parameter Request message"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_SystemFlagType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="SystemFlagType_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="SystemFlagType_codeSystem" use="optional"/>
+				<xs:attribute name="displayName" type="st" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_SystemFlagType">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="SystemFlagType_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="SystemFlagType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SystemFlagType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="TM"/>
+			<xs:enumeration value="FR"/>
+			<xs:enumeration value="SC"/>
+			<xs:enumeration value="PL"/>
+			<xs:enumeration value="TR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SystemFlagType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="Patient has suffered trauma flag"/>
+			<xs:enumeration value="Fire risk at incident location flag"/>
+			<xs:enumeration value="Scene safe flag"/>
+			<xs:enumeration value="Police in attendance or required at incident location flag"/>
+			<xs:enumeration value="Patient is trapped flag"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_TriageOutcomeType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="TriageOutcomeType_code" use="required"/>
+				<xs:attribute name="codeSystem" type="TriageOutcomeType_codeSystem" use="required"/>
+				<xs:attribute name="displayName" type="TriageOutcomeType_displayName" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_TriageOutcomeType">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="TriageOutcomeType_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="TriageOutcomeType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.328"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TriageOutcomeType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="TO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TriageOutcomeType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="Triage outcome"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_TriageDispositionType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="TriageDispositionType_code" use="required"/>
+				<xs:attribute name="codeSystem" type="TriageDispositionType_codeSystem" use="required"/>
+				<xs:attribute name="displayName" type="TriageDispositionType_displayName" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_TriageDispositionType">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="TriageDispositionType_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="TriageDispositionType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.419"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TriageDispositionType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="TD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TriageDispositionType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="Triage Disposition"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_NHS111TriageDeviceType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="NHS111TriageDeviceType_code" use="required"/>
+				<xs:attribute name="codeSystem" type="NHS111TriageDeviceType_codeSystem" use="required"/>
+				<xs:attribute name="displayName" type="NHS111TriageDeviceType_displayName" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_NHS111TriageDeviceType">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="NHS111TriageDeviceType_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="NHS111TriageDeviceType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.418"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111TriageDeviceType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="TS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111TriageDeviceType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="TriageSystem Software"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_ActStatus">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="ActStatus_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="ActStatus_codeSystem" use="optional"/>
+				<xs:attribute name="displayName" type="st" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CS_ActStatus">
+		<xs:complexContent>
+			<xs:restriction base="CS">
+				<xs:attribute name="code" type="ActStatus_code" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="ActStatus_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="completed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActStatus_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="completed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ActStatus_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_NHS111MessageType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="NHS111MessageType_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="NHS111MessageType_codeSystem" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="NHS111MessageType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.420"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111MessageType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111MessageType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="NHS111 Repeat Caller Database Request"/>
+			<xs:enumeration value="NHS111 Repeat Caller Database Response"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_NHS111RepeatCallerServiceResponseType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="NHS111RepeatCallerServiceResponseType_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="NHS111RepeatCallerServiceResponseType_codeSystem" use="optional"/>
+				<xs:attribute name="displayName" type="NHS111RepeatCallerServiceResponseType_displayName" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="NHS111RepeatCallerServiceResponseType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.421"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111RepeatCallerServiceResponseType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="RC"/>
+			<xs:enumeration value="NRC"/>
+			<xs:enumeration value="PRC"/>
+			<xs:enumeration value="IIQ"/>
+			<xs:enumeration value="ER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111RepeatCallerServiceResponseType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="Repeat Caller"/>
+			<xs:enumeration value="Not Repeat Caller"/>
+			<xs:enumeration value="Potential Repeat Caller"/>
+			<xs:enumeration value="Insufficient Information for Query"/>
+			<xs:enumeration value="Repeat Caller Service Error"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CV_NHS111AdditionalNotesType">
+		<xs:complexContent>
+			<xs:restriction base="CV">
+				<xs:sequence>
+					<xs:element name="originalText" type="ED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="code" type="NHS111AdditionalNotesType_code" use="optional"/>
+				<xs:attribute name="codeSystem" type="NHS111AdditionalNotesType_codeSystem" use="optional"/>
+				<xs:attribute name="displayName" type="NHS111AdditionalNotesType_displayName" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="NHS111AdditionalNotesType_codeSystem">
+		<xs:annotation>
+			<xs:appinfo>
+				<status>created</status>
+				<version>1.0</version>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="uid">
+			<xs:enumeration value="2.16.840.1.113883.2.1.3.2.4.17.422"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111AdditionalNotesType_code">
+		<xs:restriction base="cs">
+			<xs:enumeration value="SPN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NHS111AdditionalNotesType_displayName">
+		<xs:restriction base="st">
+			<xs:enumeration value="Special Patient Notes"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

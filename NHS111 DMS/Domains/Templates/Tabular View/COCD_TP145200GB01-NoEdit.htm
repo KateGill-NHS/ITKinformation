@@ -218,8 +218,11 @@ TABLE {
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
                   <p>
-                     <strong>Identifies a person playing the role of author.<br>
-                        </strong>
+                     <b>A universal template for an author where information about the person and the organisation they work for is required to be
+                        sent between systems. </b>
+                     <b>
+                        <br>
+                        </b>
                      
                   </p>
                   
@@ -236,8 +239,28 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>Indicates that this role is assigned.</p>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
+                  <p>The HL7 attribute <b>classCode</b> describes this class as an assigned role.                 					 An assigned role is a type of agent in which, the player
+                     is a person employed by a scoping organisation.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
+                     
+                     
+                  </p> The XML attribute <b>classCode</b> is fixed to "<font color="#ff0000">
+                     <b>ASSIGNED</b>
+                     </font>".
                </div>
             </td>
          </tr>
@@ -247,19 +270,220 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>A set of addresses associated with the role.</p>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description</b>
+                        </u>
+                     
+                  </p>
                   
-                  <p>There are two optional additional components:</p>
-                  
-                  <ul>
+                  <div contenteditable="false" style="height: 100%; width: 100%">
                      
-                     <li>The <i>use </i>attribute may be used
-                     </li>
+                     <p>The HL7 attribute <b>addr</b> provides a set of addresses associated with the role. This should be the address for where the information was authored.
+                        
+                     </p>
                      
-                     <li>The <i>useablePeriod </i>child element may be used
-                     </li>
+                     <p>The HL7 attribute <b>addr</b> allows structured and  unstructured addresses to be carried in an instance. Only structured  addresses are recommended to
+                        be                      used. There are a number of structured  forms of  addresses. The three shown here are the recommended
+                        formats for   organisation                      addresses, they are listed in no particular order.                   
+                     </p>
                      
-                  </ul>
+                     <p>
+                        <u>
+                           <b>Implementation in XML Instance   </b>
+                           </u>
+                        
+                     </p>
+                     
+                     <p>When the <b>structured</b> address in the style of PDS is used then it shall contain five XML elements <b>streetAddressLine</b>:<br>
+                        
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>The first XML element <b>streetAddressLine</b> should contain the premises name<br>
+                           
+                        </li>
+                        
+                        <li>The second XML element <b>streetAddressLine</b> should contain the number and thoroughfare                      
+                        </li>
+                        
+                        <li>The third XML element <b>streetAddressLine</b> should contain the locality                      
+                        </li>
+                        
+                        <li>The fourth XML element <b>streetAddressLine</b> should contain the post town                      
+                        </li>
+                        
+                        <li>The fifth XML element <b>streetAddressLine</b> should contain the county                      
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>The first XML element<b> streetAddressLine</b> or second XML element <b>streetAddressLine</b> and the fourth XML element <b>streetAddressLine</b> are mandated to be populated.<br>
+                        
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>  The XML element <b>postalCode</b> may be used to carry a postcode<br>
+                           
+                        </li>
+                        
+                        <li>The XML element <b>addressKey</b> may be used to carry a PAF key                      
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>or the address may use the <b>fully structured</b> address:
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>The XML element<b> houseNumber </b>should contain the house/building number or name<br>
+                           
+                        </li>
+                        
+                        <li>The XML element<b> streetName</b> should contain contains the street name<br>
+                           
+                        </li>
+                        
+                        <li>The XML element <b>city</b> should contain the city name<br>
+                           
+                        </li>
+                        
+                        <li>The XML element <b>county</b> should contain the county                      
+                        </li>
+                        
+                        <li>The XML element <b>country</b> should contain the country name<br>
+                           
+                        </li>
+                        
+                        <li>The XML element <b>postalCode</b> should contain the post code                      
+                        </li>
+                        
+                        <li>The XML element <b>addressKey</b> should contain the address key                      
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>Alternatively the structured address may contain just a series of XML elements <b>streetAddressLine</b> populated in the correct order to render as a postal address with as much information as available included.<br>
+                        
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>The first XML element <b>streetAddressLine</b> contains the first address line <br>
+                           
+                        </li>
+                        
+                        <li>The second XML element <b>streetAddressLine </b>contains the second address line                        
+                        </li>
+                        
+                        <li>The third XML element <b>streetAddressLine </b>contains the third address line                        
+                        </li>
+                        
+                        <li>and so on ....<br>
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>The XML element <b>addr</b> allows an XML attribute <b>use</b>,   this should be used to further define the organisation address when  required. Only the <b>use</b> values listed below are recommended                      to be used for organisation addresses.                   
+                     </p>
+                     
+                     <table align="center" border="1" width="90%">
+                        
+                        <tbody>
+                           
+                           <tr>
+                              
+                              <th>Code <br>
+                                 
+                              </th>
+                              
+                              <th>Definition <br>
+                                 
+                              </th>
+                              
+                           </tr>
+                           
+                           <tr>
+                              
+                              <td>
+                                 <b>WP</b>
+                                 
+                              </td>
+                              
+                              <td>Work place - An office address. First choice for business related contacts during business hours.  </td>
+                              
+                           </tr>
+                           
+                           <tr>
+                              
+                              <td>
+                                 <b>TMP</b>
+                                 
+                              </td>
+                              
+                              <td>Temporary address - may be good for visit or mailing.</td>
+                              
+                           </tr>
+                           
+                           <tr>
+                              
+                              <td>
+                                 <b>PHYS</b>
+                                 
+                              </td>
+                              
+                              <td>Physical visit address - Used primarily to visit an address.</td>
+                              
+                           </tr>
+                           
+                           <tr>
+                              
+                              <td>
+                                 <b>PST</b>
+                                 <br>
+                                 
+                              </td>
+                              
+                              <td>Postal address - Used to send mail.</td>
+                              
+                           </tr>
+                           
+                        </tbody>
+                        
+                     </table>
+                     
+                     <p>The XML element <b>useablePeriod</b> of XML element <b>addr</b> can be used to indicate some of the following types of valid times:                                            
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>A point in time when the contact address details are valid<br>
+                           
+                        </li>
+                        
+                        <li>A start and end time</li>
+                        
+                        <ul>
+                           
+                           <li>Just including hours and minutes to indicate opening hours of an office for a work address</li>
+                           
+                           <li>Using dates for indicating a contact address is only for a certain period of time<br>
+                              
+                           </li>
+                           
+                        </ul>
+                        
+                        <li>A start time only to indicate when the contact address is valid from</li>
+                        
+                        <li>An end time only to indicate that the contact address is only valid until a certain date   </li>
+                        
+                     </ul>
+                     
+                  </div>
                   
                </div>
             </td>
@@ -269,23 +493,91 @@ TABLE {
             </td>
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
+                  <u>
+                     <b>Model Attribute Description</b>
+                     </u>
+                  <br>
                   
-                  <p>Any code that describes a person's job role. <br>
-                     <br>The Coded Plain  flavour of the Coded Value (CV) data type shall be used to carry this  information as follows:
+                  <p>The HL7 attribute<b> code</b> uses a code from any available vocabulary to describe the person job role.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance</b>
+                        </u>
+                     
+                  </p>
+                  
+                  <p>The <b>Coded Plain</b> flavour of the <b>Coded Value</b> (CV) data type shall be used to carry this information in the XML element <b>code</b> as follows:
+                  </p>
+                  
+                  <p>When the <b>JobRoleName</b> vocabulary is used then:
                   </p>
                   
                   <ul>
                      
-                     <li>The <i>code</i> attribute shall contain the person's job role code
+                     
+                     <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the<b> JobRoleName</b> vocabulary                                                  </font>
+                        
                      </li>
                      
-                     <li>The <i>codeSystem</i> attribute shall contain the OID for the code system
+                     
+                     <li>The XML attribute <b>codeSystem</b>                         shall contain the OID "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.17.124</b>
+                           </font>"                                                  
                      </li>
                      
-                     <li>The <i>displayName </i>attribute shall carry the person's job role name
+                     <li>The XML attribute <b>displayName</b> shall carry the description associated with the code in the <b>JobRoleName </b>vocabulary
+                     </li>
+                     
+                  </ul>    When an alternative vocabulary is used and an OID is available then: <br>
+                  
+                  <ul>
+                     
+                     
+                     <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the alternative vocabulary                                                  </font>
+                        
+                     </li>
+                     
+                     <li>The XML attribute <b>codeSystem</b>                         shall contain the OID for the alternative vocabulary                                            
+                        
+                     </li>
+                     
+                     <li>The XML attribute <b>displayName</b> shall carry the description from the alternative vocabulary
                      </li>
                      
                   </ul>
+                  
+                  <p>When an alternative vocabulary is used and no OID is available then: <br>
+                     
+                  </p>
+                  
+                  <ul>
+                     
+                     
+                     <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the alternative vocabulary                                                  </font>
+                        
+                     </li>
+                     
+                     
+                     <li>The XML attribute <b>codeSystem</b>                         shall contain the OID "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.17.339</b>
+                           </font>"
+                     </li>
+                     
+                     <li>The XML attribute <b>displayName</b> shall carry the description from the alternative vocabulary
+                     </li>
+                     
+                  </ul>
+                  
+                  
+                  <p>Where no information about the person's role is available then the XML attribute <b>nullFlavor</b> of the XML element <b>code</b> should contain "<font color="#ff0000">
+                        <b>NI</b>
+                        </font>" (no information). 
+                  </p>
+                  
+                  <p>If the XML element <b>id</b> of this class uses a <b>nullFlavor</b>, the XML element <b>code</b> should not use a <b>nullFlavor</b>.
+                  </p>
                   
                </div>
             </td>
@@ -296,31 +588,128 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>One or more identifier(s) including local identifiers which identify the person who is the author.</p>
-                  
-                  <ul>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
                      
-                     <li>The <em>root </em>attribute shall contain the OID for the identifying system.
-                     </li>
-                     
-                     <li>The <em>extension </em>attribute shall contain the author's identifier.
-                     </li>
-                     
-                  </ul>
+                  </p>
                   
-                  <p>Where no OID is available the OID "2.16.840.1.113883.2.1.3.2.4.18.24" shall be used</p>
+                  <p>The HL7 attribute <b>id</b> uses one or more identifier(s) including local identifiers to identify the person who is the author.
+                  </p>
                   
-                  <p>Where no identifier is available a nullFlavor of "NI" (no information) shall be used, as shown below:</p>
-                  
-                  <ul>
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
                      
-                     <li>
+                  </p>
+                  
+                  <p>When using SDS identifiers then: <br>
+                     
+                  </p>
+                  
+                  <div>
+                     
+                     <blockquote>The first instance of the XML element <b>id</b> is mandatory and shall carry the SDS User ID,  the second instance of XML element <b>id</b> is required and shall carry the SDS User Role Profile ID  when available on the sending system. The identifiers shall be
+                        carried in the XML element <b>id</b> as follows:<br>
                         
-                        <p>'&lt;id nullFlavor="NI"/&gt;'</p>
-                        
-                     </li>
+                     </blockquote>
                      
-                  </ul>
+                     <blockquote>  The first instance of the XML element <b>id</b> shall carry an SDS identifier that uniquely identifies the person as follows:<br>
+                        
+                        <ul>
+                           
+                           
+                           <li>The XML attribute <b>root</b> shall contain the OID "<font color="#ff0000">
+                                 <b>1.2.826.0.1285.0.2.0.65</b>
+                                 </font>" 
+                           </li>
+                           
+                           <li>The XML attribute <b>extension</b> shall contain the SDS User ID<br>
+                              
+                           </li>
+                           
+                        </ul>    The second instance of the XML element <b>id</b> shall carry the SDS identifier that uniquely identifies the role profile of the person as follows:<br>
+                        
+                        <ul>
+                           
+                           
+                           <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                                 <b>1.2.826.0.1285.0.2.0.67</b>
+                                 </font>"
+                           </li>
+                           
+                           <li>The XML attribute <b>extension</b> shall contain the SDS Role Profile ID
+                           </li>
+                           
+                        </ul>
+                        
+                     </blockquote>
+                     
+                  </div>
+                  
+                  <blockquote>
+                     
+                     
+                     <p>When the SDS role profile ID is not available then the XML element <b>nullFlavor</b> of the second XML element <b>id</b> must carry a value of "<font color="#ff0000">
+                           <b>UNK</b>
+                           </font>". 
+                     </p>
+                     
+                  </blockquote>
+                  
+                  <p>When using alternative identifiers where the code system can be identified using an OID then the XML element <b>id</b> shall carry the identifiers as follows:<br>
+                     
+                  </p>
+                  
+                  <blockquote>
+                     
+                     <ul>
+                        
+                        <li>The XML attribute <b>root</b> shall contain the OID for the identifying system
+                        </li>
+                        
+                        <li>The XML attribute <b>extension</b> shall contain the author's identifier
+                        </li>
+                        
+                     </ul>
+                     
+                  </blockquote>
+                  
+                  <p>When using alternative identifiers where the code system can not be identified using an OID then the XML element <b>id</b> shall carry the identifiers as follows:<br>
+                     
+                  </p>
+                  
+                  <blockquote>
+                     
+                     <ul>
+                        
+                        
+                        <li>The XML attribute <b>root</b> shall contain the OID "<font color="#ff0000">
+                              <b>2.16.840.1.113883.2.1.3.2.4.18.24</b>
+                              </font>".
+                        </li>
+                        
+                        <li>The XML attribute <b>extension</b> shall contain the author's identifier.
+                        </li>
+                        
+                        <li>The XML attribute <b>assignedAuthorityName</b> shall contain the assigning organisation in the format of ODSCode:ODSName, for example:
+                        </li>
+                        
+                     </ul>
+                     <b>assigningAuthorityName</b>="RA9:SOUTH DEVON HEALTHCARE NHS TRUST"  
+                  </blockquote>
+                  
+                  
+                  <p>Where no identifier is available then the XML attribute <b>nullFlavor</b> of the XML element <b>id</b> shall contain <font color="#ff0000">
+                        <b>"NI"</b>
+                        </font>.
+                  </p>
+                  
+                  <p>Note: If the XML element <b>code</b> of this class uses a XML attribute <b>nullFlavor</b>, then the author XML element <b>id</b> should not use a XML attribute <b>nullFlavor</b>.
+                  </p>
                   
                </div>
             </td>
@@ -331,17 +720,123 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>A set of telecommunication addresses associated with the role.</p>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
-                  <p>There are two optional additional components:</p>
+                  <p>The HL7 Attribute <b>telecom</b> specifies contact details for the person in the form of telephone numbers, fax numbers and email                      addresses.
+                     
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance   </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>This XML element <b>telecom</b> should be populated as below: <br>
+                     
+                  </p>
+                  
+                  <p>The XML attribute <b>value</b> of the XML element <b>telecom</b> should contain the telephone / fax number or an email address prefixed by the type of contact and a colon.              
+                     
+                  </p>
                   
                   <ul>
                      
-                     <li>The <i>use </i>attribute may be used                            
+                     <li>For a telephone number the actual telephone number would be prefixed with <b>tel:</b>
+                        
                      </li>
                      
-                     <li>The <i>useablePeriod </i>child element may be used
+                     <li>For a fax number the actual fax number would be prefixed with <b>fax:</b>
+                        
                      </li>
+                     
+                     <li>For an email address the actual email address would be prefixed with <b>mailto:</b>
+                        <br>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>The XML attribute <b>use</b> of the XML element <b>telecom</b> may be used to give further information about the type of contact details contained in the XML attribute <b>value</b>. Only the <b>use</b> values listed below are recommended for the contact details associated with the role:                   
+                  </p>
+                  
+                  <table align="center" border="1" width="90%">
+                     
+                     <tbody>
+                        
+                        <tr>
+                           
+                           <th>Code</th>
+                           
+                           <th>Definition</th>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              <b>AS</b>
+                              
+                           </td>
+                           
+                           <td>Answering service - an automated answering machine used for less urgent  cases and if the main purpose of contact is to leave
+                              a message or access                       an automated announcement.                                                     
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              <b>EC </b>
+                              <br>
+                              
+                           </td>
+                           
+                           <td>Emergency contact - A contact specifically designated to be used for emergencies. This is the first choice in emergencies,
+                              independent of any                      other use codes.                                                        
+                           </td>
+                           
+                        </tr>
+                        
+                     </tbody>
+                     
+                  </table>
+                  
+                  <p>The XML element <b>useablePeriod</b> of XML element <b>telecom</b> may be used to indicate when the contact details given are valid, for example to indicate that a telephone number is only
+                     for office hours (9am to 5 pm). It can be used to indicate some of the following types of valid times:                   
+                  </p>
+                  
+                  <ul>
+                     
+                     <li>A point in time when the contact details are valid<br>
+                        
+                     </li>
+                     
+                     <li>A start and end time</li>
+                     
+                     <ul>
+                        
+                        <li>Just including hours and minutes to indicate opening hours</li>
+                        
+                        <li>Using dates for indicating a contact is only for a certain period of time.  <br>
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     <li>A start time only to indicate when the contact details are valid from</li>
+                     
+                     <li>An end time only to indicate that the contact details are only valid until a certain date.   </li>
                      
                   </ul>
                   
@@ -354,22 +849,35 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div id="COCD_TP145001UK03.Role.AssignedAuthorSDS/$templateId">The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.
-                     <div>
+                  <div id="COCD_TP145001UK03.Role.AssignedAuthorSDS/$templateId">
+                     <u>
+                        <b>Model Attribute Description</b>
+                        </u>
+                     <br>
+                     <br>The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is used to identify how the CDA
+                     standard has been constrained for NHS use.<br>
+                     <br>
+                     <u>
+                        <b>Implementation in XML Instance</b>
+                        </u>
+                     <br>
+                     <br>The <b>Identifier External</b> data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:<br>
+                     
+                     <ul>
                         
-                        <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
                         
-                        <ul>
-                           
-                           <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
-                           </li>
-                           
-                           <li>The <em>extension </em>attribute shall contain the fixed value.
-                           </li>
-                           
-                        </ul>
+                        <li>    The XML attribute <b>root</b> is fixed to the OID "<font color="#ff0000">
+                              <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                              </font>"
+                        </li>
                         
-                     </div>
+                        
+                        <li>    The XML attribute <b>extension</b> is fixed to "<font color="#ff0000">
+                              <b>COCD_TP145200GB01#AssignedAuthor</b>
+                              </font>"
+                        </li>
+                        
+                     </ul>
                      
                   </div>
                   
@@ -382,7 +890,7 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>A link to the person entity which is playing this role.</p>
+                  <p>A link to the person playing this role.</p>
                   
                </div>
             </td>
@@ -393,7 +901,7 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>A link to the represented organisation.</p>
+                  <p>A link to the scoping organisation.</p>
                   
                </div>
             </td>
@@ -404,7 +912,7 @@ TABLE {
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
                   <p>
-                     <strong>Details of the person.</strong>
+                     <b>A class which details the person who is the author.</b>
                      
                   </p>
                   
@@ -421,8 +929,27 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>Indicates that this a person.</div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
+                  <p>The HL7 attribute <b>classCode</b> describes this class as a person.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
+                     
+                     
+                  </p>The XML attribute <b>classCode</b> is fixed to "<font color="#ff0000">
+                     <b>PSN</b>
+                     </font>".
                </div>
             </td>
          </tr>
@@ -432,8 +959,27 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>Indicates this is a instance of a person.</div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
                   
+                  <p>The HL7 attribute <b>determinerCode</b> describes this class as an instance of a person.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
+                     
+                     
+                  </p>The XML attribute <b>determinerCode</b> is fixed to "<font color="#ff0000">
+                     <b>INSTANCE</b>
+                     </font>".
                </div>
             </td>
          </tr>
@@ -443,7 +989,126 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>The name of the person.</div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The HL7 attribute <b>name</b> provides a name associated with the person who is the author.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The <b>Person Name Structured</b>
+                     <b> with optional Use and optional Valid Time</b> flavour of the<b> PN</b> data type is the recommended format for the author's name. This information is carried in the XML element <b>name </b>as follows: 
+                  </p>
+                  
+                  <ul>
+                     
+                     <li>The XML element <b>prefix</b> should contain the author's title
+                     </li>
+                     
+                     <li>The XML element <b>given</b> should contain the author's forenames; there can be as many occurrences of the XML element as required. <br>
+                        
+                     </li>
+                     
+                     <li>The XML element <b>family</b> should contain the author's surname
+                     </li>
+                     
+                     <li>The XML element <b>suffix</b> may contain any suffix for the author<br>
+                        
+                     </li>
+                     
+                  </ul>
+                  
+                  <p>Additionally the XML attribute <b>use</b> of the XML element <b>name </b>should be used to indicate the type of name; the recommended codes to be used are listed below: 
+                  </p>
+                  
+                  <p>Note some of the codes listed are NHS extensions, these are marked with an * <br>
+                     
+                  </p>
+                  
+                  <table align="center" border="1" width="90%">
+                     
+                     <tbody>
+                        
+                        <tr>
+                           
+                           <th width="30%">Code</th>
+                           
+                           <th width="70%">Definition</th>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              <b>L</b>
+                              <br>
+                              
+                           </td>
+                           
+                           <td>Legal<br>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              <b>PREFERRED *</b>
+                              <br>
+                              
+                           </td>
+                           
+                           <td>Preferred name<br>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                     </tbody>
+                     
+                  </table>
+                  
+                  <p>Additionally the XML element <b>validTime</b> of the XML element <b>name</b> may be used to indicate the time when the name is valid/was valid for the author, some uses are shown below:  <br>
+                     
+                  </p>
+                  
+                  <ul>
+                     
+                     <li>A point in time when the name details are known to be valid <br>
+                        
+                     </li>
+                     
+                     <li>A start and end time</li>
+                     
+                     <ul>
+                        
+                        <li>To represent the period of time the author is/was known by this name. <br>
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     <li>A start time only to indicate when the name is/was valid from for the author.<br>
+                        
+                     </li>
+                     
+                     <li>An end time only to indicate that the name is/was only valid for the author until a certain date.   </li>
+                     
+                  </ul>
+                  <br>
                   
                </div>
             </td>
@@ -453,24 +1118,34 @@ TABLE {
             </td>
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
+                  <u>
+                     <b>Model Attribute Description</b>
+                     </u>
+                  <br>
+                  <br>The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is used to identify how the CDA
+                  standard has been constrained for NHS use.<br>
+                  <br>
+                  <u>
+                     <b>Implementation in XML Instance</b>
+                     </u>
+                  <br>
+                  <br>The <b>Identifier External </b>data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:<br>
                   
-                  <div>
+                  <ul>
                      
-                     <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
                      
-                     <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                     <li>The XML attribute <b>root</b> is fixed to the OID "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                           </font>"
+                     </li>
                      
-                     <ul>
-                        
-                        <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
-                        </li>
-                        
-                        <li>The <em>extension </em>attribute shall contain the fixed value.
-                        </li>
-                        
-                     </ul>
                      
-                  </div>
+                     <li>The XML attribute <b>extension</b> is fixed to "<font color="#ff0000">
+                           <b>COCD_TP145200GB01#assignedPerson</b>
+                           </font>"
+                     </li>
+                     
+                  </ul>
                   
                </div>
             </td>
@@ -481,8 +1156,9 @@ TABLE {
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
                   <p>
-                     <strong>Details to allow identification of an organisation<br>
-                        </strong>
+                     <b>This class details the organisation which scopes the role of the author (the organisation which employs the person who is
+                        the author).<br>
+                        </b>
                      
                   </p>
                   
@@ -499,7 +1175,28 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>Indicates this is an organisation.<br>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The HL7 attribute <b>classCode</b> describes this class as an organisation.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The XML attribute <b>classCode</b> is fixed to "<b>
+                        <font color="#ff0000">ORG</font>
+                        </b>".   <br>
                      
                   </p>
                   
@@ -512,7 +1209,29 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <p>Indicates this is an instance of an organisation<br>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The HL7 attribute <b>determinerCode</b> describes this class as an instance of an organisation.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  
+                  <p>The XML attribute <b>determinerCode</b> is fixed to "<font color="#ff0000">
+                        <b>INSTANCE</b>
+                        </font>". <br>
                      
                   </p>
                   
@@ -524,33 +1243,61 @@ TABLE {
             </td>
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
-                  							              
-                  <p>A valid identifier that uniquely identifies the organisation.</p>
-                  							              
-                  <p>The organisation id attribute can be populated using the following ODS codes (formerly known as NACS code) :</p>
-                  							              
+                  
+                  <p>
+                     <u>
+                        <b>Model Attribute Description   </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>The HL7 attribute<b> id</b> uses an ODS code as an identifier that uniquely identifies the organisation which employs the author. The ODS code should
+                     identify the organisation at either the site level or organisation level. Where possible the organisation should be identified
+                     at the site level. ODS codes were formerly known as NACS codes.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance   </b>
+                        </u>
+                     <br>
+                     
+                  </p>
+                  
+                  <p>When ODS site code is used then the XML element <b>id </b>is populated in the following way:
+                  </p>
+                  
                   <ul>
-                     								                
-                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.2"
+                     
+                     
+                     <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.19.2</b>
+                           </font>"
                      </li>
-                     								                
-                     <li>The <em>extension </em>attribute shall contain the ODS site code.
+                     
+                     <li>The XML attribute <b>extension</b> shall contain the ODS site code.
                      </li>
-                     							              
+                     
                   </ul>
-                  							              
+                  
+                  <p>When ODS organisation code is used then the XML element <b>id </b>is populated in the following way:<br>
+                     
+                  </p>
+                  
                   <ul>
-                     								                
-                     <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.1"
+                     
+                     
+                     <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                           <b>2.16.840.1.113883.2.1.3.2.4.19.1</b>
+                           </font>"
                      </li>
-                     								                
-                     <li>The <em>extension </em>attribute shall contain the ODS organisation code.
+                     
+                     <li>The XML attribute <b>extension</b> shall contain the ODS organisation code.
                      </li>
-                     							              
+                     
                   </ul>
-                  							              
-                  <p>Note these are listed in order preference for populating this attribute.</p>						
-                  						            
+                  
                </div>
             </td>
          </tr>
@@ -560,18 +1307,26 @@ TABLE {
             <td width="50%">
                <div style="height: 100%; width: 100%;" contenteditable="false">
                   
-                  <div>
+                  <p>
+                     <u>
+                        <b>Model Attribute Description </b>
+                        </u>
+                     <br>
                      
-                     <div>The name of the organisation.  </div>
+                  </p>
+                  
+                  <p>The HL7 attribute <b>name</b> uses the description of the organisation associated with the ODS code.
+                  </p>
+                  
+                  <p>
+                     <u>
+                        <b>Implementation in XML Instance  </b>
+                        </u>
+                     <br>
                      
-                     <div></div>
-                     
-                     <div>This shall use the name associated with the ODS code.</div>
-                     
-                     <div></div>
-                     
-                     <div></div>
-                     
+                  </p>
+                  
+                  <div>The XML element <b>name</b> will carry the description associated with the ODS code carried in the XML attribute <b>extension</b>  of the XML element <b>id</b>.
                   </div>
                   
                </div>
@@ -585,16 +1340,37 @@ TABLE {
                   
                   <div>
                      
-                     <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
+                     <p>
+                        <u>
+                           <b>Model Attribute Description</b>
+                           </u>
+                        <br>
+                        <br> The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is used to identify how the CDA
+                        standard has been constrained for NHS use.
+                     </p>
                      
-                     <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                     <p>
+                        <u>
+                           <b>Implementation in XML Instance </b>
+                           </u>
+                        <br>
+                        
+                     </p>
+                     
+                     <p>The <b>Identifier External </b>data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:
+                     </p>
                      
                      <ul>
                         
-                        <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"
+                        
+                        <li>The XML attribute <b>root</b>  is fixed to the OID "<font color="#ff0000">
+                              <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                              </font>"
                         </li>
                         
-                        <li>The <em>extension </em>attribute shall contain the fixed value.
+                        <li>The XML attribute <b>extension</b> is fixed to "<b>
+                              <font color="#ff0000">COCD_TP145200GB01#representedOrganization</font>
+                              </b>".
                         </li>
                         
                      </ul>

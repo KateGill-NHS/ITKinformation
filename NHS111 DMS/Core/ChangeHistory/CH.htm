@@ -1,195 +1,321 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>NHS 111: Change History</title>
-</head>
-<!-- Framework CSS -->
-<link rel="stylesheet" href="../Stylesheets/screen.css" type="text/css" media="screen, projection">
-<link rel="stylesheet" href="../Stylesheets/print.css" type="text/css" media="print">
-<!--[if lt IE 8]>
-<link rel="stylesheet" href="../Stylesheets/ie.css" type="text/css" media="screen, projection">
-<![endif]-->
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+			<title>NHS 111: Change History</title>
+			<!-- Framework CSS -->
+			<link rel="stylesheet" href="../Stylesheets/screen.css" type="text/css" media="screen, projection">
+			<link rel="stylesheet" href="../Stylesheets/print.css" type="text/css" media="print">
+			<!--[if lt IE 8]>
+				<link rel="stylesheet" href="../Stylesheets/ie.css" type="text/css" media="screen, projection">
+			<![endif]-->
+		</head>
+		<body>
+			<div class="d-mim-container">
+				<div id="banner">
+					<div class="d-mim-span-6 d-mim-left">
+						<img src="../logo_left.png"/>
+					</div>
+					<div class="d-mim-span-12">
+						<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message Specification </h1>
+					</div>
+					<div class="d-mim-span-6 d-mim-last">
+						<img src="../logo_right.jpg" class="d-mim-right">
+					</div>
+				</div>
+				<div id="navigation">
+					<div id="status">Version: 1.0; Status: RC2</div>
+					<ul class="tabs level0">
+						<li class="selected"><a href="../../Index.htm" title="Overview">Overview</a></li>
+						<li><a href="../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">Message Definitions</a></li>
+						<li><a href="../../Domains/NHS111/Document files/AssociatedSpecifications.htm" title="Associated Specifications">Associated Specifications</a></li>			
+						<li><a href="../../Core/References.htm" title="References">References</a></li>
+					</ul>
+					<ul  class="tabs level1">
+						<li class="selected"><a href="CH.htm" title="Change History">Change History</a></li>
+						<li><a href="../Glossary.htm" title="Glossary">Glossary</a></li>		
+						<li><a href="../Guide.htm" title="User Guide">User Guide</a></li>				
+						<li><a href="../../Domains/NHS111/Document files/MessageCreationGuidance.htm" title="Message Creation Guidance">Message Creation Guidance</a></li>			
+					</ul>	
+				</div>
+				<div id="content">
+					<h1><a name=_Toc_Section_></a>Change History</h1>
+					<p class="un-numberedheading2">Contents</p>
 
-</head>
+					<div class="index1" div id="fp_TOC" class="fp_TOC">
+					<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: RC2</a><br>
+					<a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: RC1</a><br>
+					<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: Draft A</a></div>
 
-
-<body>
-<div class="d-mim-container">
-<div id="banner">
-		<div class="d-mim-span-6 d-mim-left">
-			<img src="../logo_left.png"/>
-		</div>
-		<div class="d-mim-span-12">
-			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message Specification </h1>
-		</div>
-		<div class="d-mim-span-6 d-mim-last">
-			<img src="../logo_right.jpg" class="d-mim-right">
-		</div>
-	</div>
-		<div id="navigation">
-		<div id="status">Version: 1.0; Status: Draft A</div>
-		<ul class="tabs level0">
-			<li class="selected">
-			<a href="../../Index.htm" title="Overview">
-			Overview</a></li>
-			<li>
-			<a href="../../Domains/NHS111/Document files/IM.htm" title="Message Definitions">Message Definitions</a></li>
-			<!-- removed old domain links SIKN1
-			<li>
-			<a href="../../Domains/HDN/Document files/IM.htm" title="Discharge Notifications to Social Care">Discharge Notifications to Social Care</a></li>
-			<li>
-			<a href="../../Domains/CHC/Document files/IM.htm" title="NHS Continuing Healthcare">NHS Continuing Healthcare</a></li>
-			-->
-			<li>
-			<a href="../../Core/Generic.htm" title="Generic">
-			Generic</a></li>			
-			<li>
-			<a href="../../Core/References.htm" title="References">
-			References</a></li>
-			<li>
-			<a href="../../Core/Glossary.htm" title="Glossary">
-			Glossary</a></li>
-		</ul>
-				<ul class="tabs level1">
-			<li class="selected">
-			<a title="Change History" href="CH.htm">
-			Change History</a></li>
-		</ul>
-	</div>
-<div id="content" style="width: 950px; height: 455px">
-<h1><a name=_Toc_Section_></a>Change History</h1>
-<!--
-<p class="un-numberedheading2">Contents</p><div class="index1" div id="fp_TOC" class="fp_TOC">
-<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;Version 1.0 Draft</a></div>
-<hr />
-	-->
-	<!--
-<div class=MsoNormal align=center style='text-align:center'><hr size=2 width="100%" align=center></div>-->
-
-
-<h1><a name=_Toc_Section_5></a>Version 1.0 Draft A</h1>
-
-
-<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table9" width="80%" style="border-style: solid; border-width: 1pt" >
-		<thead>
-			<tr>
-				<th width='207' align="left" valign="top">Artefact Id</th>
-				<th width='141' align="left" valign="top">Class</th>
-				<th width='141' align="left" valign="top">Attribute</th>
-				<th align="left" valign="top">Details of change</th>
-			</tr>
-		</thead>
-		<tr>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">
-			Added Ambulance Request message to Draft NHS 111 DMS. Updated the Domain Message Specification to 
-			address comments from Interoperability 
-			Team and NHS 111 Team. </td>
-		</tr>
-
-		
-		</table>
-
-
-<h1><a name=_Toc_Section_3></a>Version 0.2 Draft</h1>
-
-
-<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table7" width="80%" style="border-style: solid; border-width: 1pt" >
-		<thead>
-			<tr>
-				<th width='207' align="left" valign="top">Artefact Id</th>
-				<th width='141' align="left" valign="top">Class</th>
-				<th width='141' align="left" valign="top">Attribute</th>
-				<th align="left" valign="top">Details of change</th>
-			</tr>
-		</thead>
-		<tr>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">
-			Updated the Domain Message Specification for 
-			message name.</td>
-		</tr>
-
-		
-		</tr>
-		
-		
-		</table>
-
-
-<h1><a name=_Toc_Section_4></a>Version 0.1 Draft</h1>
-
-
-<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table8" width="80%" style="border-style: solid; border-width: 1pt" >
-		<thead>
-			<tr>
-				<th width='207' align="left" valign="top">Artefact Id</th>
-				<th width='141' align="left" valign="top">Class</th>
-				<th width='141' align="left" valign="top">Attribute</th>
-				<th align="left" valign="top">Details of change</th>
-			</tr>
-		</thead>
-		<tr>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">N/A</td>
-			<td align="left" valign="top">
-			First NHS 111 DMS</td>
-		</tr>
-
-		
-		</tr>
-		
-		
-		</table>
-
-<!--
-	<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table3" width="91%" style="border-style: solid; border-width: 1pt" >
-		<thead>
-			<tr>
-				<th width='199' align="left" valign="top"><font face="Arial">Artefact Id</font></th>
-				<th width='147' align="left" valign="top"><font face="Arial">Class</font></th>
-				<th width='139' align="left" valign="top"><font face="Arial">Attribute</font></th>
-				<th align="left" valign="top"><font face="Arial">First NHS 111 DMS</font></th>
-			</tr>
-		</thead>
-		<tr>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top"><font face="Arial">First NHS 111 DMS</font></td>
-		</tr>
-	</table>
-	-->
-
-<!--
-	<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table3" width="91%" style="border-style: solid; border-width: 1pt" >
-		<thead>
-			<tr>
-				<th width='199' align="left" valign="top"><font face="Arial">Artefact Id</font></th>
-				<th width='147' align="left" valign="top"><font face="Arial">Class</font></th>
-				<th width='139' align="left" valign="top"><font face="Arial">Attribute</font></th>
-				<th align="left" valign="top"><font face="Arial">First NHS 111 DMS</font></th>
-			</tr>
-		</thead>
-		<tr>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top" rowspan="6"><font face="Arial">N/A</font></td>
-			<td align="left" valign="top"><font face="Arial">First NHS 111 DMS</font></td>
-		</tr>
-	</table>
-	-->
+					<p>&nbsp;</p>
+					<h1><a name=_Toc_Section_1></a>1&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: RC2</h1>
+					<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table11" width="80%" style="border-style: solid; border-width: 1pt">
+						<thead>
+							<tr>
+								<th width='207' align="left" valign="top">Artefact Id</th>
+								<th align="left" valign="top">Details of change</th>
+							</tr>
+						</thead>
+							<tr>
+								<td>Location details</td>
+								<td>For both NHS 111 Report and Ambulance 
+								request, template COCD_TP145222GB01 up-versioned 
+								to COCD_TP145222GB02 to enable the carrying of a 
+								location identifier field. This field is used to 
+								carry the gazetteer identifiers when an 
+								ambulance request is sent, that has used the 
+								gazetteer to look up the location details. In 
+								these cases, the gazetteer unique identifier and 
+								X and Y coordinates are sent to ambulance 
+								service. In all other cases (when an ambulance 
+								request is sent not using the gazetteer, or a 
+								NHS111 report is sent), the address details are 
+								filled out as per the specification.</td>
+							</tr>						
+							<tr>
+								<td>CDA Document text section &amp; titles</td>
+								<td>Text section now also carries Special 
+								Patient Notes.<p>Guidance document updated to 
+								include</p>
+								<ul>
+									<li>Title of case summary to be &quot;Case 
+									Summary&quot;</li>
+									<li>Title of special patient notes to be 
+									&quot;Special Patient Notes&quot;</li>
+									<li>Section of &quot;Patient's Reported 
+									Condition&quot; allowed (as reported by the 
+									patient), although this may be incorporated 
+									into the case summary and not require its 
+									own section)</li>
+								</ul>
+								<p>The case summary should not include 
+								demographic information</td>
+							</tr>						
+							<tr>
+								<td>Preferred contact details</td>
+								<td>Guidance documents for the NHS111 Report and Ambulance Request 
+								now say that the preferred contact should be marked with a "use" 
+								attribute of "EC" - Emergency Contact</td>
+							</tr>						
+							<tr>
+								<td>Change to Ambulance dispatch codes</td>
+								<td>codes now read <br/>
+									R1 -	Red 1<br/>
+									R2 -	Red 2<br/>
+									G2 -	Green 2<br/>
+									G3 -	Green 3<br/>
+									G4 -	Green 4</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">New interaction to 
+								support Repeat caller to GP</td>
+								<td align="left" valign="top">
+									A new interaction has been included for when 
+									a patient is recognised as a repeat caller 
+									and the details need to be passed onto a GP 
+									for a call back within one hour. In this 
+									case, all the reports from the Repeat Caller 
+									database and the report of the current call 
+									are sent to OOH as multiple payloads within 
+									the same distribution envelope.</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Repeat Caller 
+								Query and Response</td>
+								<td align="left" valign="top">
+									Two new message definitions and interactions 
+									added to support a query to the Repeat 
+									Caller service, and a response. Guidance 
+									document for the creation of the query 
+									included.</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">NHS111 Report &amp; 
+								Ambulance Request</td>
+								<td align="left" valign="top">
+									NHS111 Report and ambulance request now have 
+									support for additional information such as 
+									Special Patient Notes (in the case of NHS111 
+									Report this is in the guidance document; in 
+									the case of the ambulance request, a new 
+									class has been added to the model)</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Message NHS111 Report</td>
+								<td align="left" valign="top">
+									Changed CodedEntry for the transmission of a 
+									complete triage assessment to hold the 
+									system and software version that created the 
+									triage. This change introduces an new 
+									template with a mandatory link to the system 
+									and software that produced the triage data.<p>
+									The CDA model has been up-versioned to 
+									POCD_RM200001GB0<b>2</b></td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Message NHS111 
+								Ambulance Request</td>
+								<td align="left" valign="top">
+									Introduction of a new class to transmit the 
+									final triage disposition code. The class is 
+									optional in the model, as the same model 
+									schema serves an interim and final message.<p>
+									The model has been up-versioned to 
+									REPC_RM20000GB0<b>2</b></td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Associated 
+								artefacts</td>
+								<td align="left" valign="top">
+									Message creation guidance updated and 
+									up-versioned<p>Examples 
+									updated&nbsp; and up-versioned to include changes to schema<p>
+									Updated and up-versioned the wsdl file<p>
+									Reference files updated and up-versioned<p>
+									Note: the profileId in the examples 
+									reference v2 of the relevant profile<p>Note: 
+									the interaction id in the examples reference 
+									v2 of the relevant interaction</td>
+							</tr>
+							</table>
+							<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<h1><a name=_Toc_Section_2></a>2&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: RC1</h1>
+					<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table10" width="80%" style="border-style: solid; border-width: 1pt">
+						<thead>
+							<tr>
+								<th width='207' align="left" valign="top">Artefact Id</th>
+								<th align="left" valign="top">Details of change</th>
+							</tr>
+						</thead>
+							<tr>
+								<td align="left" valign="top">CDA Guidance Document</td>
+								<td align="left" valign="top">
+									<ul>
+										<li>Updated to add further advise and guidance around ClinicalDocument\code</li>
+										<li>Updated to include new participation class (ReferredTo)</li>
+										<li>Update to reflect new recipient templates</li>
+										<li>Updated with Consent guidance. Note that Consent is now mandated</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Schema Changes</td>
+								<td align="left" valign="top">
+								<ul>
+									<li>Schema in this pack will show 
+									differences to schema issued in draft A. 
+									Many of the changes are due to the 
+									tightening of schema (for example 
+									enumerating possible values). Where this has 
+									occurred, then the schema version has stayed 
+									the same. (This reduces the impact of 
+									change).</li>
+									<li>The recipient schemas 
+									(COCD_TP145202GB02; COCD_TP145203GB03; 
+									COCD_TP145204GB03) have all been 
+									up-versioned, as the schemas now include an 
+									optional address, and other schema 
+									tightening.</li>
+									<li>Consent schema (COCD_TP146226GB02 has 
+									been changed and upversioned)</li>
+									<li>Service Event schema (COCD_TP146227GB02 
+									has been changed and upversioned - although 
+									not recommended for use in this 
+									specification at present)</li>
+									<li>CDA document conformance model 
+									(POCD_MT2000001GB01.xsd) has several 
+									tightenings (but is same version)</li>
+									<li>Ambulance main message 
+									(REPC_MT200001GB01.xsd has several 
+									tightenings (but is same version)</li>
+								</ul>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Model changes</td>
+								<td align="left" valign="top">
+									<ul>
+										<li>Recipient Templates - All recipient templates have been up-versioned. The up-versioned template introduces an optional address attribute in the IntendedRecipient class.</li>
+										<li>Participant Template - Addition of an optional participant template choice. This is used to add a &quot;Referred To&quot; participation in the message instance. NHS 111 messages should 	use the &quot;DocumentParticipantUniversal&quot; template to hold the organisation and actual physical location to which the patient was referred as a result of the NHS 111 triage.</li>
+										<li>Correction of relationship class name from ClinicalDocument to ParentDocument. Class name is now &quot;relatedDocument&quot;</li>
+										<li>ClinicalDocument/code and ClinicalDocument/title - further guidance added when using multiple SNOMED CT codes to describe a Document.</li>
+										<li>Tabular views have all been refreshed to add additional advise and guidance. These tabular view changes have resulted in some schema tightening</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Message Definitions<p>ITK Implementation &amp; Service Names</td>
+								<td align="left" valign="top">
+									<ul>
+										<li>Removal of Receiver Responsibility to send an ITK Business Acknowledgement from all interactions.</li>
+										<li>Service name of Ambulance Request changed to &quot;RequestAmbulanceDispatch-v1-0&quot;</li>
+										<li>Service name of NHS 111 CDA document changed to &quot;SendNHS111Report-v1-0&quot;</li>
+										<li>Inclusion of wsdl to document &quot;RequestAmbulanceDispatch-v1-0&quot; &amp; &quot;SendNHS111Report-v1-0&quot;</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Transforms</td>
+								<td align="left" valign="top">A new page (References &gt; Transforms) has been created to document 2 important transforms included in the Domain Message Specification.</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Associated Specifications</td>
+								<td align="left" valign="top">The definition of Generic (on-the-wire) CDA and details on how to nullify a document have been hived off into their own stand-alone Domain Message Specifications. For details of on-the-wire CDA model and schemas look in the &quot;Generic CDA&quot; pack. For details of the Nullification document look in the &quot;Nullification&quot; pack. Note there is NO CHANGE to the definitions of either Generic CDA or Nullification.</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Guidance Documents</td>
+								<td align="left" valign="top">Addition of Guidance documentation detailing how to create a NHS 111 CDA document and Ambulance Request attribute by attribute. 
+								Also included &quot;Technical Guidance for Templated 
+								CDA Domains&quot;, which explains the templating 
+								mechanism used in CDA documents.</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top">Navigation Tabs</td>
+									<td align="left" valign="top"><b>Overview</b>: 
+										<p>Retains Change History. </p>
+										<p>Added Glossary (formerly on the top level of the navigation tabs)</p>
+										<p>Added User Guide (a guide to the the navigation of Domain Message Specifications)</p>
+										<p>Added Message Creation Guidance (2 detailed documents to aid message development)</p>
+										<p><b>Message Definitions</b><p>Navigation Remains the same<p><b> Associated Specifications</b><p>Replaces the &quot;Generic&quot; tab. The Associated Specifications page now links off to (opens in new tab/window) specifications for generic CDA and Nullification<p><b>References</b><p>Has the equivalent tabs to the old pack &quot;References&quot; &gt; &quot;NHS 111&quot; and the addition of a &quot;Transforms&quot; tab that documents important transforms included in the pack
+									</td>
+								</tr>
+								<tr>
+									<td align="left" valign="top">Examples</td>
+									<td align="left" valign="top">Examples added, including fully documented examples and fully wrapped examples. See "Message Definitions" > "ITK Implementation" (section 5). 
+									Note that &quot;Templated&quot; payloads are 
+									on-the-wore payloads (excluding the 
+									distribution envelope) that have been 
+									transformed into conformance examples by 
+									using the transform 
+									&quot;TrueCDAToCDALike_v2.xsl&quot; - included in the 
+									Transforms tab).</td>
+								</tr>		
+							</table>
+							<br/>
+							<h1><a name=_Toc_Section_3></a>3&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.0; Status: Draft A</h1>
+							<table class="helper" border=1 cellspacing=3  cellpadding=0 id="table9" width="80%" style="border-style: solid; border-width: 1pt">
+								<thead>
+									<tr>
+										<th width='207' align="left" valign="top">Artefact Id</th>
+										<th align="left" valign="top">Details of change</th>
+									</tr>
+								</thead>
+								<tr>
+									<td align="left" valign="top">N/A</td>
+									<td align="left" valign="top">Initial Draft for comment</td>
+								</tr>
+							</table>
+						
 </div>
 <div id="footer">
-<div class="d-mim-span-8">Document Ref NPFIT-FNT-TO-DSD-0214</div>
-<div class="d-mim-span-8">CFH Interoperability Team: <a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
-<div class="d-mim-span-8 d-mim-last">Release Date 30-Nov-2011</div>
+<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0214</div>
+<div class="d-mim-span-8">CFH Interoperability Team:
+	<a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+<div class="d-mim-span-8 d-mim-last">Release Date: 16-Mar-2012</div>			
 </div>
 </div>
-	</body></html>
+
+</body>
+</html>
+

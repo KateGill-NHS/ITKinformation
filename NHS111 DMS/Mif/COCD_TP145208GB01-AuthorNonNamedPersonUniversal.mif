@@ -2,7 +2,7 @@
 <staticModel isAbstract="false" isSerializable="true"
     name="COCD_TP145208GB01" packageKind="root"
     representationKind="flat" xmlns="urn:hl7-org:v3/mif"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3/mif C:\PROGRA~1\HL7\System\schemas\mifStaticModelFlat.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3/mif ../MifSchemas/mifStaticModelFlat.xsd">
     <packageLocation artifact="TP" domain="CD" id="145208"
         name="COCD_TP145208GB01" realm="GB" root="DEFN" section="HM"
         subSection="CO" version="01"/>
@@ -30,9 +30,7 @@
                 </text>
             </description>
             <otherAnnotation type="html">
-                <text>
-                    <b>A template that identifies an author and their role in an organisation, where the person's details are not required or are not available.</b>
-                </text>
+                <text/>
             </otherAnnotation>
         </annotations>
         <graphicRepresentation>
@@ -67,7 +65,8 @@
                 <otherAnnotation type="html">
                     <text>
                         <p>
-                            <b>Details to allow identification of the organisation which is reposible for the role.</b>
+                            <b>This class details the organisation which scopes the role of the author (the organisation which employs the person who is the author).<br/>
+                            </b>
                         </p>
                     </text>
                 </otherAnnotation>
@@ -81,11 +80,27 @@
                     <otherAnnotation type="html">
                         <text>
                             <div>
-                                <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
-                                <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                                <p>
+                                    <u>
+                                    <b>Model Attribute Description</b>
+                                    </u>
+                                    <br/>
+                                    <br/> The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is used to identify how the CDA standard has been constrained for NHS use.</p>
+                                <p>
+                                    <u>
+                                    <b>Implementation in XML Instance </b>
+                                    </u>
+                                    <br/>
+                                </p>
+                                <p>The <b>Identifier External </b>data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:</p>
                                 <ul>
-                                    <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
-                                    <li>The <em>extension </em>attribute shall contain the fixed value.</li>
+
+                                    <li>The XML attribute <b>root</b>  is fixed to the OID "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                                    </font>"</li>
+                                    <li>The XML attribute <b>extension</b> is fixed to "<b>
+                                    <font color="#ff0000">COCD_TP145208GB01#representedOrganization</font>
+                                    </b>".</li>
                                 </ul>
                             </div>
                         </text>
@@ -102,7 +117,23 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>Indicates this is an organisation.</p>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute <b>classCode</b> describes this class as an organisation.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance </b>
+                                </u>
+                                <br/>
+                            </p>
+                                <p>The XML attribute <b>classCode</b> is fixed to "<b>
+                                    <font color="#ff0000">ORG</font>
+                                    </b>".   <br/>
+                                </p>
                         </text>
                     </otherAnnotation>
                 </annotations>
@@ -118,7 +149,23 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>Indicates this is an instance of an organisation.</p>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description  </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute <b>determinerCode</b> describes this class as an instance of an organisation.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance  </b>
+                                </u>
+                                <br/>
+                            </p>
+                                <p>The XML attribute <b>determinerCode</b> is fixed to "<font color="#ff0000">
+                                    <b>INSTANCE</b>
+                                    </font>". <br/>
+                                </p>
                         </text>
                     </otherAnnotation>
                 </annotations>
@@ -133,17 +180,42 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>A valid identifier that uniquely identifies the organisation, as follows:</p>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description   </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute<b> id</b> uses an ODS code as an identifier that uniquely identifies the organisation which employs the author. The ODS code should identify the organisation at either the site level or organisation level. Where possible the organisation should be identified at the site level. ODS codes were formerly known as NACS codes.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance   </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>When ODS site code is used then the XML element <b>id </b>is populated in the following way:</p>
                             <ul>
-                                <li>The <em>root </em>attribute shall contain an OID with the value "2.16.840.1.113883.2.1.3.2.4.19.1"</li>
-                                <li>The <em>extension </em>attribute shall contain the ODS code (formerly known as the NACS code)</li>
+
+                                <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.19.2</b>
+                                    </font>"</li>
+                                <li>The XML attribute <b>extension</b> shall contain the ODS site code.</li>
+                            </ul>
+                            <p>When ODS organisation code is used then the XML element <b>id </b>is populated in the following way:<br/>
+                            </p>
+                            <ul>
+
+                                <li>The XML attribute <b>root</b> shall contain an OID with the value "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.19.1</b>
+                                    </font>"</li>
+                                <li>The XML attribute <b>extension</b> shall contain the ODS organisation code.</li>
                             </ul>
                         </text>
                     </otherAnnotation>
                 </annotations>
                 <derivationSupplier attributeName="id"
                     className="Organization" staticModelDerivationId="1"/>
-                <type name="II" typeSpecialisation="II.NPfIT.OrganizationSDS.Organisation.oid"/>
+                <type name="II" typeSpecialisation="II.NPfIT.OrganizationSDS.Organisation.oid:II.NPfIT.OrganizationSDS.Site.oid"/>
             </attribute>
             <attribute conformance="R" isMandatory="true"
                 maximumMultiplicity="1" minimumMultiplicity="1"
@@ -151,8 +223,20 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>The name of the organisation.</p>
-                            <p>This shall use the name associated with the ODS code.</p>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute <b>name</b> uses the description of the organisation associated with the ODS code.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance  </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <div>The XML element <b>name</b> will carry the description associated with the ODS code carried in the XML attribute <b>extension</b>  of the XML element <b>id</b>.</div>
                         </text>
                     </otherAnnotation>
                 </annotations>
@@ -177,11 +261,9 @@
                 <otherAnnotation type="html">
                     <text>
                         <p>
-                            <b>A template that identifies an author and their role in an  organisation, where the person's details are not required or are not  available.</b>
-                            <br/>
-                        </p>
-                        <p>
-                            <b>This class details the type of role of the person.<br/>
+                            <b>A universal template for an author where information about the person is not available or required but the type of person (their role) and their organisation is required to be sent between systems. </b>
+                            <b>
+                                <br/>
                             </b>
                         </p>
                     </text>
@@ -195,12 +277,27 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>The fixed value of this attribute provides a unique identifier for the  template and the classname within that template.</p>
-                            <div>
-                                <p>The IdentifierExternal datatype flavour is used to carry this information as follows:</p>
+                            <div id="COCD_TP145001UK03.Role.AssignedAuthorSDS/$templateId">
+                                <u>
+                                    <b>Model Attribute Description</b>
+                                </u>
+                                <br/>
+                                <br/>The HL7 attribute <b>templateId</b> provides a unique identifier for the template and the class name within that template. This is used to identify how the CDA standard has been constrained for NHS use.<br/>
+                                <br/>
+                                <u>
+                                    <b>Implementation in XML Instance</b>
+                                </u>
+                                <br/>
+                                <br/>The <b>Identifier External</b> data type flavour is used to carry this information in the XML element <b>templateId</b> as follows:<br/>
                                 <ul>
-                                    <li>The <em>root </em>attribute shall contain the OID "2.16.840.1.113883.2.1.3.2.4.18.2"</li>
-                                    <li>The <em>extension </em>attribute shall contain the fixed value.</li>
+
+                                    <li>    The XML attribute <b>root</b> is fixed to the OID "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.18.2</b>
+                                    </font>"</li>
+
+                                    <li>    The XML attribute <b>extension</b> is fixed to "<font color="#ff0000">
+                                    <b>COCD_TP145208GB01#AssignedAuthor</b>
+                                    </font>"</li>
                                 </ul>
                             </div>
                         </text>
@@ -217,8 +314,22 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>Indicates that this role is assigned.</p>
-                        </text>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute <b>classCode</b> describes this class as an assigned role.                 					 An assigned role is a type of agent in which, the player is a person employed by a scoping organisation.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance </b>
+                                </u>
+                                <br/>
+
+                            </p> The XML attribute <b>classCode</b> is fixed to "<font color="#ff0000">
+                                <b>ASSIGNED</b>
+                            </font>".</text>
                     </otherAnnotation>
                 </annotations>
                 <derivationSupplier attributeName="classCode"
@@ -232,23 +343,46 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>An identifier (including local identifier) which identify the person who is the author.</p>
-                            <ul>
-                                <li>The <em>root </em>attribute shall contain the OID  for the identifying system.</li>
-                                <li>The <em>extension </em>attribute shall contain the author's identifier.</li>
-                            </ul>
-                            <p>Where no OID is available the OID "2.16.840.1.113883.2.1.3.2.4.18.24" shall be used</p>
-                            <p>Where no identifier is available a null flavour of "NA" shall be used, as shown below:</p>
-                            <ul>
-                                <li>
-                                    <p>'&lt;id nullFlavor="NI"/&gt;'</p>
-                                </li>
-                            </ul>
+                            <p>
+                                <u>
+                                    <b>Model Attribute Description  </b>
+                                </u>
+                                <br/>
+                            </p>
+                            <p>The HL7 attribute <b>id</b> uses a local identifier to identify the role of the person who is the author.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance </b>
+                                </u>
+                            </p>When using a local identifier where the code system can be identified using an OID then the XML element <b>id</b> shall carry the identifier as follows:<br/>
+                            <blockquote>
+                                <ul>
+                                    <li>The XML attribute <b>root</b> shall contain the OID for the identifying system.</li>
+                                    <li>The XML attribute <b>extension</b> shall contain the author's role identifier.</li>
+                                </ul>
+                            </blockquote>
+                            <p>When using an alternative identifier where the code system can not be identified using an OID then the XML element <b>id</b> shall carry the identifier as follows:<br/>
+                            </p>
+                            <blockquote>
+                                <ul>
+
+                                    <li>The XML attribute <b>root</b> shall contain the OID "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.18.37</b>
+                                    </font>".</li>
+                                    <li>The XML attribute <b>extension</b> shall contain the author's role identifier.</li>
+                                    <li>The XML attribute <b>assignedAuthorityName</b> shall contain the assigning organisation in the format of ODSCode:ODSName, for example:</li>
+                                </ul>
+                                <b>assigningAuthorityName</b>="RA9:SOUTH DEVON HEALTHCARE NHS TRUST"  </blockquote>
+
+                            <p>Where no identifier is available then the XML attribute <b>nullFlavor</b> of the XML element <b>id</b> shall contain "<font color="#ff0000">
+                                    <b>NI</b>
+                                </font>". </p>
+                            <p>Note: If the XML element <b>JobRoleName</b> of this class uses a XML attribute <b>nullFlavor</b>, then the author XML element <b>id</b> should not use a XML attribute <b>nullFlavor</b>.</p>
                         </text>
                     </otherAnnotation>
                 </annotations>
                 <derivationSupplier attributeName="id" className="Role" staticModelDerivationId="1"/>
-                <type name="II" typeSpecialisation="II.NPfIT.oid.required"/>
+                <type name="II" typeSpecialisation="II.NPfIT.oid.required.assigningAuthorityName"/>
             </attribute>
             <attribute conformance="R" isMandatory="false"
                 maximumMultiplicity="1" minimumMultiplicity="1"
@@ -256,15 +390,52 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <div>
-                                <p>Any code that describes a person's job role. <br/>
-                                    <br/>The Coded Plain  flavour of the Coded Value (CV) data type shall be used to carry this  information as follows:</p>
-                                <ul>
-                                    <li>The <i>code</i> attribute shall contain the person's job role code</li>
-                                    <li>The <i>codeSystem</i> attribute shall contain the OID for the code system</li>
-                                    <li>The <i>displayName </i>attribute shall carry the person's job role name</li>
-                                </ul>
-                            </div>
+                            <u>
+                                <b>Model Attribute Description</b>
+                            </u>
+                            <br/>
+                            <p>The HL7 attribute<b> code</b> uses a code from the <b>JobRoleName</b> vocabulary or any alternative vocabulary to describe the type of person's job role.</p>
+                            <p>
+                                <u>
+                                    <b>Implementation in XML Instance</b>
+                                </u>
+                            </p>
+                            <p>The <b>Coded Plain</b> flavour of the <b>Coded Value</b> (CV) data type shall be used to carry this information in the XML element <b>code</b> as follows:</p>
+                            <p>When the <b>JobRoleName</b> vocabulary is used then:</p>
+                            <ul>
+
+                                <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the<b> JobRoleName</b> vocabulary                                                  </font>
+                                </li>
+
+                                <li>The XML attribute <b>codeSystem</b>                         shall contain the OID "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.17.124</b>
+                                    </font>"                                                  </li>
+                                <li>The XML attribute <b>displayName</b> shall carry the description associated with the code in the <b>JobRoleName </b>vocabulary.</li>
+                            </ul>    When an alternative vocabulary is used and an OID is available then: <br/>
+                            <ul>
+
+                                <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the alternative vocabulary                                                  </font>
+                                </li>
+                                <li>The XML attribute <b>codeSystem</b>                         shall contain the OID for the alternative vocabulary                                                  </li>
+                                <li>The XML attribute <b>displayName</b> shall carry the description from the alternative vocabulary</li>
+                            </ul>
+                            <p>When an alternative vocabulary is used and no OID is available then: <br/>
+                            </p>
+                            <ul>
+
+                                <li>The XML attribute <b>code</b> shall contain the <font color="#000000">code from the alternative vocabulary                                                  </font>
+                                </li>
+
+                                <li>The XML attribute <b>codeSystem</b>                         shall contain the OID "<font color="#ff0000">
+                                    <b>2.16.840.1.113883.2.1.3.2.4.17.339</b>
+                                    </font>"</li>
+                                <li>The XML attribute <b>displayName</b> shall carry the description from the alternative vocabulary</li>
+                            </ul>
+
+                            <p>Where no information about the person's role is available then the XML attribute <b>nullFlavor</b> of the XML element <b>code</b> should contain "<font color="#ff0000">
+                                    <b>NI</b>
+                                </font>". </p>
+                            <p>If the XML element <b>id</b> of this class uses a <b>nullFlavor</b>, the XML element <b>JobRoleName</b> should not use a <b>nullFlavor</b>.</p>
                         </text>
                     </otherAnnotation>
                 </annotations>
@@ -294,7 +465,7 @@
                 <annotations>
                     <otherAnnotation type="html">
                         <text>
-                            <p>A link to the organisation entity which is scoping this role.</p>
+                            <p>A link to the scoping organisation.</p>
                         </text>
                     </otherAnnotation>
                 </annotations>
