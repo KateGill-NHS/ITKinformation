@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProfileConfig xmlns:itk="urn:nhs-itk:ns:201005">
+	<profileId root="2.16.840.1.113883.2.1.3.2.4.18.28" extension="urn:nhs-en:profile:nullificationDocument-v5-0"/>
+	<configGroup type="Templates">
+		<configItem code="COCD_TP145001UK03" displayName="AuthorSDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145004UK03" displayName="EntitySDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145017UK03" displayName="RecipientOrganization" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145018UK03" displayName="CustodianOrganizationUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145019UK03" displayName="NonNamedPersonAuthorSDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145020UK03" displayName="Patient" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145021UK04" displayName="RecipientEntitySDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145021UK05" displayName="RecipientEntitySDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145022UK02" displayName="EntitySDSWithRequiredRoleProfileId" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145029UK02" displayName="RecipientWorkgroupSDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145031GB02" displayName="WorkgroupSDS" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145200GB01" displayName="AuthorPersonUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145201GB01" displayName="PatientUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145202GB01" displayName="RecipientPersonUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145203GB02" displayName="RecipientOrganizationUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145204GB02" displayName="RecipientWorkgroupUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145205GB01" displayName="PersonUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145207GB01" displayName="AuthorDeviceUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145208GB01" displayName="AuthorNonNamedPersonUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP145212GB02" displayName="WorkgroupUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP146049UK05" displayName="NullifyDocument" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP146061UK01" displayName="TextSection" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+		<configItem code="COCD_TP146062UK01" displayName="CRETypeListSNOMEDCT" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+	</configGroup>
+	<configGroup type="Vocabulary">
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" codeSystemName="AuthorFunctionType" codeSystemVersion="1.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.15.11.81" codeSystemName="CDADocumentTypeSnCT" codeSystemVersion="2.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289" codeSystemName="CDAOrganizationProviderType" codeSystemVersion="1.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.15.11.67" codeSystemName="CRETypeSnCT" codeSystemVersion="2.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.70" codeSystemName="HumanLanguage" codeSystemVersion="4.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" codeSystemName="JobRoleName" codeSystemVersion="2.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.176" codeSystemName="ReasonForDocumentNullification" codeSystemVersion="2.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" codeSystemName="SDSJobRoleName" codeSystemVersion="2.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" codeSystemName="Sex" codeSystemVersion="1.0"/>
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.266" codeSystemName="WorkgroupRoleName" codeSystemVersion="1.0"/>
+	</configGroup>
+</ProfileConfig>

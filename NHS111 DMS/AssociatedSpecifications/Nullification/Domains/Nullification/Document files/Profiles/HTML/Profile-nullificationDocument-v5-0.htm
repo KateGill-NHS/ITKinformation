@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+<title>Nullification: Configuration Profiles</title>
+
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../../../../../Core/Stylesheets/screen.css" type="text/css" media="screen, projection"/>
+<link rel="stylesheet" href="../../../../../Core/Stylesheets/print.css" type="text/css" media="print"/>
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../../../../../Core/Stylesheets/ie.css" type="text/css" media="screen, projection"/>
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../../../../../Core/ImageFiles/CorporateLogoImage.png" alt="left logo"/>
+		</div>
+		<div class="d-mim-span-12">
+			<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; ">
+			<span class="Apple-style-span" style="color: rgb(34, 34, 34); font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; ">
+			<h1><a name=_Toc_Section_></a>Nullification<br>Domain Message Specification</h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../../../../../Core/ImageFiles/CorporateLogoText.jpg" class="d-mim-right" alt="right logo"/>
+		</div>
+	</div>
+		<div id="navigation">
+			<div id="status">Version: 2.1; Status: RC1</div>
+				<ul class="tabs level0">
+			<li><a href="../../../../../Index.htm" title="Overview">Overview</a></li>
+			<li class="selected">
+			<a title="Message Definitions" href="../../IM.htm">Message Definitions</a></li>
+			<li><a href="../../../../../Core/References.htm" title="References">References</a></li>
+			<li><a href="../../../../../Core/Glossary.htm" title="Glossary">Glossary</a></li>
+		</ul>
+		<ul class="tabs level1">
+			<li class="selected"><a href="../Profiles.htm" title="Configuration Profiles">Configuration Profiles</a></li>
+
+		</ul>
+			</div>
+<div id="content"><h1>Profile - urn:nhs-en:profile:nullificationDocument-v5-0</h1>
+	<hr/>
+<p>The profile has the following configurable items:</p><h1>Vocabulary</h1>
+<table>
+<thead>
+<tr>
+<th>Vocabulary Name</th>
+<th>OID</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+					<td>AuthorFunctionType</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.178</td>
+					<td>1.0</td>
+				</tr>
+				<tr>
+					<td>CDADocumentTypeSnCT</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.15.11.81</td>
+					<td>2.0</td>
+				</tr>
+				<tr>
+					<td>CDAOrganizationProviderType</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.289</td>
+					<td>1.0</td>
+				</tr>
+				<tr>
+					<td>CRETypeSnCT</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.15.11.67</td>
+					<td>2.0</td>
+				</tr>
+				<tr>
+					<td>HumanLanguage</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.70</td>
+					<td>4.0</td>
+				</tr>
+				<tr>
+					<td>JobRoleName</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.124</td>
+					<td>2.0</td>
+				</tr>
+				<tr>
+					<td>ReasonForDocumentNullification</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.176</td>
+					<td>2.0</td>
+				</tr>
+				<tr>
+					<td>SDSJobRoleName</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.196</td>
+					<td>2.0</td>
+				</tr>
+				<tr>
+					<td>Sex</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.16.25</td>
+					<td>1.0</td>
+				</tr>
+				<tr>
+					<td>WorkgroupRoleName</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.17.266</td>
+					<td>1.0</td>
+				</tr></tbody>
+</table>
+<h1>Templates</h1>
+<table>
+<thead>
+</thead>
+<tbody>
+	<tr>
+					<th>Template Identifier</th>
+					<th>Template Name</th>
+					<th>Template Scheme</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+					<td>COCD_TP145001UK03</td>
+					<td>AuthorSDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145004UK03</td>
+					<td>EntitySDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145017UK03</td>
+					<td>RecipientOrganization</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145018UK03</td>
+					<td>CustodianOrganizationUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145019UK03</td>
+					<td>NonNamedPersonAuthorSDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145020UK03</td>
+					<td>Patient</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145021UK04</td>
+					<td>RecipientEntitySDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145021UK05</td>
+					<td>RecipientEntitySDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145022UK02</td>
+					<td>EntitySDSWithRequiredRoleProfileId</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145029UK02</td>
+					<td>RecipientWorkgroupSDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145031GB02</td>
+					<td>WorkgroupSDS</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145200GB01</td>
+					<td>AuthorPersonUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145201GB01</td>
+					<td>PatientUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145202GB01</td>
+					<td>RecipientPersonUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145203GB02</td>
+					<td>RecipientOrganizationUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145204GB02</td>
+					<td>RecipientWorkgroupUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145205GB01</td>
+					<td>PersonUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145207GB01</td>
+					<td>AuthorDeviceUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145208GB01</td>
+					<td>AuthorNonNamedPersonUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP145212GB02</td>
+					<td>WorkgroupUniversal</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP146049UK05</td>
+					<td>NullifyDocument</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP146061UK01</td>
+					<td>TextSection</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr>
+				<tr>
+					<td>COCD_TP146062UK01</td>
+					<td>CRETypeListSNOMEDCT</td>
+					<td>2.16.840.1.113883.2.1.3.2.4.18.2</td>
+				</tr></tbody>
+</table>
+<p>
+<br/>
+
+</p>
+
+<div>
+	&nbsp;</div>
+	</div>
+		<div id="footer">
+		<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0220</div>
+		<div class="d-mim-span-8">CFH Interoperability Team: <a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+		<div class="d-mim-span-8 d-mim-last">Release Date: 20-Jan-2012</div>
+	</div>
+	</div>
+</body>
+
+</html>

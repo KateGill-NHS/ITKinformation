@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Nullification: Overview</title>
+</head>
+<!-- Framework CSS -->
+<link rel="stylesheet" href="Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+
+</head>
+
+
+<body>
+<div class="d-mim-container">
+<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="Core/ImageFiles/CorporateLogoImage.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1>Nullification<br>Domain Message Specification</h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="Core/ImageFiles/CorporateLogoText.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 2.1; Status: RC1</div>
+		<ul class="tabs level0">
+			<li class="selected">
+			<a href="Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+			<a href="Domains/Nullification/Document files/IM.htm" title="Message Definitions">Message Definitions</a>
+			</li>		
+			<li>
+			<a href="Core/References.htm" title="References">
+			References</a></li>
+			<li>
+			<a href="Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>
+				<ul class="tabs level1">
+			<li>
+			<a title="Change History" href="Core/ChangeHistory/CH.htm">
+			Change History</a></li>
+		</ul>
+	</div>
+<div id="content">
+<h1>Overview: Nullification Domain Message Specification</h1>
+	<p>
+	<font face="Arial">The Nullification Domain Message Specification supports 
+	the following care communications:</font></p>
+<ul>
+		<li><font face="Arial">Nullification CDA Document</font></li></ul>
+		
+	<p>
+	This domain details generic documents used to nullify documents sent by CDA 
+	domains. Nullification documents are used where it is not possible to use 
+	the normal replacement mechanism because no correcting document is 
+	available. Further details of the normal replacement mechanism are contained 
+	within each CDA domain.</p>  
+	<p><br>
+		<b>Domain Compliance Statement:</b>&nbsp; The CDA document specified within this domain complies with the conformance statement
+ from "HL7 Clinical Document Architecture, Release 2.0" (2006 Normative Edition), specifically:
+</p>
+<p><br>"A conformant CDA document is one that at a minimum validates against the CDA Schema,
+ and that restricts its use of coded vocabulary to values allowable within the specified vocabulary domains."
+The CDA specification described in this domain makes use of a templating mechanism 
+that supports both entry-level and section-level templating. NHS CFH have implemented 
+the HL7 guidelines for CDA and have included localisations to aid navigation of the CDA document.</p> 
+<p><br>
+<b>Use of templates</b>:
+This domain uses templates, for further information on templates refer to the latest version 
+of  "NPFIT-ELIBR-AREL-P1R2-0178 Technical Guidance for Implementation of Templated CDA Domains"</p>
+<h2>Artefact Key</h2>
+	<p class="d-mim-quiet">Within this specification clicking on these icons 
+	will open the page in a new window</p>
+	<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<img border="0" src="Core/ImageFiles/RMIM.gif" width="16" height="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">R-MIM</font></p>
+	<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<img border="0" src="Core/ImageFiles/TabView.gif" width="16" height="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">Tabular 
+	View</font></p>
+	<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<img border="0" src="Core/ImageFiles/Schema.gif" width="16" height="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Schema</font></p>
+	<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<img border="0" src="Core/ImageFiles/XMLExample.gif" width="16" height="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">Example 
+	Message</font></p>
+	<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<font size="3">
+	<img border="0" src="Core/ImageFiles/ModelTemplateList.gif" width="16" height="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Model Template List</font></p>
+<p class="MsoNormal" style="MARGIN-BOTTOM: 3pt">
+	<font face="Arial" size="3">
+	<a title="View MIF" style="color: blue" href="Mif/POCD_RM130001UK05-NullifyDocument.mif" target="_blank">
+	<img border="0" src="Core/ImageFiles/Mif.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Mif</font></p>
+	
+	<div class="d-mim-span-18 d-mim-box d-mim-small d-mim-prepend-top">This work is based on material originally published in the HL7 Version 3 Standard, &copy; 2002-2004 by Health Level Seven, Incorporated. Readers are recommended to consult the indicated versions of referenced materials as published by HL7 or HL7 UK. Membership details for HL7 UK are available at www.hl7.org.uk .
+The authors gratefully acknowledge input from HL7 UK and HL7 members during the development of this work. The messages are designed to meet NHS requirements as an implementation specification of the HL7 Version 3 standards material available during development.</div>
+
+	<div  class="d-mim-prepend-top">
+<img width=53 height=49 class="d-mim-right" src="Core/ImageFiles/HL7.gif">
+</div>
+</div>
+<div id="footer">
+<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0220</div>
+<div class="d-mim-span-8">CFH Interoperability Team: <a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+<div class="d-mim-span-8 d-mim-last">Release Date: 20-Jan-2012</div>
+</div>
+</div>
+</body>
+
+</html>
+
+
+
+
+
+

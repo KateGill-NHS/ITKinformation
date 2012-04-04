@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProfileConfig xmlns:itk="urn:nhs-itk:ns:201005">
+	<profileId root="2.16.840.1.113883.2.1.3.2.4.18.28" extension="RepeatCallerQuery"/>
+	<configGroup type="Templates">
+		<configItem code="COCD_TP145200GB01" displayName="AuthorPersonUniversal" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+	</configGroup>
+	<configGroup type="Vocabulary">
+		<configItem codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" codeSystemName="JobRoleName" codeSystemVersion="2.0"/>
+	</configGroup>
+</ProfileConfig>

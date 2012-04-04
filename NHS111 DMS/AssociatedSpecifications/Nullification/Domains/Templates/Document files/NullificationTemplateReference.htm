@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Nullification: Template Usage</title>
+</head>
+
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../../../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../../../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../../../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../../../Core/ImageFiles/CorporateLogoImage.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>Nullification<br>Domain 
+			Message Specification</h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../../../Core/ImageFiles/CorporateLogoText.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 2.1; Status: RC1</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../../../Index.htm" title="Overview">
+			Overview</a></li>
+			<li>
+			<a href="../../Nullification/Document%20files/IM.htm" title="Message Definitions">
+			Message Definitions</a>
+			
+			<!--<li>
+			<a href="../../../Core/Generic.htm" title="Generic">
+			Generic</a></li>-->
+			<!--
+			<li class="selected">
+			<a href="References.htm" title="References">
+			References</a></li>
+			-->
+			
+			<li class="selected">
+			<a href="../../../Core/References.htm" title="References">
+			References</a></li>
+
+			<li>
+			<a href="../../../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>		
+		<ul class="tabs level1">
+			<li>
+				<a title="Data Types" href="../../../Data%20Types/DataTypesIndexPage.htm">Data Types</a>      
+			</li>
+			<li>
+				<a title="Constraints" href="NullificationConstraintReference.htm">Constraint Usage</a>      
+			</li>
+			<li class="selected">
+				<a title="Templates Usage" href="../../../Domains/Templates/Document%20files/NullificationTemplateReference.htm">Templates Usage</a>      
+			</li>
+<li>
+				<a title="Vocabulary" href="../../../Vocabulary/VocabularyIndexPage.htm">Vocabulary</a>    
+			</li>
+
+		</ul>
+
+	</div>
+	<div id="content">
+         	<div class="section">
+         			<div class="section1_1">
+            <h2><span style="font-style: normal">Template Usage</span></h2>
+	<h2>Contents</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorSDS - 
+	COCD_TP145001UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EntitySDS - 
+	COCD_TP145004UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3">3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientOrganization 
+	- COCD_TP145017UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4">4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CustodianOrganizationUniversal 
+	- COCD_TP145018UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5">5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NonNamedPersonAuthorSDS 
+	- COCD_TP145019UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_6">6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient - 
+	COCD_TP145020UK03</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7">7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientEntitySDS 
+	- COCD_TP145021UK04</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_8">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientEntitySDS 
+	- COCD_TP145021UK05</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_9">9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EntitySDSWithRequiredRoleProfileId 
+	- COCD_TP145022UK02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_10">10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientWorkgroupSDS 
+	- COCD_TP145029UK02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_11">11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkgroupSDS 
+	- COCD_TP145031GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_12">12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorPersonUniversal 
+	- COCD_TP145200GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_13">13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PatientUniversal 
+	- COCD_TP145201GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_14">14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientPersonUniversal 
+	- COCD_TP145202GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_15">15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientOrganizationUniversal 
+	- COCD_TP145203GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_16">16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RecipientWorkgroupUniversal 
+	- COCD_TP145204GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_17">17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PersonUniversal 
+	- COCD_TP145205GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_18">18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorDeviceUniversal 
+	- COCD_TP145207GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_19">19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorNonNamedPersonUniversal 
+	- COCD_TP145208GB01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_20">20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkgroupUniversal 
+	- COCD_TP145212GB02</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_21">21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NullifyDocument 
+	- COCD_TP146049UK05</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_22">22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextSection 
+	- COCD_TP146061UK01</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_23">23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRETypeListSNOMEDCT 
+	- COCD_TP146062UK01</a></div>
+         <hr>
+         <div class="section1_2">
+            <h2><a name="_Toc_Section_1"></a>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template : 
+               			<a>COCD_TP145001UK03 [ AuthorSDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145001UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145001UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145001UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145001UK03-AuthorSDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_2"></a>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145004UK03 [ EntitySDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145004UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145004UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145004UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145004UK03-EntitySDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800016#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800016_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_3" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_3"></a>&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145017UK03 [ RecipientOrganization ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145017UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145017UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145017UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145017UK03-RecipientOrganization.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_4"></a>&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145018UK03 [ CustodianOrganizationUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145018UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145018UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145018UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145018UK03-CustodianOrganizationUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800014#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800014_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_5" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_5"></a>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145019UK03 [ NonNamedPersonAuthorSDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145019UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145019UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145019UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145019UK03-NonNamedPersonAuthorSDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_6"></a>&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145020UK03 [ Patient ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145020UK03.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145020UK03-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145020UK03.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145020UK03-Patient.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800019#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800019_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_4" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_7"></a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145021UK04 [ RecipientEntitySDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145021UK04.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145021UK04-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145021UK04.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145021UK04-RecipientEntitySDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_8"></a>&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145021UK05 [ RecipientEntitySDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145021UK05.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145021UK05-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145021UK05.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145021UK05-RecipientEntitySDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_9"></a>&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145022UK02 [ 
+			EntitySDSWithRequiredRoleProfileId ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145022UK02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145022UK02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145022UK02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145022UK02-EntitySDSWithRequiredRoleProfileId.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800024#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800024_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_6" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_10"></a>&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145029UK02 [ RecipientWorkgroupSDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145029UK02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145029UK02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145029UK02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145029UK02-RecipientWorkgroupSDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_11"></a>&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145031GB02 [ WorkgroupSDS ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145031GB02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145031GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145031GB02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145031GB02-WorkgroupSDS.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_12"></a>&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145200GB01 [ AuthorPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145200GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145200GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145200GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145200GB01-AuthorPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_13"></a>&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145201GB01 [ PatientUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145201GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145201GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145201GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145201GB01-PatientUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800019#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800019_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_4" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_14"></a>&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145202GB01 [ RecipientPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145202GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145202GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145202GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145202GB01-RecipientPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_15"></a>&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145203GB02 [ RecipientOrganizationUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145203GB02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145203GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145203GB02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145203GB02-RecipientOrganizationUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_16"></a>&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145204GB02 [ RecipientWorkgroupUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145204GB02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145204GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145204GB02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145204GB02-RecipientWorkgroupUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800008#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800008_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_1" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_17"></a>&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145205GB01 [ PersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145205GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145205GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145205GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145205GB01-PersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800016#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800016_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_3" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+                  <tr>
+                     <td>NPFIT-800024#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800024_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_6" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_18"></a>&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145207GB01 [ AuthorDeviceUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145207GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145207GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145207GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145207GB01-AuthorDeviceUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_19"></a>&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145208GB01 [ AuthorNonNamedPersonUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145208GB01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145208GB01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145208GB01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145208GB01-AuthorNonNamedPersonUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_20"></a>&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP145212GB02 [ WorkgroupUniversal ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP145212GB02.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP145212GB02-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP145212GB02.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP145212GB02-WorkgroupUniversal.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800007#Role</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800007_Role.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RoleConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_2" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_21"></a>&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146049UK05 [ NullifyDocument ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146049UK05.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146049UK05-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146049UK05.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146049UK05-NullifyDocument.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800017#Section</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800017_Section.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/SectionConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_9" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_22"></a>&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146061UK01 [ TextSection ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146061UK01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146061UK01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146061UK01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146061UK01-TextSection.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800001#Section</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800001_Section.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/SectionConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_8" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+            <h2><a name="_Toc_Section_23"></a>&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template :COCD_TP146062UK01 [ CRETypeListSNOMEDCT ]&nbsp;&nbsp;&nbsp;
+               			<a title="View R-MIM" style="color: blue" href="../Tabular View/COCD_TP146062UK01.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/RMIM.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Tabular View" style="color: blue" href="../Tabular View/COCD_TP146062UK01-NoEdit.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/TabView.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View Schema" style="color: blue" href="../../../Schemas/COCD_TP146062UK01.xsd" target="_blank"><img border="0" src="../../../Core/ImageFiles/Schema.gif" width="16" height="16"></a>&nbsp;&nbsp;&nbsp;
+               			<a title="View MIF" style="color: blue" href="../../../Mif/COCD_TP146062UK01-CRETypeListSNOMEDCT.mif" target="_blank"><img border="0" src="../../../Core/ImageFiles/Mif.gif" width="16" height="16"></a></h2>
+            <table>
+               <thead class="templateheader">
+                  <tr>
+                     <td style="width: 10%">Constraint</td>
+                     <td style="width: 5%">Model</td>
+                     <td style="width: 15%">Cross Reference</td>
+                     <td style="width: 5%">Version</td>
+                     <td style="width: 5%">Status</td>
+                     <td style="width: 65%">ChangeHistory</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NPFIT-800032#Section</td>
+                     <td align="center">
+						<a title="View Constraint" style="color: blue" href="NPFIT-800032_Section.htm" target="_blank"><img border="0" src="../../../Core/ImageFiles/SectionConstraint.gif" width="16" height="16"></a></td>
+                     <td align="center">
+						<a title="View Constraint Cross Reference" href="NullificationConstraintReference.htm#_Toc_Section_7" target="_blank"><img border="0" src="../../../Core/ImageFiles/ConstraintCrossReference.gif" width="16" height="16"></a></td>
+                     <td>1.0</td>
+                     <td>A</td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+            </div>
+            <p></p>
+            <h3>Impacted Domains</h3>
+            <ul>
+               <li>Nullification</li>
+            </ul>
+            <hr>
+         </div>
+      </div>
+   <div id="footer">
+	<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0220</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date: 20-Jan-2012</div></div>
+	</div>
+
+</body>
+
+</html>

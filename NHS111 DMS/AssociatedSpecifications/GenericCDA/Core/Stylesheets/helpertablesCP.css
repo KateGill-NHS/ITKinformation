@@ -1,0 +1,22 @@
+table.helper {
+    border-right: black 1px solid;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    width: 80%;
+} 
+
+table.helper th {
+    background: #99CCFF;
+ font-weight:bold;
+}
+
+table.helper td {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 3pt 3pt 3pt 3pt;
+    vertical-align: top;
+}
+
+

@@ -1,0 +1,1389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Nullification: Data Types Specification</title>
+</head>
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+<style type="text/css">
+/*Override default styles as contains nested tables*/
+	TD {
+		border-bottom: 1px solid black;
+		background: #fff !important; 
+	}
+	table { border-collapse:collapse; }
+</style>
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../Core/ImageFiles/CorporateLogoImage.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>Nullification<br>Domain Message Specification </h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../Core/ImageFiles/CorporateLogoText.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 2.1; Status: RC1</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../Index.htm" title="Overview">
+			Overview</a></li>
+			<li class="selected">
+			<a href="../Domains/Nullification/Document files/IM.htm" title="Message Definitions">Message Definitions</a></li>
+			<li>
+			<a href="../Core/References.htm" title="References">
+			References</a></li>
+			<li>
+			<a href="../Core/Glossary.htm" title="Glossary">
+			Glossary</a></li>
+		</ul>
+		<ul class="tabs level1">
+			<li class="selected">
+				<a title="Data Types" href="DataTypesIndexPage.htm">Data Types</a>     
+			</li>
+			<li>
+				<a title="Constraints" href="../Domains/Templates/Document%20files/NullificationConstraintReference.htm">Constraint Usage</a>      
+			</li>
+			<li>
+				<a title="Templates Usage" href="../Domains/Templates/Document%20files/NullificationTemplateReference.htm">Templates Usage</a>      
+			</li>
+<li>
+				<a title="Vocabulary" href="../Vocabulary/VocabularyIndexPage.htm">Vocabulary</a>    
+			</li>
+
+		</ul>
+	</div>
+<div id="content"><h1><a name=_Toc_Section_></a>Data Types Specification</h1>
+
+		<p class="un-numberedheading2">Contents</p>
+	<div class="index1" id="fp_TOC" class="fp_TOC">
+			<a href="#_Toc_Section_1">1&nbsp;&nbsp;&nbsp;&nbsp;Introduction</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.1">1.1&nbsp;&nbsp;&nbsp;&nbsp;Domain Specification Data Types</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.2">1.2&nbsp;&nbsp;&nbsp;&nbsp;HL7 and W3C data types</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.3">1.3&nbsp;&nbsp;&nbsp;&nbsp;Data type flavours</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1.4">1.4&nbsp;&nbsp;&nbsp;&nbsp;SET, LIST, BAG and IVL</a><br><a href="#_Toc_Section_2">2&nbsp;&nbsp;&nbsp;&nbsp;Data Type details</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.2">2.2&nbsp;&nbsp;&nbsp;&nbsp;Simple types</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#BL"><a href="#_Toc_Section_2.2.1">2.2.1&nbsp;&nbsp;&nbsp;&nbsp;Boolean
+(BL)<a name=BL></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#INT"><a href="#_Toc_Section_2.2.2">2.2.2&nbsp;&nbsp;&nbsp;&nbsp;Integer Number (INT)<a name=INT></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.3">2.3&nbsp;&nbsp;&nbsp;&nbsp;Text and encapsulated data</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ST"><a href="#_Toc_Section_2.3.1">2.3.1&nbsp;&nbsp;&nbsp;&nbsp;Character
+String (ST)<a name=ST></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#SC"><a href="#_Toc_Section_2.3.2">2.3.2&nbsp;&nbsp;&nbsp;&nbsp;Character String with Code (SC)<a name=SC></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ED"><a href="#_Toc_Section_2.3.3">2.3.3&nbsp;&nbsp;&nbsp;&nbsp;Encapsulated Data (ED)<a name=ED></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.4">2.4&nbsp;&nbsp;&nbsp;&nbsp;Demographics</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#PN"><a href="#_Toc_Section_2.4.1">2.4.1&nbsp;&nbsp;&nbsp;&nbsp;Person Name (PN)<a name=PN></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#_Toc_Section_2.4.2">2.4.2&nbsp;&nbsp;&nbsp;&nbsp;Organization Name (<span lang="EN-US">ON</span>)<span lang="EN-US"></span><span lang="EN-US"><a style="TEXT-DECORATION: none" name="ON"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#AD"><a href="#_Toc_Section_2.4.3">2.4.3&nbsp;&nbsp;&nbsp;&nbsp;Postal 
+Address (AD)<a name=AD></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TEL"><a href="#_Toc_Section_2.4.4">2.4.4&nbsp;&nbsp;&nbsp;&nbsp;Telecommunication 
+Address (TEL)<a name=TEL></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.5">2.5&nbsp;&nbsp;&nbsp;&nbsp;Codes</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#_Toc_Section_2.5.1">2.5.1&nbsp;&nbsp;&nbsp;&nbsp;Introduction</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CE"><a href="#_Toc_Section_2.5.2">2.5.2&nbsp;&nbsp;&nbsp;&nbsp;Coded
+with Equivalents (CE)<a name=CE></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CS"><a href="#_Toc_Section_2.5.3">2.5.3&nbsp;&nbsp;&nbsp;&nbsp;Coded Simple 
+Value (CS)<a name=CS></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#CV"><a href="#_Toc_Section_2.5.4">2.5.4&nbsp;&nbsp;&nbsp;&nbsp;Coded Value (CV)<a name=CV></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#_Toc_Section_2.5.5">2.5.5&nbsp;&nbsp;&nbsp;&nbsp;Domain 
+	Specification Codes</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.6">2.6&nbsp;&nbsp;&nbsp;&nbsp;Identifiers</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#II"><a href="#_Toc_Section_2.6.1">2.6.1&nbsp;&nbsp;&nbsp;&nbsp;Instance 
+Identifier (II)<a name=II></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2.7">2.7&nbsp;&nbsp;&nbsp;Dates and Times</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#TS"><a href="#_Toc_Section_2.7.1">2.7.1&nbsp;&nbsp;&nbsp;&nbsp;Point in Time (TS)<a name=TS></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#IVL_TS"><a href="#_Toc_Section_2.8.2">2.8.2&nbsp;&nbsp;&nbsp;&nbsp;Interval of 
+Points in Time (IVL&lt;TS&gt;)<a name="IVL_TS"></a></span><a href="#_Toc_Section_2.8.3"></div>
+		<div class=MsoNormal align=center style='text-align:center'>
+			<hr size=3 width="100%" align=center></div>
+		<h1><a name=_Toc_Section_1></a>1&nbsp;&nbsp;&nbsp;&nbsp;Introduction</a></h1>
+		<p class="MsoNormal">This document specifies all the current datatypes in use in NHS 
+		CFH message specifications at the time of publication, for the datatypes 
+		specific to the NHS 111 messages please refer to the data 
+		type cross reference section in this specification.</font>
+	</p>
+		<h2><a name=_Toc_Section_1.1></a>1.1&nbsp;&nbsp;&nbsp;&nbsp;Domain Specification Data Types</h2>
+	<p class=MsoNormal><font size="3">The messages in this specification
+specify a data type for each data item.&nbsp; There is an XML representation of
+each data type, and the schemas for these are in the file datatypes.xsd. For two 
+	attributes, (Address part type of element ADXP), as permitted by HL7 V3
+regulations, UK-specific attribute values have been used rather than the
+standard HL7 V3 set.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">The data types listed below are a subset of the full HL7 V3
+data types as these were defined in 2006 - Normative version.&nbsp; While there may be differences between the data types defined
+here and the final HL7 balloted data types, it is anticipated that there will
+be an XSLT transform that can be applied to convert&nbsp;the data types
+described below to the final HL7 V3 ones. For the full HL7 v3 2006 - Normative 
+	version documentation on data types, readers should consult the HL7
+v3 Ballot pack. </font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">The data types have been described in this document to
+prevent the ongoing HL7 ballot process from introducing uncertainty to Domain 
+	Specification,
+and to allow domain specific profiles of each data type, with only those values
+that are appropriate in the context of Domain Specification.&nbsp; This will simplify the
+processing requirements for the receiving systems, and remove the need for developers
+to learn about optional facets of the data types that are not being used in 
+	Domain Specification
+messages.</font></p>
+	<h2><a name=_Toc_Section_1.2></a>1.2&nbsp;&nbsp;&nbsp;&nbsp;HL7 and W3C data types</h2>
+	<p class=MsoNormal><font size="3">All HL7 data types are based on the data types defined in
+the W3C schema recommendation.&nbsp;&nbsp;However the HL7 data types were
+defined as those best suited to meet the requirements of healthcare messaging
+and this accounts for some of the differences between them and the native W3C
+XML Schema data types.</font></p>
+	<p class=MsoNormal><font size="3">Some simple data types such as Boolean are restrictions on
+the W3C version, with the values &quot;true and &quot;false&quot; being
+allowed, but not 0 and 1, which have proved a source of confusion in messaging
+implementations.&nbsp; Others are more loosely defined, such as TS (Time Stamp)
+which is implemented as a union of many of the W3C date/time data types.</font></p>
+	<p class=MsoNormal><font size="3">Where a data type component is intended to be used
+externally its name is in capitals (e.g. TS), and where is intended only for
+use in as a part of another data type, the name is in lower case (e.g. center,
+low and high which is used by IVL_TS).</font></p>
+	<h2><a name=_Toc_Section_1.3></a>1.3&nbsp;&nbsp;&nbsp;&nbsp;Data type flavours</h2>
+	<p class=MsoNormal><font size="3">HL7 Version 3 provides a rich set of possible variants on a
+set of relatively complex data types. For the purposes of Domain Specification this document
+describes constraints on some of the HL7 Data Types. Each profile of a data
+type is referred to as a &quot;flavour&quot;. Each of the permitted
+&quot;flavours&quot; is specified in full and is assigned a name which is used
+in guidance documents to indicate which variant to use to meet particular sets
+of requirements. This approach is experimental - in the sense that it is not
+part of standard HL7 methodology. Its principal purpose is to enumerate the
+possible structures and simplify advice on the most appropriate way to
+represent specific collections of data. Similar issues have been raised in the
+HL7 community and specifications such as this may become common within
+particular realms of use.&nbsp; Data type flavour titles are suffixed with (f).</font></p>
+	<h2><a name=_Toc_Section_1.4></a>1.4&nbsp;&nbsp;&nbsp;&nbsp;SET, LIST, BAG and IVL</h2>
+	<p class=MsoNormal><font size="3">These are data values that comprise generic collections of 
+data values of a single data type.&nbsp; Four concern us here: </font></p>
+	<ul style='margin-top:0cm' type=disc>
+		<li class=MsoNormal><a name=BAG></a><font size="3">BAG - unordered collection of data
+     values.&nbsp; A data value may occur more than once.&nbsp; The collection
+     of the integers (17, 2,13, 2, 99,17) would be a BAG.</font></li>
+		<li class=MsoNormal><font size="3"><a name=LIST></a>LIST - an ordered collection of distinct
+     data values. The collection of the integers (2, 13, 17, 99) would be a
+     LIST.</font></li>
+		<li class=MsoNormal><a name=SET></a><font size="3">SET - a collection of distinct data values
+     in no particular order. The collection of the integers (17, 13, 99, 2)
+     would be a SET.</font></li>
+		<li class=MsoNormal><a name="IVL"><font size="3"></a>IVL</font><font size="3"> - a set of consecutive values. 
+			</font></li>
+	</ul>
+		<p class="MsoNormal"><font size="3" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#IVL_TS">IVL&lt;TS&gt; an interval of Points in Time</a></font></p>
+	<p class="MsoNormal"><font class="MSoNormal" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#IVL_PQ">IVL&lt;PQ&gt; an interval of Physical Quantities</a>
+	</font></p>
+	<div class=MsoNormal align=center style='text-align:center'>
+		<hr size=3 width="100%" align=center></div>
+	<h1><a name=_Toc_Section_2></a>2&nbsp;&nbsp;&nbsp;&nbsp;Data Type details</h1>
+	<h2><a name=_Toc_Section_2.2></a>2.2&nbsp;&nbsp;&nbsp;&nbsp;Simple types</h2>
+	<h3><a name=_Toc_Section_2.2.1></a>2.2.1&nbsp;&nbsp;&nbsp;&nbsp;Boolean
+(BL)<a name=BL></a></h3>
+	<p class=MsoNormal><font size="3">An element of type BL has one attribute, a &quot;<b>value</b>&quot;
+which shall&nbsp;be &quot;true&quot; or &quot;false&quot;. Alternatively, the
+&quot;<b>nullFlavor</b>&quot; attribute may be used to indicate that a simple
+true or false value cannot be asserted. This represents the global HL7
+standard, and is not an domain specification flavour.&nbsp;</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Note: The values are case sensitive (e.g. &quot;TRUE&quot;
+is not a valid value but &quot;true&quot; is).</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Note: A nullFlavor is not permitted simultaneously with a
+value.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a context conduction indicator with
+value &quot;true&quot; </font></span>
+	</b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">contextConductionInd</font></span><span
+style='color:red;background:white'><font size="3"> value</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">true</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a seperatable indicator with value
+&quot;false&quot; </font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">seperatableInd</font></span><span
+style='color:red;background:white'><font size="3"> value</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">false</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a seperatable indicator where the
+value is unknown</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">seperatableInd</font></span><span
+style='color:red;background:white'><font size="3"> nullFlavor</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">UNK</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h3><a name=_Toc_Section_2.2.2></a>2.2.2&nbsp;&nbsp;&nbsp;&nbsp;Integer Number (INT)<a name=INT></a></h3>
+	<p class=MsoNormal><font size="3">Integers are expressed as an attribute &quot;<b>value</b>&quot;
+within this data-type.&nbsp; Where the value is not known or not available then
+an appropriate setting for the &quot;<b>nullFlavor</b>&quot; attribute should
+be sent. This represents the global HL7 standard, and is not an domain 
+	specification flavour.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Note: A nullFlavor is not permitted simultaneously with a
+value.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a repeat number of &quot;1&quot; 
+		</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">repeatNumber</font></span><span
+style='color:red;background:white'><font size="3"> value</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a sequence number where the value is
+unknown</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">sequenceNumber</font></span><span
+style='color:red;background:white'><font size="3"> nullFlavor</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">UNK</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h2><a name=_Toc_Section_2.3></a>2.3&nbsp;&nbsp;&nbsp;&nbsp;Text and encapsulated data</h2>
+	<h3><a name=_Toc_Section_2.3.1></a>2.3.1&nbsp;&nbsp;&nbsp;&nbsp;Character
+String (ST)<a name=ST></a></h3>
+	<p class=MsoNormal><font size="3">String data is sent as the element content for any 
+		element
+of this datatype. This represents the global HL7 standard, and is not an domain 
+	specification
+flavour.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Note: A nullFlavor is not permitted simultaneously with a
+value.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate some plain text (in an observation
+class &quot;text&quot; attribute)</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">text</font></span><span style='color:blue;background:white'><font size="3">&gt;</font></span><span style='color:black;background:white'><font size="3">Some plain text</font></span><span
+style='color:blue;background:white'><font size="3">&lt;/</font></span><span
+style='color:maroon;background:white'><font size="3">text</font></span><span
+style='color:blue;background:white'><font size="3">&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate that the text value is unknown (in an
+observation class &quot;value&quot; attribute)</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">value</font></span><span style='color:red;background:white'><font size="3"> nullFlavor</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">UNK</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h3><a name=_Toc_Section_2.3.2></a>2.3.2&nbsp;&nbsp;&nbsp;&nbsp;Character String with Code (SC)<a name=SC></a></h3>
+	<p class=MsoNormal><font size="3">A character string that optionally may have a code attached.
+The text must always be present if a code is present. The code is often a local
+code.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Note: A nullFlavor is not permitted simultaneously with a
+value.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a software name of &quot;NHAIS&quot;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">softwareName</font></span><span
+style='color:blue;background:white'><font size="3">&gt;</font></span><span
+style='color:black;background:white'><font size="3">NHAIS</font></span><span
+style='color:blue;background:white'><font size="3">&lt;/</font></span><span
+style='color:maroon;background:white'><font size="3">softwareName</font></span><span
+style='color:blue;background:white'><font size="3">&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a software name of &quot;NHAIS&quot;
+and a code meaning &quot;NHAIS&quot;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">softwareName</font></span><span
+style='color:red;background:white'><font size="3"> code</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> codeSystem</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.3.2.9999</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> displayName</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">NHAIS</font></span><span
+style='color:blue;background:white'><font size="3">&quot;&gt;</font></span><span
+style='color:black;background:white'><font size="3">NHAIS</font></span><span
+style='color:blue;background:white'><font size="3">&lt;/</font></span><span
+style='color:maroon;background:white'><font size="3">softwareName</font></span><span
+style='color:blue;background:white'><font size="3">&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:black;background:white'><font size="3">&nbsp;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate that the software name is unknown</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">softwareName</font></span><span
+style='color:red;background:white'><font size="3"> nullFlavor</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">UNK</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h3><a name=_Toc_Section_2.3.3></a>2.3.3&nbsp;&nbsp;&nbsp;&nbsp;Encapsulated Data (ED)<a name=ED></a></h3>
+	<p class=MsoNormal><font size="3">ED is used to hold encapsulated data, which is anything that
+is not expressed directly in an HL7 data type. There are only three attributes
+allowed -- &quot;<b>encoding</b>&quot; which can only be &quot;B64&quot;
+(base64) or &quot;TXT&quot; (Text, which is the default value), &quot;<b>mediaType</b>&quot; 
+	which identifies the MIME type of the data, and &quot;<b>compression</b>&quot; which
+indicates the algorithm (if any) used to compress the data.&nbsp; A full list
+of the supported types is provided in the HL7 specification document. </font>
+	</p>
+	<p class=MsoNormal><font size="3">Where the data is included in the 
+		element, it is sent as the
+		element content.&nbsp; Alternatively it can be sent as a URL using the optional
+&quot;<b>reference</b>&quot; child.&nbsp; If this reference element is used,
+then there should not be any other content in the ED-typed element (i.e. data
+must either be sent inline, or by reference, but both should not be done at the
+same time).&nbsp; The reference element is of type TEL, with attributes for the
+URL, the use type, and an optional valid Time child element to specify when the
+linked data is useable.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width=595
+ style='width:80%'>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt' bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt' bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 data</font></p></td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The text or data (may be
+  null with reference to get data)</font></p></td>
+			</tr>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">0..1 encoding</font></p></td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">Binary encoding =
+  &quot;TXT&quot; (Text - default) or &quot;B64&quot; (Base 64)</font></p></td>
+			</tr>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">0..1 mediaType
+				</font></p></td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">MIME media type =
+  &quot;text/plain&quot; (default) or other MIME media types</font></p></td>
+			</tr>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">0..1 reference </font></p>
+				</td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">URL reference to data</font></p>
+				</td>
+			</tr>
+			<tr>
+				<td width=161 valign=top style='width:121.05pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">0..1 compression</font></p>
+				</td>
+				<td width=434 valign=top style='width:325.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">Code representing
+  compression used if any &quot;DF&quot;=deflate or &quot;GZ&quot;=zip as in
+  HL7 specification.</font></p></td>
+			</tr>
+			<tr>
+				<td width=595 colspan=2 valign=top style='width:446.25pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<class=MsoNormal><font size="3">Components not used here
+  include &quot;integrityCheck&quot;, &quot;integrityCheckAlgorithm&quot;, &quot;xml:lang&quot;,&quot;thumbnail&quot;</font></td>
+			</tr>
+		</table></div>
+	<h2><a name=_Toc_Section_2.4></a>2.4&nbsp;&nbsp;&nbsp;&nbsp;Demographics</h2>
+	<h3><a name=_Toc_Section_2.4.1></a>2.4.1&nbsp;&nbsp;&nbsp;&nbsp;Person Name (PN)<a name=PN></a></h3>
+	<p class=MsoNormal><font size="3">Person Name is used to express either an unstructured name
+as string content of the element, or a structured name as a set of <b>FAM</b>, 
+		<b>GIV</b>,
+<b>PFX</b> and <b>SFX</b> child elements.&nbsp;If any of the FAM, GIV, PFX and
+SFX elements are used, then there shall be no string content in the PN-typed
+		element (i.e. the name must be structured <b>or</b> unstructured).&nbsp;In a
+structured name there may be only one FAM element for the family name, and one PFX 
+		element for the title.&nbsp; The text values of the FAM, GIV, PFX and SFX 
+		elements shall be sent as element content. If the name is available in both
+structured and unstructured forms, the structured form shall be preferred.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">For both structured and unstructured names, there are two
+optional additional elements:-</font></p>
+	<p class=MsoNormal><font size="3">the use of the name may be sent as a single optional
+attribute (&quot;<b>use</b>&quot;) of the PN-typed element with the following 
+	values: </font></p>
+	<p class=MsoNormal><img border="0" src="DataTy1.gif"></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<div align="center" style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+		<table class="NPfITGrid" border="1" cellspacing="3" cellpadding="0" width="595" style="width: 80%; vertical-align: middle; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; border: 0 none; margin: 0; padding: 0" id="table65">
+			<tbody style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Code</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Name</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<b>Definition</b></td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					L</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					Legal</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Known as/conventional/the one you use</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					A</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					Artist/Stage</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Includes writer's pseudonym, stage name, etc</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					I</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					Indigenous/Tribal</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					e.g. Chief Red Cloud</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					R</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					Religious</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					e.g. Sister Mary Francis, Brother John</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					ABC</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Alphabetic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Alphabetic transcription of name (Japanese: romaji)</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					SYL</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Syllabic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Syllabic transcription of name (e.g., Japanese kana, Korean 
+					hangul)</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					IDE</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Ideographic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					Ideographic representation of name (e.g., Japanese kanji, 
+					Chinese characters)</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-BIRTH</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-BIRTH</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					NHS UK extension for PDS </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-MAIDEN</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-MAIDEN</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					NHS UK extension for PDS </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-BACHELOR</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS-BACHELOR</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					NHS UK extension for PDS </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREVIOUS</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					NHS UK extension for PDS </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREFERRED</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					PREFERRED</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					NHS UK extension for PDS </td>
+				</tr>
+		</table>
+	</div>
+	<p class="MsoNormal" align="center" style="text-align:center">&nbsp;</p>
+	<p class=MsoNormal>&nbsp;</p>
+	<ul style='margin-top:0cm' type=disc>
+		<li class=MsoNormal><font size="3">a <b>validTime</b> IVL&lt;TS&gt; child 
+			element can be used
+     to define the timeframe within which this name is valid, e.g. when the
+     current name was assigned or the period during which a previous name was
+     valid </font></li>
+	</ul>
+	<h3 style='text-autospace:none'><a name=_Toc_Section_2.4.2></a>2.4.2&nbsp;&nbsp;&nbsp;&nbsp;Organization Name (<span lang="EN-US">ON</span>)<span lang="EN-US"><a style="TEXT-DECORATION: none" name="ON"></a></span></h3>
+	<div class="Section1">
+		<p class="MsoNormal"><font size="3">An organisational name is always unstructured, and is 
+	sent as string content of the element.&nbsp; There is an optional child 
+		element 
+	that defines the <b>validTime</b> for the name. As a result there are two 
+	flavours of organisation name:</font></p>
+		<p class="MsoNormal">&nbsp;</p>
+		<p class="MsoNormal"><font size="3">1.&nbsp;&nbsp;&nbsp;&nbsp; Organisation name 
+		</font><i><font size="3">(f)</font></i></p>
+		<p class="MsoNormal"><font size="3">2.&nbsp;&nbsp;&nbsp;&nbsp; Organisation name with valid time 
+		</font><i><font size="3">(f)</font></i></p>
+		<div align="center">
+			<table class="NPfITGrid" id="table13" style="WIDTH: 80%" cellSpacing="3" cellPadding="0" width="87%" border="1">
+				<tr>
+					<td valign=top style='width:254px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+					<b>Element / Attribute<br>&nbsp;</b></td>
+					<td valign=top style='width:699px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+					<b>Notes</b></td>
+				</tr>
+				<tr>
+					<td style="PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; WIDTH: 254px; PADDING-TOP: 0cm" vAlign="top">
+					<p class="MsoNormal"><font size="3">1 ST </font></td>
+					<td style="PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; WIDTH: 699px; PADDING-TOP: 0cm" vAlign="top">
+					<p class="MsoNormal"><font size="3">The name of the 
+			organisation as an unstructured string</font></td>
+				</tr>
+				<tr>
+					<td style="PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; WIDTH: 254px; PADDING-TOP: 0cm" vAlign="top">
+					<p class="MsoNormal"><font size="3">0..1 validTime<br>IVL&lt;TS&gt;</font></td>
+					<td style="PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; WIDTH: 699px; PADDING-TOP: 0cm" vAlign="top">
+					<p class="MsoNormal"><font size="3">The period of validity of the name is specified 
+			using one of the following flavours of the IVL&lt;TS&gt; data type:
+					</font></p>
+					<ul style="MARGIN-TOP: 0cm; MARGIN-BOTTOM: 0cm" type="disc">
+						<li class="MsoNormal"><font size="3">Time Point - 
+				where known to be valid at a specified date. </font></li>
+						<li class="MsoNormal"><font size="3">Time 
+				Interval Complete - where the start and end of the period of 
+				validity is known. </font></li>
+						<li class="MsoNormal"><font size="3">Time 
+				Interval Before - where the end of the period of validity is 
+				known. </font></li>
+						<li class="MsoNormal"><font size="3">Time 
+				Interval After - where the start of the period of validity is 
+				known. </font></li>
+					</ul></td>
+				</tr>
+			</table></div>
+		<p class="MsoNormal">&nbsp;</p>
+		<p class="MsoNormal"><font size="3">Examples:</font></p>
+		<p class="MsoNormal"><b><span style="color: blue; background: white">
+		<font size="3"></font></span><span style="color: gray; background: white"><font size="3"> 
+	To indicate an unstructured organization name</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: blue; background: white">
+		<font size="3">&lt;</font></span><span style="color: maroon; background: white"><font size="3">name</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span><span style="color: black; background: white"><font size="3">Good 
+	Health Hospital</font></span><span style="color: blue; background: white"><font size="3">&lt;/</font></span><span style="color: maroon; background: white"><font size="3">name</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: black; background: white">
+		<font size="3">&nbsp;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: blue; background: white">
+		<font size="3"></font></span><span style="color: gray; background: white"><font size="3"> 
+	To indicate an unstructured organization name with a validity date interval</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: blue; background: white">
+		<font size="3">&lt;</font></span><span style="color: maroon; background: white"><font size="3">name</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span><span style="color: black; background: white"><font size="3">Good 
+	Health Hospital</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: black; background: white">
+		<font size="3">&nbsp;&nbsp;&nbsp;&nbsp; 
+	</font></span><span style="color: blue; background: white"><font size="3">&lt;</font></span><span style="color: maroon; background: white"><font size="3">validTime</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: black; background: white">
+		<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></span><span style="color: blue; background: white">
+		<font size="3">&lt;</font></span><span style="color: maroon; background: white"><font size="3">low</font></span><span style="color: red; background: white"><font size="3"> 
+	value</font></span><span style="color: blue; background: white"><font size="3">=&quot;</font></span><span style="color: black; background: white"><font size="3">19990401</font></span><span style="color: blue; background: white"><font size="3">&quot;/&gt;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: black; background: white">
+		<font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></span><span style="color: blue; background: white">
+		<font size="3">&lt;</font></span><span style="color: maroon; background: white"><font size="3">high</font></span><span style="color: red; background: white"><font size="3"> 
+	value</font></span><span style="color: blue; background: white"><font size="3">=&quot;</font></span><span style="color: black; background: white"><font size="3">20040331</font></span><span style="color: blue; background: white"><font size="3">&quot;/&gt;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: black; background: white">
+		<font size="3">&nbsp;&nbsp;&nbsp;&nbsp; 
+	</font></span><span style="color: blue; background: white"><font size="3">&lt;/</font></span><span style="color: maroon; background: white"><font size="3">validTime</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span></b></p>
+		<p class="MsoNormal"><b><span style="color: blue; background: white">
+		<font size="3">&lt;/</font></span><span style="color: maroon; background: white"><font size="3">name</font></span><span style="color: blue; background: white"><font size="3">&gt;</font></span></b></div>
+	<h3><a name=_Toc_Section_2.4.3></a>2.4.3&nbsp;&nbsp;&nbsp;&nbsp;Postal 
+Address (AD)<a name=AD></a></h3>
+	<p class=MsoNormal><font size="3">The element is defined as holding mixed content. An address
+shall be transmitted in one of four formats: </font></p>
+	<p class=MsoNormal><font size="3">unstructured address, transmitted as up to 175 characters of
+text without any further markup structure, i.e. as string content of the <b>AD 
+		</b>element.&nbsp;
+This corresponds to the NHS Data Dictionary <i>Unstructured Address, </i>address
+format code =<i> </i>&quot;U&quot; or &quot;2&quot;.</font></p>
+	<p class=MsoNormal><font size="3">an address as a set of print lines, transmitted as 1 to 5
+child <b>ADXP</b> elements of type &quot;streetAddressLine&quot; and maximum length 35
+characters.&nbsp; This corresponds to the NHS Data Dictionary <i>Label Format
+Address, </i>address format code = &quot;S&quot; or &quot;1&quot;, and UK Government Data Standards
+catalogue <i>UK Postal Address.</i> </font></p>
+	<p class=MsoNormal><font size="3">address as a set of typed parts, transmitted as a set of
+typed child <b>ADXP</b> elements.&nbsp; This corresponds to a subset of the UK
+Government Data Standards Catalogue <i>BS7666 Address</i>, which will be
+incorporated the NHS Data Dictionary when it has moved from draft to final
+status.&nbsp; It is because of the draft status that the <i>BS7666 Address</i>
+Unique Property Reference Number and Unique Street Reference Number have not
+been included yet.</font></p>
+	<p class=MsoNormal><font size="3">as a unique identifier for the address, used where the
+recipient does not need to receive the full address (for example because the
+receiving application has access to an address file keyed by the unique
+identifier). The key currently used in Domain Specification is the Postal Address File (PAF)
+key, which is generated by the Royal Mail. </font></p>
+	<p class=MsoNormal><font size="3">In all cases, the components and content shall be ordered in
+the sequence in which they are to be printed, i.e. reading left to right and
+top to bottom.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">If an address is available in more than 
+	one of formats 1-3, and a message permits more than one format, the most 
+	structured version available should be used, i.e. format 3 should be used 
+	wherever possible, failing that format 2, and failing that format 1. </font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">An optional postcode may be specified for any of the first
+three address formats in a child <b>&quot;postalCode&quot;</b> element.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">AD has a single optional attribute &quot;<b>use</b>&quot;
+that may be used to specify the purpose of the address. The allowed&nbsp;</font>values 
+	are:</p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><img border="0" src="DataTy2.gif"></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<div align="center">
+		<table class="NPfITGrid" border="1" cellspacing="3" cellpadding="0" width="595" style="width: 80%; vertical-align: middle; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; border: 0 none; margin: 0; padding: 0" id="table66">
+			<tbody style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Code</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Name</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<b>Definition</b></td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					PHYS</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					physical visit address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<span style="font-size: 10.0pt; font-family: Verdana,sans-serif; color: black">
+					Used primarily to visit an address.</span></td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					PST</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					postal address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Used to send mail </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					TMP</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					temporary address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A temporary address, may be good for visit or mailing. Note 
+					that an address history can provide more detailed 
+					information.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					BAD</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p class="MsoNormal" style="font-size: 12.0pt; font-family: Arial; font-weight: inherit; font-style: inherit; vertical-align: baseline; border: 0 none; margin-left: 5; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; padding: 0">
+					bad address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A flag indicating that the address is bad, in fact, useless.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					H</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					home address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A communication address at a home, attempted contacts for 
+					business purposes might intrude privacy and chances are one 
+					will contact family or other household members instead of 
+					the person one wishes to call. Typically used with urgent 
+					cases, or if no other contacts are available.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					HP</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					primary home</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					The primary home, to reach a person after business hours.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					HV</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					vacation home</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					IA vacation home, to reach a person while on vacation.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					WP</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					work place</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					An office address. First choice for business related 
+					contacts during business hours. </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					ABC</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Alphabetic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Alphabetic transcription of name (Japanese: romaji) </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					SYL</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Syllabic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Syllabic transcription of name (e.g., Japanese kana, Korean 
+					hangul)</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					IDE</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Ideographic</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Ideographic representation of name (e.g., Japanese kanji, 
+					Chinese characters)</td>
+				</tr>
+		</table>
+	</div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">An optional child element, <b>validTime</b>, may be used to
+define a time interval within which this address is valid.&nbsp; See
+IVL&lt;TS&gt; below for a description of this element's type.</font></p>
+	<h3><a name=_Toc_Section_2.4.4></a>2.4.4&nbsp;&nbsp;&nbsp;&nbsp;Telecommunication 
+Address (TEL)<a name=TEL></a></h3>
+	<p class=MsoNormal><font size="3">Telephone numbers, pager and email addresses, and references
+to external data by the ED data type are all expressed using the URL syntax as
+described in the HL7 documentation.&nbsp;&nbsp;Note that specification of the
+type of the&nbsp;address&nbsp;(e.g. fax or email) is built into the URL
+itself.&nbsp;</font></p>
+	<p class=MsoNormal><font size="3">There are two optional components of Telecommunication
+Address::</font></p>
+	<p>&nbsp;</p>
+	<p><font size="3">The codes for the &quot;<b>use</b>&quot; attribute are</font></p>
+	<p>&nbsp;</p>
+	<p><img border="0" src="DataTy3.gif"></p>
+	<p>&nbsp;</p>
+	<div align="center">
+		<table class="NPfITGrid" border="1" cellspacing="3" cellpadding="0" width="595" style="width: 80%; vertical-align: middle; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; border: 0 none; margin: 0; padding: 0" id="table67">
+			<tbody style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Code</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: 700; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					Name</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" bgcolor="#95BCE2">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<b>Definition</b></td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					H</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					home address</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A communication address at a home, attempted contacts for 
+					business purposes might intrude privacy and chances are one 
+					will contact family or other household members instead of 
+					the person one wishes to call. Typically used with urgent 
+					cases, or if no other contacts are available.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					HP</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					primary home</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					The primary home, to reach a person after business hours.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					HV</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					vacation home</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					IA vacation home, to reach a person while on vacation.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					WP</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					work place</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					An office address. First choice for business related 
+					contacts during business hours. </td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					AS</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					answering service</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm" height="25">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					An automated answering machine used for less urgent cases 
+					and if the main purpose of contact is to leave a message or 
+					access an automated announcement.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					EC</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					emergency contact</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A contact specifically designated to be used for 
+					emergencies. This is the first choice in emergencies, 
+					independent of any other use codes.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					PG</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					pager</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					<p style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					A paging device suitable to solicit a callback or to leave a 
+					very short message.</td>
+				</tr>
+				<tr style="font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; border: 0 none; margin: 0; padding: 0">
+					<td valign="top" style="width: 176px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					MC</td>
+					<td valign="top" style="width: 194px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					mobile contact</td>
+					<td valign="top" style="width: 336px; vertical-align: middle; text-align: left; font-weight: normal; float: none; font-style: inherit; font-size: 100%; font-family: inherit; border-left: 0 none; border-right: 0 none; border-top: 0 none; border-bottom: 1px solid black; margin: 0; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+					A telecommunication device that moves and stays with its 
+					owner. May have characteristics of all other use codes, 
+					suitable for urgent matters, not the first choice for 
+					routine business.</td>
+				</tr>
+		</table>
+	</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p><font size="3">There is also an optional <b>validTime</b> child 
+			element
+     to specify when the telecommunication address is stated to apply.</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<h2><a name=_Toc_Section_2.5></a>2.5&nbsp;&nbsp;&nbsp;&nbsp;Codes</h2>
+	<h3><a name=_Toc_Section_2.5.1></a>2.5.1&nbsp;&nbsp;&nbsp;&nbsp;Introduction</h3>
+	<p class=MsoNormal><font size="3">HL7 Version 3 supports four coded data types which can
+either be considered as constraints on the most flexible type (CD - Concept
+Descriptor) or extensions of the simplest type (CS -Coded Simple). The simplest
+form is merely a code, the more complex types add support for identifying the codeSystem,
+conveying textual renderings of the code meaning, adding translations from
+alternative code systems and adding qualifying codes to refined meaning.</font></p>
+	<p class=MsoNormal><font size="3">The UK data type flavours for coded data types provide some
+additional levels of refinement to the coded data type hierarchy, for example
+in some flavours original text rendering are not just possible but are
+required.</font></p>
+	<p class=MsoNormal><font size="3">The following subsections present the key features of each
+of the HL7 data types and are followed by the formal representations of the
+relevant UK data type flavours.</font></p>
+	<h3><a name=_Toc_Section_2.5.2></a>2.5.2&nbsp;&nbsp;&nbsp;&nbsp;Coded
+with Equivalents (CE)<a name=CE></a></h3>
+	<p class=MsoNormal><font size="3">CE is used where the approved coding scheme is 
+		<i>not</i>
+the original scheme in which the data was encoded. However, it is not
+applicable where qualifiers are required. The original code is mapped to a
+translated code in the approved scheme. The mapping may translate a specific
+original code to a more general code in the approved scheme but must not add
+specificity not present in the original code.</font></p>
+	<p class=MsoNormal><font size="3">The following flavours are valid constraints on this data
+type:</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<ul style='margin-top:0cm' type=disc>
+		<li class=MsoNormal><a href="#_Coded_Plain_(f)"><font size="3">Coded Plain</font></a></li>
+	</ul>
+	<h3><a name=_Toc_Section_2.5.3></a>2.5.3&nbsp;&nbsp;&nbsp;&nbsp;Coded Simple 
+Value (CS)<a name=CS></a></h3>
+	<p class=MsoNormal><font size="3">CS is used to convey information on the form of a 
+		<b>code</b>
+only.&nbsp; This is only used where there is a short controlled list of possible
+values, and typically these will be HL7 defined structural codes where the
+coding system can reliably be inferred by context.</font></p>
+	<p class=MsoNormal><font size="3">The following flavours are valid constraints on this data
+type:</font></p>
+	<ul>
+		<li class=MsoNormal><a href="#Coded&nbsp;Only_(f)"><font size="3">Coded Only</font></a></li>
+	</ul>
+	<h3><a name=_Toc_Section_2.5.4></a>2.5.4&nbsp;&nbsp;&nbsp;&nbsp;Coded Value (CV)<a name=CV></a></h3>
+	<p class=MsoNormal><font size="3">CV is used where there is no requirement from sending
+translations or qualifiers, otherwise it has the same structure as the CD data
+type.&nbsp; It must either have the NULL attribute, or all three of <b>code</b>,
+		<b>displayName</b>, and </font><b><font size="3">codeSystem.</font></b></p>
+	<p class=MsoNormal><font size="3">The following flavours are valid constraints on this data
+type:</font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<ul style='margin-top:0cm' type=disc>
+		<li class=MsoNormal><a href="#_Coded_Plain_(f)"><font size="3">Coded Plain</font></a></li>
+		<li class=MsoNormal><a href="#Coded_with_Code_System_(f)">
+		<font size="3">Coded with Code System</font></a></li>
+		<li class=MsoNormal>
+		<a name="Coded_Value_with_CDA_URL(f)0" href="#Coded_Value_with_CDA_URL(f)">
+		<font size="3">Coded 
+Value with CDA URL</font></a></li>
+	</ul>
+	<h3><a name=_Toc_Section_2.5.5></a>2.5.5&nbsp;&nbsp;&nbsp;&nbsp;Domain 
+	Specification Codes</h3>
+	<h4>2.5.5.1&nbsp;&nbsp;&nbsp;&nbsp;
+Coded Plain (f)<a name="_Coded_Plain_(f)"></a></h4>
+	<p class=MsoNormal><i><font size="3">Valid constraint of HL7 data types: CD, CE and CV.</font></i></p>
+	<p class=MsoNormal><font size="3">This flavour is used where the original encoding uses the
+approved coding scheme for a message attribute. It is the minimal flavour
+permitted where the message specifies the CD data type.</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width=604
+ style='width:80%'>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute<br>&nbsp;</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">1 code</font></p></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">The primary code value
+  originally used to encode a statement.</font></p></td>
+			</tr>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">1 displayName</font></p></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">The text or rubric
+  associated with the code.</font></p></td>
+			</tr>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">1 codeSystem</font></p></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm'>
+				<p class=MsoNormal><font size="3">An OID identifying the
+  coding system from which the code is derived.</font></p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">&nbsp;Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a request response for a
+&quot;value&quot; attribute of an observation class</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">value</font></span><span style='color:red;background:white'><font size="3"> code</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style='color:black;background:white'><font size="3">11</font></span><span style='color:blue;background:white'><font size="3">&quot;</font></span><span style='color:red;background:white'><font size="3"> codeSystem</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.3.2.4.17.42</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> displayName</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">NHS Number confirmed</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h4>2.5.5.2&nbsp;&nbsp;&nbsp;&nbsp;Coded&nbsp;Only (f)<a name="Coded&nbsp;Only_(f)" style="text-decoration: none"></a></h4>
+	<p class=MsoNormal><i><font size="3">Valid constraint of HL7 data types: CD, CE, CV and CS.</font></i></p>
+	<p class=MsoNormal><font size="3">This flavour is use in most instances of the CS data type.
+Since this data type is only used for structural attributes and other
+attributes with fixed code list other components are not required.</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width=604
+ style='width:80%' id="table32">
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=126 valign=top style='width:94.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 code </font></p></td>
+				<td width=478 valign=top style='width:358.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The primary code value
+  originally used to encode a statement.</font></p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate administrative gender of
+&quot;Female&quot;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">administrativeGenderCode</font></span><span
+style='color:red;background:white'><font size="3"> code</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h4>2.5.5.3&nbsp;&nbsp;&nbsp;&nbsp;Coded with Code System (f)<a name="Coded_with_Code_System_(f)"></a></h4>
+	<p class=MsoNormal><i><font size="3">Valid constraint of HL7 data types: CD, CE and CV.</font></i></p>
+	<p class=MsoNormal><font size="3">This alternative flavour may be required where there is a specified
+recognised coding system that can be looked up.</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width=604
+ style='width:80%'>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=126 valign=top style='width:94.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 code </font></p></td>
+				<td width=478 valign=top style='width:358.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The primary code value
+  originally used to encode a statement.</font></p></td>
+			</tr>
+			<tr>
+				<td width=126 valign=top style='width:94.5pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 codeSystem</font></p></td>
+				<td width=478 valign=top style='width:358.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">An OID identifying the
+  coding system from which the code is derived.</font></p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a confidentiality code of &quot;Sensitive&quot;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">confidentialityCode</font></span><span
+style='color:red;background:white'><font size="3"> code</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">S</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> codeSystem</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.3.2.4.16.1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span><span
+style='color:black;background:white'><font size="3"> </font></span></b></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><b><span style='color:blue;background:white'>
+	<font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">value</font></span><span style='color:red;background:white'><font size="3"> code</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style='color:black;background:white'><font size="3">11</font></span><span style='color:blue;background:white'><font size="3">&quot;</font></span><span style='color:red;background:white'><font size="3"> codeSystem</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.3.2.4.17.42</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> </font><font size="3">codeSystemVersion</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style="background-color: #FFFFFF; background-position: 0% 0%"><font size="3">1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<h4>2.5.5.4&nbsp;&nbsp;&nbsp;&nbsp;Coded with Equivalents with CDA URL(f)<a name="Coded_with_Equivalents_with_CDA_URL(f)"></a></h4>
+	<p class=MsoNormal><i><font size="3">Valid constraint of HL7 data types: CE 
+	.</font></i></p>
+	<p class="MsoNormal"><font size="3">This flavour is used where the original 
+	encoding uses the approved coding scheme for a message attribute but where 
+	there may be some text entered or selected by the user either by direct 
+	entry or by reference that is not identical to the display text or rubric 
+	associated with the code.</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width="87%"
+ style='width:80%' id="table62">
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=121 valign=top style='width:90.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 code</font></p></td>
+				<td width=470 valign=top style='width:352.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The primary code value 
+				originally used to encode a statement.</font></p></td>
+			</tr>
+			<tr>
+				<td width=121 valign=top style='width:90.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 
+		<a name=displayName2></a>displayName </font></p></td>
+				<td width=470 valign=top style='width:352.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The text or rubric associated 
+				with the code.</font></p></td>
+			</tr>
+			<tr>
+				<td width=121 valign=top style='width:90.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 codeSystem </font></p></td>
+				<td width=470 valign=top style='width:352.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">An OID identifying the coding 
+				system from which the code is derived.</font></p></td>
+			</tr>
+			<tr>
+				<td width=121 valign=top style='width:90.45pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">0 
+		<a name=originalText2></a>originalText </font></p></td>
+				<td width=470 valign=top style='width:352.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">The full text associated with 
+				this code as selected, typed or seen by the author of this 
+				statement. 
+				</font><i><font size="3">This may contain additional information 
+				that is not completely coded. </font></i>
+				</p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">&nbsp;Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> 
+	To indicate a code with the original text upon which the code was based for 
+	a &quot;code&quot; attribute of an observation class</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">code</font></span><span style='color:red;background:white'><font size="3"> 
+	code</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style='color:black;background:white'><font size="3">195967001</font></span><span style='color:blue;background:white'><font size="3">&quot;</font></span><span style='color:red;background:white'><font size="3"> 
+	codeSystem</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.3.2.4.15</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> displayName</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">asthma</font></span><span
+style='color:blue;background:white'><font size="3">&quot;&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'>
+	<span style="color: #000000; background-color: #FFFFFF; background-position: 0% 0%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">originalText</font></span><span
+style='color:blue;background:white'><font size="3">&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'>
+	<span style="background-color: #FFFFFF; background-position: 0% 0%"><b>
+	<font size="3" color="#0000FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;</font><font size="3" color="#800000">reference</font><font size="3" color="#0000FF">
+	</font></b></span><b><font color="#FF0000" size="3">
+	<span
+style='background:white'>value</span></font><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='background:white'><font size="3">#a1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'>
+	<span style="background-color: #FFFFFF; background-position: 0% 0%">
+	<font size="3" color="#0000FF"><b>&nbsp;&nbsp;&nbsp; &lt;/</b></font></span><b><span style='color:maroon;background:white'><font size="3">originalText&gt;</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;/</font></span><span style='color:maroon;background:white'><font size="3">code</font></span><span style='color:blue;background:white'><font size="3">&gt;</font></span></b></p>
+	<h2><a name=_Toc_Section_2.6></a>2.6&nbsp;&nbsp;&nbsp;&nbsp;Identifiers</h2>
+	<h3><a name=_Toc_Section_2.6.1></a>2.6.1&nbsp;&nbsp;&nbsp;&nbsp;Instance 
+Identifier (II)<a name=II></a></h3>
+	<p class=MsoNormal><font size="3">The II data type only allows two attributes, a 
+		<b>root</b>
+and an <b>extension</b>.&nbsp; </font></p>
+	<p class=MsoNormal><font size="3">&quot;Real world&quot; identifiers such as a&nbsp;GMCP number
+or a patient NHS Number should be sent&nbsp;in the <b>extension</b> attribute,
+with the <b>root</b> being used to identify the&nbsp;assigning authority that
+is responsible for ensuring the uniqueness of the identifier in the extension. 
+		</font></p>
+	<p class=MsoNormal><font size="3">An alternative mechanism is used for&nbsp;identifiers that
+are used to maintain instances of information as that information becomes
+distributed as a result of messaging.&nbsp; In this case there is no single
+authority that can be made responsible for maintaining the uniqueness, and so DCE
+UUIDs are used (Universally&nbsp;Unique IDs).&nbsp; These must be generated in
+a way that ensures uniqueness, and be expressed as dash separated hexadecimal
+numbers. The DCE UUID is sent in the <b>root</b> attribute.</font></p>
+	<h4>2.6.1.1&nbsp;&nbsp;&nbsp;&nbsp;Identifier Global</a> (f)</h4>
+	<p class=MsoNormal><font size="3">The Identifier Global flavour is used for representing
+instances of information objects in the message. It consists of a single
+component containing a DCE UUID</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width="55%"
+ style='width:80%' id="table33">
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=154 valign=top style='width:115.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 root</font></p></td>
+				<td width=450 valign=top style='width:337.6pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">DCE UUID</font></p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">&nbsp;Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate a DCE UUID for an &quot;id&quot;
+class attribute</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">id</font></span><span style='color:red;background:white'><font size="3"> root</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style='color:black;background:white'><font size="3">BBBBE26A-A9D1-A411-F824-9F7A00A33757</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h4>2.6.1.2&nbsp;&nbsp;&nbsp;&nbsp;Identifier External (f)<a name="_HV_0010649"></a></h4>
+	<p class=MsoNormal><font size="3">The Identifier External flavour is used for externally
+specified identifiers for real world entities. It consists of two components
+one identifying the scheme of identifiers and the other containing the
+identifier itself.</font></p>
+	<div align="center">
+		<table class=NPfITGrid border=1 cellspacing=3 cellpadding=0 width="55%"
+ style='width:80%'>
+			<tr>
+				<td valign=top style='width:257px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Element / Attribute</b></td>
+				<td valign=top style='width:696px;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm' height="21" bgcolor="#95BCE2">
+				<b>Notes</b></td>
+			</tr>
+			<tr>
+				<td width=154 valign=top style='width:115.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 root</font></p></td>
+				<td width=450 valign=top style='width:337.6pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">OID identifying the scheme
+  of identifiers</font></p></td>
+			</tr>
+			<tr>
+				<td width=154 valign=top style='width:115.7pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">1 extension</font></p></td>
+				<td width=450 valign=top style='width:337.6pt;padding:0cm 5.4pt 0cm 5.4pt'>
+				<p class=MsoNormal><font size="3">Real-world-Identifier
+  within the specified scheme.</font></p></td>
+			</tr>
+		</table></div>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate an identifier for an &quot;id&quot;
+class attribute (in this case a NHS number)</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">id</font></span><span style='color:red;background:white'><font size="3"> root</font></span><span style='color:blue;background:white'><font size="3">=&quot;</font></span><span style='color:black;background:white'><font size="3">2.16.840.1.113883.2.1.4.1</font></span><span
+style='color:blue;background:white'><font size="3">&quot;</font></span><span
+style='color:red;background:white'><font size="3"> extension</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">9999999484</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h2><a name=_Toc_Section_></a></h2>
+	<h2><a name=_Toc_Section_2.7></a>2.7&nbsp;&nbsp;&nbsp;Dates and Times</h2>
+	<h3><a name=_Toc_Section_2.7.1></a>2.7.1&nbsp;&nbsp;&nbsp;&nbsp;Point in Time (TS)<a name=TS></a></h3>
+	<p class=MsoNormal><font size="3">The timeStamp is sent in the &quot;<b>value</b>&quot;
+attribute of this data type. Time stamp information is sent in a format that is
+simplest for the XML schema to validate, as follows:</font></p>
+	<p class=MsoNormal><font size="3">YYYYMMDDHHMMSS[+|-ZZzz],&nbsp; where YYYY is the year, MM
+the month, DD the day, HH the hour, MM the minutes, SS.the seconds and +|-ZZzz
+is the time zone offset in hours and minutes. Sections from the right of this
+representation may be left off to send an imprecise date, thus &quot;2000&quot;
+would be a valid value for TS, indicating&nbsp;sometime in the year 2000.&nbsp;
+A timestamp precise down to the hour would be &quot;2000040103&quot;. A timestamp precise
+down to the second would look like &quot;20000401031520&quot;.&nbsp; </font></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal><font size="3">Examples:</font></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate an effective time of 12:05 on 25/06/2004</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">effectiveTime</font></span><span
+style='color:red;background:white'><font size="3"> value</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">200406251205</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<p class=MsoNormal>&nbsp;</p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3"></font></span><span style='color:gray;background:white'><font size="3"> To indicate an effective time of 12:05.055 on 25/06/2004</font></span></b></p>
+	<p class=MsoNormal style='text-autospace:none'><b>
+	<span style='color:blue;background:white'><font size="3">&lt;</font></span><span style='color:maroon;background:white'><font size="3">effectiveTime</font></span><span
+style='color:red;background:white'><font size="3"> value</font></span><span
+style='color:blue;background:white'><font size="3">=&quot;</font></span><span
+style='color:black;background:white'><font size="3">200406251205.055</font></span><span
+style='color:blue;background:white'><font size="3">&quot;/&gt;</font></span></b></p>
+	<h3><a name=_Toc_Section_2.8.2></a>2.8.2&nbsp;&nbsp;&nbsp;&nbsp;Interval of 
+Points in Time (IVL&lt;TS&gt;)<a name="IVL_TS"></a></h3>
+	<p class=MsoNormal><font size="3">A&nbsp;time interval&nbsp;can either be expressed using
+&quot;<b>low</b>&quot; and &quot;<b>high</b>&quot; child elements to define the
+bounds of the interval (if only one of these is sent, then the other is assumed
+to be unbounded), or by sending the &quot;<b>center</b>&quot; element to
+express a&nbsp;single point in time, or finally the &quot;<b>width</b>&quot;
+		element can be used to express a duration which is not fixed to a particular
+point in time.&nbsp; </font></p>
+	<p class=MsoNormal><font size="3">The &quot;<b>width</b>&quot;&nbsp;would be used to state
+that a symptom lasted for 30 minutes, without having to state the exact time
+that this occurred.&nbsp; </font></p>
+	<p class=MsoNormal><font size="3">Note that&nbsp;if both&nbsp;&quot;<b>center</b>&quot;&nbsp;and
+&quot;<b>width</b>&quot; are present, then neither &quot;<b>low</b>&quot; nor
+&quot;<b>high</b>&quot; may be included.</font></p>
+</div>
+<div id="footer">
+	<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0220</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net">Contact Us</a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date: 20-Jan-2012</div></div>
+
+
+</body>
+
+</html>
+</html>
+</html>
