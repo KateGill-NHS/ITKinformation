@@ -10,7 +10,9 @@ Publishing sample message outputs here will allow vendors to self assure their s
 
 We will also collate test datasets here so we can test our systems as we learn and develop.
 
-<Official Wording>This is not intended to replace TRUD, it is a tool to be used without warrenty that I believe we will all benefit from using</Official Wording>
+<Official Wording>
+This is not intended to replace TRUD, it is a tool to be used without warrenty that I believe we will all benefit from using. I will only add members of organisations that have signed up to TRUD first as there are copyright implications with some of the HL7 elements.
+</Official Wording>
 
 ##Structure
 / - Latest releases of core documentation with versions name removed to allow a diff
