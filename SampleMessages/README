@@ -1,4 +1,18 @@
+======================================================
+
 Please name your messages clearly, propose the following format unless someone comes up with something better
 
-Supplier_Interaction_Date_Number.xml
+Supplier_Interaction_Date_Number_info.xml
 
+e.g. 111buntu_SendNHS111Report-v2-0_20120413_01_wrapped.xml
+
+======================================================
+
+Each sample message set should contain:
+
+- A valid wrapped CDA Document (including DistributionEnvelope)
+- A valid on-the-wire CDA Document
+- A valid templated CDA Document
+- An HTML file containing the rendered version of the Clinical Document
+
+======================================================

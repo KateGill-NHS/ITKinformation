@@ -1,0 +1,6 @@
+Known Errors
+============
+
+We have discovered an issue with transforming UK01 compliant on-the-wire outputs to the GB02 compliant templated formats.
+
+Use the included TrueCDAToCDALike_v2_Advanced.xslt file to transform on-the-wire to compliant templated output (UK01 to GB02).
