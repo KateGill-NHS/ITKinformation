@@ -1,0 +1,187 @@
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT200001GB02"/>
+	<id root="509B1170-36AA-4481-826F-6174486D5B3A"/>
+	<code code="819551000000100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"/>
+	<title>NHS 111 Report</title>
+	<effectiveTime value="20120417140739.5229+01"/>
+	<confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.1.11.16926"/>
+	<setId root="5573B3EA-2964-4A72-8B92-983DEF30EC95"/>
+	<versionNumber value="1"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole"/>
+		<patientRole classCode="PAT">
+			<templateId extension="COCD_TP145201GB01#PatientRole" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id extension="23423423444" root="2.16.840.1.113883.2.1.3.2.4.18.23"/>
+			<telecom value="tel:3453453453" use="EC"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145201GB01#patientPatient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>OOA</given>
+					<family>TEST 2</family>
+				</name>
+				<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" code="1"/>
+				<birthTime value="19820823000000+01"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor"/>
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+		<time value="20120417140739.5229+01"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+			<id extension="113" root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+			<code nullFlavor="UNK"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+				<name>
+					<given>PAUL</given>
+					<family>DARBY</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="RYEA3"/>
+				<name>SCAS Bicester Emergency Operations Centre</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<informant typeCode="INF" contextControlCode="OP">
+		<npfitlc:contentId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+		<relatedEntity classCode="PRS">
+			<templateId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<code code="99" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" displayName="Not specified"/>
+			<telecom value="tel:3453453453" use="MC"/>
+			<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145007UK03#relationshipHolder" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>TEST</given>
+					<family>OOA CALLER</family>
+				</name>
+			</relatedPerson>
+		</relatedEntity>
+	</informant>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian"/>
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian"/>
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="Test_CustSiteCode"/>
+				<name>South Central Ambulance Service</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145203GB03#IntendedRecipient"/>
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId extension="COCD_TP145203GB03#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<telecom use="WP" value="tel:"/>
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#representedOrganization"/>
+				<name>Target</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146232GB01#EncompassingEncounter"/>
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146232GB01#EncompassingEncounter"/>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.34" extension="A11082501597"/>
+			<code code="NHS111Encounter" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.326" displayName="NHS111 Encounter"/>
+			<effectiveTime>
+				<low value="20120417130651.79+01"/>
+				<high value="20120417130739.397+01"/>
+			</effectiveTime>
+			<dischargeDispositionCode code="Dx010" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.325" displayName="Dispatch for Potential Cardiac Arrest"/>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146232GB01#location"/>
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145222GB02#HealthCareFacility"/>
+				<healthCareFacility classCode="ISDLOC">
+					<templateId extension="COCD_TP145222GB02#HealthCareFacility" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+					<id nullFlavor="NA"/>
+					<location classCode="PLC" determinerCode="INSTANCE">
+						<templateId extension="COCD_TP145222GB02#location" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+						<name>Incident Location</name>
+						<addr>
+							<postalCode>SN3 5AE</postalCode>
+							<desc>RAVENSCROFT SWINDON</desc>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="3F6E9F76-D8DF-4E58-BCDD-2A05F0E8D1CC"/>
+					<entry typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId extension="COCD_TP146002GB01#ObservationMedia" root="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+						<observationMedia classCode="OBS" moodCode="EVN">
+							<templateId extension="COCD_TP146002GB01#ObservationMedia" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<id root="202041C7-F77B-4363-9E7E-ACD8B2273911"/>
+							<value representation="B64" mediaType="text/xml">PFBhdGh3YXlzQ2FzZSB4bWxucz0iaHR0cDovL25oc3BhdGh3YXlzLm9yZy93ZWJzZXJ2aWNlcy9wYXRod2F5cy9wYXRod2F5c0Nhc2UiPjxzZXJ2aWNlRGVzdGluYXRpb24+PGNvZGU+PC9jb2RlPjwvc2VydmljZURlc3RpbmF0aW9uPjxtZXNzYWdlU3RhdHVzPkNvbXBsZXRlPC9tZXNzYWdlU3RhdHVzPjxjYXNlUmVjZWl2ZVN0YXJ0PjIwMTItMDQtMTdUMTM6MDY6NTEuNzkwMDAwMDwvY2FzZVJlY2VpdmVTdGFydD48Y2FzZVJlY2VpdmVFbmQ+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9jYXNlUmVjZWl2ZUVuZD48Y2FzZURldGFpbHM+PGNhc2VSZWY+T09BPC9jYXNlUmVmPjxjb25kaXRpb24+Tm90IGJyZWF0aGluZywgTm8gaW5kaWNhdGlvbiBzY2VuZSB1bnNhZmU8L2NvbmRpdGlvbj48Y29udGFjdERldGFpbHMgLz48L2Nhc2VEZXRhaWxzPjxwYXRpZW50PjxyZWY+UE1BMzwvcmVmPjxmb3JlbmFtZT5PT0E8L2ZvcmVuYW1lPjxzdXJuYW1lPlRFU1QgMjwvc3VybmFtZT48Z2VuZGVyPk1hbGU8L2dlbmRlcj48ZGF0ZU9mQmlydGg+PGRvYj4wMDAxLTAxLTAxPC9kb2I+PC9kYXRlT2ZCaXJ0aD48bW9iaWxlUGhvbmUgLz48L3BhdGllbnQ+PHJldHVyblBob25lPjxudW1iZXIgLz48L3JldHVyblBob25lPjxwYXRod2F5RGV0YWlscz48cGF0aHdheVRyaWFnZURldGFpbHM+PHBhdGh3YXlUcmlhZ2U+PHN0YXJ0PjIwMTItMDQtMTdUMTM6MDY6NTEuNzkwMDAwMDwvc3RhcnQ+PGZpbmlzaD4yMDEyLTA0LTE3VDEzOjA3OjM5LjM5NzAwMDA8L2ZpbmlzaD48ZmluYWxEaXNwb3NpdGlvbj48ZmluYWxEaXNwQ29kZT5EeDAxMDwvZmluYWxEaXNwQ29kZT48ZmluYWxEaXNwdGV4dD5EaXNwYXRjaCBmb3IgUG90ZW50aWFsIENhcmRpYWMgQXJyZXN0PC9maW5hbERpc3B0ZXh0PjwvZmluYWxEaXNwb3NpdGlvbj48dXNlcj48aWQ+PC9pZD48bmFtZT48L25hbWU+PHNraWxsU2V0PlQxPC9za2lsbFNldD48L3VzZXI+PHRyaWFnZUxpbmVEZXRhaWxzPjx0cmlhZ2VMaW5lPjxzdGFydD4yMDEyLTA0LTE3VDEzOjA2OjUxLjc5MDAwMDA8L3N0YXJ0PjxmaW5pc2g+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9maW5pc2g+PHF1ZXN0aW9uVHlwZT48L3F1ZXN0aW9uVHlwZT48cmVwb3J0VGV4dD48dGV4dD5QYXRpZW50OiAgT09BIFRFU1QgMiwgQWdlIEdlbmRlciBTZWxlY3RlZDogQWR1bHQsIE1hbGUgPC90ZXh0PjwvcmVwb3J0VGV4dD48YWN0aW9uPk5leHQ8L2FjdGlvbj48aW5jbHVkZUluUmVwb3J0PnRydWU8L2luY2x1ZGVJblJlcG9ydD48L3RyaWFnZUxpbmU+PHRyaWFnZUxpbmU+PHN0YXJ0PjIwMTItMDQtMTdUMTM6MDY6NTEuNzkwMDAwMDwvc3RhcnQ+PGZpbmlzaD4yMDEyLTA0LTE3VDEzOjA3OjM5LjM5NzAwMDA8L2ZpbmlzaD48cXVlc3Rpb25UeXBlPjwvcXVlc3Rpb25UeXBlPjxyZXBvcnRUZXh0Pjx0ZXh0PlBhdGh3YXkgU2VsZWN0ZWQ6IFBNQTMsIENhbGxpbmcgQWJvdXQgU29tZW9uZSBFbHNlIDwvdGV4dD48L3JlcG9ydFRleHQ+PGFjdGlvbj5OZXh0PC9hY3Rpb24+PGluY2x1ZGVJblJlcG9ydD50cnVlPC9pbmNsdWRlSW5SZXBvcnQ+PC90cmlhZ2VMaW5lPjx0cmlhZ2VMaW5lPjxzdGFydD4yMDEyLTA0LTE3VDEzOjA2OjUxLjc5MDAwMDA8L3N0YXJ0PjxmaW5pc2g+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9maW5pc2g+PHF1ZXN0aW9uVHlwZT5TaW5nbGVBbnN3ZXI8L3F1ZXN0aW9uVHlwZT48cmVwb3J0VGV4dD48dGV4dD5BbiBpbmp1cnkgb3Igb3RoZXIgaGVhbHRoIHByb2JsZW0gd2FzIGRlc2NyaWJlZC4gPC90ZXh0PjwvcmVwb3J0VGV4dD48YWN0aW9uPk5leHQ8L2FjdGlvbj48aW5jbHVkZUluUmVwb3J0PnRydWU8L2luY2x1ZGVJblJlcG9ydD48L3RyaWFnZUxpbmU+PHRyaWFnZUxpbmU+PHN0YXJ0PjIwMTItMDQtMTdUMTM6MDY6NTEuNzkwMDAwMDwvc3RhcnQ+PGZpbmlzaD4yMDEyLTA0LTE3VDEzOjA3OjM5LjM5NzAwMDA8L2ZpbmlzaD48cXVlc3Rpb25UeXBlPlNpbmdsZUFuc3dlcjwvcXVlc3Rpb25UeXBlPjxyZXBvcnRUZXh0Pjx0ZXh0PlJlc3BpcmF0b3J5IGFycmVzdCB0aW1lIG9mIHRoZSBjYWxsIHdhcyBkZXNjcmliZWQuIDwvdGV4dD48L3JlcG9ydFRleHQ+PGFjdGlvbj5OZXh0PC9hY3Rpb24+PGluY2x1ZGVJblJlcG9ydD50cnVlPC9pbmNsdWRlSW5SZXBvcnQ+PC90cmlhZ2VMaW5lPjx0cmlhZ2VMaW5lPjxzdGFydD4yMDEyLTA0LTE3VDEzOjA2OjUxLjc5MDAwMDA8L3N0YXJ0PjxmaW5pc2g+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9maW5pc2g+PHF1ZXN0aW9uVHlwZT5EaXNwb3NpdGlvbjwvcXVlc3Rpb25UeXBlPjxyZXBvcnRUZXh0Pjx0ZXh0PkFuIGVtZXJnZW5jeSBhbWJ1bGFuY2UgaXMgYmVpbmcgYXJyYW5nZWQuIDwvdGV4dD48L3JlcG9ydFRleHQ+PGFjdGlvbj5OZXh0PC9hY3Rpb24+PGluY2x1ZGVJblJlcG9ydD50cnVlPC9pbmNsdWRlSW5SZXBvcnQ+PC90cmlhZ2VMaW5lPjx0cmlhZ2VMaW5lPjxzdGFydD4yMDEyLTA0LTE3VDEzOjA2OjUxLjc5MDAwMDA8L3N0YXJ0PjxmaW5pc2g+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9maW5pc2g+PHF1ZXN0aW9uVHlwZT5TaW5nbGVBbnN3ZXI8L3F1ZXN0aW9uVHlwZT48cmVwb3J0VGV4dD48dGV4dD5UaGVyZSBpcyBubyBpbmRpY2F0aW9uIHRoZSBzY2VuZSBpcyB1bnNhZmUuIDwvdGV4dD48L3JlcG9ydFRleHQ+PGFjdGlvbj5OZXh0PC9hY3Rpb24+PGluY2x1ZGVJblJlcG9ydD50cnVlPC9pbmNsdWRlSW5SZXBvcnQ+PC90cmlhZ2VMaW5lPjx0cmlhZ2VMaW5lPjxzdGFydD4yMDEyLTA0LTE3VDEzOjA2OjUxLjc5MDAwMDA8L3N0YXJ0PjxmaW5pc2g+MjAxMi0wNC0xN1QxMzowNzozOS4zOTcwMDAwPC9maW5pc2g+PHF1ZXN0aW9uVHlwZT5TaW5nbGVBbnN3ZXI8L3F1ZXN0aW9uVHlwZT48cmVwb3J0VGV4dD48dGV4dD5QcmUtYXJyaXZhbCBjYXJlIGluc3RydWN0aW9ucyB3ZXJlIG5vdCBhcHByb3ByaWF0ZS4gPC90ZXh0PjwvcmVwb3J0VGV4dD48YWN0aW9uPk5leHQ8L2FjdGlvbj48aW5jbHVkZUluUmVwb3J0PnRydWU8L2luY2x1ZGVJblJlcG9ydD48L3RyaWFnZUxpbmU+PHRyaWFnZUxpbmU+PHN0YXJ0PjIwMTItMDQtMTdUMTM6MDY6NTEuNzkwMDAwMDwvc3RhcnQ+PGZpbmlzaD4yMDEyLTA0LTE3VDEzOjA3OjM5LjM5NzAwMDA8L2ZpbmlzaD48cXVlc3Rpb25UeXBlPkhvbWVDYXJlQWR2aWNlPC9xdWVzdGlvblR5cGU+PHJlcG9ydFRleHQ+PHRleHQ+SWYgeW91IGNhbiwgY29sbGVjdCB0b2dldGhlciBhbnkgY3VycmVudCBtZWRpY2F0aW9ucyBvciBsaXN0IG9mIG1lZGljYXRpb25zIGFuZCBhbnkgbWVkaWNhbCByZWNvcmRzIGFuZCBnaXZlIHRoZXNlIHRvIHRoZSBjcmV3IHdoZW4gdGhleSBhcnJpdmUuDQpJZiBpdCdzIGRhcmsgcHV0IHRoZSBsaWdodHMgb24gYXQgdGhlIGZyb250IG9mIHRoZSBob3VzZSB0byBtYWtlIGl0IGVhc3kgdG8gZmluZC4NCiA8L3RleHQ+PC9yZXBvcnRUZXh0PjxhY3Rpb24+TmV4dDwvYWN0aW9uPjxpbmNsdWRlSW5SZXBvcnQ+dHJ1ZTwvaW5jbHVkZUluUmVwb3J0PjwvdHJpYWdlTGluZT48L3RyaWFnZUxpbmVEZXRhaWxzPjxvcmlnU2l0ZT48c2l0ZUlkPjwvc2l0ZUlkPjxzaXRlTmFtZT48L3NpdGVOYW1lPjxjYXNlSWQ+PC9jYXNlSWQ+PHBhdGh3YXlzQ29udGVudFZlcnNpb24+PC9wYXRod2F5c0NvbnRlbnRWZXJzaW9uPjxzb2Z0d2FyZT48cHJvZHVjdE5hbWU+PC9wcm9kdWN0TmFtZT48dmVyc2lvbj48L3ZlcnNpb24+PC9zb2Z0d2FyZT48L29yaWdTaXRlPjxjYWxsZXJJc1BhdGllbnQ+ZmFsc2U8L2NhbGxlcklzUGF0aWVudD48L3BhdGh3YXlUcmlhZ2U+PC9wYXRod2F5VHJpYWdlRGV0YWlscz48ZGVtb2dyYXBoaWNzPjxnZW5kZXI+TWFsZTwvZ2VuZGVyPjxhZ2VHcm91cD5BZHVsdDwvYWdlR3JvdXA+PC9kZW1vZ3JhcGhpY3M+PHNoYXJlZENhc2VJZD48L3NoYXJlZENhc2VJZD48L3BhdGh3YXlEZXRhaWxzPjxzaXRlPjxpZCAvPjxuYW1lIC8+PC9zaXRlPjwvUGF0aHdheXNDYXNlPg==</value>
+							<participant typeCode="DEV" contextControlCode="OP">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146002GB01#participant"/>
+								<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145000GB01#ParticipantRole"/>
+								<participantRole classCode="ROL">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145000GB01#ParticipantRole"/>
+									<code code="TS" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.418"/>
+									<playingDevice classCode="DEV" determinerCode="INSTANCE">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145000GB01#playingDevice"/>
+										<manufacturerModelName displayName="Pathways"/>
+										<softwareName displayName="2.4"/>
+									</playingDevice>
+								</participantRole>
+							</participant>
+						</observationMedia>
+					</entry>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146246GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146246GB01#Section1"/>
+							<id root="4E0CCC6B-87DC-424B-A1DC-6496AC8ECAD8"/>
+							<title>Patient's Reported Condition</title>
+							<text>Condition: Not breathing, No indication scene unsafe</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146246GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146246GB01#Section1"/>
+							<id root="B3E851BC-FE8E-4615-9808-43D842275170"/>
+							<title>Case Summary</title>
+							<text>
+								<content styleCode="bold">Patient:</content>
+								<br/>
+								<content>OOA TEST 2</content>
+								<br/>
+								<content styleCode="bold">Disposition:</content>
+								<br/>
+								<content>Dispatch for Potential Cardiac Arrest</content>
+								<br/>
+								<content styleCode="bold">Code:</content>
+								<br/>
+								<content>Dx010</content>
+								<br/>
+								<content styleCode="bold">Pathways Assessment:</content>
+								<br/>
+								<content>An injury or other health problem was described. <br/>Respiratory arrest time of the call was described. <br/>There is no indication the scene is unsafe. <br/>Pre-arrival care instructions were not appropriate. <br/>
+								</content>
+								<content styleCode="bold">Advice given:</content>
+								<br/>
+								<content>If you can, collect together any current medications or list of medications and any medical records and give these to the crew when they arrive.
+If it's dark put the lights on at the front of the house to make it easy to find.
+ <br/>
+								</content>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

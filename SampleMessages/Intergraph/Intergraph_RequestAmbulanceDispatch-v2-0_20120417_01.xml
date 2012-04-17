@@ -1,0 +1,127 @@
+<AmbulanceRequest classCode="PCPR" moodCode="RQO" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xsi:schemaLocation="urn:hl7-org:v3 C:\work\code\Ambulance\NHS111\NHS111.Library\Xml\Schema\v1_0\RC2\Schema\Schemas\REPC_MT200001GB02.xsd">
+	<code code="828791000000100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"/>
+	<effectiveTime value="20120417140404.7697+01"/>
+	<id root="023BC572-6150-4116-A192-625433A0B19D"/>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01"/>
+		<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+		<time value="20120417140404.7697+01"/>
+		<COCD_TP145200GB01.AssignedAuthor classCode="ASSIGNED">
+			<code nullFlavor="UNK"/>
+			<id extension="113" root="1.2.826.0.1285.0.2.0.65"/>
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>PAUL</given>
+					<family>DARBY</family>
+				</name>
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="RYEA3"/>
+				<name>SCAS Bicester Emergency Operations Centre</name>
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+			</representedOrganization>
+		</COCD_TP145200GB01.AssignedAuthor>
+	</author>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145203GB01#IntendedRecipient"/>
+		<COCD_TP145203GB03.IntendedRecipient classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#IntendedRecipient"/>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="3"/>
+				<name>Ambulance</name>
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#representedOrganization"/>
+			</representedOrganization>
+		</COCD_TP145203GB03.IntendedRecipient>
+	</informationRecipient>
+	<pertinentInformation typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentTraumaFlag classCode="OBS" moodCode="EVN">
+			<code code="TM" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+			<value value="false"/>
+		</pertinentTraumaFlag>
+	</pertinentInformation>
+	<pertinentInformation1 typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentFireFlag classCode="OBS" moodCode="EVN">
+			<code code="FR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+			<value value="false"/>
+		</pertinentFireFlag>
+	</pertinentInformation1>
+	<pertinentInformation2 typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentSceneSafeFlag classCode="OBS" moodCode="EVN">
+			<code code="SC" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+			<value value="false"/>
+		</pertinentSceneSafeFlag>
+	</pertinentInformation2>
+	<pertinentInformation3 typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentPoliceFlag classCode="OBS" moodCode="EVN">
+			<code code="PL" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+			<value value="false"/>
+		</pertinentPoliceFlag>
+	</pertinentInformation3>
+	<pertinentInformation4 typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentTrappedFlag classCode="OBS" moodCode="EVN">
+			<code code="TR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+			<value value="false"/>
+		</pertinentTrappedFlag>
+	</pertinentInformation4>
+	<pertinentInformation5 typeCode="PERT">
+		<seperatableInd value="false"/>
+		<pertinentEncounterEvent classCode="ENC" moodCode="EVN">
+			<effectiveTime>
+				<low value="20120417130342+01"/>
+			</effectiveTime>
+			<id root="2.16.840.1.113883.2.1.3.2.4.18.34" extension="A11082501596"/>
+			<text mediaType="text/plain"/>
+			<location typeCode="LOC">
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145222GB02#HealthCareFacility"/>
+				<COCD_TP145222GB02.HealthCareFacility classCode="ISDLOC">
+					<id nullFlavor="NA"/>
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#HealthCareFacility"/>
+					<location classCode="PLC" determinerCode="INSTANCE">
+						<addr>
+							<desc>SANDRINGHAM ROAD SWINDON</desc>
+						</addr>
+						<name nullFlavor="NI"/>
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#location"/>
+					</location>
+				</COCD_TP145222GB02.HealthCareFacility>
+			</location>
+			<recordTarget typeCode="RCT" contextControlCode="OP">
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole"/>
+				<COCD_TP145201GB01.PatientRole classCode="PAT">
+					<id extension="234534534" root="2.16.840.1.113883.2.1.4.1"/>
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#PatientRole"/>
+					<patientPatient classCode="PSN" determinerCode="INSTANCE">
+						<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Female" code="2"/>
+						<birthTime nullFlavor="UNK"/>
+						<name>
+							<given>TEST</given>
+							<family>OOA SERVICE</family>
+						</name>
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#patientPatient"/>
+					</patientPatient>
+					<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+						<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="C1234"/>
+						<name/>
+						<standardIndustryClassCode code="001" displayName="GP Practice" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289"/>
+						<telecom value="tel:" use="WP"/>
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization"/>
+					</providerOrganization>
+				</COCD_TP145201GB01.PatientRole>
+			</recordTarget>
+		</pertinentEncounterEvent>
+	</pertinentInformation5>
+	<reason typeCode="RSON">
+		<seperatableInd value="false"/>
+		<justifyingTriageOutcome classCode="OBS" moodCode="EVN">
+			<code code="TO" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.328"/>
+			<value code="RED2" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.329"/>
+		</justifyingTriageOutcome>
+	</reason>
+</AmbulanceRequest>
