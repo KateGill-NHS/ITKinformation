@@ -4,11 +4,11 @@
 			<id uri="SiteId:0 UserId:1 SessionId:2" type="2.16.840.1.113883.2.1.3.2.4.18.27"/>
 		</auditIdentity>
 		<manifest count="1">
-			<manifestitem id="uuid_6D482A54-92F6-4870-993A-470FDBB4B71E" mimetype="application/cda+xml" profileid="urn:nhs-en:profile:nhs111CDADocument-v1-0"/>
+			<manifestitem id="uuid_6D482A54-92F6-4870-993A-470FDBB4B71E" mimetype="application/cda+xml" profileid="urn:nhs-en:profile:nhs111CDADocument-v2-0"/>
 		</manifest>
 		<senderAddress uri="SiteId:0" type="2.16.840.1.113883.2.1.3.2.4.18.22"/>
 		<handlingSpecification>
-			<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v1-0"/>
+			<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryGeneralPractitionerRecipientNHS111CDADocument-v2-0"/>
 		</handlingSpecification>
 	</header>
 	<payloads count="1">
