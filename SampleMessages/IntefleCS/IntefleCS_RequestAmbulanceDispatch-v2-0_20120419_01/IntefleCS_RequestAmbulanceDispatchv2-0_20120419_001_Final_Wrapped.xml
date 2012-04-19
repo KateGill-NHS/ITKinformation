@@ -4,11 +4,11 @@
 			<id uri="SiteId:0 UserId:187 SessionId:16304" type="2.16.840.1.113883.2.1.3.2.4.18.27">            </id>
 		</auditIdentity>
 		<manifest count="1">
-			<manifestitem id="uuid_49FA0A9B-0234-4A4C-83F2-F2CB0CF89124" mimetype="text/xml" profileid="urn:nhs-en:profile:nhs111AmbulanceRequest-v1-0">            </manifestitem>
+			<manifestitem id="uuid_49FA0A9B-0234-4A4C-83F2-F2CB0CF89124" mimetype="text/xml" profileid="urn:nhs-en:profile:nhs111AmbulanceRequest-v2-0">            </manifestitem>
 		</manifest>
 		<senderAddress uri="SiteId:0" type="2.16.840.1.113883.2.1.3.2.4.18.22">          </senderAddress>
 		<handlingSpecification>
-			<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v1-0">            </spec>
+			<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v2-0">            </spec>
 		</handlingSpecification>
 	</header>
 	<payloads count="1">
