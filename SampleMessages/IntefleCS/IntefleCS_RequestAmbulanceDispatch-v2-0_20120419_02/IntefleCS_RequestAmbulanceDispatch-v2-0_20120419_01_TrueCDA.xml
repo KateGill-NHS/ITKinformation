@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AmbulanceRequest xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/REPC_MT200001GB02.xsd" classCode="PCPR" moodCode="RQO" xmlns="urn:hl7-org:v3">
+  <code code="828801000000101" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
+  <effectiveTime value="20111221100135" />
+  <id root="55241244-57D5-4C48-AF79-68C84722E8D3" />
+  <!--COCD_TP145200GB01_AuthorPerson-->
+  <author typeCode="AUT" contextControlCode="OP">
+    <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor" />
+    <functionCode code="OA" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" displayName="Originating Author" />
+    <time value="201112211001" />
+    <!--COCD_TP145210GB01_PersonWithOrganisation-->
+    <COCD_TP145200GB01.AssignedAuthor classCode="ASSIGNED">
+      <addr>
+        <streetAddressLine>The call centre</streetAddressLine>
+        <streetAddressLine>2 Bank Road</streetAddressLine>
+        <streetAddressLine>Chelmsford</streetAddressLine>
+        <streetAddressLine>Essex</streetAddressLine>
+        <postalCode>EX1 5RT</postalCode>
+      </addr>
+      <code code="CH1" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Call Handler Level 1" />
+      <id root="1.2.826.0.1285.0.2.0.65" extension="8666463078" />
+      <id root="1.2.826.0.1285.0.2.0.67" extension="CH1" />
+      <telecom value="tel:0123456789" use="EC" />
+      <telecom value="mailto:harry.parker@nhs.net" use="EC" />
+      <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor" />
+      <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+        <name>
+          <prefix>Mr</prefix>
+          <given>Harry</given>
+          <family>Parker</family>
+        </name>
+        <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson" />
+      </assignedPerson>
+      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="NHS111ABC" />
+        <name>NHS 111 Call Centre Chelmsford</name>
+        <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization" />
+      </representedOrganization>
+    </COCD_TP145200GB01.AssignedAuthor>
+  </author>
+  <!--COCD_TP145203GB03_RecipientOrganization-->
+  <informationRecipient typeCode="PRCP">
+    <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145203GB03#IntendedRecipient" />
+    <COCD_TP145203GB03.IntendedRecipient classCode="ASSIGNED">
+      <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#IntendedRecipient" />
+      <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+        <id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="AMB123" />
+        <name>East Chelmsford Ambulance Service</name>
+        <standardIndustryClassCode code="018" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.191" displayName="Ambulance Trust" />
+        <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#representedOrganization" />
+      </representedOrganization>
+    </COCD_TP145203GB03.IntendedRecipient>
+  </informationRecipient>
+  <pertinentInformation typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentTraumaFlag classCode="OBS" moodCode="EVN">
+      <code code="TM" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
+      <value value="false" />
+    </pertinentTraumaFlag>
+  </pertinentInformation>
+  <pertinentInformation1 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentFireFlag classCode="OBS" moodCode="EVN">
+      <code code="FR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
+      <value value="false" />
+    </pertinentFireFlag>
+  </pertinentInformation1>
+  <pertinentInformation2 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentSceneSafeFlag classCode="OBS" moodCode="EVN">
+      <code code="SC" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
+      <value value="false" />
+    </pertinentSceneSafeFlag>
+  </pertinentInformation2>
+  <pertinentInformation3 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentPoliceFlag classCode="OBS" moodCode="EVN">
+      <code code="PL" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
+      <value value="false" />
+    </pertinentPoliceFlag>
+  </pertinentInformation3>
+  <pertinentInformation4 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentTrappedFlag classCode="OBS" moodCode="EVN">
+      <code code="TR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
+      <value value="false" />
+    </pertinentTrappedFlag>
+  </pertinentInformation4>
+  <pertinentInformation5 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentEncounterEvent classCode="ENC" moodCode="EVN">
+      <effectiveTime>
+        <low value="20110519184500" />
+        <high value="20110519191500" />
+      </effectiveTime>
+      <id root="2.16.840.1.113883.2.1.3.2.4.18.34" extension="CASEREF1234" assigningAuthorityName="NHSD:NHS Direct" />
+      <id root="2.16.840.1.113883.2.1.3.2.4.18.35" extension="CASEID123" assigningAuthorityName="NHSD:NHS Direct" />
+      <text mediaType="text/plain">Patient: Joe Bloggs Disposition: Go to the nearest Emergency Department within 4 hours. Selected care service: Dx009 Pathways Assessment: An injury or other health problem was described. The individual was described as breathing and conscious. Loss of at least a mugful of blood in the last 30 minutes was not described. An illness or other health problem was described. - Insect Bite Fighting for breath was not described. A heart attack, chest/upper back pain, recent probable stroke, recent fit/seizure or suicide attempt was not described as the main call reason. New confusion, a diabetic hypo, a probable allergic reaction or successful resuscitation was not described as being the main call reason. The individual was described as being warm to touch. An insect or spider bite or sting was described. - Tick Bite A sting/bite occurring within the last hour was not described. 10 or more stings were not described. Nausea or vomiting since the sting was not described. A sting involving the eyes or mouth was not described. A fever was not described. An insect still attached to the skin was described. A tick bite was described. Advice given: Remove any jewellery or tight clothing from the area. Antihistamine medication and creams help reduce swelling and itching. They can be bought from pharmacies. Talk to the pharmacist for advice. Follow the instructions in the pack. Unless advised not to, or they have already been given, paracetamol or ibuprofen can be used to relieve pain. Follow the instructions in the pack. If in doubt ask a pharmacist.</text>
+      <!--COCD_TP145007UK03 Related Entity-->
+      <informant typeCode="INF" contextControlCode="OP">
+        <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145007UK03#RelatedEntity" />
+        <COCD_TP145007UK03.RelatedEntity classCode="PRS">
+          <addr use="PHYS">
+            <streetAddressLine>43 Summers Avenue</streetAddressLine>
+            <streetAddressLine>Somerset Street</streetAddressLine>
+            <city>Medway</city>
+            <postalCode>ME5 7TY</postalCode>
+          </addr>
+          <code code="01" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" displayName="Spouse" />
+          <telecom value="tel:07886554123" use="EC" />
+          <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#RelatedEntity" />
+          <relationshipHolder classCode="PSN" determinerCode="INSTANCE">
+            <name>
+              <given>Helga</given>
+              <family>Bloggs</family>
+            </name>
+            <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#relationshipHolder" />
+          </relationshipHolder>
+        </COCD_TP145007UK03.RelatedEntity>
+      </informant>
+      <location typeCode="LOC">
+        <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145222GB02#HealthCareFacility" />
+        <!--COCD_TP145222GB02_IncidentalHealthCareFacility-->
+        <COCD_TP145222GB02.HealthCareFacility classCode="ISDLOC">
+          <code code="224769008" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Domestic vegetable garden" />
+          <id nullFlavor="NA" />
+          <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#HealthCareFacility" />
+          <location classCode="PLC" determinerCode="INSTANCE">
+            <addr use="PHYS">
+              <streetAddressLine>7 Lime Avenue</streetAddressLine>
+              <streetAddressLine>Chelmsford</streetAddressLine>
+              <postalCode>CH3 4HU</postalCode>
+              <desc>The actual location is in the garden, round the back of the house</desc>
+            </addr>
+            <name nullFlavor="NI" />
+            <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#location" />
+          </location>
+        </COCD_TP145222GB02.HealthCareFacility>
+      </location>
+      <!--COCD_TP145201GB01_Patient-->
+      <recordTarget typeCode="RCT" contextControlCode="OP">
+        <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole" />
+        <COCD_TP145201GB01.PatientRole classCode="PAT">
+          <addr use="H">
+            <streetAddressLine>7 Lime Avenue</streetAddressLine>
+            <streetAddressLine>Chelmsford</streetAddressLine>
+            <streetAddressLine>Essex</streetAddressLine>
+            <postalCode>EX3 4HU</postalCode>
+          </addr>
+          <id root="2.16.840.1.113883.2.1.3.2.4.18.23" extension="5689098431" />
+          <telecom value="tel:0765478574" use="H" />
+          <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#PatientRole" />
+          <patientPatient classCode="PSN" determinerCode="INSTANCE">
+            <administrativeGenderCode code="1" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" />
+            <birthTime value="19760731" />
+            <name>
+              <prefix>Mr</prefix>
+              <given>Jack</given>
+              <family>Assington</family>
+            </name>
+            <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#patientPatient" />
+            <languageCommunication>
+              <languageCode code="ar" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.70" />
+              <modeCode code="RSP" codeSystem="2.16.840.1.113883.5.60" displayName="Receive Spoken" />
+              <preferenceInd value="true" />
+              <proficiencyLevelCode code="G" codeSystem="2.16.840.1.113883.5.61" displayName="Good" />
+              <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#languageCommunication" />
+            </languageCommunication>
+          </patientPatient>
+          <providerOrganization classCode="ORG" determinerCode="INSTANCE">
+            <addr use="WP">
+              <streetAddressLine>The Surgery</streetAddressLine>
+              <streetAddressLine>Surgery Lane</streetAddressLine>
+              <streetAddressLine>Chelmsford</streetAddressLine>
+              <streetAddressLine>Essex</streetAddressLine>
+              <postalCode>EX5 4EE</postalCode>
+            </addr>
+            <id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="SUR556" />
+            <name>The Surgery</name>
+            <standardIndustryClassCode code="001" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289" displayName="GP Practice" />
+            <telecom value="tel:0145562342343" use="WP" />
+            <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization" />
+          </providerOrganization>
+        </COCD_TP145201GB01.PatientRole>
+      </recordTarget>
+    </pertinentEncounterEvent>
+  </pertinentInformation5>
+  <pertinentInformation6 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentTriageDisposition classCode="OBS" moodCode="EVN">
+      <code code="TD" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.419" />
+      <value code="Dx009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.414" displayName="Blood loss - urgent care required" />
+    </pertinentTriageDisposition>
+  </pertinentInformation6>
+  <pertinentInformation7 typeCode="PERT">
+    <seperatableInd value="false" />
+    <pertinentAdditionalNotes classCode="OBS" moodCode="EVN">
+      <code code="SPN" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.422" />
+      <text>This patient is blah blah blah</text>
+    </pertinentAdditionalNotes>
+  </pertinentInformation7>
+  <reason typeCode="RSON">
+    <seperatableInd value="false" />
+    <justifyingTriageOutcome classCode="OBS" moodCode="EVN">
+      <code code="TO" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.328" />
+      <value code="RED2" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.329" />
+    </justifyingTriageOutcome>
+  </reason>
+  <replacementOf typeCode="RPLC">
+    <priorPreviousAmbulanceRequest classCode="PCPR" moodCode="RQO">
+      <id root="7D7B58E0-AE1A-11DB-9865-B18E1E0994EE" />
+    </priorPreviousAmbulanceRequest>
+  </replacementOf>
+</AmbulanceRequest>
