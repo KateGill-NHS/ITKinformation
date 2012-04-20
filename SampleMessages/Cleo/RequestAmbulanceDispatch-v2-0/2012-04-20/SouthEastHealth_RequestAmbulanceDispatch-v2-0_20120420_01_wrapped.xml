@@ -1,0 +1,195 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Header>
+		<To s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">http://ash-dev-iis01.sehnp.nhs.uk:83/AmbulanceDispatchv20.svc</To>
+		<Action s:mustUnderstand="1" xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none">urn:nhs-itk:services:201005:RequestAmbulanceDispatch-v2-0</Action>
+	</s:Header>
+	<s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<DistributionEnvelope xmlns="urn:nhs-itk:ns:201005">
+			<header trackingid="06484E90-B951-4599-AB44-C14C03E91C8E" service="RequestAmbulanceDispatch-v2-0">
+				<auditIdentity>
+					<id uri="urn:nhs-uk:addressing:ods:SEH"/>
+				</auditIdentity>
+				<manifest count="1">
+					<manifestitem id="uuid_69B077C1-9870-4222-B58C-B30B77D26472" mimetype="text/xml" profileid="urn:nhs-en:profile:nhs111AmbulanceRequest-v2-0"/>
+				</manifest>
+				<senderAddress uri="urn:nhs-uk:addressing:ods:SEH"/>
+				<handlingSpecification>
+					<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v2-0"/>
+				</handlingSpecification>
+			</header>
+			<payloads count="1">
+				<payload id="uuid_69B077C1-9870-4222-B58C-B30B77D26472">
+					<AmbulanceRequest moodCode="RQO" classCode="PCPR" xmlns="urn:hl7-org:v3">
+						<code code="828791000000100" codeSystem="2.16.80.1.113883.2.1.3.2.4.15"/>
+						<effectiveTime value="20120420142831"/>
+						<id root="1F1AB990-02A0-4DED-97F0-3E7842320493"/>
+						<author typeCode="AUT" contextControlCode="OP">
+							<contentId extension="COCD_TP145203GB02#AssignedAuthor" root="2.16.840.1.113883.2.1.3.2.4.18.16" xmlns="NPFIT:HL7:Localisation"/>
+							<functionCode code="OA" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" displayName="Originating Author"/>
+							<time value="20120420142831"/>
+							<COCD_TP145200GB01.AssignedAuthor classCode="ASSIGNED">
+								<addr use="WP">
+									<streetAddressLine partType="SAL">Kingston House</streetAddressLine>
+									<streetAddressLine partType="SAL">The Long Barrow</streetAddressLine>
+									<streetAddressLine partType="SAL">Orbital Park</streetAddressLine>
+									<streetAddressLine partType="SAL">Ashford</streetAddressLine>
+									<streetAddressLine partType="SAL">Kent</streetAddressLine>
+									<postalCode partType="ZIP">TN24 0GP</postalCode>
+									<id nullFlavor="NA"/>
+								</addr>
+								<code code="NR1690" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Call Operator"/>
+								<id extension="Matthew A Rudolph" root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+								<telecom value="tel:01233505450" use="EC"/>
+								<templateId extension="COCD_TP145200GB01#AssignedAuthor" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								<assignedPerson determinerCode="INSTANCE" classCode="PSN">
+									<name>Matthew A Rudolph</name>
+									<templateId extension="COCD_TP145200GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								</assignedPerson>
+								<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+									<id extension="NVE" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+									<name>Great Yarmouth and Waveney NHS 111</name>
+									<templateId extension="COCD_TP145200GB01#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								</representedOrganization>
+							</COCD_TP145200GB01.AssignedAuthor>
+						</author>
+						<informationRecipient typeCode="PRCP">
+							<contentId extension="COCD_TP145203GB03#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.16" xmlns="NPFIT:HL7:Localisation"/>
+							<COCD_TP145203GB03.IntendedRecipient classCode="ASSIGNED">
+								<templateId extension="COCD_TP145203GB03#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								<representedOrganization determinerCode="INSTANCE" classCode="ORG">
+									<id extension="NVE" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+									<name>Great Yarmouth and Waveney NHS 111</name>
+									<templateId extension="COCD_TP145203GB03#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								</representedOrganization>
+							</COCD_TP145203GB03.IntendedRecipient>
+						</informationRecipient>
+						<pertinentInformation typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentTraumaFlag classCode="OBS" moodCode="EVN">
+								<code code="TM" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+								<value value="true"/>
+							</pertinentTraumaFlag>
+						</pertinentInformation>
+						<pertinentInformation1 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentFireFlag classCode="OBS" moodCode="EVN">
+								<code code="FR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+								<value value="false"/>
+							</pertinentFireFlag>
+						</pertinentInformation1>
+						<pertinentInformation2 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentSceneSafeFlag classCode="OBS" moodCode="EVN">
+								<code code="SC" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+								<value value="true"/>
+							</pertinentSceneSafeFlag>
+						</pertinentInformation2>
+						<pertinentInformation3 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentPoliceFlag classCode="OBS" moodCode="EVN">
+								<code code="PL" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+								<value value="false"/>
+							</pertinentPoliceFlag>
+						</pertinentInformation3>
+						<pertinentInformation4 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentTrappedFlag classCode="OBS" moodCode="EVN">
+								<code code="TR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327"/>
+								<value value="true"/>
+							</pertinentTrappedFlag>
+						</pertinentInformation4>
+						<pertinentInformation5 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentEncounterEvent classCode="ENC" moodCode="EVN">
+								<effectiveTime>
+									<low value="20120420150805"/>
+								</effectiveTime>
+								<id extension="PMA1" root="2.16.840.1.113883.2.1.3.2.4.18.34"/>
+								<id extension="14348" root="2.16.840.1.113883.2.1.3.2.4.18.35"/>
+								<text>Patient: Test SPARTACUS Disposition: Dispatch 8 minute ambulance Selected Care Service: Dx011 Pathways Assessment: . Additional Text: ' '. . Additional Text: ' '. an injury or other health problem. Additional Text: ' '. yes. Additional Text: ' '. "present". Additional Text: ' '. 2 mugfuls OR MORE. Additional Text: ' '. yes. Additional Text: ' '. yes. Additional Text: ' '. . Additional Text: ' '. </text>
+								<informant typeCode="INF" contextControlCode="OP">
+									<contentId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.16" xmlns="NPFIT:HL7:Localisation"/>
+									<COCD_TP145007UK03.RelatedEntity classCode="PRS">
+										<addr nullFlavor="UNK"/>
+										<code code="21" codeSystem="2.16.840.1.113883.2.1.3.2.4.18.16"/>
+										<telecom value="tel:01227123456" use="EC"/>
+										<templateId extension="COCD_TP145007UK03#RelatedEntity" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+										<relationshipHolder determinerCode="INSTANCE" classCode="PSN">
+											<name/>
+											<templateId extension="COCD_TP145007UK03#relationshipHolder" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+										</relationshipHolder>
+									</COCD_TP145007UK03.RelatedEntity>
+								</informant>
+								<location typeCode="LOC">
+									<contentId extension="COCD_TP145222GB02#HealthCareFacility" root="2.16.840.1.113883.2.1.3.2.4.18.16" xmlns="NPFIT:HL7:Localisation"/>
+									<COCD_TP145222GB02.HealthCareFacility classCode="ISDLOC">
+										<id nullFlavor="NA"/>
+										<templateId extension="COCD_TP145222GB02#HealthCareFacility" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+										<location determinerCode="INSTANCE" classCode="PLC">
+											<addr use="PHYS">
+												<streetName partType="STR">Estuary View Medical Centre,25 Estuary View Busine</streetName>
+												<postalCode partType="ZIP">CT5 3SE</postalCode>
+												<additionalLocator partType="ADL">X60990Y16450</additionalLocator>
+											</addr>
+											<name/>
+											<templateId extension="COCD_TP145222GB02#location" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+										</location>
+									</COCD_TP145222GB02.HealthCareFacility>
+								</location>
+								<recordTarget typeCode="RCT" contextControlCode="OP">
+									<contentId extension="COCD_TP145201GB01#PatientRole" root="2.16.840.1.113883.2.1.3.2.4.18.16" xmlns="NPFIT:HL7:Localisation"/>
+									<COCD_TP145201GB01.PatientRole classCode="PAT">
+										<addr use="H">
+											<streetName partType="STR">Estuary View Medical Centre,25 Estuary View Business Park,Boorman Way</streetName>
+											<city partType="CTY">Whitstable</city>
+											<postalCode partType="ZIP">CT5 3SE</postalCode>
+										</addr>
+										<addr use="PHYS">
+											<streetName partType="STR">Estuary View Medical Centre,25 Estuary View Business Park,Boorman Way</streetName>
+											<city partType="CTY">Whitstable</city>
+											<postalCode partType="ZIP">CT5 3SE</postalCode>
+										</addr>
+										<id assigningAuthorityName="NVE:Great Yarmouth and Waveney NHS 111" extension="SPARTACUS, Test" root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+										<telecom value="tel:01227123456" use="EC"/>
+										<telecom use="H"/>
+										<templateId extension="COCD_TP145201GB01#PatientRole" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+										<patientPatient classCode="PSN" determinerCode="INSTANCE">
+											<administrativeGenderCode code="1" codeSystem="2.16.840.1.113883.2.1.3.2.4" displayName="Male"/>
+											<birthTime nullFlavor="NA"/>
+											<name>
+												<given>Test</given>
+												<family>SPARTACUS</family>
+											</name>
+											<templateId extension="COCD_TP145201GB01#patientPatient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+											<languageCommunication>
+												<languageCode code="en" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.70"/>
+												<modeCode code="RSP" codeSystem="2.16.840.1.113883.6.60" displayName="Received Spoken"/>
+												<preferenceInd nullFlavor="UNK"/>
+												<proficiencyLevelCode code="F" codeSystem="2.16.840.1.113883.5.61" displayName="Fair"/>
+												<templateId extension="COCD_TP145201GB01#languageCommunication" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+											</languageCommunication>
+										</patientPatient>
+									</COCD_TP145201GB01.PatientRole>
+								</recordTarget>
+							</pertinentEncounterEvent>
+						</pertinentInformation5>
+						<pertinentInformation6 typeCode="PERT">
+							<seperatableInd value="false"/>
+							<pertinentTriageDisposition classCode="OBS" moodCode="EVN">
+								<code code="TD" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.419"/>
+								<value code="Dx011" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.414" displayName="Dispatch 8 minute ambulance"/>
+							</pertinentTriageDisposition>
+						</pertinentInformation6>
+						<reason typeCode="RSON">
+							<seperatableInd value="false"/>
+							<justifyingTriageOutcome classCode="OBS" moodCode="EVN">
+								<code code="TO" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.328"/>
+								<value code="R2" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.329" displayName="Red 2"/>
+							</justifyingTriageOutcome>
+						</reason>
+					</AmbulanceRequest>
+				</payload>
+			</payloads>
+		</DistributionEnvelope>
+	</s:Body>
+</s:Envelope>
