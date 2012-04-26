@@ -1,0 +1,290 @@
+<ClinicalDocument classCode="DOCCLIN" moodCode="EVN" xmlns="urn:hl7-org:v3"	xmlns:npfitlc="NPFIT:HL7:Localisation">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT200001GB02"/>
+	<id root="47F5CFEE-69E2-4E81-A196-5654B13840D6"/>
+	<code code="819551000000100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"/>
+	<title>NHS 111 Report</title>
+	<effectiveTime value="20120413155416"/>
+	<confidentialityCode code="V" displayName="very restricted"
+		codeSystem="2.16.840.1.113883.1.11.16926"/>
+	<setId root="C3819984-7BDB-4FA5-ADF7-BF65819F0861"/>
+	<versionNumber value="1"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP145201GB01#PatientRole"/>
+		<patientRole classCode="PAT">
+			<templateId extension="COCD_TP145201GB01#PatientRole"
+				root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<id extension="1234567881" root="2.16.840.1.113883.2.1.3.2.4.18.23"/>
+			<id extension="F8E2EE2B-B895-43DA-B2AD-2EEAD5257CED"
+				root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+			<addr use="H">
+				<streetAddressLine>Appartment 17</streetAddressLine>
+				<streetAddressLine>123 Talbot Road</streetAddressLine>
+				<streetAddressLine>Blackpool</streetAddressLine>
+				<postalCode>FY1 3QX</postalCode>
+			</addr>
+			<addr use="HV">
+				<streetAddressLine>6</streetAddressLine>
+				<streetAddressLine>East Royal Drive</streetAddressLine>
+				<streetAddressLine>Easton Socon</streetAddressLine>
+				<postalCode>CB2 5HH</postalCode>
+			</addr>
+			<telecom value="tel:01233 722700" use="H"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<templateId extension="COCD_TP145201GB01#patientPatient"
+					root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+				<name>
+					<given>Jimmy</given>
+					<family>Anderson</family>
+				</name>
+				<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25"
+					displayName="Male" code="1"/>
+				<birthTime value="19320918"/>
+			</patient>
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP145201GB01#providerOrganization"/>
+				<id extension="G12345" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+				<name>Adastra Surgery</name>
+				<telecom value="tel:01233 722700" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Adastra Surgery</streetAddressLine>
+					<streetAddressLine>1 The Street</streetAddressLine>
+					<streetAddressLine>Town</streetAddressLine>
+					<postalCode/>
+				</addr>
+				<standardIndustryClassCode code="001" displayName="GP Practice"
+					codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289"/>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP145200GB01#AssignedAuthor"/>
+		<functionCode code="OA" displayName="Originating Author"
+			codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+		<time value="20120413165407"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+				extension="COCD_TP145200GB01#AssignedAuthor"/>
+			<id extension="ADASTRA" root="2.16.840.1.113883.2.1.3.2.4.18.24"/>
+			<code code="T1" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196"
+				displayName="Nurse Triage Practitioner"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP145200GB01#assignedPerson"/>
+				<name>
+					<given>Test</given>
+					<family>Clinician</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP145200GB01#representedOrganization"/>
+				<id extension="T00003" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+				<name>Advanced Health &amp; Care</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP145018UK03#AssignedCustodian"/>
+		<assignedCustodian classCode="ASSIGNED">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+				extension="COCD_TP145018UK03#AssignedCustodian"/>
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP145018UK03#representedCustodianOrganization"/>
+				<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="1A2"/>
+				<name>Adastra NHS Trust</name>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient typeCode="PRCP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP145203GB03#IntendedRecipient"/>
+		<intendedRecipient classCode="ASSIGNED">
+			<templateId extension="COCD_TP145203GB03#IntendedRecipient"
+				root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+			<addr use="WP">
+				<streetAddressLine>Adastra Surgery</streetAddressLine>
+				<streetAddressLine>1 The Street</streetAddressLine>
+				<streetAddressLine>Town</streetAddressLine>
+				<postalCode/>
+			</addr>
+			<telecom value="tel:01233 722700" use="WP"/>
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP145203GB03#representedOrganization"/>
+				<id extension="G12345" root="2.16.840.1.113883.2.1.3.2.4.19.2"/>
+				<name>Adastra Surgery</name>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<authorization typeCode="AUTH">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP146226GB02#Consent"/>
+		<consent classCode="CONS" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+				extension="COCD_TP146226GB02#Consent"/>
+			<id root="A709A442-3CF4-476E-8377-377700E727C7"/>
+			<code code="425691002" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"
+				displayName="Consent given for electronic record sharing"/>
+			<statusCode code="completed"/>
+		</consent>
+	</authorization>
+	<componentOf typeCode="COMP">
+		<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+			extension="COCD_TP146232GB01#EncompassingEncounter"/>
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+				extension="COCD_TP146232GB01#EncompassingEncounter"/>
+			<id extension="C3819984-7BDB-4FA5-ADF7-BF65819F0861" root="2.16.840.1.113883.2.1.3.2.4.18.34"/>
+			<id extension="10575" root="2.16.840.1.113883.2.1.3.2.4.18.35"/>
+			<code code="NHS111Encounter" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.326" displayName="NHS111 Encounter"/>
+			<effectiveTime>
+				<low value="20120413165008"/>
+				<high value="20120413165407"/>
+			</effectiveTime>
+			<dischargeDispositionCode codeSystem="2.16.840.1.113883.2.1.3.2.4.17.325" code="Dx02"
+				displayName="Go to the nearest Emergency Department within 1 hour."/>
+			<responsibleParty typeCode="RESP">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP146232GB01#responsibleParty"/>
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+					extension="COCD_TP145210GB01#AssignedEntity"/>
+				<assignedEntity classCode="ASSIGNED">
+					<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+						extension="COCD_TP145210GB01#AssignedEntity"/>
+					<id nullFlavor="NI"/>
+					<code code="R0010" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196"
+						displayName="Medical Director"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+							extension="COCD_TP145210GB01#assignedPerson"/>
+						<name>
+							<given>Alex</given>
+							<family>Yeates</family>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+							extension="COCD_TP145210GB01#representedOrganization"/>
+						<id extension="T00003" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+						<name>Advanced Health &amp; Care</name>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+			<location typeCode="LOC">
+				<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+					extension="COCD_TP146232GB01#location"/>
+				<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+					extension="COCD_TP145222GB02#HealthCareFacility"/>
+				<healthCareFacility classCode="ISDLOC">
+					<templateId extension="COCD_TP145222GB02#HealthCareFacility"
+						root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+					<id nullFlavor="NA"/>
+					<code code="313161000000107" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"
+						displayName="Example Care Setting"/>
+					<location classCode="PLC" determinerCode="INSTANCE">
+						<templateId extension="COCD_TP145222GB02#location"
+							root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+						<name>Incident Location</name>
+						<addr use="PHYS">
+							<streetAddressLine>Unit 4</streetAddressLine>
+							<streetAddressLine>Eurogate</streetAddressLine>
+							<city>Ashford</city>
+							<postalCode>TN24 8SB</postalCode>
+						</addr>
+					</location>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<id root="7AFDCAD6-1CE3-45A6-A176-DDAC27F46C87"/>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+							extension="COCD_TP146246GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+								extension="COCD_TP146246GB01#Section1"/>
+							<id root="773110DB-288F-4B32-8DE1-362646A65E9A"/>
+							<title>Patient's Reported Condition</title>
+							<text>
+								<content>fallen and hit head</content>
+							</text>
+						</section>
+					</component>
+					<component typeCode="COMP" contextConductionInd="true">
+						<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16"
+							extension="COCD_TP146246GB01#Section1"/>
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2"
+								extension="COCD_TP146246GB01#Section1"/>
+							<id root="8271D2F1-126F-4A14-A1AC-C6C8023243CF"/>
+							<title>Case Summary</title>
+							<text>
+								<content styleCode="bold">Disposition:</content>
+								<br/>
+								<content>Go to the nearest Emergency Department within 1
+									hour.</content>
+								<br/>
+								<content styleCode="bold">Selected care service:</content>
+								<br/>
+								<content>Dx02</content>
+								<br/>
+								<content styleCode="bold">Pathways Assessment:</content>
+								<br/>
+								<content>An injury or other health problem was
+									described.<br/>Significant blood loss was not described.<br/>An
+									injury or symptom relating to an injury was
+									described.<br/>Fighting for breath was not described.<br/>The
+									individual was not described as feeling cold to touch.<br/>Major
+									trauma was not described.<br/>The problem was not described as
+									resulting from a suicide attempt or self-harm.<br/>The
+									individual was not described as being trapped at the
+									scene.<br/>Injury preceded by illness was described.<br/>A chest
+									injury was not described as the main problem.<br/>3 or more
+									episodes of fainting/loss of consciousness in the last 24 hours
+									were not described.<br/>New inability to raise both arms and
+									keep them there, new difficulty speaking or new one-sided facial
+									weakness prior to injury were not described.<br/>Sudden onset of
+									a severe headache prior to the injury was not
+									described.<br/>Pathway selected - Head, Facial or Neck Injury,
+									Blunt<br/>New/worsening breathlessness since the injury was not
+									described.<br/>A fit at the time of or since the injury was not
+									described.<br/>New confusion/agitation or difficulty speaking,
+									reading or writing subsequent to the head injury was not
+									described.<br/>New limb weakness, coordination problems or
+									sensory loss were not described.<br/>Fluid leak from an ear or
+									bleeding from an ear or new deafness was not described.<br/>New
+									continuous neck pain was not described.<br/>A reduced level of
+									consciousness was not described.<br/>Visual disturbance was not
+									described.<br/>New skull or facial deformity was not
+									described.<br/>A fall from something moving onto the head was
+									described.<br/>Safe transport to hospital was
+									available.<br/>Instructions given were: The individual needs to
+									go straight to the nearest Emergency Department within 1 hour.
+									<br/>Instructions given were: The individual needs to go
+									straight to the nearest Emergency Department within 1 hour.
+									<br/>Advice given:&#xD; Worsening&#xD; <br/>
+								</content>
+								<content styleCode="bold">Advice given:</content>
+								<br/>
+								<content>If the condition gets worse, changes or if you have any
+									other concerns, call us back.<br/>Remember to take a list of any
+									current medications if you go to the out of hours surgery.<br/>
+								</content>
+							</text>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
