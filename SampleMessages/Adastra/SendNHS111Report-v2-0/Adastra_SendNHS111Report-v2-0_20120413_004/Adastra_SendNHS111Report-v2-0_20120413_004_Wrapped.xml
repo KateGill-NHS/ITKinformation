@@ -130,7 +130,8 @@
 					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146232GB01#EncompassingEncounter"/>
 					<encompassingEncounter classCode="ENC" moodCode="EVN">
 						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146232GB01#EncompassingEncounter"/>
-						<id extension="C3819984-7BDB-4FA5-ADF7-BF65819F0861" root="2.16.840.1.113883.2.1.3.2.4.18.35"/>
+						<id extension="C3819984-7BDB-4FA5-ADF7-BF65819F0861" root="2.16.840.1.113883.2.1.3.2.4.18.34"/>
+						<id extension="10575" root="2.16.840.1.113883.2.1.3.2.4.18.35"/>
 						<code code="NHS111Encounter" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.326" displayName="NHS111 Encounter"/>
 						<effectiveTime>
 							<low value="20120413165008"/>
