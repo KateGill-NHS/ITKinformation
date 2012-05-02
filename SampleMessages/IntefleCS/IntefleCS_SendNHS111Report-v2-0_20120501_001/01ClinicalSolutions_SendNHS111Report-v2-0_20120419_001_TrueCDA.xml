@@ -5,7 +5,7 @@
   <id root="A709A442-3CF4-476E-8377-376500E829C9" />
   <code code="819551000000100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
   <title>NHS 111 Report</title>
-  <effectiveTime value="201105192000+0100" />
+  <effectiveTime value="201105191900+0000" />
   <confidentialityCode code="N" codeSystem="2.16.840.1.113883.1.11.16926" displayName="normal" />
   <setId root="411910CF-1A76-4330-98FE-C345DDEE5553" />
   <versionNumber value="2" />
@@ -21,8 +21,8 @@
         <city>Medway</city>
         <postalCode>ME5 FS3</postalCode>
       </addr>
-      <telecom value="tel:01634 775667" use="H" />
-      <telecom value="tel:01634 451628" use="HV" />
+      <telecom value="tel:01634775667" use="H" />
+      <telecom value="tel:01634451628" use="HV" />
       <telecom value="mailto:Joe.Blogg@emailfree.co.uk" use="H" />
       <patient classCode="PSN" determinerCode="INSTANCE">
         <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#patientPatient" />
@@ -42,7 +42,7 @@
         <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization" />
         <id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="V396F" />
         <name>Medway Medical Practice</name>
-        <telecom value="tel:01634 111222" use="WP" />
+        <telecom value="tel:01634111222" use="WP" />
         <addr use="WP">
           <streetAddressLine>Springer Street</streetAddressLine>
           <city>Medway</city>
@@ -56,7 +56,7 @@
   <author typeCode="AUT" contextControlCode="OP">
     <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor" />
     <functionCode code="OA" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" displayName="Originating Author" />
-    <time value="201105192000+0100" />
+    <time value="201105191900+0000" />
     <!--COCD_TP145210GB01_PersonWithOrganisation-->
     <assignedAuthor classCode="ASSIGNED">
       <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor" />
@@ -125,7 +125,7 @@
       <telecom value="tel:0123476895" use="WP" />
       <receivedOrganization classCode="ORG" determinerCode="INSTANCE">
         <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#representedOrganization" />
-        <id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="PRA123" />
+        <id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="OrganizationSiteCode" />
         <name>Thames Medical Practice</name>
       </receivedOrganization>
     </intendedRecipient>
@@ -186,12 +186,12 @@
     <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146232GB01#EncompassingEncounter" />
     <encompassingEncounter classCode="ENC" moodCode="EVN">
       <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146232GB01#EncompassingEncounter" />
-      <id root="2.16.840.1.113883.2.1.3.2.4.18.34" extension="CASEREF1234" />
+      <id root="2.16.840.1.113883.2.1.3.2.4.18.34" extension="df3aad66-f10e-4d5a-aead-7fedcf54942a" />
       <id root="2.16.840.1.113883.2.1.3.2.4.18.35" extension="CASEID123" />
       <code code="NHS111Encounter" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.326" displayName="NHS111 Encounter" />
       <effectiveTime>
-        <low value="201105191945+0100" />
-        <high value="201105192015+0100" />
+        <low value="201105191845+0000" />
+        <high value="201105191915+0000" />
       </effectiveTime>
       <dischargeDispositionCode code="Dx009" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.325" displayName="Go to the nearest Emergency Department within 4 hours." />
       <responsibleParty typeCode="RESP">
@@ -217,7 +217,7 @@
         </assignedEntity>
       </responsibleParty>
       <location typeCode="LOC">
-        <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02.HealthCareFacility" />
+        <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146232GB01#location" />
         <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145222GB02#HealthCareFacility" />
         <!--COCD_TP145222GB02_IncidentalHealthCareFacility-->
         <healthCareFacility classCode="ISDLOC">
@@ -245,13 +245,13 @@
     <structuredBody classCode="DOCBODY" moodCode="EVN">
       <component typeCode="COMP" contextConductionInd="true">
         <section classCode="DOCSECT" moodCode="EVN">
-          <id root="9535AFB8-6B33-4F5C-BAA2-A8C450C76C64" />
+          <id root="C3765706-636C-4021-902E-FD4E9F60367F" />
           <!--COCD_TP146002GB01#ObservationMedia-->
           <entry typeCode="COMP" contextConductionInd="true">
             <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146002GB01#ObservationMedia" />
             <observationMedia classCode="OBS" moodCode="EVN">
               <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146002GB01#ObservationMedia" />
-              <id root="E52F1D10-694F-4AE5-970B-2314F29CC83F" />
+              <id root="90377EFB-CBAF-480E-A41B-CE2BF75C1784" />
               <value representation="TXT" mediaType="text/plain">This is the content</value>
               <!--Section added for version 2-->
               <participant typeCode="DEV" contextControlCode="OP">
@@ -274,7 +274,7 @@
             <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146246GB01#Section1" />
             <section classCode="DOCSECT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146246GB01#Section1" />
-              <id root="C5DAF36D-109E-47AD-9A5E-63C03D4B7DA7" />
+              <id root="608E177B-499A-4201-A0D3-E7AC2DF25A56" />
               <title>Patient’s Reported Condition</title>
               <text>
                 <content>Patient has a insect bite.</content>
@@ -353,7 +353,7 @@ Unless advised not to, or they have already been given, paracetamol or ibuprofen
             <npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146246GB01#Section1" />
             <section classCode="DOCSECT" moodCode="EVN">
               <templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146246GB01#Section1" />
-              <id root="1B0146B3-F3E7-412A-B6F0-C1BE49128FAE" />
+              <id root="06BAF443-119F-404A-952F-8E5C1D27DDF9" />
               <title>Patient Special Notes</title>
               <text>This patient has the following special notes: blah blah blah...</text>
             </section>
