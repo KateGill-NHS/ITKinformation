@@ -1,12 +1,16 @@
-Some examples from IntefleCS of outbound messages
+Some new examples from IntefleCS of outbound messages
 	
 	-CDA
 	
-	-Ambulance Request interim and final
-	
-	The 01 sample is a distribution wrappered interim and final
-	The 02 sample is a final
+	-Ambulance Request 
 
-Shaun Dodimead
+        -Repeat Caller Repository Query
+	
+
+Tim Cromarty
 Clinical Solutions
-07977 919555
+
+07977 919546
+tim.cromarty@clinicalsolutions.com
+
+1st May 2012
