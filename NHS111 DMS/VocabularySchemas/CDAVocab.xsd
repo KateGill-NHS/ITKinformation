@@ -1727,11 +1727,17 @@
 	<xs:simpleType name="NHS111AdditionalNotesType_code">
 		<xs:restriction base="cs">
 			<xs:enumeration value="SPN"/>
+			<xs:enumeration value="LAI"/>
+			<xs:enumeration value="OAN"/>
+			<xs:enumeration value="PRC"/>									
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NHS111AdditionalNotesType_displayName">
 		<xs:restriction base="st">
 			<xs:enumeration value="Special Patient Notes"/>
+			<xs:enumeration value="Location Access Information"/>
+			<xs:enumeration value="Other Additional Notes"/>
+			<xs:enumeration value="Primary Reason for Call – Chief Complaint in recipient systems"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
