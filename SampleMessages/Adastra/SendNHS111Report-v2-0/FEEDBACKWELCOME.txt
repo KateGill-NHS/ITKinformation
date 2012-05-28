@@ -1,1 +1,0 @@
-These messages all seem to validate against the appropriate schemas, but would appreciate feedback on any misinterpretations / gotchas that the schema validations don't catch!
