@@ -1,4 +1,0 @@
-Known Errors
-============
-
-26/04 - Messages 001 and 002 removed due to issue discovered with EncompassingEncounter template. Messages 003 and 004 updated manually to reflect correct OID until new system-generated files provided.
