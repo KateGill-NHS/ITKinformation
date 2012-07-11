@@ -1,9 +1,4 @@
 <?xml version="1.0"?>
-<!--
-$Date: 2010-08-19 15:39:26 +0100 (Thu, 19 Aug 2010) $
-$Revision: 17194 $
-$Author: npfit\algr2 $
--->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:n1="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:n2="urn:hl7-org:v3/meta/voc" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="n1 n2 voc npfitlc xsi">
 	<xsl:output method="html" indent="yes" version="4.01" encoding="UTF-8" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"/>
 	<!-- CDA document -->
@@ -23,6 +18,7 @@ $Author: npfit\algr2 $
 	<xsl:template match="n1:ClinicalDocument">
 		<html>
 			<head>
+				<xsl:comment>$trasformVersion=1.0 $updateDate=29/06/2012 Interoperability Team</xsl:comment>	
 				<!-- <meta name='Generator' content='&CDA-Stylesheet;'/> -->
 				<xsl:comment> Do NOT edit this HTML directly, it was generated via an XSLT transformation from the original release 2 CDA
           Document. </xsl:comment>
@@ -83,6 +79,7 @@ $Author: npfit\algr2 $
 			<xsl:comment>Updated by Aled Greenhalgh - NHS CFH</xsl:comment>
 			<xsl:comment>Updated by Prashant Trivedi - NHS CFH</xsl:comment>
 			<body>
+				<div style="color:red; font-weight:bold;">***This HTML is created using transform which is provided on as-is basis and content of this HTML is not clinically validated. The transform used to create this HTML can be modified as per local needs.***</div>
 				<xsl:call-template name="patientBanner"/>
 				<xsl:if test="/n1:ClinicalDocument/n1:informant/n1:relatedEntity/n1:relatedPerson/n1:name">
 					<xsl:call-template name="informantBanner"/>
@@ -802,6 +799,11 @@ $Author: npfit\algr2 $
 								<xsl:call-template name="getName">
 									<xsl:with-param name="name" select="/n1:ClinicalDocument/n1:informant/n1:relatedEntity/n1:relatedPerson/n1:name"/>
 								</xsl:call-template>
+								<!--PRTR1 Get display name as well here-->
+								<xsl:if test="/n1:ClinicalDocument/n1:informant/n1:relatedEntity/n1:code/@displayName">
+									<xsl:text> - </xsl:text>
+									<xsl:value-of select="/n1:ClinicalDocument/n1:informant/n1:relatedEntity/n1:code/@displayName"/>
+								</xsl:if>								
 							</td>
 						</xsl:if>
 					</tr>
@@ -994,8 +996,34 @@ $Author: npfit\algr2 $
 					</tr>
 				</xsl:for-each>
 				<xsl:call-template name="performer"/>
+				<!--PRTR1 Get consent here-->
+				<xsl:for-each select="/n1:ClinicalDocument/n1:authorization">
+					<xsl:sort select="@typeCode"/>
+					<tr>
+						<th class="header" valign="top">
+							<xsl:choose>
+								<xsl:when test="@typeCode='AUTH' and not(preceding-sibling::*/@typeCode='AUTH')">
+									<xsl:choose>
+										<xsl:when test="count(following-sibling::*[@typeCode='AUTH'])=0">
+											<xsl:text>Consent Status</xsl:text>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:text>Consent Statuses</xsl:text>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text/>
+								</xsl:otherwise>
+							</xsl:choose>
+						</th>
+						<td class="header">
+								<xsl:value-of select="n1:consent/n1:code/@displayName"/>
+						</td>
+					</tr>
+				</xsl:for-each>				
 			</table>
-			<!--	<xsl:call-template name="performer"/>-->
+			<!--<xsl:call-template name="performer"/>-->
 		</div>
 	</xsl:template>
 	<!--  Title Bar  -->
@@ -1046,6 +1074,49 @@ $Author: npfit\algr2 $
 								</xsl:choose>
 							</td>
 						</tr>
+						<!--PRTR1 Encounter identifier check for NHS 111 specific oids-->
+						<xsl:for-each select="/n1:ClinicalDocument/n1:componentOf/n1:encompassingEncounter/n1:id">
+							<xsl:choose>
+								<xsl:when test="./@root = '2.16.840.1.113883.2.1.3.2.4.18.34'">
+									<tr>
+										<th class="titlebar">Case Reference</th>
+										<td class="titlebar">
+											<xsl:value-of select="./@extension"/>
+										</td>
+									</tr>
+								</xsl:when>
+								<xsl:when test="./@root = '2.16.840.1.113883.2.1.3.2.4.18.35'">
+									<tr>
+										<th class="titlebar">Case ID</th>
+										<td class="titlebar">
+											<xsl:value-of select="./@extension"/>
+										</td>
+									</tr>
+								</xsl:when>
+								<!--<xsl:when test="./@root = 'UUID'">
+									<xsl:text>This is UUID and should not be shown</xsl:text>
+								</xsl:when>-->
+								<xsl:otherwise>
+									<xsl:if test="./@extension">
+										<tr>
+											<th class="titlebar">Encounter Identifier</th>
+											<td class="titlebar">
+												<xsl:value-of select="./@extension"/>
+											</td>
+										</tr>
+									</xsl:if>	
+								</xsl:otherwise>								
+							</xsl:choose>	
+						</xsl:for-each>
+						<!--PRTR1 encounter disposition-->
+						<xsl:if test="n1:encompassingEncounter/n1:dischargeDispositionCode/@displayName">
+							<tr>
+								<th class="titlebar">Encounter Disposition</th>
+								<td class="titlebar">
+									<xsl:value-of select="n1:encompassingEncounter/n1:dischargeDispositionCode/@displayName"/>
+								</td>
+							</tr>
+						</xsl:if>						
 						<xsl:if test="n1:encompassingEncounter/n1:location/n1:healthCareFacility/n1:serviceProviderOrganization/n1:name">
 							<tr>
 								<th class="titlebar">Care Setting Organisation</th>
@@ -1259,7 +1330,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-			<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='CON']">
 				<table>
@@ -1301,7 +1374,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-			<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>			
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='REFT']">
 				<table>
@@ -1343,7 +1418,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>			
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='BBY']">
 				<table>
@@ -1385,7 +1462,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='CALLBCK']">
 				<table>
@@ -1427,7 +1506,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='DEV']">
 				<table>
@@ -1469,7 +1550,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='DIST']">
 				<table>
@@ -1511,7 +1594,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='ELOC']">
 				<table>
@@ -1553,7 +1638,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='NOT']">
 				<table>
@@ -1595,7 +1682,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='VIA']">
 				<table>
@@ -1637,7 +1726,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="/n1:ClinicalDocument/n1:participant[@typeCode='WIT']">
 				<table>
@@ -1679,7 +1770,9 @@ $Author: npfit\algr2 $
 					</tr>
 					</xsl:if>
 				</table>
-				<xsl:call-template name="participantBody"/>
+				<xsl:if test="n1:associatedEntity/n1:addr">
+					<xsl:call-template name="participantBody"/>
+				</xsl:if>
 			</xsl:for-each>
 		</div>
 	</xsl:template>
@@ -1791,6 +1884,57 @@ $Author: npfit\algr2 $
 						<xsl:value-of select="/n1:ClinicalDocument/n1:versionNumber/@value"/>
 					</td>
 				</tr>
+				<!--PRTR1 get replacement of (related document) here-->
+					<xsl:if test="/n1:ClinicalDocument/n1:relatedDocument/@typeCode='RPLC'">
+						<tr>
+							<th class="header">
+								<xsl:text>Replacement of</xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:id/@root"/>
+							</td>
+							<th class="header">
+								<xsl:text>Version</xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:versionNumber/@value"/>
+							</td>
+						</tr>	
+					</xsl:if>
+					<!--PRTR1 get addendum to (related document) here-->
+					<xsl:if test="/n1:ClinicalDocument/n1:relatedDocument/@typeCode='APND'">
+						<tr>
+							<th class="header">
+								<xsl:text>Addendum to</xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:id/@root"/>
+							</td>
+							<th class="header">
+								<xsl:text>Version</xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:versionNumber/@value"/>
+							</td>
+						</tr>	
+					</xsl:if>
+					<!--PRTR1 get transformation of  (related document) here-->	
+					<xsl:if test="/n1:ClinicalDocument/n1:relatedDocument/@typeCode='XFRM'">
+						<tr>
+							<th class="header">
+								<xsl:text>Transformation of </xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:id/@root"/>
+							</td>
+							<th class="header">
+								<xsl:text>Version</xsl:text>
+							</th>
+							<td class="header">
+								<xsl:value-of select="/n1:ClinicalDocument/n1:relatedDocument/n1:parentDocument/n1:versionNumber/@value"/>
+							</td>
+						</tr>	
+					</xsl:if>														
 				<xsl:for-each select="n1:informationRecipient">
 					<xsl:sort select="@typeCode"/>
 					<tr>
@@ -1858,9 +2002,6 @@ $Author: npfit\algr2 $
 				</xsl:for-each>
 			</table>
 		</div>
-		<xsl:if test="$debug='yes'">
-			<div style="color:red; font-weight:bold;">Transform info: $Date: 2010-08-19 15:39:26 +0100 (Thu, 19 Aug 2010) $ $Revision: 17194 $ $Author: npfit\algr2 $</div>
-		</xsl:if>
 	</xsl:template>
 	<!-- 
   -->
@@ -1966,59 +2107,82 @@ $Author: npfit\algr2 $
 			</xsl:for-each>
 		</table>
 	</xsl:template>
-	<!-- 
-  -->
+	<!--PRTR1 This is for Service Event template [0..*] and each service event can have multiple performers [0..*]-->
 	<xsl:template name="performer">
-		<!--	<table class="header">-->
-		<xsl:for-each select="//n1:serviceEvent">
+		<xsl:for-each select="//n1:documentationOf">
 			<tr>
-				<th class="header">
-					<xsl:if test="n1:code">
-							Report of 
-						</xsl:if>
-					<xsl:if test="not(n1:code)">
-							Report period
-						</xsl:if>
+				<th class="header" valign="top">
+					<xsl:choose>
+						<xsl:when test="@typeCode='DOC' and not(preceding-sibling::*/@typeCode='DOC')">
+							<xsl:choose>
+								<xsl:when test="count(following-sibling::*[@typeCode='DOC'])=0">
+									<xsl:text>Report of</xsl:text>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text>Reports of</xsl:text>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:text/>
+						</xsl:otherwise>
+					</xsl:choose>
 				</th>
 				<td class="header">
-					<xsl:if test="n1:code">
-						<xsl:value-of select="n1:code/@displayName"/>
-						<xsl:text> </xsl:text>
+					<xsl:if test="n1:serviceEvent/n1:code">
+						<xsl:value-of select="n1:serviceEvent/n1:code/@displayName"/>
 					</xsl:if>
-					<xsl:text>From </xsl:text>
-					<xsl:call-template name="formatDate">
-						<xsl:with-param name="date" select="n1:effectiveTime/n1:low/@value"/>
-					</xsl:call-template>
-					<xsl:text>  To </xsl:text>
-					<xsl:call-template name="formatDate">
-						<xsl:with-param name="date" select="n1:effectiveTime/n1:high/@value"/>
-					</xsl:call-template>
-					<xsl:if test="n1:performer/n1:assignedEntity/n1:assignedPerson/n1:name">
+					<xsl:if test="n1:serviceEvent/n1:effectiveTime">
+						<xsl:text> - </xsl:text>
+						<xsl:text>From </xsl:text>
+						<xsl:call-template name="formatDate">
+							<xsl:with-param name="date" select="n1:serviceEvent/n1:effectiveTime/n1:low/@value"/>
+						</xsl:call-template>
+						<xsl:text>  To </xsl:text>
+						<xsl:call-template name="formatDate">
+							<xsl:with-param name="date" select="n1:serviceEvent/n1:effectiveTime/n1:high/@value"/>
+						</xsl:call-template>
+					</xsl:if>
+					<!--<xsl:if test="n1:serviceEvent/n1:performer/n1:assignedEntity/n1:assignedPerson/n1:name">
 						<xsl:text> , </xsl:text>
 						<xsl:call-template name="getName">
-							<xsl:with-param name="name" select="n1:performer/n1:assignedEntity/n1:assignedPerson/n1:name"/>
+							<xsl:with-param name="name" select="n1:serviceEvent/n1:performer/n1:assignedEntity/n1:assignedPerson/n1:name"/>
 						</xsl:call-template>
-					</xsl:if>
+					</xsl:if>-->
+				<!--</td>-->
+				<!--PRTR1 Get the performer loop here-->
+				<p>
+				<xsl:for-each select="n1:serviceEvent/n1:performer">
+					<xsl:sort select="@typeCode"/>
+							<xsl:choose>
+								<xsl:when test="@typeCode='PRF' and not(preceding-sibling::*/@typeCode='PRF')">
+									<xsl:choose>
+										<xsl:when test="count(following-sibling::*[@typeCode='PRF'])=0">
+										   <span class="label">
+												<xsl:text>Performed by </xsl:text>
+											</span> 
+										</xsl:when>
+										<xsl:otherwise>
+										    <span class="label">
+												<xsl:text>Performed by </xsl:text> <!--PRTR1 Changed with comment from KZS-->
+											</span>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text/>
+								</xsl:otherwise>
+							</xsl:choose>
+							<xsl:call-template name="getName">
+									<xsl:with-param name="name" select="n1:assignedEntity/n1:assignedPerson/n1:name"/>
+							</xsl:call-template>
+							<xsl:if test="not(position() = last())">
+								<xsl:text>, </xsl:text>
+							</xsl:if>
+					</xsl:for-each>
+				</p>		
 				</td>
-				<!--<td>
-						<xsl:call-template name="getName">
-							<xsl:with-param name="name" select="n1:performer/n1:assignedEntity/n1:assignedPerson/n1:name"/>
-						</xsl:call-template>
-						<xsl:text> (</xsl:text>
-						<xsl:call-template name="translateCode">
-							<xsl:with-param name="code" select="n1:assignedEntity/n1:code"/>
-						</xsl:call-template>)
-					</td>-->
 			</tr>
-			<!--<tr>
-					<td/>
-					<td>
-						<xsl:call-template name="getContactInfo">
-							<xsl:with-param name="contact" select="n1:assignedEntity"/>
-						</xsl:call-template>
-					</td>
-				</tr>-->
 		</xsl:for-each>
-		<!--	</table>-->
 	</xsl:template>
 </xsl:stylesheet>
