@@ -1,32 +1,32 @@
-<distributionEnvelopeType xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<header service="urn:nhs-itk:services:201005:RequestAmbulanceDispatch-v1-0" trackingid="39774F3E-C838-4F61-A6F4-DF6DD093B544" xmlns="urn:nhs-itk:ns:201005">
+<distributionEnvelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<header service="urn:nhs-itk:services:201005:RequestAmbulanceDispatch-v1-0" trackingid="A213BBF9-5D5A-4591-B3B4-D7AC4EB1D304" xmlns="urn:nhs-itk:ns:201005">
 		<addresslist>
-			<address uri="urn:nhs-uk:addressing:ods:" />
+			<address uri="urn:nhs-uk:addressing:ods:8GY38" />
 		</addresslist>
 		<auditIdentity>
-			<id uri="urn:nhs-uk:identity:ods:" />
+			<id uri="urn:nhs-uk:identity:ods:8GY38" />
 		</auditIdentity>
 		<manifest count="1">
-			<manifestitem id="uuid_3dd75d41-930c-4473-96ee-de522303d7bc" mimetype="text/xml" profileid="urn:nhs-en:profile:nhs111AmbulanceRequest-v2-0" />
+			<manifestitem id="uuid_c7947a65-0e2b-4f8b-a681-2f811dcb4049" mimetype="text/xml" profileid="urn:nhs-en:profile:nhs111AmbulanceRequest-v2-0" />
 		</manifest>
-		<senderAddress uri="urn:nhs-uk:addressing:ods:" />
+		<senderAddress uri="urn:nhs-uk:addressing:ods:8GY38" />
 		<handlingSpecification>
 			<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryNHS111RequestforAmbulance-v2-0" />
 		</handlingSpecification>
 	</header>
 	<payloads count="1" xmlns="urn:nhs-itk:ns:201005">
-		<payload id="uuid_3dd75d41-930c-4473-96ee-de522303d7bc">
+		<payload id="uuid_c7947a65-0e2b-4f8b-a681-2f811dcb4049">
 			<AmbulanceRequest classCode="PCPR" moodCode="RQO" xmlns="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 				<code code="828791000000100" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" />
-				<effectiveTime value="20120518111742" />
-				<id root="3DD75D41-930C-4473-96EE-DE522303D7BC" />
+				<effectiveTime value="20120531160719" />
+				<id root="C7947A65-0E2B-4F8B-A681-2F811DCB4049" />
 				<author typeCode="AUT" contextControlCode="OP">
 					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor" />
 					<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" />
-					<time value="20120518111742" />
+					<time value="20120531160719" />
 					<COCD_TP145200GB01.AssignedAuthor classCode="ASSIGNED">
 						<code codeSystem="2.16.840.1.113883.2.1.3.2.4.17.339" code="DOCTOR" displayName="Doctor" />
-						<id extension="DE1035C2-AC25-4362-A21F-3D64CF6F0D1E" root="2.16.840.1.113883.2.1.3.2.4.18.24" assigningAuthorityName=":Advanced Health and Care Limited (316)" />
+						<id extension="DE1035C2-AC25-4362-A21F-3D64CF6F0D1E" root="2.16.840.1.113883.2.1.3.2.4.18.24" assigningAuthorityName="8GY38:Advanced Health and Care Limited (316)" />
 						<id nullFlavor="UNK" />
 						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor" />
 						<assignedPerson classCode="PSN" determinerCode="INSTANCE">
@@ -37,7 +37,7 @@
 							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson" />
 						</assignedPerson>
 						<representedOrganization classCode="ORG" determinerCode="INSTANCE">
-							<id extension="" root="2.16.840.1.113883.2.1.3.2.4.19.1" />
+							<id extension="8GY38" root="2.16.840.1.113883.2.1.3.2.4.19.1" />
 							<name>Advanced Health and Care Limited (316)</name>
 							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization" />
 						</representedOrganization>
@@ -48,8 +48,8 @@
 					<COCD_TP145203GB03.IntendedRecipient classCode="ASSIGNED">
 						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#IntendedRecipient" />
 						<representedOrganization classCode="ORG" determinerCode="INSTANCE">
-							<id extension="RX6" root="2.16.840.1.113883.2.1.3.2.4.19.2" />
-							<name>NORTH EAST AMBULANCE SERVICE NHS FOUNDATION TRUST</name>
+							<id extension="RYD" root="2.16.840.1.113883.2.1.3.2.4.19.2" />
+							<name>SOUTH EAST COAST AMBULANCE SERVICE NHS FOUNDATION TRUST</name>
 							<standardIndustryClassCode code="018" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.191" displayName="Ambulance Trust" />
 							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145203GB03#representedOrganization" />
 						</representedOrganization>
@@ -59,7 +59,7 @@
 					<seperatableInd value="false" />
 					<pertinentTraumaFlag classCode="OBS" moodCode="EVN">
 						<code code="TM" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.327" />
-						<value value="true" />
+						<value nullFlavor="UNK" />
 					</pertinentTraumaFlag>
 				</pertinentInformation>
 				<pertinentInformation1 typeCode="PERT">
@@ -94,11 +94,11 @@
 					<seperatableInd value="false" />
 					<pertinentEncounterEvent classCode="ENC" moodCode="EVN">
 						<effectiveTime>
-							<low value="20120418091615" />
+							<low value="20110610130806" />
 						</effectiveTime>
-						<id extension="10550DC6-5EE0-402D-92BC-AC27B2BDFAE0" root="2.16.840.1.113883.2.1.3.2.4.18.34" assigningAuthorityName=":Advanced Health and Care Limited (316)" />
-						<id extension="12593" root="2.16.840.1.113883.2.1.3.2.4.18.35" assigningAuthorityName=":Advanced Health and Care Limited (316)" />
-						<text mediaType="text/plain">  Case Summary    Disposition: Dx28    Contact Pharmacist      Pathways Assessment:    An injury or other health problem was described.    Significant blood loss was not described.    An illness or other health problem was described.    User comment - "earache"    Fighting for breath was not described.    A heart attack, chest/upper back pain, recent probable stroke, recent fit/seizure or suicide attempt was not described as the main call reason.    New confusion, a diabetic hypo, a probable allergic reaction was not described as being the main call reason.    The individual was not described as feeling cold to touch.    Pathway selected - Earache    Severe illness and a rash suggestive of septicaemia were not described.    Severe illness and inability to flex the neck or photophobia were not described.    A foreign body in the ear was not described.    Deafness or continuous ringing in the ear since the earache began was not described.    New or worsening confusion was not described.    A fever was not described.    New blistering of a painful area was not described.    Ear discharge could not be confirmed.    One-sided facial weakness was not described.    Symptom duration of less than 3 days was described.      Advice Given:    Unless advised not to, or they have already been given, paracetamol or ibuprofen can be used to relieve earache. Follow the instructions in the pack. If in doubt ask a pharmacist.    A flannel soaked in warm water and held against the ear may help.    Don't clean inside the ear, use eardrops or put anything else into the ear unless it has been  prescribed.    Keep water out of the ears.    Severe swelling of the ear, severe illness, severe dizziness or the pain getting worse - CONTACT THE GP PRACTICE OR OUT OF HOURS SERVICE IMMEDIATELY.    An injury or other health problem was described.  Significant blood loss was described.    Loss of more than 2 mugfuls of blood was described.  Bleeding from a wound was described.  Blood spurting or spraying from a wound was described.  Instructions given were: An ambulance is being dispatched to arrive within 8 minutes.  </text>
+						<id extension="967284BF-3C8F-49E9-A41C-A310AB90DC3B" root="2.16.840.1.113883.2.1.3.2.4.18.34" assigningAuthorityName="8GY38:Advanced Health and Care Limited (316)" />
+						<id extension="12671" root="2.16.840.1.113883.2.1.3.2.4.18.35" assigningAuthorityName="8GY38:Advanced Health and Care Limited (316)" />
+						<text mediaType="text/plain">Final Disposition: I will pass the information on to a Community Healthcare Professional. (Dx47)  The consultation has identified  Access to another healthcare provider required  District nurse/community health care professional request    Final Disposition: I will pass the information on to a Community Healthcare Professional. (Dx47)            Patient's Reported Condition      Case Summary    Disposition:    I will pass the information on to a Community Healthcare Professional.    Selected care service:    Dx47    Pathways Assessment:    Access to another healthcare provider was required.  A community healthcare professional was requested.  Instructions given were: I will pass the information on to a Community Healthcare Professional.  Directory of Services referral: Urgent Care Centre Bpool and North Lancs    Advice given:    None recorded.    An injury or other health problem was described.  Significant blood loss was described.    Loss of at least 1 mugful of blood was described.  Instructions given were: An ambulance is being dispatched to arrive within 8 minutes.  </text>
 						<location typeCode="LOC">
 							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145222GB02#HealthCareFacility" />
 							<COCD_TP145222GB02.HealthCareFacility classCode="ISDLOC">
@@ -106,11 +106,11 @@
 								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#HealthCareFacility" />
 								<location classCode="PLC" determinerCode="INSTANCE">
 									<addr use="H">
-										<streetAddressLine>17</streetAddressLine>
-										<streetAddressLine>Swinside Drive</streetAddressLine>
-										<streetAddressLine>District</streetAddressLine>
-										<streetAddressLine>Durham</streetAddressLine>
-										<postalCode>DH1 1AD</postalCode>
+										<streetAddressLine>4 Overledge</streetAddressLine>
+										<streetAddressLine>Sandgate</streetAddressLine>
+										<streetAddressLine>Hythe</streetAddressLine>
+										<streetAddressLine>Kent</streetAddressLine>
+										<postalCode>CT21 5PT</postalCode>
 									</addr>
 									<name nullFlavor="NI" />
 									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145222GB02#location" />
@@ -121,31 +121,23 @@
 							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole" />
 							<COCD_TP145201GB01.PatientRole classCode="PAT">
 								<addr use="H">
-									<streetAddressLine>17</streetAddressLine>
-									<streetAddressLine>Swinside Drive</streetAddressLine>
-									<streetAddressLine>District</streetAddressLine>
-									<streetAddressLine>Durham</streetAddressLine>
-									<postalCode>DH1 1AD</postalCode>
+									<streetAddressLine>4 Overledge</streetAddressLine>
+									<streetAddressLine>Sandgate</streetAddressLine>
+									<streetAddressLine>Hythe</streetAddressLine>
+									<streetAddressLine>Kent</streetAddressLine>
+									<postalCode>CT21 5PT</postalCode>
 								</addr>
-								<id extension="9990088780" root="2.16.840.1.113883.2.1.3.2.4.18.23" />
-								<id extension="BDFE15FB-0821-4745-834C-BB691DCD6902" root="2.16.840.1.113883.2.1.3.2.4.18.24" />
-								<telecom value="tel:0191 373 2077" use="H" />
+								<id extension="96FC41AB-9CFF-4288-B14B-9D6B418C80FB" root="2.16.840.1.113883.2.1.3.2.4.18.24" />
 								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#PatientRole" />
 								<patientPatient classCode="PSN" determinerCode="INSTANCE">
-									<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" code="1" />
-									<birthTime value="19660101" />
+									<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Female" code="2" />
+									<birthTime value="20010101" />
 									<name>
-										<given>Test</given>
+										<given>Linda</given>
 										<family>Test</family>
 									</name>
 									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#patientPatient" />
 								</patientPatient>
-								<providerOrganization classCode="ORG" determinerCode="INSTANCE">
-									<id extension="" root="2.16.840.1.113883.2.1.3.2.4.19.1" />
-									<name/>
-									<standardIndustryClassCode code="001" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289" displayName="GP Practice" />
-									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization" />
-								</providerOrganization>
 							</COCD_TP145201GB01.PatientRole>
 						</recordTarget>
 					</pertinentEncounterEvent>
@@ -161,10 +153,10 @@
 					<seperatableInd value="false" />
 					<justifyingTriageOutcome classCode="OBS" moodCode="EVN">
 						<code code="TO" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.328" />
-						<value code="G4" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.329" displayName="Green 4" />
+						<value codeSystem="2.16.840.1.113883.2.1.3.2.4.17.329" code="R2" />
 					</justifyingTriageOutcome>
 				</reason>
 			</AmbulanceRequest>
 		</payload>
 	</payloads>
-</distributionEnvelopeType>
+</distributionEnvelope>
