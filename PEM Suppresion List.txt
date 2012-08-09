@@ -1,0 +1,10 @@
+National approved never send PEM messages.
+
+DX 28 – Contact Pharmacist 
+DX 52 – Refer to Police 
+DX 60 – Contact Optician next routine appointment within 72 hours 
+DX 22 – To be seen by Dental Practice within 3 working days 
+DX 23 – Contact Orthodontist next working day 
+DX 45 – Provide Service Location Information 
+DX 46 – Refer to Health Information 
+DX 63 – Refer to Fluline 
