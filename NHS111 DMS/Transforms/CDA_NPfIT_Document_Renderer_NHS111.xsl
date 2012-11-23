@@ -81,7 +81,6 @@
 			<xsl:comment>Updated by Prashant Trivedi - NHS CFH</xsl:comment>
 			<xsl:comment>Updated by Dave Barnet - branched for NHS111</xsl:comment>	
 			<body>
-				<div style="color:red; font-weight:bold;">***This HTML is created using transform which is provided on as-is basis and content of this HTML is not clinically validated. The transform used to create this HTML can be modified as per local needs.***</div>
 				<!--moved title to here daba-->
 				<div class="doctitle">
 					<xsl:value-of select="$title"/>
