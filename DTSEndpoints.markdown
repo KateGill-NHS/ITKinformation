@@ -19,58 +19,24 @@
 ## Message Types ##
 The proposed legacy message type values are:
 
-<table border=1>
-	<tr>
-		<th>Legacy Message Type</th><th>Value</th>
-	</tr>
-	<tr>
-		<td>EMIS LV</td><td>EMISLV</td>
-	</tr>
-	<tr>
-		<td>EMIS PCS</td><td>EMISPCS</td>
-	</tr>
-	<tr>
-		<td>EMIS Web</td><td>EMISWEB</td>
-	</tr>
-	<tr>
-		<td>InPS Vision</td><td>IPSVISION</td>
-	</tr>
-	<tr>
-		<td>InPS Vision 360</td><td>IPS360</td>
-	</tr>
-	<tr>
-		<td>TPP SystmOne</td><td>TPPSYSTMONE</td>
-	</tr>
-	<tr>
-		<td>Isoft Synergy</td><td>ISOFTSYNERGY</td>
-	</tr>
-	<tr>
-		<td>Isoft Ganymede</td><td>ISOFTGANYMEDE</td>
-	</tr>
-	<tr>
-		<td>Microtest Evolution</td><td>MTESTEVOLUTION</td>
-	</tr>
-	<tr>
-		<td>Microtest Evolution</td><td>MTESTEVOLUTION</td>
-	</tr>
-</table>
+**Legacy Message Types**  
+EMISLV  
+EMISPCS  
+EMISWEB  
+IPSVISION  
+IPS360  
+TPPSYSTMONE  
+ISOFTSYNERGY  
+ISOFTGANYMEDE  
+MTESTEVOLUTION  
+MTESTEVOLUTION  
 
 The proposed 111 CDA message type values are:
 
-<table border=1>
-	<tr>
-		<th>111 CDA Message Type</th><th>Value</th>
-	</tr>
-	<tr>
-		<td>CDA</td><td>A wrapped (in a Distribution Envelope) 111 CDA document in native form</td>
-	</tr>
-	<tr>
-		<td>PDF</td><td>111 CDA document rendered to PDF</td>
-	</tr>
-	<tr>
-		<td>HTML</td><td>111 CDA document rendered to HTML</td>
-	</tr>
-</table>
+**111 CDA Message Types**  
+CDA  
+PDF  
+HTML
 
 A consuming system should only process the DTS endpoint instructions for MessageTypes that they can support.
 
