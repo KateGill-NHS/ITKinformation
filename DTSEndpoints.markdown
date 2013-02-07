@@ -2,32 +2,26 @@
 
 ## Proposed Endpoint Format ##
 
-*DTSAddress*/|*WorkflowID*/|*MessageFormat*
+*DTSAddress*\|*InteractionID*\|*MessageType*\|*BusinessScenario*\|*WorkflowID*
 
 - DTSAddress would be the address of the destination DTS mailbox to which the message should be sent e.g. `gpsystem123@dts.nhs.uk`
 
-- WorkflowID would be the workflow ID to be used in the DTS control file e.g. `111_REFERRAL_COPY`
+- InteractionID would be used in the same way that it is currently, and so you would only ever expect to see `urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v2-0` in this field at present. You would only ever use this if using one of the 111 CDA Message Types.
 
-- MessageFormat would inform the sending system as to which format of message can be accepted by the receiving system e.g. `EMISLV, EMISWEB`
+- MessageType would be one of the values from the list below - this would tell the consuming system what type of DTS .dat file should be sent to the surgery.
 
+- BusinessScenario is the standard `Primary` or `Copy` value (you would only expect to see `Copy` really and would most likely ignore the endpoint if it had `Primary` if it had that value.
 
-## Workflow IDs ##
+- WorkflowID would be the workflow ID to be used in the DTS control file e.g. `111_REFERRAL_COPY` or `OOH_MESSAGE`. According the DTS team, the `111_REFERRAL_COPY` workflow ID should be used for CDA messages only, and so for any other type of message, the `OOH_MESSSAGE` workflow ID should be used.
 
-Workflow IDs are issued by the CfH DTS team. Current OOH DTS messages are sent using the `OOH_MESSAGE` workflow ID which identifies to the DTS team that the messages are part of the OOH PEM workflow.
+*For Primary scenario endpoints, the 5th segment would be used for the referral message, however the proposal is to use it to house the WorkflowID as referral message is not relevant to a Copy business scenario*
 
-Two new workflow IDs have been created by the DTS team to handle 111 messaging:
-
-- `111_REFERRAL` \- to be used for primary referrals (i.e. where the service is the primary service selected from the DOS for the patient referral).
-- `111_REFERRAL_COPY` \- to be used for Post Event Messaging to the patient's registered surgery.
-
-The guidance from the DTS team is that these workflow IDs can be used however **the owner of the sending mailbox must have gained permission from the DTS team to use their mailbox for 111 traffic.**
-
-## Message Formats ##
-The proposed message format values for specific surgery systems are:
+## Message Types ##
+The proposed legacy message type values are:
 
 <table border=1>
 	<tr>
-		<th>System</th><th>MessageFormat Value</th>
+		<th>Legacy Message Type</th><th>Value</th>
 	</tr>
 	<tr>
 		<td>EMIS LV</td><td>EMISLV</td>
@@ -61,27 +55,27 @@ The proposed message format values for specific surgery systems are:
 	</tr>
 </table>
 
-The proposed generic message format values are:
+The proposed 111 CDA message type values are:
 
 <table border=1>
 	<tr>
-		<th>Generic Format</th><th>MessageFormat Value</th>
+		<th>111 CDA Message Type</th><th>Value</th>
 	</tr>
 	<tr>
-		<td>111 CDA Message</td><td>urn:nhs-itk:interaction:copyRecipientNHS111CDADocument-v2-0</td>
+		<td>CDA</td><td>A wrapped (in a Distribution Envelope) 111 CDA document in native form</td>
 	</tr>
 	<tr>
-		<td>PDF</td><td>PDF</td>
+		<td>PDF</td><td>111 CDA document rendered to PDF</td>
 	</tr>
 	<tr>
-		<td>HTML</td><td>HTML</td>
+		<td>HTML</td><td>111 CDA document rendered to HTML</td>
 	</tr>
 </table>
 
-*Note: For CDA messages, the MessageFormat value should be the interactionID relating to the specific message to be sent. This then allows unique message versions to be profiled for systems based on their level of support.*
-
-A consuming system should only process the DTS endpoint instructions for MessageFormats that they can support.
+A consuming system should only process the DTS endpoint instructions for MessageTypes that they can support.
 
 i.e. If you cannot support the proprietary format for sending DTS messages to an EMIS LV system, you would ignore this endpoint as if it were not present.
+
+
 
 
